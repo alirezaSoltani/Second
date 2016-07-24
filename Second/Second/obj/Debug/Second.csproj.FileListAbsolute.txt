@@ -1,2 +1,3 @@
 c:\users\se7en\documents\visual studio 2015\Projects\Second\Second\bin\Debug\Second.exe.config
 C:\Users\SE7EN\Source\Repos\Second\Second\Second\bin\Debug\Second.exe.config
+C:\Users\ASUS\Source\Repos\Second2\Second\Second\bin\Debug\Second.exe.config
