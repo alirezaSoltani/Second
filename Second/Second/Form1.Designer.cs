@@ -75,6 +75,7 @@
             this.login_enter_btn.TabIndex = 4;
             this.login_enter_btn.Text = "ورود";
             this.login_enter_btn.UseVisualStyleBackColor = true;
+            this.login_enter_btn.Click += new System.EventHandler(this.login_enter_btn_Click);
             // 
             // Login
             // 

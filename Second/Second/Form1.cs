@@ -21,5 +21,10 @@ namespace Second
         {
 
         }
+
+        private void login_enter_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
