@@ -59,6 +59,7 @@
             this.login_user_tb.Name = "login_user_tb";
             this.login_user_tb.Size = new System.Drawing.Size(146, 20);
             this.login_user_tb.TabIndex = 2;
+            this.login_user_tb.Text = "رمز عبور";
             // 
             // login_pass_tb
             // 
