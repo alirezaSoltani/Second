@@ -33,24 +33,24 @@ namespace Test
         {
             try
             {
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString =
-            "Data Source=(local);" +
-            "Initial Catalog=Project;" +
-            "Integrated Security=True";
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString =
+                "Data Source=(local);" +
+                "Initial Catalog=Project;" +
+                "Integrated Security=True";
 
-            SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
                 sc.CommandText = "INSERT INTO lessonTable (lesson#,lessonName,lessonTime,lessonGroup#,lessonTeacher#) VALUES ( '" + lessonObject.lessonNumber
                                                                                                             + "','" + lessonObject.lessonName
                                                                                                             + "','" + lessonObject.lessonTime
                                                                                                                 + "','" + lessonObject.lessonGroupNumber
                                                                                                                 + "','" + lessonObject.lessonTeacherNumber + "')";
 
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                conn.Open();
+                reader = sc.ExecuteReader();
 
 
                 using (SqlCommand cmd = new SqlCommand("CREATE TABLE [dbo].[" + lessonObject.lessonNumber + "-" + lessonObject.lessonGroupNumber + "_Table" + "]("
@@ -68,7 +68,7 @@ namespace Test
                     cmd.Connection.Close();
                 }
 
-            conn.Close();
+                conn.Close();
 
             }
             catch (Exception e)
@@ -83,28 +83,27 @@ namespace Test
         public static void updateLesson(lessonModel lessonObject)
         {
             try
-        {
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString =
-            "Data Source=(local);" +
-            "Initial Catalog=Project;" +
-            "Integrated Security=True";
+            {
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString =
+                "Data Source=(local);" +
+                "Initial Catalog=Project;" +
+                "Integrated Security=True";
 
-            SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "UPDATE lessonTable SET lesson# = '" + lessonObject.lessonNumber
-                                                                + "', lessonName ='" + lessonObject.lessonName
-                                                                + "', lessonTime ='" + lessonObject.lessonTime
-                                                                    + "', lessonGroup# ='" + lessonObject.lessonGroupNumber
-                                                                    + "', lessonTeacher# ='" + lessonObject.lessonTeacherNumber + "')";
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
+                sc.CommandText = "UPDATE lessonTable SET lesson# = '" + lessonObject.lessonNumber
+                                                                    + "', lessonName ='" + lessonObject.lessonName
+                                                                    + "', lessonTime ='" + lessonObject.lessonTime
+                                                                        + "', lessonGroup# ='" + lessonObject.lessonGroupNumber
+                                                                        + "', lessonTeacher# ='" + lessonObject.lessonTeacherNumber + "')";
 
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
-            conn.Close();
-
-                /*
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                conn.Open();
+                reader = sc.ExecuteReader();
+                conn.Close();
+                
 
                 using (SqlCommand cmd = new SqlCommand("CREATE TABLE [dbo].[" + lessonObject.newLessonNumber + "-" + lessonObject.newLessonGroupNumber + "_Table" + "]("
                             + "[student#] [bigint] NOT NULL ,"
