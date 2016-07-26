@@ -49,7 +49,7 @@
             this.teacher_main_tc.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.teacher_main_tc.RightToLeftLayout = true;
             this.teacher_main_tc.SelectedIndex = 0;
-            this.teacher_main_tc.Size = new System.Drawing.Size(607, 465);
+            this.teacher_main_tc.Size = new System.Drawing.Size(1752, 784);
             this.teacher_main_tc.TabIndex = 0;
             // 
             // teacher_dashbord_tp
@@ -97,7 +97,7 @@
             this.teacher_settings_tp.Location = new System.Drawing.Point(4, 22);
             this.teacher_settings_tp.Name = "teacher_settings_tp";
             this.teacher_settings_tp.Padding = new System.Windows.Forms.Padding(3);
-            this.teacher_settings_tp.Size = new System.Drawing.Size(599, 439);
+            this.teacher_settings_tp.Size = new System.Drawing.Size(1744, 758);
             this.teacher_settings_tp.TabIndex = 4;
             this.teacher_settings_tp.Text = "تنظیمات";
             this.teacher_settings_tp.UseVisualStyleBackColor = true;
@@ -106,7 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(631, 489);
+            this.ClientSize = new System.Drawing.Size(1789, 808);
             this.Controls.Add(this.teacher_main_tc);
             this.Name = "TeacherForm";
             this.Text = "استاد";

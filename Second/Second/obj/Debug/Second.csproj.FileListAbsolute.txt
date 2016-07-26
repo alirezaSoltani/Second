@@ -4,3 +4,13 @@ C:\Users\ASUS\Source\Repos\Second2\Second\Second\bin\Debug\Second.exe.config
 C:\Users\Nimaa\Source\Repos\Second2\Second\Second\bin\Debug\Second.exe.config
 C:\Users\SE7EN\Source\Repos\Second2\Second\Second\bin\Debug\Second.exe.config
 C:\Users\peyman\Source\Repos\Second\Second\Second\bin\Debug\Second.exe.config
+C:\Users\SE7EN\Source\Repos\Second2\Second\Second\bin\Debug\Second.exe
+C:\Users\SE7EN\Source\Repos\Second2\Second\Second\bin\Debug\Second.pdb
+C:\Users\SE7EN\Source\Repos\Second2\Second\Second\obj\Debug\Second.csprojResolveAssemblyReference.cache
+C:\Users\SE7EN\Source\Repos\Second2\Second\Second\obj\Debug\Second.Login.resources
+C:\Users\SE7EN\Source\Repos\Second2\Second\Second\obj\Debug\Second.ManagerForm.resources
+C:\Users\SE7EN\Source\Repos\Second2\Second\Second\obj\Debug\Second.Properties.Resources.resources
+C:\Users\SE7EN\Source\Repos\Second2\Second\Second\obj\Debug\Second.TeacherForm.resources
+C:\Users\SE7EN\Source\Repos\Second2\Second\Second\obj\Debug\Second.csproj.GenerateResource.Cache
+C:\Users\SE7EN\Source\Repos\Second2\Second\Second\obj\Debug\Second.exe
+C:\Users\SE7EN\Source\Repos\Second2\Second\Second\obj\Debug\Second.pdb
