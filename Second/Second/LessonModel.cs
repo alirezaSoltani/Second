@@ -5,93 +5,168 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Test
 {
-    class LessonModel
+    class lessonModel
     {
         public long lessonNumber;
         public String lessonName;
         public String lessonTime;
         public int lessonGroupNumber;
-        public LessonModel()
+        public long lessonTeacherNumber;
+        public long newLessonNumber;
+        public int newLessonGroupNumber;
+        public lessonModel()
         {
             lessonNumber = 0;
             lessonName = "";
+            lessonTime = "";
             lessonGroupNumber = 0;
+            lessonTeacherNumber = 0;
+            newLessonNumber = 0;
+            newLessonGroupNumber = 0;
 
         }
-        public static void addLesson(LessonModel lessonObject)
+        public static void addLesson(lessonModel lessonObject)
         {
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString =
-            "Data Source=(local);" +
-            "Initial Catalog=Project;" +
-            "Integrated Security=True";
+            try
+            {
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString =
+                "Data Source=(local);" +
+                "Initial Catalog=Project;" +
+                "Integrated Security=True";
 
-            SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "INSERT INTO lessonTable (lesson#,lessonName,lessonTime,lessonGroup#) VALUES ( '" + lessonObject.lessonNumber
-                                                                                                            + "','" + lessonObject.lessonName
-                                                                                                            + "','" + lessonObject.lessonTime
-                                                                                                            + "','" + lessonObject.lessonGroupNumber + "')";
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
-            conn.Close();
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
+                sc.CommandText = "INSERT INTO lessonTable (lesson#,lessonName,lessonTime,lessonGroup#,lessonTeacher#) VALUES ( '" + lessonObject.lessonNumber
+                                                                                                                + "','" + lessonObject.lessonName
+                                                                                                                + "','" + lessonObject.lessonTime
+                                                                                                                + "','" + lessonObject.lessonGroupNumber
+                                                                                                                + "','" + lessonObject.lessonTeacherNumber + "')";
 
-            //////////Create Table Querry
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                conn.Open();
+                reader = sc.ExecuteReader();
+
+
+                using (SqlCommand cmd = new SqlCommand("CREATE TABLE [dbo].[" + lessonObject.lessonNumber + "-" + lessonObject.lessonGroupNumber + "_Table" + "]("
+                                 + "[student#] [bigint] NOT NULL ,"
+                                 + "[studentFName] [text] NOT NULL,"
+                                 + "[studentLName] [text] NOT NULL,"
+                                 + "CONSTRAINT ['pk_" + lessonObject.lessonNumber + "-" + lessonObject.lessonGroupNumber + "_Table" + "'] PRIMARY KEY CLUSTERED "
+                                 + "("
+                                 + "[student#] ASC"
+                                 + ")WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]"
+                                 + ") ON [PRIMARY]", new SqlConnection(conn.ConnectionString)))
+                {
+                    cmd.Connection.Open();
+                    cmd.ExecuteNonQuery();
+                    cmd.Connection.Close();
+                }
+
+                conn.Close();
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
+
 
         }
 
-        public static void updateLesson(LessonModel lessonObject)
+        public static void updateLesson(lessonModel lessonObject)
         {
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString =
-            "Data Source=(local);" +
-            "Initial Catalog=Project;" +
-            "Integrated Security=True";
+            try
+            {
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString =
+                "Data Source=(local);" +
+                "Initial Catalog=Project;" +
+                "Integrated Security=True";
 
-            SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "UPDATE lessonTable SET lesson# = '" + lessonObject.lessonNumber
-                                                                + "', lessonName ='" + lessonObject.lessonName
-                                                                + "', lessonTime ='" + lessonObject.lessonTime
-                                                                + "', lessonGroup# ='" + lessonObject.lessonGroupNumber + "')";
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
+                sc.CommandText = "UPDATE lessonTable SET lesson# = '" + lessonObject.lessonNumber
+                                                                    + "', lessonName ='" + lessonObject.lessonName
+                                                                    + "', lessonTime ='" + lessonObject.lessonTime
+                                                                    + "', lessonGroup# ='" + lessonObject.lessonGroupNumber
+                                                                    + "', lessonTeacher# ='" + lessonObject.lessonTeacherNumber + "')";
 
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
-            conn.Close();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                conn.Open();
+                reader = sc.ExecuteReader();
+                conn.Close();
 
-            ///////Update Table querry
+                /*
+
+                using (SqlCommand cmd = new SqlCommand("CREATE TABLE [dbo].[" + lessonObject.newLessonNumber + "-" + lessonObject.newLessonGroupNumber + "_Table" + "]("
+                            + "[student#] [bigint] NOT NULL ,"
+                            + "[studentFName] [text] NOT NULL,"
+                            + "[studentLName] [text] NOT NULL,"
+                            + "CONSTRAINT ['pk_" + lessonObject.newLessonNumber + "-" + lessonObject.newLessonGroupNumber + "_Table" + "'] PRIMARY KEY CLUSTERED "
+                            + "("
+                            + "[student#] ASC"
+                            + ")WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]"
+                            + ") ON [PRIMARY]", new SqlConnection(conn.ConnectionString)))
+                {
+                    cmd.Connection.Open();
+                    cmd.ExecuteNonQuery();
+                    cmd.Connection.Close();
+                }
+
+                */
+
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
-        public static void deleteLesson(LessonModel lessonObject)
+        public static void deleteLesson(lessonModel lessonObject)
         {
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString =
-            "Data Source=(local);" +
-            "Initial Catalog=Project;" +
-            "Integrated Security=True";
+            try
+            {
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString =
+                "Data Source=(local);" +
+                "Initial Catalog=Project;" +
+                "Integrated Security=True";
 
-            SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = " DELETE FROM lessonTable WHERE lesson# = " + lessonObject.lessonNumber + " ";
-
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
-            conn.Close();
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
+                sc.CommandText = " DELETE FROM lessonTable WHERE lesson# = " + lessonObject.lessonNumber + "AND lessonGroup# = " + lessonObject.lessonGroupNumber + " ";
 
 
-            //////Delete Table Querry
+                SqlCommand sc1 = new SqlCommand();
+                SqlDataReader reader2;
+                sc1.CommandText = " DROP TABLE [dbo].[" + lessonObject.lessonNumber + "-" + lessonObject.lessonGroupNumber + "_Table]";
+                sc1.CommandType = CommandType.Text;
+
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                sc1.Connection = conn;
+                conn.Open();
+                reader = sc.ExecuteReader();
+                reader2 = sc.ExecuteReader();
+                conn.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
         }
-        public static List<LessonModel> getAllLesson(LessonModel lessonObject)
+        public static List<lessonModel> getAllLesson(lessonModel lessonObject)
         {
-            List<LessonModel> list = new List<LessonModel>();
+            List<lessonModel> list = new List<lessonModel>();
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString =
             "Data Source=(local);" +
@@ -109,11 +184,12 @@ namespace Test
                 rdr = sc.ExecuteReader();
                 while (rdr.Read())
                 {
-                    LessonModel person = new LessonModel();
+                    lessonModel person = new lessonModel();
                     lessonObject.lessonNumber = (long)rdr["lesson#"];
                     lessonObject.lessonName = (String)rdr["lessonName"];
                     lessonObject.lessonTime = (String)rdr["lessonDate"];
                     lessonObject.lessonGroupNumber = (Int16)rdr["lessonGroup#"];
+                    lessonObject.lessonTeacherNumber = (Int64)rdr["lessonTeacher#"];
                     list.Add(lessonObject);
                 }
 
@@ -126,5 +202,7 @@ namespace Test
 
 
         }
+
+
     }
 }
