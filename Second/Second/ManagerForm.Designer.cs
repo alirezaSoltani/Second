@@ -51,7 +51,7 @@
             this.manager_main_tc.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.manager_main_tc.RightToLeftLayout = true;
             this.manager_main_tc.SelectedIndex = 0;
-            this.manager_main_tc.Size = new System.Drawing.Size(683, 540);
+            this.manager_main_tc.Size = new System.Drawing.Size(1754, 790);
             this.manager_main_tc.TabIndex = 0;
             // 
             // manager_dashbord_tp
@@ -109,7 +109,7 @@
             this.manager_settnigs_tp.Location = new System.Drawing.Point(4, 22);
             this.manager_settnigs_tp.Name = "manager_settnigs_tp";
             this.manager_settnigs_tp.Padding = new System.Windows.Forms.Padding(3);
-            this.manager_settnigs_tp.Size = new System.Drawing.Size(675, 514);
+            this.manager_settnigs_tp.Size = new System.Drawing.Size(1746, 764);
             this.manager_settnigs_tp.TabIndex = 5;
             this.manager_settnigs_tp.Text = "تنظیمات";
             this.manager_settnigs_tp.UseVisualStyleBackColor = true;
@@ -119,7 +119,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(707, 564);
+            this.ClientSize = new System.Drawing.Size(1778, 814);
             this.Controls.Add(this.manager_main_tc);
             this.Name = "ManagerForm";
             this.Text = "ManagerForm";
