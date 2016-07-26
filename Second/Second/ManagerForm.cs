@@ -20,8 +20,7 @@ namespace Second
         private void ManagerForm_Load(object sender, EventArgs e)
         {
 
-            FormBorderStyle = FormBorderStyle.None;
-            WindowState = FormWindowState.Maximized;
+           
         }
 
         private void manager_settnigs_tp_Click(object sender, EventArgs e)
