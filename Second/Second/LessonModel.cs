@@ -7,9 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Test
+namespace LessonModel
 {
-    class lessonModel
+    class LessonModel
     {
         public long lessonNumber;
         public String lessonName;
@@ -18,7 +18,7 @@ namespace Test
         public long lessonTeacherNumber;
         public long newLessonNumber;
         public int newLessonGroupNumber;
-        public lessonModel()
+        public LessonModel()
         {
             lessonNumber = 0;
             lessonName = "";
@@ -29,7 +29,7 @@ namespace Test
             newLessonGroupNumber = 0;
 
         }
-        public static void addLesson(lessonModel lessonObject)
+        public static void addLesson(LessonModel lessonObject)
         {
             try
             {
@@ -42,8 +42,8 @@ namespace Test
                 SqlCommand sc = new SqlCommand();
                 SqlDataReader reader;
                 sc.CommandText = "INSERT INTO lessonTable (lesson#,lessonName,lessonTime,lessonGroup#,lessonTeacher#) VALUES ( '" + lessonObject.lessonNumber
-                                                                                                            + "','" + lessonObject.lessonName
-                                                                                                            + "','" + lessonObject.lessonTime
+                                                                                                                + "','" + lessonObject.lessonName
+                                                                                                                + "','" + lessonObject.lessonTime
                                                                                                                 + "','" + lessonObject.lessonGroupNumber
                                                                                                                 + "','" + lessonObject.lessonTeacherNumber + "')";
 
@@ -80,7 +80,7 @@ namespace Test
 
         }
 
-        public static void updateLesson(lessonModel lessonObject)
+        public static void updateLesson(LessonModel lessonObject)
         {
             try
             {
@@ -95,15 +95,16 @@ namespace Test
                 sc.CommandText = "UPDATE lessonTable SET lesson# = '" + lessonObject.lessonNumber
                                                                     + "', lessonName ='" + lessonObject.lessonName
                                                                     + "', lessonTime ='" + lessonObject.lessonTime
-                                                                        + "', lessonGroup# ='" + lessonObject.lessonGroupNumber
-                                                                        + "', lessonTeacher# ='" + lessonObject.lessonTeacherNumber + "')";
+                                                                    + "', lessonGroup# ='" + lessonObject.lessonGroupNumber
+                                                                    + "', lessonTeacher# ='" + lessonObject.lessonTeacherNumber + "')";
 
                 sc.CommandType = CommandType.Text;
                 sc.Connection = conn;
                 conn.Open();
                 reader = sc.ExecuteReader();
                 conn.Close();
-                
+
+                /*
 
                 using (SqlCommand cmd = new SqlCommand("CREATE TABLE [dbo].[" + lessonObject.newLessonNumber + "-" + lessonObject.newLessonGroupNumber + "_Table" + "]("
                             + "[student#] [bigint] NOT NULL ,"
@@ -118,17 +119,29 @@ namespace Test
                     cmd.Connection.Open();
                     cmd.ExecuteNonQuery();
                     cmd.Connection.Close();
+                }
+
+                */
+
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
         public static void deleteLesson(LessonModel lessonObject)
         {
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString =
-            "Data Source=(local);" +
-            "Initial Catalog=Project;" +
-            "Integrated Security=True";
+            try
+            {
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString =
+                "Data Source=(local);" +
+                "Initial Catalog=Project;" +
+                "Integrated Security=True";
 
-            SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
                 sc.CommandText = " DELETE FROM lessonTable WHERE lesson# = " + lessonObject.lessonNumber + "AND lessonGroup# = " + lessonObject.lessonGroupNumber + " ";
 
 
@@ -137,13 +150,13 @@ namespace Test
                 sc1.CommandText = " DROP TABLE [dbo].[" + lessonObject.lessonNumber + "-" + lessonObject.lessonGroupNumber + "_Table]";
                 sc1.CommandType = CommandType.Text;
 
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
                 sc1.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
+                conn.Open();
+                reader = sc.ExecuteReader();
                 reader2 = sc.ExecuteReader();
-            conn.Close();
+                conn.Close();
             }
             catch (Exception e)
             {
@@ -151,9 +164,9 @@ namespace Test
             }
 
         }
-        public static List<lessonModel> getAllLesson(lessonModel lessonObject)
+        public static List<LessonModel> getAllLesson(LessonModel lessonObject)
         {
-            List<lessonModel> list = new List<lessonModel>();
+            List<LessonModel> list = new List<LessonModel>();
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString =
             "Data Source=(local);" +
@@ -171,7 +184,7 @@ namespace Test
                 rdr = sc.ExecuteReader();
                 while (rdr.Read())
                 {
-                    lessonModel person = new lessonModel();
+                    LessonModel person = new LessonModel();
                     lessonObject.lessonNumber = (long)rdr["lesson#"];
                     lessonObject.lessonName = (String)rdr["lessonName"];
                     lessonObject.lessonTime = (String)rdr["lessonDate"];
