@@ -46,11 +46,11 @@
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(111)))));
-            this.textBox1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Font = new System.Drawing.Font("B Yekan+", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.textBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox1.Location = new System.Drawing.Point(111, 120);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(213, 29);
+            this.textBox1.Size = new System.Drawing.Size(213, 34);
             this.textBox1.TabIndex = 2;
             // 
             // label1
@@ -77,6 +77,7 @@
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "login1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "login";
             this.ResumeLayout(false);
             this.PerformLayout();
