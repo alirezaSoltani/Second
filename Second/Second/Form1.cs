@@ -28,5 +28,15 @@ namespace Second
             TeacherForm form = new TeacherForm();
             form.Show();
         }
+
+        private void login_pass_txt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
