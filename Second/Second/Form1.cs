@@ -25,7 +25,7 @@ namespace Second
         private void login_enter_btn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ManagerForm form = new ManagerForm();
+            TeacherForm form = new TeacherForm();
             form.Show();
         }
     }
