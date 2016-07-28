@@ -127,6 +127,7 @@
             this.Controls.Add(this.manager_main_tc);
             this.Name = "ManagerForm";
             this.Text = "ManagerForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ManagerForm_Load);
             this.manager_main_tc.ResumeLayout(false);
             this.ResumeLayout(false);
