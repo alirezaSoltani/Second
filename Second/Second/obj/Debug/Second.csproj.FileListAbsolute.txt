@@ -27,3 +27,11 @@ C:\Users\Nimaa\Source\Repos\Second3\Second\Second\obj\Debug\Second.ManagerForm.r
 C:\Users\Nimaa\Source\Repos\Second3\Second\Second\obj\Debug\Second.Properties.Resources.resources
 C:\Users\Nimaa\Source\Repos\Second3\Second\Second\obj\Debug\Second.TeacherForm.resources
 C:\Users\Nimaa\Source\Repos\Second3\Second\Second\obj\Debug\Second.csproj.GenerateResource.Cache
+C:\Users\peyman\Source\Repos\Second\Second\Second\bin\Debug\Second.exe
+C:\Users\peyman\Source\Repos\Second\Second\Second\bin\Debug\Second.pdb
+C:\Users\peyman\Source\Repos\Second\Second\Second\obj\Debug\Second.csprojResolveAssemblyReference.cache
+C:\Users\peyman\Source\Repos\Second\Second\Second\obj\Debug\Second.Login.resources
+C:\Users\peyman\Source\Repos\Second\Second\Second\obj\Debug\Second.ManagerForm.resources
+C:\Users\peyman\Source\Repos\Second\Second\Second\obj\Debug\Second.Properties.Resources.resources
+C:\Users\peyman\Source\Repos\Second\Second\Second\obj\Debug\Second.TeacherForm.resources
+C:\Users\peyman\Source\Repos\Second\Second\Second\obj\Debug\Second.csproj.GenerateResource.Cache
