@@ -37,5 +37,10 @@ namespace Second
         {
 
         }
+
+        private void teacher_show2_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
