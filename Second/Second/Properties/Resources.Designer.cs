@@ -63,6 +63,16 @@ namespace Second.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap images {
+            get {
+                object obj = ResourceManager.GetObject("images", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap new_form {
             get {
                 object obj = ResourceManager.GetObject("new form", resourceCulture);
@@ -116,6 +126,16 @@ namespace Second.Properties {
         internal static System.Drawing.Bitmap Untitled_231 {
             get {
                 object obj = ResourceManager.GetObject("Untitled-231", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled_2311 {
+            get {
+                object obj = ResourceManager.GetObject("Untitled-2311", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

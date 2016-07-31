@@ -27,6 +27,7 @@ namespace Second
         private void label2_Click(object sender, EventArgs e)
         {
             this.Close();
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -37,6 +38,13 @@ namespace Second
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+           ManagerForm Form2 = new ManagerForm();
+            Form2.Show();
         }
     }
 }
