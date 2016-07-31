@@ -46,14 +46,14 @@
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Location = new System.Drawing.Point(1, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(396, 371);
+            this.panel1.Size = new System.Drawing.Size(376, 366);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(329, 47);
+            this.label2.Location = new System.Drawing.Point(330, 47);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 24);
             this.label2.TabIndex = 5;
@@ -64,7 +64,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("B Yekan+", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(90, 269);
+            this.label1.Location = new System.Drawing.Point(90, 270);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(239, 38);
             this.label1.TabIndex = 4;
@@ -77,7 +77,7 @@
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("B Yekan+", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.textBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBox2.Location = new System.Drawing.Point(107, 219);
+            this.textBox2.Location = new System.Drawing.Point(104, 219);
             this.textBox2.Name = "textBox2";
             this.textBox2.PasswordChar = '●';
             this.textBox2.Size = new System.Drawing.Size(177, 27);
@@ -90,7 +90,7 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("B Yekan+", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.textBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBox1.Location = new System.Drawing.Point(107, 168);
+            this.textBox1.Location = new System.Drawing.Point(104, 168);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(177, 27);
             this.textBox1.TabIndex = 2;
@@ -99,7 +99,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(399, 376);
+            this.ClientSize = new System.Drawing.Size(438, 417);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
