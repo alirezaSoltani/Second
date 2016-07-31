@@ -15,6 +15,8 @@ namespace Second
         public login1()
         {
             InitializeComponent();
+            this.BackColor = Color.LightBlue;
+            this.TransparencyKey = Color.LightBlue;
         }
 
         private void login1_Load(object sender, EventArgs e)
@@ -28,6 +30,11 @@ namespace Second
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
