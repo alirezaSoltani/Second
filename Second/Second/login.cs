@@ -12,13 +12,19 @@ namespace Second
 {
     public partial class login1 : Form
     {
+        
         public login1()
         {
             InitializeComponent();
             this.BackColor = Color.LightBlue;
             this.TransparencyKey = Color.LightBlue;
-        }
 
+           
+
+             
+
+        }
+       
         private void login1_Load(object sender, EventArgs e)
         {
 

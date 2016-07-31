@@ -172,7 +172,7 @@
             this.manager_teachers_add_tp.Location = new System.Drawing.Point(4, 26);
             this.manager_teachers_add_tp.Name = "manager_teachers_add_tp";
             this.manager_teachers_add_tp.Padding = new System.Windows.Forms.Padding(3);
-            this.manager_teachers_add_tp.Size = new System.Drawing.Size(1350, 582);
+            this.manager_teachers_add_tp.Size = new System.Drawing.Size(1347, 582);
             this.manager_teachers_add_tp.TabIndex = 1;
             this.manager_teachers_add_tp.Text = "اساتید";
             // 
@@ -809,7 +809,7 @@
             this.manager_meesaging_tp.Location = new System.Drawing.Point(4, 26);
             this.manager_meesaging_tp.Name = "manager_meesaging_tp";
             this.manager_meesaging_tp.Padding = new System.Windows.Forms.Padding(3);
-            this.manager_meesaging_tp.Size = new System.Drawing.Size(1350, 582);
+            this.manager_meesaging_tp.Size = new System.Drawing.Size(1347, 582);
             this.manager_meesaging_tp.TabIndex = 4;
             this.manager_meesaging_tp.Text = "پیام رسانی";
             // 
@@ -819,7 +819,7 @@
             this.manager_settnigs_tp.Location = new System.Drawing.Point(4, 26);
             this.manager_settnigs_tp.Name = "manager_settnigs_tp";
             this.manager_settnigs_tp.Padding = new System.Windows.Forms.Padding(3);
-            this.manager_settnigs_tp.Size = new System.Drawing.Size(1350, 582);
+            this.manager_settnigs_tp.Size = new System.Drawing.Size(1347, 582);
             this.manager_settnigs_tp.TabIndex = 5;
             this.manager_settnigs_tp.Text = "تنظیمات";
             this.manager_settnigs_tp.Click += new System.EventHandler(this.manager_settnigs_tp_Click);
@@ -1061,12 +1061,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(111)))));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1354, 733);
             this.Controls.Add(this.manager_main_tc);
             this.Controls.Add(this.panel1);
             this.Name = "ManagerForm";
             this.Text = "ManagerForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ManagerForm_Load);
             this.manager_main_tc.ResumeLayout(false);
             this.manager_teachers_add_tp.ResumeLayout(false);

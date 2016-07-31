@@ -15,12 +15,15 @@ namespace Second
         public ManagerForm()
         {
             InitializeComponent();
+            this.Location = new Point(0, 0);
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            
         }
 
         private void ManagerForm_Load(object sender, EventArgs e)
         {
+            
 
-           
         }
 
         private void manager_settnigs_tp_Click(object sender, EventArgs e)
