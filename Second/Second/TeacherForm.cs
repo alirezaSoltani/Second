@@ -22,5 +22,25 @@ namespace Second
             FormBorderStyle = FormBorderStyle.None;
             WindowState = FormWindowState.Maximized;
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void teacher_students_tp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void teacher_show2_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
