@@ -22,7 +22,7 @@ namespace Second
 
         private void ManagerForm_Load(object sender, EventArgs e)
         {
-            
+          //  this.WindowState = FormWindowState.Maximized;
 
         }
 
@@ -139,6 +139,49 @@ namespace Second
         private void panel8_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void panel12_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+
+        }
+
+        private void teacher_update_bt_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            Manager_techer_change k = new Manager_techer_change();
+            k.Show();
         }
     }
 }

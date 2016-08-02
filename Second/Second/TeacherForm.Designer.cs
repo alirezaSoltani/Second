@@ -62,7 +62,7 @@
             this.teacher_main_tc.Controls.Add(this.teacher_messaging_tp);
             this.teacher_main_tc.Controls.Add(this.teacher_settings_tp);
             this.teacher_main_tc.Cursor = System.Windows.Forms.Cursors.Default;
-            this.teacher_main_tc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.teacher_main_tc.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.teacher_main_tc.Location = new System.Drawing.Point(2, 103);
             this.teacher_main_tc.Multiline = true;
             this.teacher_main_tc.Name = "teacher_main_tc";
@@ -77,10 +77,10 @@
             // 
             this.teacher_dashbord_tp.BackColor = System.Drawing.Color.LightBlue;
             this.teacher_dashbord_tp.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.teacher_dashbord_tp.Location = new System.Drawing.Point(4, 28);
+            this.teacher_dashbord_tp.Location = new System.Drawing.Point(4, 26);
             this.teacher_dashbord_tp.Name = "teacher_dashbord_tp";
             this.teacher_dashbord_tp.Padding = new System.Windows.Forms.Padding(3);
-            this.teacher_dashbord_tp.Size = new System.Drawing.Size(1341, 574);
+            this.teacher_dashbord_tp.Size = new System.Drawing.Size(1341, 576);
             this.teacher_dashbord_tp.TabIndex = 0;
             this.teacher_dashbord_tp.Text = "داشبورد";
             // 
@@ -95,10 +95,10 @@
             this.teacher_students_tp.Controls.Add(this.teacher_lessonGroupNumber_tb);
             this.teacher_students_tp.Controls.Add(this.teacher_lessonNumber_tb);
             this.teacher_students_tp.Controls.Add(this.dataGridView1);
-            this.teacher_students_tp.Location = new System.Drawing.Point(4, 28);
+            this.teacher_students_tp.Location = new System.Drawing.Point(4, 26);
             this.teacher_students_tp.Name = "teacher_students_tp";
             this.teacher_students_tp.Padding = new System.Windows.Forms.Padding(3);
-            this.teacher_students_tp.Size = new System.Drawing.Size(1341, 574);
+            this.teacher_students_tp.Size = new System.Drawing.Size(1341, 576);
             this.teacher_students_tp.TabIndex = 1;
             this.teacher_students_tp.Text = "حضور و غیاب";
             this.teacher_students_tp.Click += new System.EventHandler(this.teacher_students_tp_Click);
@@ -108,7 +108,7 @@
             this.teacher_lessonName_cb.FormattingEnabled = true;
             this.teacher_lessonName_cb.Location = new System.Drawing.Point(1009, 14);
             this.teacher_lessonName_cb.Name = "teacher_lessonName_cb";
-            this.teacher_lessonName_cb.Size = new System.Drawing.Size(182, 27);
+            this.teacher_lessonName_cb.Size = new System.Drawing.Size(182, 25);
             this.teacher_lessonName_cb.TabIndex = 7;
             // 
             // label1
@@ -159,14 +159,14 @@
             // 
             this.teacher_lessonGroupNumber_tb.Location = new System.Drawing.Point(1009, 111);
             this.teacher_lessonGroupNumber_tb.Name = "teacher_lessonGroupNumber_tb";
-            this.teacher_lessonGroupNumber_tb.Size = new System.Drawing.Size(182, 26);
+            this.teacher_lessonGroupNumber_tb.Size = new System.Drawing.Size(182, 25);
             this.teacher_lessonGroupNumber_tb.TabIndex = 2;
             // 
             // teacher_lessonNumber_tb
             // 
             this.teacher_lessonNumber_tb.Location = new System.Drawing.Point(1009, 65);
             this.teacher_lessonNumber_tb.Name = "teacher_lessonNumber_tb";
-            this.teacher_lessonNumber_tb.Size = new System.Drawing.Size(182, 26);
+            this.teacher_lessonNumber_tb.Size = new System.Drawing.Size(182, 25);
             this.teacher_lessonNumber_tb.TabIndex = 1;
             // 
             // dataGridView1
@@ -185,10 +185,10 @@
             this.teacher_cours_tp.Controls.Add(this.teacher_teacherNumber_txt);
             this.teacher_cours_tp.Controls.Add(this.teacher_teacherNumber_tb);
             this.teacher_cours_tp.Controls.Add(this.dataGridView2);
-            this.teacher_cours_tp.Location = new System.Drawing.Point(4, 28);
+            this.teacher_cours_tp.Location = new System.Drawing.Point(4, 26);
             this.teacher_cours_tp.Name = "teacher_cours_tp";
             this.teacher_cours_tp.Padding = new System.Windows.Forms.Padding(3);
-            this.teacher_cours_tp.Size = new System.Drawing.Size(1341, 574);
+            this.teacher_cours_tp.Size = new System.Drawing.Size(1341, 576);
             this.teacher_cours_tp.TabIndex = 2;
             this.teacher_cours_tp.Text = "درس ها";
             // 
@@ -223,7 +223,7 @@
             this.teacher_teacherNumber_tb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.teacher_teacherNumber_tb.Location = new System.Drawing.Point(1049, 35);
             this.teacher_teacherNumber_tb.Name = "teacher_teacherNumber_tb";
-            this.teacher_teacherNumber_tb.Size = new System.Drawing.Size(182, 26);
+            this.teacher_teacherNumber_tb.Size = new System.Drawing.Size(182, 25);
             this.teacher_teacherNumber_tb.TabIndex = 2;
             // 
             // dataGridView2
@@ -238,20 +238,20 @@
             // teacher_messaging_tp
             // 
             this.teacher_messaging_tp.BackColor = System.Drawing.Color.LightBlue;
-            this.teacher_messaging_tp.Location = new System.Drawing.Point(4, 28);
+            this.teacher_messaging_tp.Location = new System.Drawing.Point(4, 26);
             this.teacher_messaging_tp.Name = "teacher_messaging_tp";
             this.teacher_messaging_tp.Padding = new System.Windows.Forms.Padding(3);
-            this.teacher_messaging_tp.Size = new System.Drawing.Size(1341, 574);
+            this.teacher_messaging_tp.Size = new System.Drawing.Size(1341, 576);
             this.teacher_messaging_tp.TabIndex = 3;
             this.teacher_messaging_tp.Text = "پیام رسانی";
             // 
             // teacher_settings_tp
             // 
             this.teacher_settings_tp.BackColor = System.Drawing.Color.LightBlue;
-            this.teacher_settings_tp.Location = new System.Drawing.Point(4, 28);
+            this.teacher_settings_tp.Location = new System.Drawing.Point(4, 26);
             this.teacher_settings_tp.Name = "teacher_settings_tp";
             this.teacher_settings_tp.Padding = new System.Windows.Forms.Padding(3);
-            this.teacher_settings_tp.Size = new System.Drawing.Size(1341, 574);
+            this.teacher_settings_tp.Size = new System.Drawing.Size(1341, 576);
             this.teacher_settings_tp.TabIndex = 4;
             this.teacher_settings_tp.Text = "تنظیمات";
             // 
@@ -265,6 +265,7 @@
             this.Controls.Add(this.teacher_main_tc);
             this.Name = "TeacherForm";
             this.Text = "استاد";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.TeacherForm_Load);
             this.teacher_main_tc.ResumeLayout(false);
             this.teacher_students_tp.ResumeLayout(false);

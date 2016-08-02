@@ -49,7 +49,7 @@ namespace Second
         private void label1_Click(object sender, EventArgs e)
         {
             this.Hide();
-           ManagerForm Form2 = new ManagerForm();
+           ManagerForm1 Form2 = new ManagerForm1();
             Form2.Show();
         }
     }
