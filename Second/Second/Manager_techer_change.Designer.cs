@@ -36,6 +36,17 @@
             this.techer_username_update_txt = new System.Windows.Forms.TextBox();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeAltF4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyCtrlCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pastCtrlVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.teacher_delet_bt = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.teacherTeacherNumber_delet_txt = new System.Windows.Forms.TextBox();
@@ -45,14 +56,15 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.techer_password_update_txt = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel12.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // teacher_update_bt
             // 
+            this.teacher_update_bt.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.teacher_update_bt.Location = new System.Drawing.Point(469, 283);
             this.teacher_update_bt.Name = "teacher_update_bt";
             this.teacher_update_bt.Size = new System.Drawing.Size(176, 33);
@@ -72,7 +84,6 @@
             // 
             // teacher_FName_update_txt
             // 
-            this.teacher_FName_update_txt.Enabled = false;
             this.teacher_FName_update_txt.Location = new System.Drawing.Point(469, 168);
             this.teacher_FName_update_txt.Name = "teacher_FName_update_txt";
             this.teacher_FName_update_txt.Size = new System.Drawing.Size(176, 20);
@@ -120,13 +131,110 @@
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::Second.Properties.Resources.Untitled_2311;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(111)))));
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(-3, -10);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(856, 123);
+            this.panel1.Size = new System.Drawing.Size(856, 132);
             this.panel1.TabIndex = 41;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.SlateGray;
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.menuStrip1);
+            this.panel3.Location = new System.Drawing.Point(0, 8);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(856, 30);
+            this.panel3.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
+            this.label2.Location = new System.Drawing.Point(818, 2);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 25);
+            this.label2.TabIndex = 8;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("B Nazanin+ Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(790, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 19);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "خروج";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.editToolStripMenuItem,
+            this.viewToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(856, 24);
+            this.menuStrip1.TabIndex = 10;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.closeAltF4ToolStripMenuItem,
+            this.copyCtrlCToolStripMenuItem,
+            this.pastCtrlVToolStripMenuItem});
+            this.fileToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // closeAltF4ToolStripMenuItem
+            // 
+            this.closeAltF4ToolStripMenuItem.Name = "closeAltF4ToolStripMenuItem";
+            this.closeAltF4ToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.closeAltF4ToolStripMenuItem.Text = "Close          Alt+F4";
+            // 
+            // copyCtrlCToolStripMenuItem
+            // 
+            this.copyCtrlCToolStripMenuItem.Name = "copyCtrlCToolStripMenuItem";
+            this.copyCtrlCToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.copyCtrlCToolStripMenuItem.Text = "Copy          Ctrl+C";
+            // 
+            // pastCtrlVToolStripMenuItem
+            // 
+            this.pastCtrlVToolStripMenuItem.Name = "pastCtrlVToolStripMenuItem";
+            this.pastCtrlVToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.pastCtrlVToolStripMenuItem.Text = "Past            Ctrl+V";
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::Second.Properties.Resources.Untitled_2311;
+            this.panel2.Location = new System.Drawing.Point(-7, 23);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(462, 114);
+            this.panel2.TabIndex = 10;
             // 
             // teacher_delet_bt
             // 
@@ -141,7 +249,6 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Enabled = false;
             this.label6.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label6.Location = new System.Drawing.Point(268, 154);
             this.label6.Name = "label6";
@@ -152,7 +259,6 @@
             // teacherTeacherNumber_delet_txt
             // 
             this.teacherTeacherNumber_delet_txt.AllowDrop = true;
-            this.teacherTeacherNumber_delet_txt.Enabled = false;
             this.teacherTeacherNumber_delet_txt.Location = new System.Drawing.Point(12, 155);
             this.teacherTeacherNumber_delet_txt.Name = "teacherTeacherNumber_delet_txt";
             this.teacherTeacherNumber_delet_txt.Size = new System.Drawing.Size(179, 20);
@@ -170,7 +276,6 @@
             // 
             // teacher_teacherNumber_update_txt
             // 
-            this.teacher_teacherNumber_update_txt.Enabled = false;
             this.teacher_teacherNumber_update_txt.Location = new System.Drawing.Point(469, 142);
             this.teacher_teacherNumber_update_txt.Name = "teacher_teacherNumber_update_txt";
             this.teacher_teacherNumber_update_txt.Size = new System.Drawing.Size(176, 20);
@@ -186,7 +291,6 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Enabled = false;
             this.label10.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label10.Location = new System.Drawing.Point(783, 168);
             this.label10.Name = "label10";
@@ -197,7 +301,6 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Enabled = false;
             this.label11.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label11.Location = new System.Drawing.Point(766, 140);
             this.label11.Name = "label11";
@@ -212,28 +315,6 @@
             this.techer_password_update_txt.Size = new System.Drawing.Size(176, 20);
             this.techer_password_update_txt.TabIndex = 34;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(771, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 16);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Close";
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
-            this.label2.Location = new System.Drawing.Point(813, 11);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 39);
-            this.label2.TabIndex = 8;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
             // Manager_techer_change
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -242,13 +323,17 @@
             this.ClientSize = new System.Drawing.Size(853, 411);
             this.Controls.Add(this.panel12);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Manager_techer_change";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manager_techer_change";
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -273,5 +358,14 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem closeAltF4ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem copyCtrlCToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pastCtrlVToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.Panel panel2;
     }
 }

@@ -66,6 +66,12 @@
     <Compile Include="ManagerForm1.Designer.cs">
       <DependentUpon>ManagerForm1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager_student_change.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager_student_change.Designer.cs">
+      <DependentUpon>Manager_student_change.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager_techer_change.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerForm1.resx">
       <DependentUpon>ManagerForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager_student_change.resx">
+      <DependentUpon>Manager_student_change.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager_techer_change.resx">
       <DependentUpon>Manager_techer_change.cs</DependentUpon>

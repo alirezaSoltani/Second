@@ -35,5 +35,26 @@ namespace Second
             Manager_techer_change k = new Manager_techer_change();
             k.Show();
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void copyCtrlCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void manager_studentAdd_bt_Click(object sender, EventArgs e)
+        {
+            Manager_student_change k = new Manager_student_change();
+            k.Show();
+        }
     }
 }

@@ -59,3 +59,4 @@ C:\Users\peyman\Source\Repos\Second2\Second\Second\obj\Debug\Second.TeacherForm.
 C:\Users\peyman\Source\Repos\Second2\Second\Second\obj\Debug\Second.csproj.GenerateResource.Cache
 C:\Users\peyman\Source\Repos\Second2\Second\Second\obj\Debug\Second.Manager_techer_change.resources
 C:\Users\peyman\Source\Repos\Second2\Second\Second\obj\Debug\Second.ManagerForm1.resources
+C:\Users\peyman\Source\Repos\Second2\Second\Second\obj\Debug\Second.Manager_student_change.resources
