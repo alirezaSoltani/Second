@@ -140,7 +140,7 @@
             this.manager_main_tc.Controls.Add(this.manager_meesaging_tp);
             this.manager_main_tc.Controls.Add(this.manager_settnigs_tp);
             this.manager_main_tc.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manager_main_tc.Location = new System.Drawing.Point(2, 129);
+            this.manager_main_tc.Location = new System.Drawing.Point(2, 128);
             this.manager_main_tc.Name = "manager_main_tc";
             this.manager_main_tc.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.manager_main_tc.RightToLeftLayout = true;
@@ -175,9 +175,9 @@
             // 
             this.panel12.Controls.Add(this.dataGridView1);
             this.panel12.Controls.Add(this.panel2);
-            this.panel12.Location = new System.Drawing.Point(3, 3);
+            this.panel12.Location = new System.Drawing.Point(0, 0);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(1004, 581);
+            this.panel12.Size = new System.Drawing.Size(1007, 584);
             this.panel12.TabIndex = 44;
             // 
             // dataGridView1
@@ -656,7 +656,7 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.checkBox1.Location = new System.Drawing.Point(752, 26);
+            this.checkBox1.Location = new System.Drawing.Point(717, 28);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(224, 25);
             this.checkBox1.TabIndex = 43;
@@ -905,9 +905,9 @@
             this.panel5.Controls.Add(this.manager_lessonTime_add_txt);
             this.panel5.Controls.Add(this.manager_lessonGroupNumbet_add_txt);
             this.panel5.Controls.Add(this.manager_lesson_delet_bt);
-            this.panel5.Location = new System.Drawing.Point(6, 16);
+            this.panel5.Location = new System.Drawing.Point(21, 17);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(988, 306);
+            this.panel5.Size = new System.Drawing.Size(954, 285);
             this.panel5.TabIndex = 45;
             // 
             // ManagerForm1
