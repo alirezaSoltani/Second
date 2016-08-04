@@ -58,6 +58,11 @@
             this.manager_techerUsername_add_txt = new System.Windows.Forms.TextBox();
             this.manager_students_tp = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.manager_student_lessonNumber_txt = new System.Windows.Forms.TextBox();
+            this.manager_student_lessonGroupNumber_txt = new System.Windows.Forms.TextBox();
             this.manager_studentNumber_add_txt = new System.Windows.Forms.TextBox();
             this.manager_studentFName_add_txt = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
@@ -67,35 +72,17 @@
             this.manager_studentAdd_bt = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.manager_cours_tp = new System.Windows.Forms.TabPage();
-            this.manager_lessonNumber_update_txt = new System.Windows.Forms.TextBox();
-            this.manager_lessonGroupNumbet_delet_txt = new System.Windows.Forms.TextBox();
-            this.manager_lessonGroupNumbet_update_txt = new System.Windows.Forms.TextBox();
-            this.manager_lessonNumber_delet_txt = new System.Windows.Forms.TextBox();
-            this.manager_lessonName_update_txt = new System.Windows.Forms.TextBox();
-            this.manager_lesson_techerNumber_update_txt = new System.Windows.Forms.TextBox();
-            this.manager_lessonNumber_add_txt = new System.Windows.Forms.TextBox();
-            this.manager_lessonTime_update_txt = new System.Windows.Forms.TextBox();
-            this.manager_lessonGroupNumbet_add_txt = new System.Windows.Forms.TextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.manager_lessonName_add_txt = new System.Windows.Forms.TextBox();
-            this.manager_lessonTime_add_txt = new System.Windows.Forms.TextBox();
-            this.manager_lesson_techerNumber_add_txt = new System.Windows.Forms.TextBox();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.manager_lesson_update_bt = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
-            this.manager_lesson_delet_bt = new System.Windows.Forms.Button();
-            this.manager_lesson_add_bt = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.manager_lesson_add_bt = new System.Windows.Forms.Button();
+            this.manager_lessonNumber_add_txt = new System.Windows.Forms.TextBox();
+            this.manager_lesson_techerNumber_add_txt = new System.Windows.Forms.TextBox();
+            this.manager_lessonGroupNumbet_add_txt = new System.Windows.Forms.TextBox();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.manager_meesaging_tp = new System.Windows.Forms.TabPage();
             this.manager_settnigs_tp = new System.Windows.Forms.TabPage();
             this.label7 = new System.Windows.Forms.Label();
@@ -105,12 +92,13 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeAltF4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.copyCtrlCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pasteCtrlVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.دربارهماToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.کپیCtrlCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.الصاقCtrlVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.جداکردنCtrlXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.lessonTableTableAdapter1 = new Second.ProjectDataSetTableAdapters.lessonTableTableAdapter();
             this.manager_main_tc.SuspendLayout();
             this.manager_teachers_add_tp.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -122,10 +110,10 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.manager_cours_tp.SuspendLayout();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.panel3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // manager_main_tc
@@ -288,7 +276,7 @@
             // 
             // manager_teacherPassword_add_txt
             // 
-            this.manager_teacherPassword_add_txt.Location = new System.Drawing.Point(14, 96);
+            this.manager_teacherPassword_add_txt.Location = new System.Drawing.Point(300, 119);
             this.manager_teacherPassword_add_txt.Name = "manager_teacherPassword_add_txt";
             this.manager_teacherPassword_add_txt.Size = new System.Drawing.Size(176, 29);
             this.manager_teacherPassword_add_txt.TabIndex = 20;
@@ -307,7 +295,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label5.Location = new System.Drawing.Point(225, 99);
+            this.label5.Location = new System.Drawing.Point(555, 122);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 21);
             this.label5.TabIndex = 25;
@@ -338,7 +326,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label3.Location = new System.Drawing.Point(495, 119);
+            this.label3.Location = new System.Drawing.Point(828, 153);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(109, 21);
             this.label3.TabIndex = 23;
@@ -356,7 +344,7 @@
             // 
             // manager_teacherLName_add_txt
             // 
-            this.manager_teacherLName_add_txt.Location = new System.Drawing.Point(300, 116);
+            this.manager_teacherLName_add_txt.Location = new System.Drawing.Point(633, 150);
             this.manager_teacherLName_add_txt.Name = "manager_teacherLName_add_txt";
             this.manager_teacherLName_add_txt.Size = new System.Drawing.Size(176, 29);
             this.manager_teacherLName_add_txt.TabIndex = 17;
@@ -390,6 +378,11 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel4.Controls.Add(this.button1);
+            this.panel4.Controls.Add(this.label9);
+            this.panel4.Controls.Add(this.label10);
+            this.panel4.Controls.Add(this.manager_student_lessonNumber_txt);
+            this.panel4.Controls.Add(this.manager_student_lessonGroupNumber_txt);
             this.panel4.Controls.Add(this.manager_studentNumber_add_txt);
             this.panel4.Controls.Add(this.manager_studentFName_add_txt);
             this.panel4.Controls.Add(this.label25);
@@ -397,15 +390,63 @@
             this.panel4.Controls.Add(this.label24);
             this.panel4.Controls.Add(this.label26);
             this.panel4.Controls.Add(this.manager_studentAdd_bt);
-            this.panel4.Location = new System.Drawing.Point(21, 17);
+            this.panel4.Location = new System.Drawing.Point(22, 16);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(954, 285);
             this.panel4.TabIndex = 39;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button1.Location = new System.Drawing.Point(264, 198);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(176, 33);
+            this.button1.TabIndex = 32;
+            this.button1.Text = "اضافه کردن گروهی";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label9.Location = new System.Drawing.Point(475, 106);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(100, 21);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "شماره گروه درس";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label10.Location = new System.Drawing.Point(502, 71);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(73, 21);
+            this.label10.TabIndex = 30;
+            this.label10.Text = "شماره درس";
+            // 
+            // manager_student_lessonNumber_txt
+            // 
+            this.manager_student_lessonNumber_txt.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manager_student_lessonNumber_txt.Location = new System.Drawing.Point(264, 68);
+            this.manager_student_lessonNumber_txt.Name = "manager_student_lessonNumber_txt";
+            this.manager_student_lessonNumber_txt.Size = new System.Drawing.Size(176, 29);
+            this.manager_student_lessonNumber_txt.TabIndex = 28;
+            // 
+            // manager_student_lessonGroupNumber_txt
+            // 
+            this.manager_student_lessonGroupNumber_txt.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manager_student_lessonGroupNumber_txt.Location = new System.Drawing.Point(264, 106);
+            this.manager_student_lessonGroupNumber_txt.Name = "manager_student_lessonGroupNumber_txt";
+            this.manager_student_lessonGroupNumber_txt.Size = new System.Drawing.Size(176, 29);
+            this.manager_student_lessonGroupNumber_txt.TabIndex = 29;
             // 
             // manager_studentNumber_add_txt
             // 
             this.manager_studentNumber_add_txt.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manager_studentNumber_add_txt.Location = new System.Drawing.Point(652, 68);
+            this.manager_studentNumber_add_txt.Location = new System.Drawing.Point(604, 68);
             this.manager_studentNumber_add_txt.Name = "manager_studentNumber_add_txt";
             this.manager_studentNumber_add_txt.Size = new System.Drawing.Size(176, 29);
             this.manager_studentNumber_add_txt.TabIndex = 16;
@@ -413,7 +454,7 @@
             // manager_studentFName_add_txt
             // 
             this.manager_studentFName_add_txt.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manager_studentFName_add_txt.Location = new System.Drawing.Point(351, 68);
+            this.manager_studentFName_add_txt.Location = new System.Drawing.Point(604, 103);
             this.manager_studentFName_add_txt.Name = "manager_studentFName_add_txt";
             this.manager_studentFName_add_txt.Size = new System.Drawing.Size(176, 29);
             this.manager_studentFName_add_txt.TabIndex = 17;
@@ -422,7 +463,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label25.Location = new System.Drawing.Point(554, 71);
+            this.label25.Location = new System.Drawing.Point(874, 106);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(69, 21);
             this.label25.TabIndex = 21;
@@ -431,7 +472,7 @@
             // manager_studentLName_add_txt
             // 
             this.manager_studentLName_add_txt.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manager_studentLName_add_txt.Location = new System.Drawing.Point(5, 71);
+            this.manager_studentLName_add_txt.Location = new System.Drawing.Point(604, 138);
             this.manager_studentLName_add_txt.Name = "manager_studentLName_add_txt";
             this.manager_studentLName_add_txt.Size = new System.Drawing.Size(176, 29);
             this.manager_studentLName_add_txt.TabIndex = 18;
@@ -450,7 +491,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label26.Location = new System.Drawing.Point(204, 71);
+            this.label26.Location = new System.Drawing.Point(823, 138);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(120, 21);
             this.label26.TabIndex = 22;
@@ -459,7 +500,7 @@
             // manager_studentAdd_bt
             // 
             this.manager_studentAdd_bt.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manager_studentAdd_bt.Location = new System.Drawing.Point(5, 238);
+            this.manager_studentAdd_bt.Location = new System.Drawing.Point(264, 237);
             this.manager_studentAdd_bt.Name = "manager_studentAdd_bt";
             this.manager_studentAdd_bt.Size = new System.Drawing.Size(176, 33);
             this.manager_studentAdd_bt.TabIndex = 27;
@@ -487,271 +528,114 @@
             this.manager_cours_tp.TabIndex = 3;
             this.manager_cours_tp.Text = "درس ها";
             // 
-            // manager_lessonNumber_update_txt
+            // panel5
             // 
-            this.manager_lessonNumber_update_txt.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manager_lessonNumber_update_txt.Location = new System.Drawing.Point(506, 5);
-            this.manager_lessonNumber_update_txt.Name = "manager_lessonNumber_update_txt";
-            this.manager_lessonNumber_update_txt.Size = new System.Drawing.Size(176, 29);
-            this.manager_lessonNumber_update_txt.TabIndex = 32;
-            // 
-            // manager_lessonGroupNumbet_delet_txt
-            // 
-            this.manager_lessonGroupNumbet_delet_txt.Enabled = false;
-            this.manager_lessonGroupNumbet_delet_txt.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manager_lessonGroupNumbet_delet_txt.Location = new System.Drawing.Point(18, 193);
-            this.manager_lessonGroupNumbet_delet_txt.Name = "manager_lessonGroupNumbet_delet_txt";
-            this.manager_lessonGroupNumbet_delet_txt.Size = new System.Drawing.Size(176, 29);
-            this.manager_lessonGroupNumbet_delet_txt.TabIndex = 28;
-            // 
-            // manager_lessonGroupNumbet_update_txt
-            // 
-            this.manager_lessonGroupNumbet_update_txt.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manager_lessonGroupNumbet_update_txt.Location = new System.Drawing.Point(506, 44);
-            this.manager_lessonGroupNumbet_update_txt.Name = "manager_lessonGroupNumbet_update_txt";
-            this.manager_lessonGroupNumbet_update_txt.Size = new System.Drawing.Size(176, 29);
-            this.manager_lessonGroupNumbet_update_txt.TabIndex = 33;
-            // 
-            // manager_lessonNumber_delet_txt
-            // 
-            this.manager_lessonNumber_delet_txt.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manager_lessonNumber_delet_txt.Location = new System.Drawing.Point(18, 158);
-            this.manager_lessonNumber_delet_txt.Name = "manager_lessonNumber_delet_txt";
-            this.manager_lessonNumber_delet_txt.Size = new System.Drawing.Size(176, 29);
-            this.manager_lessonNumber_delet_txt.TabIndex = 27;
-            // 
-            // manager_lessonName_update_txt
-            // 
-            this.manager_lessonName_update_txt.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manager_lessonName_update_txt.Location = new System.Drawing.Point(506, 83);
-            this.manager_lessonName_update_txt.Name = "manager_lessonName_update_txt";
-            this.manager_lessonName_update_txt.Size = new System.Drawing.Size(176, 29);
-            this.manager_lessonName_update_txt.TabIndex = 34;
-            // 
-            // manager_lesson_techerNumber_update_txt
-            // 
-            this.manager_lesson_techerNumber_update_txt.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manager_lesson_techerNumber_update_txt.Location = new System.Drawing.Point(506, 163);
-            this.manager_lesson_techerNumber_update_txt.Name = "manager_lesson_techerNumber_update_txt";
-            this.manager_lesson_techerNumber_update_txt.Size = new System.Drawing.Size(176, 29);
-            this.manager_lesson_techerNumber_update_txt.TabIndex = 36;
-            // 
-            // manager_lessonNumber_add_txt
-            // 
-            this.manager_lessonNumber_add_txt.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manager_lessonNumber_add_txt.Location = new System.Drawing.Point(200, 8);
-            this.manager_lessonNumber_add_txt.Name = "manager_lessonNumber_add_txt";
-            this.manager_lessonNumber_add_txt.Size = new System.Drawing.Size(176, 29);
-            this.manager_lessonNumber_add_txt.TabIndex = 15;
-            // 
-            // manager_lessonTime_update_txt
-            // 
-            this.manager_lessonTime_update_txt.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manager_lessonTime_update_txt.Location = new System.Drawing.Point(506, 123);
-            this.manager_lessonTime_update_txt.Name = "manager_lessonTime_update_txt";
-            this.manager_lessonTime_update_txt.Size = new System.Drawing.Size(176, 29);
-            this.manager_lessonTime_update_txt.TabIndex = 35;
-            // 
-            // manager_lessonGroupNumbet_add_txt
-            // 
-            this.manager_lessonGroupNumbet_add_txt.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manager_lessonGroupNumbet_add_txt.Location = new System.Drawing.Point(200, 47);
-            this.manager_lessonGroupNumbet_add_txt.Name = "manager_lessonGroupNumbet_add_txt";
-            this.manager_lessonGroupNumbet_add_txt.Size = new System.Drawing.Size(176, 29);
-            this.manager_lessonGroupNumbet_add_txt.TabIndex = 16;
+            this.panel5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel5.Controls.Add(this.manager_lessonName_add_txt);
+            this.panel5.Controls.Add(this.label12);
+            this.panel5.Controls.Add(this.label14);
+            this.panel5.Controls.Add(this.label15);
+            this.panel5.Controls.Add(this.label16);
+            this.panel5.Controls.Add(this.manager_lesson_add_bt);
+            this.panel5.Controls.Add(this.manager_lessonNumber_add_txt);
+            this.panel5.Controls.Add(this.manager_lesson_techerNumber_add_txt);
+            this.panel5.Controls.Add(this.manager_lessonGroupNumbet_add_txt);
+            this.panel5.Location = new System.Drawing.Point(21, 17);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(954, 285);
+            this.panel5.TabIndex = 45;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // manager_lessonName_add_txt
             // 
             this.manager_lessonName_add_txt.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manager_lessonName_add_txt.Location = new System.Drawing.Point(200, 86);
+            this.manager_lessonName_add_txt.Location = new System.Drawing.Point(336, 63);
             this.manager_lessonName_add_txt.Name = "manager_lessonName_add_txt";
             this.manager_lessonName_add_txt.Size = new System.Drawing.Size(176, 29);
             this.manager_lessonName_add_txt.TabIndex = 17;
-            // 
-            // manager_lessonTime_add_txt
-            // 
-            this.manager_lessonTime_add_txt.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manager_lessonTime_add_txt.Location = new System.Drawing.Point(200, 128);
-            this.manager_lessonTime_add_txt.Name = "manager_lessonTime_add_txt";
-            this.manager_lessonTime_add_txt.Size = new System.Drawing.Size(176, 29);
-            this.manager_lessonTime_add_txt.TabIndex = 18;
-            // 
-            // manager_lesson_techerNumber_add_txt
-            // 
-            this.manager_lesson_techerNumber_add_txt.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manager_lesson_techerNumber_add_txt.Location = new System.Drawing.Point(200, 169);
-            this.manager_lesson_techerNumber_add_txt.Name = "manager_lesson_techerNumber_add_txt";
-            this.manager_lesson_techerNumber_add_txt.Size = new System.Drawing.Size(176, 29);
-            this.manager_lesson_techerNumber_add_txt.TabIndex = 20;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(3, 335);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(1000, 249);
-            this.dataGridView3.TabIndex = 44;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label18.Location = new System.Drawing.Point(240, 174);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(73, 21);
-            this.label18.TabIndex = 29;
-            this.label18.Text = "شماره درس";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label17.Location = new System.Drawing.Point(213, 205);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(100, 21);
-            this.label17.TabIndex = 30;
-            this.label17.Text = "شماره گروه درس";
-            // 
-            // manager_lesson_update_bt
-            // 
-            this.manager_lesson_update_bt.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manager_lesson_update_bt.Location = new System.Drawing.Point(506, 230);
-            this.manager_lesson_update_bt.Name = "manager_lesson_update_bt";
-            this.manager_lesson_update_bt.Size = new System.Drawing.Size(176, 33);
-            this.manager_lesson_update_bt.TabIndex = 42;
-            this.manager_lesson_update_bt.Text = "ثبت تغییرات";
-            this.manager_lesson_update_bt.UseVisualStyleBackColor = true;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label19.Location = new System.Drawing.Point(777, 236);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(74, 21);
-            this.label19.TabIndex = 41;
-            this.label19.Text = "شماره استاد";
-            // 
-            // manager_lesson_delet_bt
-            // 
-            this.manager_lesson_delet_bt.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manager_lesson_delet_bt.Location = new System.Drawing.Point(18, 238);
-            this.manager_lesson_delet_bt.Name = "manager_lesson_delet_bt";
-            this.manager_lesson_delet_bt.Size = new System.Drawing.Size(176, 33);
-            this.manager_lesson_delet_bt.TabIndex = 31;
-            this.manager_lesson_delet_bt.Text = "حذف";
-            this.manager_lesson_delet_bt.UseVisualStyleBackColor = true;
-            // 
-            // manager_lesson_add_bt
-            // 
-            this.manager_lesson_add_bt.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manager_lesson_add_bt.Location = new System.Drawing.Point(232, 223);
-            this.manager_lesson_add_bt.Name = "manager_lesson_add_bt";
-            this.manager_lesson_add_bt.Size = new System.Drawing.Size(176, 33);
-            this.manager_lesson_add_bt.TabIndex = 26;
-            this.manager_lesson_add_bt.Text = "اضافه";
-            this.manager_lesson_add_bt.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.checkBox1.Location = new System.Drawing.Point(717, 28);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(224, 25);
-            this.checkBox1.TabIndex = 43;
-            this.checkBox1.Text = "تغییر شماره درس و شماره گروه درس";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label21.Location = new System.Drawing.Point(794, 154);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(57, 21);
-            this.label21.TabIndex = 39;
-            this.label21.Text = "نام درس";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label16.Location = new System.Drawing.Point(427, 16);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(73, 21);
-            this.label16.TabIndex = 21;
-            this.label16.Text = "شماره درس";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label20.Location = new System.Drawing.Point(767, 196);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(84, 21);
-            this.label20.TabIndex = 40;
-            this.label20.Text = "ساعت برگزاری";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label22.Location = new System.Drawing.Point(751, 115);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(100, 21);
-            this.label22.TabIndex = 38;
-            this.label22.Text = "شماره گروه درس";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label23.Location = new System.Drawing.Point(778, 76);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(73, 21);
-            this.label23.TabIndex = 37;
-            this.label23.Text = "شماره درس";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label15.Location = new System.Drawing.Point(401, 50);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(100, 21);
-            this.label15.TabIndex = 22;
-            this.label15.Text = "شماره گروه درس";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label14.Location = new System.Drawing.Point(443, 89);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(57, 21);
-            this.label14.TabIndex = 23;
-            this.label14.Text = "نام درس";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label13.Location = new System.Drawing.Point(416, 131);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(84, 21);
-            this.label13.TabIndex = 24;
-            this.label13.Text = "ساعت برگزاری";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label12.Location = new System.Drawing.Point(427, 173);
+            this.label12.Location = new System.Drawing.Point(559, 105);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(74, 21);
             this.label12.TabIndex = 25;
             this.label12.Text = "شماره استاد";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label14.Location = new System.Drawing.Point(573, 66);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(57, 21);
+            this.label14.TabIndex = 23;
+            this.label14.Text = "نام درس";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label15.Location = new System.Drawing.Point(843, 105);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(100, 21);
+            this.label15.TabIndex = 22;
+            this.label15.Text = "شماره گروه درس";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label16.Location = new System.Drawing.Point(869, 71);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(73, 21);
+            this.label16.TabIndex = 21;
+            this.label16.Text = "شماره درس";
+            // 
+            // manager_lesson_add_bt
+            // 
+            this.manager_lesson_add_bt.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manager_lesson_add_bt.Location = new System.Drawing.Point(13, 239);
+            this.manager_lesson_add_bt.Name = "manager_lesson_add_bt";
+            this.manager_lesson_add_bt.Size = new System.Drawing.Size(176, 33);
+            this.manager_lesson_add_bt.TabIndex = 26;
+            this.manager_lesson_add_bt.Text = "اضافه";
+            this.manager_lesson_add_bt.UseVisualStyleBackColor = true;
+            this.manager_lesson_add_bt.Click += new System.EventHandler(this.manager_lesson_add_bt_Click);
+            // 
+            // manager_lessonNumber_add_txt
+            // 
+            this.manager_lessonNumber_add_txt.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manager_lessonNumber_add_txt.Location = new System.Drawing.Point(648, 63);
+            this.manager_lessonNumber_add_txt.Name = "manager_lessonNumber_add_txt";
+            this.manager_lessonNumber_add_txt.Size = new System.Drawing.Size(176, 29);
+            this.manager_lessonNumber_add_txt.TabIndex = 15;
+            // 
+            // manager_lesson_techerNumber_add_txt
+            // 
+            this.manager_lesson_techerNumber_add_txt.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manager_lesson_techerNumber_add_txt.Location = new System.Drawing.Point(336, 102);
+            this.manager_lesson_techerNumber_add_txt.Name = "manager_lesson_techerNumber_add_txt";
+            this.manager_lesson_techerNumber_add_txt.Size = new System.Drawing.Size(176, 29);
+            this.manager_lesson_techerNumber_add_txt.TabIndex = 20;
+            // 
+            // manager_lessonGroupNumbet_add_txt
+            // 
+            this.manager_lessonGroupNumbet_add_txt.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.manager_lessonGroupNumbet_add_txt.Location = new System.Drawing.Point(648, 102);
+            this.manager_lessonGroupNumbet_add_txt.Name = "manager_lessonGroupNumbet_add_txt";
+            this.manager_lessonGroupNumbet_add_txt.Size = new System.Drawing.Size(176, 29);
+            this.manager_lessonGroupNumbet_add_txt.TabIndex = 16;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(21, 308);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(954, 197);
+            this.dataGridView3.TabIndex = 44;
             // 
             // manager_meesaging_tp
             // 
@@ -813,8 +697,7 @@
             this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.editToolStripMenuItem,
-            this.viewToolStripMenuItem});
+            this.editToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1010, 24);
@@ -825,8 +708,7 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.closeAltF4ToolStripMenuItem,
-            this.copyCtrlCToolStripMenuItem,
-            this.pasteCtrlVToolStripMenuItem});
+            this.دربارهماToolStripMenuItem});
             this.fileToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -835,35 +717,43 @@
             // closeAltF4ToolStripMenuItem
             // 
             this.closeAltF4ToolStripMenuItem.Name = "closeAltF4ToolStripMenuItem";
-            this.closeAltF4ToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.closeAltF4ToolStripMenuItem.Text = "Close           Alt+F4";
+            this.closeAltF4ToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.closeAltF4ToolStripMenuItem.Text = "خروج           Alt+F4";
             // 
-            // copyCtrlCToolStripMenuItem
+            // دربارهماToolStripMenuItem
             // 
-            this.copyCtrlCToolStripMenuItem.Name = "copyCtrlCToolStripMenuItem";
-            this.copyCtrlCToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.copyCtrlCToolStripMenuItem.Text = "Copy           Ctrl+C";
-            this.copyCtrlCToolStripMenuItem.Click += new System.EventHandler(this.copyCtrlCToolStripMenuItem_Click);
-            // 
-            // pasteCtrlVToolStripMenuItem
-            // 
-            this.pasteCtrlVToolStripMenuItem.Name = "pasteCtrlVToolStripMenuItem";
-            this.pasteCtrlVToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.pasteCtrlVToolStripMenuItem.Text = "Paste           Ctrl+V";
+            this.دربارهماToolStripMenuItem.Name = "دربارهماToolStripMenuItem";
+            this.دربارهماToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.دربارهماToolStripMenuItem.Text = "درباره ما";
             // 
             // editToolStripMenuItem
             // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.کپیCtrlCToolStripMenuItem,
+            this.الصاقCtrlVToolStripMenuItem,
+            this.جداکردنCtrlXToolStripMenuItem});
             this.editToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
             // 
-            // viewToolStripMenuItem
+            // کپیCtrlCToolStripMenuItem
             // 
-            this.viewToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.viewToolStripMenuItem.Text = "View";
+            this.کپیCtrlCToolStripMenuItem.Name = "کپیCtrlCToolStripMenuItem";
+            this.کپیCtrlCToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.کپیCtrlCToolStripMenuItem.Text = "کپی               Ctrl+C";
+            // 
+            // الصاقCtrlVToolStripMenuItem
+            // 
+            this.الصاقCtrlVToolStripMenuItem.Name = "الصاقCtrlVToolStripMenuItem";
+            this.الصاقCtrlVToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.الصاقCtrlVToolStripMenuItem.Text = "الصاق           Ctrl+V";
+            // 
+            // جداکردنCtrlXToolStripMenuItem
+            // 
+            this.جداکردنCtrlXToolStripMenuItem.Name = "جداکردنCtrlXToolStripMenuItem";
+            this.جداکردنCtrlXToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.جداکردنCtrlXToolStripMenuItem.Text = "جداکردن        Ctrl+X";
             // 
             // panel1
             // 
@@ -874,41 +764,9 @@
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // panel5
+            // lessonTableTableAdapter1
             // 
-            this.panel5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel5.Controls.Add(this.manager_lessonName_add_txt);
-            this.panel5.Controls.Add(this.manager_lessonNumber_update_txt);
-            this.panel5.Controls.Add(this.label12);
-            this.panel5.Controls.Add(this.manager_lessonGroupNumbet_update_txt);
-            this.panel5.Controls.Add(this.manager_lessonGroupNumbet_delet_txt);
-            this.panel5.Controls.Add(this.manager_lessonName_update_txt);
-            this.panel5.Controls.Add(this.label13);
-            this.panel5.Controls.Add(this.manager_lesson_techerNumber_update_txt);
-            this.panel5.Controls.Add(this.manager_lessonNumber_delet_txt);
-            this.panel5.Controls.Add(this.manager_lessonTime_update_txt);
-            this.panel5.Controls.Add(this.label14);
-            this.panel5.Controls.Add(this.label15);
-            this.panel5.Controls.Add(this.manager_lesson_update_bt);
-            this.panel5.Controls.Add(this.label19);
-            this.panel5.Controls.Add(this.label16);
-            this.panel5.Controls.Add(this.checkBox1);
-            this.panel5.Controls.Add(this.manager_lesson_add_bt);
-            this.panel5.Controls.Add(this.label21);
-            this.panel5.Controls.Add(this.manager_lessonNumber_add_txt);
-            this.panel5.Controls.Add(this.label20);
-            this.panel5.Controls.Add(this.label18);
-            this.panel5.Controls.Add(this.label22);
-            this.panel5.Controls.Add(this.manager_lesson_techerNumber_add_txt);
-            this.panel5.Controls.Add(this.label23);
-            this.panel5.Controls.Add(this.label17);
-            this.panel5.Controls.Add(this.manager_lessonTime_add_txt);
-            this.panel5.Controls.Add(this.manager_lessonGroupNumbet_add_txt);
-            this.panel5.Controls.Add(this.manager_lesson_delet_bt);
-            this.panel5.Location = new System.Drawing.Point(21, 17);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(954, 285);
-            this.panel5.TabIndex = 45;
+            this.lessonTableTableAdapter1.ClearBeforeFill = true;
             // 
             // ManagerForm1
             // 
@@ -937,13 +795,13 @@
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.manager_cours_tp.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -977,34 +835,15 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TabPage manager_cours_tp;
-        private System.Windows.Forms.TextBox manager_lessonNumber_update_txt;
-        private System.Windows.Forms.TextBox manager_lessonGroupNumbet_delet_txt;
-        private System.Windows.Forms.TextBox manager_lessonGroupNumbet_update_txt;
-        private System.Windows.Forms.TextBox manager_lessonNumber_delet_txt;
-        private System.Windows.Forms.TextBox manager_lessonName_update_txt;
-        private System.Windows.Forms.TextBox manager_lesson_techerNumber_update_txt;
         private System.Windows.Forms.TextBox manager_lessonNumber_add_txt;
-        private System.Windows.Forms.TextBox manager_lessonTime_update_txt;
         private System.Windows.Forms.TextBox manager_lessonGroupNumbet_add_txt;
         private System.Windows.Forms.TextBox manager_lessonName_add_txt;
-        private System.Windows.Forms.TextBox manager_lessonTime_add_txt;
         private System.Windows.Forms.TextBox manager_lesson_techerNumber_add_txt;
         private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Button manager_lesson_update_bt;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Button manager_lesson_delet_bt;
         private System.Windows.Forms.Button manager_lesson_add_bt;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TabPage manager_meesaging_tp;
         private System.Windows.Forms.TabPage manager_settnigs_tp;
@@ -1025,11 +864,18 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeAltF4ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem copyCtrlCToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pasteCtrlVToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox manager_student_lessonNumber_txt;
+        private System.Windows.Forms.TextBox manager_student_lessonGroupNumber_txt;
+        private ProjectDataSetTableAdapters.lessonTableTableAdapter lessonTableTableAdapter1;
+        private System.Windows.Forms.ToolStripMenuItem کپیCtrlCToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem الصاقCtrlVToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem جداکردنCtrlXToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem دربارهماToolStripMenuItem;
     }
 }
