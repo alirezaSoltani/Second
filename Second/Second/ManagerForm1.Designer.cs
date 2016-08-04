@@ -327,7 +327,6 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Enabled = false;
             this.label1.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label1.Location = new System.Drawing.Point(863, 84);
             this.label1.Name = "label1";
@@ -348,7 +347,6 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Enabled = false;
             this.label2.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label2.Location = new System.Drawing.Point(879, 119);
             this.label2.Name = "label2";
@@ -878,6 +876,7 @@
             // 
             // panel5
             // 
+            this.panel5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel5.Controls.Add(this.manager_lessonName_add_txt);
             this.panel5.Controls.Add(this.manager_lessonNumber_update_txt);
             this.panel5.Controls.Add(this.label12);
