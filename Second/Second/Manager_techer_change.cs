@@ -31,7 +31,8 @@ namespace Second
 
         private void teacher_update_bt_Click(object sender, EventArgs e)
         {
-
+            PasswordRequest k = new PasswordRequest();
+            k.Show();
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -106,7 +107,8 @@ namespace Second
 
         private void teacher_delet_bt_Click(object sender, EventArgs e)
         {
-
+            PasswordRequest k = new PasswordRequest();
+            k.Show();
         }
 
         private void label6_Click(object sender, EventArgs e)
