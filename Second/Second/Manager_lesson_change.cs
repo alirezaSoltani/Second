@@ -14,7 +14,7 @@ namespace Second
     {
         public Manager_lesson_change()
         {
-            InitializeComponent();
+         //   InitializeComponent();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

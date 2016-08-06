@@ -184,7 +184,7 @@ namespace LessonModel
                 rdr = sc.ExecuteReader();
                 while (rdr.Read())
                 {
-                    LessonModel person = new LessonModel();
+                    
                     lessonObject.lessonNumber = (long)rdr["lesson#"];
                     lessonObject.lessonName = (String)rdr["lessonName"];
                     lessonObject.lessonTime = (String)rdr["lessonDate"];
