@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Test;
 
 namespace Second
 {
@@ -48,9 +49,27 @@ namespace Second
 
         private void label1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-           ManagerForm1 Form2 = new ManagerForm1();
-            Form2.Show();
+            bool Checker = false;
+            if (textBox1.Text != "" && textBox2.Text != "")
+            {
+                TeacherModel teacher = new TeacherModel();
+                Checker = teacher.Authenticator(Int64.Parse(textBox1.Text), textBox2.Text);
+                if (Checker == true)
+                {
+                    this.Hide();
+                    ManagerForm1 Form2 = new ManagerForm1();
+                    Form2.Show();
+                }
+                else
+                {
+                    MessageBox.Show(".نام کاربری یا رمز عبور صحیح نمیباشد");
+
+                }
+            }
+            else
+            {
+                MessageBox.Show(".نام کاربری یا رمز عبور وارد نشده است . لطفا پس از اطمینان مجدداً تلاش کنید");
+            }
         }
     }
 }

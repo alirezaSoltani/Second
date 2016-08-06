@@ -43,7 +43,6 @@ namespace LessonModel
                 SqlDataReader reader;
                 sc.CommandText = "INSERT INTO lessonTable (lesson#,lessonName,lessonTime,lessonGroup#,lessonTeacher#) VALUES ( '" + lessonObject.lessonNumber
                                                                                                                 + "','" + lessonObject.lessonName
-                                                                                                                + "','" + lessonObject.lessonTime
                                                                                                                 + "','" + lessonObject.lessonGroupNumber
                                                                                                                 + "','" + lessonObject.lessonTeacherNumber + "')";
 

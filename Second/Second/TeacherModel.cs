@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Test
 {
@@ -139,5 +140,53 @@ namespace Test
 
 
         }
+        public bool Authenticator(long username, String password)
+        {
+            bool Authenticate = false;
+            try
+            {
+
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString =
+                    "Data Source= 185.159.152.5;" +
+                    "Initial Catalog=youshita_Test;" +
+                    "User id=youshita_co; " +
+                    "Password=P@hn1395;";
+
+
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
+                sc.CommandText = "SELECT teacher# , teacherPassword FROM teacherTable ";
+
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                conn.Open();
+                reader = sc.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    if (reader.GetInt64(0) == username &&
+                            reader.GetString(1) == password)
+
+                    {
+                        Authenticate = true;
+                    }
+                }
+                conn.Close();
+
+
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
+            return Authenticate;
+
+        }
+
+
+
     }
 }

@@ -24,7 +24,7 @@ namespace Second
         private void ManagerForm1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'projectDataSet.teacherTable' table. You can move, or remove it, as needed.
-            this.teacherTableTableAdapter.Fill(this.projectDataSet.teacherTable);
+           // this.teacherTableTableAdapter.Fill(this.projectDataSet.teacherTable);
 
         }
 

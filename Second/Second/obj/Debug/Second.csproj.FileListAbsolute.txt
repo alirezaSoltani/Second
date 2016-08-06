@@ -60,3 +60,17 @@ C:\Users\peyman\Source\Repos\Second2\Second\Second\obj\Debug\Second.ManagerForm1
 C:\Users\peyman\Source\Repos\Second2\Second\Second\obj\Debug\Second.Manager_student_change.resources
 C:\Users\peyman\Source\Repos\Second2\Second\Second\obj\Debug\Second.Manager_lesson_change.resources
 C:\Users\peyman\Source\Repos\Second2\Second\Second\obj\Debug\Second.PasswordRequest.resources
+C:\Users\Nimaa\Source\Repos\Second\Second\Second\obj\Debug\Second.csprojResolveAssemblyReference.cache
+C:\Users\Nimaa\Source\Repos\Second\Second\Second\obj\Debug\Second.Manager_lesson_change.resources
+C:\Users\Nimaa\Source\Repos\Second\Second\Second\obj\Debug\Second.login1.resources
+C:\Users\Nimaa\Source\Repos\Second\Second\Second\obj\Debug\Second.ManagerForm1.resources
+C:\Users\Nimaa\Source\Repos\Second\Second\Second\obj\Debug\Second.Manager_student_change.resources
+C:\Users\Nimaa\Source\Repos\Second\Second\Second\obj\Debug\Second.Manager_techer_change.resources
+C:\Users\Nimaa\Source\Repos\Second\Second\Second\obj\Debug\Second.PasswordRequest.resources
+C:\Users\Nimaa\Source\Repos\Second\Second\Second\obj\Debug\Second.Properties.Resources.resources
+C:\Users\Nimaa\Source\Repos\Second\Second\Second\obj\Debug\Second.csproj.GenerateResource.Cache
+C:\Users\Nimaa\Source\Repos\Second\Second\Second\obj\Debug\Second.exe
+C:\Users\Nimaa\Source\Repos\Second\Second\Second\obj\Debug\Second.pdb
+C:\Users\Nimaa\Source\Repos\Second\Second\Second\bin\Debug\Second.exe.config
+C:\Users\Nimaa\Source\Repos\Second\Second\Second\bin\Debug\Second.exe
+C:\Users\Nimaa\Source\Repos\Second\Second\Second\bin\Debug\Second.pdb
