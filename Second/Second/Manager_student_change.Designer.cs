@@ -30,11 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manager_student_change));
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.کپیCtrlCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.الصاقCtrlVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.جداکردنCtrlXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeAltF4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.دربارهماToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.manager_studentNumber_delet_txt = new System.Windows.Forms.TextBox();
             this.manager_studentNumber_update_txt = new System.Windows.Forms.TextBox();
@@ -47,12 +52,7 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.دربارهماToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.کپیCtrlCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.الصاقCtrlVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.جداکردنCtrlXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -70,6 +70,24 @@
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
             // 
+            // کپیCtrlCToolStripMenuItem
+            // 
+            this.کپیCtrlCToolStripMenuItem.Name = "کپیCtrlCToolStripMenuItem";
+            this.کپیCtrlCToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.کپیCtrlCToolStripMenuItem.Text = "کپی            Ctrl+C";
+            // 
+            // الصاقCtrlVToolStripMenuItem
+            // 
+            this.الصاقCtrlVToolStripMenuItem.Name = "الصاقCtrlVToolStripMenuItem";
+            this.الصاقCtrlVToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.الصاقCtrlVToolStripMenuItem.Text = "الصاق        Ctrl+V";
+            // 
+            // جداکردنCtrlXToolStripMenuItem
+            // 
+            this.جداکردنCtrlXToolStripMenuItem.Name = "جداکردنCtrlXToolStripMenuItem";
+            this.جداکردنCtrlXToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.جداکردنCtrlXToolStripMenuItem.Text = "جداکردن      Ctrl+X";
+            // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -83,8 +101,14 @@
             // closeAltF4ToolStripMenuItem
             // 
             this.closeAltF4ToolStripMenuItem.Name = "closeAltF4ToolStripMenuItem";
-            this.closeAltF4ToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.closeAltF4ToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.closeAltF4ToolStripMenuItem.Text = "خروج          Alt+F4";
+            // 
+            // دربارهماToolStripMenuItem
+            // 
+            this.دربارهماToolStripMenuItem.Name = "دربارهماToolStripMenuItem";
+            this.دربارهماToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.دربارهماToolStripMenuItem.Text = "درباره ما";
             // 
             // label1
             // 
@@ -121,6 +145,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(856, 30);
             this.panel3.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
+            this.label2.Location = new System.Drawing.Point(812, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 25);
+            this.label2.TabIndex = 8;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel12
             // 
@@ -193,6 +227,7 @@
             this.manager_student_update_bt.TabIndex = 51;
             this.manager_student_update_bt.Text = "ثبت تغییرات";
             this.manager_student_update_bt.UseVisualStyleBackColor = true;
+            this.manager_student_update_bt.Click += new System.EventHandler(this.manager_student_update_bt_Click);
             // 
             // manager_studentDelet_bt
             // 
@@ -203,6 +238,7 @@
             this.manager_studentDelet_bt.TabIndex = 44;
             this.manager_studentDelet_bt.Text = "حذف";
             this.manager_studentDelet_bt.UseVisualStyleBackColor = true;
+            this.manager_studentDelet_bt.Click += new System.EventHandler(this.manager_studentDelet_bt_Click);
             // 
             // label30
             // 
@@ -244,16 +280,6 @@
             this.panel1.Size = new System.Drawing.Size(856, 132);
             this.panel1.TabIndex = 41;
             // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
-            this.label2.Location = new System.Drawing.Point(812, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 25);
-            this.label2.TabIndex = 8;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
             // panel2
             // 
             this.panel2.BackgroundImage = global::Second.Properties.Resources.Untitled_2311;
@@ -261,30 +287,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(462, 114);
             this.panel2.TabIndex = 10;
-            // 
-            // دربارهماToolStripMenuItem
-            // 
-            this.دربارهماToolStripMenuItem.Name = "دربارهماToolStripMenuItem";
-            this.دربارهماToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.دربارهماToolStripMenuItem.Text = "درباره ما";
-            // 
-            // کپیCtrlCToolStripMenuItem
-            // 
-            this.کپیCtrlCToolStripMenuItem.Name = "کپیCtrlCToolStripMenuItem";
-            this.کپیCtrlCToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.کپیCtrlCToolStripMenuItem.Text = "کپی            Ctrl+C";
-            // 
-            // الصاقCtrlVToolStripMenuItem
-            // 
-            this.الصاقCtrlVToolStripMenuItem.Name = "الصاقCtrlVToolStripMenuItem";
-            this.الصاقCtrlVToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.الصاقCtrlVToolStripMenuItem.Text = "الصاق        Ctrl+V";
-            // 
-            // جداکردنCtrlXToolStripMenuItem
-            // 
-            this.جداکردنCtrlXToolStripMenuItem.Name = "جداکردنCtrlXToolStripMenuItem";
-            this.جداکردنCtrlXToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.جداکردنCtrlXToolStripMenuItem.Text = "جداکردن      Ctrl+X";
             // 
             // Manager_student_change
             // 

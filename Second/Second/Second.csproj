@@ -78,6 +78,12 @@
     <Compile Include="Manager_techer_change.Designer.cs">
       <DependentUpon>Manager_techer_change.cs</DependentUpon>
     </Compile>
+    <Compile Include="PasswordRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PasswordRequest.Designer.cs">
+      <DependentUpon>PasswordRequest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="ProjectDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -101,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manager_techer_change.resx">
       <DependentUpon>Manager_techer_change.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PasswordRequest.resx">
+      <DependentUpon>PasswordRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

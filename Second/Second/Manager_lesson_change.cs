@@ -26,5 +26,17 @@ namespace Second
         {
             this.Hide();
         }
+
+        private void manager_lesson_update_bt_Click(object sender, EventArgs e)
+        {
+            PasswordRequest k = new PasswordRequest();
+            k.Show();
+        }
+
+        private void manager_lesson_delet_bt_Click(object sender, EventArgs e)
+        {
+            PasswordRequest k = new PasswordRequest();
+            k.Show();
+        }
     }
 }
