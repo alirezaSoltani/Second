@@ -29,25 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerForm1));
             this.manager_main_tc = new System.Windows.Forms.TabControl();
             this.manager_dashbord_tp = new System.Windows.Forms.TabPage();
             this.manager_teachers_add_tp = new System.Windows.Forms.TabPage();
             this.panel12 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.teacherDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.teacherFNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.teacherLNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.teacherUsernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.teacherPasswordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.teacherURLDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.teacherTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.projectDataSet = new Second.ProjectDataSet();
+            this.teacherFName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teacherLName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teacherTableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.manager_teacherFName_add_txt = new System.Windows.Forms.TextBox();
-            this.manager_teacherPassword_add_txt = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.manager_teacherAdd_bt = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,7 +49,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.manager_teacherLName_add_txt = new System.Windows.Forms.TextBox();
             this.manager_teacherNumber_add_txt = new System.Windows.Forms.TextBox();
-            this.manager_techerUsername_add_txt = new System.Windows.Forms.TextBox();
+            this.manager_techerPassword_add_txt = new System.Windows.Forms.TextBox();
             this.manager_students_tp = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -85,8 +79,8 @@
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.manager_meesaging_tp = new System.Windows.Forms.TabPage();
             this.manager_settnigs_tp = new System.Windows.Forms.TabPage();
+            this.teacherTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label7 = new System.Windows.Forms.Label();
-            this.teacherTableTableAdapter = new Second.ProjectDataSetTableAdapters.teacherTableTableAdapter();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -98,13 +92,12 @@
             this.الصاقCtrlVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.جداکردنCtrlXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lessonTableTableAdapter1 = new Second.ProjectDataSetTableAdapters.lessonTableTableAdapter();
+            this.lessonTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.manager_main_tc.SuspendLayout();
             this.manager_teachers_add_tp.SuspendLayout();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teacherTableBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teacherTableBindingSource1)).BeginInit();
             this.panel2.SuspendLayout();
             this.manager_students_tp.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -112,8 +105,10 @@
             this.manager_cours_tp.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teacherTableBindingSource)).BeginInit();
             this.panel3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lessonTableBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // manager_main_tc
@@ -128,12 +123,12 @@
             this.manager_main_tc.Controls.Add(this.manager_meesaging_tp);
             this.manager_main_tc.Controls.Add(this.manager_settnigs_tp);
             this.manager_main_tc.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manager_main_tc.Location = new System.Drawing.Point(2, 128);
+            this.manager_main_tc.Location = new System.Drawing.Point(-2, 128);
             this.manager_main_tc.Name = "manager_main_tc";
             this.manager_main_tc.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.manager_main_tc.RightToLeftLayout = true;
             this.manager_main_tc.SelectedIndex = 0;
-            this.manager_main_tc.Size = new System.Drawing.Size(1008, 571);
+            this.manager_main_tc.Size = new System.Drawing.Size(1012, 571);
             this.manager_main_tc.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.manager_main_tc.TabIndex = 1;
             // 
@@ -155,7 +150,7 @@
             this.manager_teachers_add_tp.Location = new System.Drawing.Point(4, 26);
             this.manager_teachers_add_tp.Name = "manager_teachers_add_tp";
             this.manager_teachers_add_tp.Padding = new System.Windows.Forms.Padding(3);
-            this.manager_teachers_add_tp.Size = new System.Drawing.Size(1000, 541);
+            this.manager_teachers_add_tp.Size = new System.Drawing.Size(1004, 541);
             this.manager_teachers_add_tp.TabIndex = 1;
             this.manager_teachers_add_tp.Text = "اساتید";
             // 
@@ -170,72 +165,41 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.teacherDataGridViewTextBoxColumn,
-            this.teacherFNameDataGridViewTextBoxColumn,
-            this.teacherLNameDataGridViewTextBoxColumn,
-            this.teacherUsernameDataGridViewTextBoxColumn,
-            this.teacherPasswordDataGridViewTextBoxColumn,
-            this.teacherURLDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.teacherTableBindingSource;
+            this.teacherFName,
+            this.teacherLName});
             this.dataGridView1.Location = new System.Drawing.Point(22, 301);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(954, 197);
             this.dataGridView1.TabIndex = 41;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // teacherDataGridViewTextBoxColumn
+            // teacherFName
             // 
-            this.teacherDataGridViewTextBoxColumn.DataPropertyName = "teacher#";
-            this.teacherDataGridViewTextBoxColumn.HeaderText = "teacher#";
-            this.teacherDataGridViewTextBoxColumn.Name = "teacherDataGridViewTextBoxColumn";
-            this.teacherDataGridViewTextBoxColumn.Width = 150;
+            this.teacherFName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.teacherFName.DataPropertyName = "teacherFName";
+            this.teacherFName.DividerWidth = 1;
+            this.teacherFName.HeaderText = "نام";
+            this.teacherFName.Name = "teacherFName";
+            this.teacherFName.ToolTipText = "نام خانوادگی";
             // 
-            // teacherFNameDataGridViewTextBoxColumn
+            // teacherLName
             // 
-            this.teacherFNameDataGridViewTextBoxColumn.DataPropertyName = "teacherFName";
-            this.teacherFNameDataGridViewTextBoxColumn.HeaderText = "teacherFName";
-            this.teacherFNameDataGridViewTextBoxColumn.Name = "teacherFNameDataGridViewTextBoxColumn";
-            this.teacherFNameDataGridViewTextBoxColumn.Width = 150;
+            this.teacherLName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.teacherLName.DataPropertyName = "teacherLName";
+            this.teacherLName.DividerWidth = 1;
+            this.teacherLName.HeaderText = "نام خانوادگی";
+            this.teacherLName.Name = "teacherLName";
+            this.teacherLName.ToolTipText = "نام خانوادگی";
             // 
-            // teacherLNameDataGridViewTextBoxColumn
+            // teacherTableBindingSource1
             // 
-            this.teacherLNameDataGridViewTextBoxColumn.DataPropertyName = "teacherLName";
-            this.teacherLNameDataGridViewTextBoxColumn.HeaderText = "teacherLName";
-            this.teacherLNameDataGridViewTextBoxColumn.Name = "teacherLNameDataGridViewTextBoxColumn";
-            this.teacherLNameDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // teacherUsernameDataGridViewTextBoxColumn
-            // 
-            this.teacherUsernameDataGridViewTextBoxColumn.DataPropertyName = "teacherUsername";
-            this.teacherUsernameDataGridViewTextBoxColumn.HeaderText = "teacherUsername";
-            this.teacherUsernameDataGridViewTextBoxColumn.Name = "teacherUsernameDataGridViewTextBoxColumn";
-            this.teacherUsernameDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // teacherPasswordDataGridViewTextBoxColumn
-            // 
-            this.teacherPasswordDataGridViewTextBoxColumn.DataPropertyName = "teacherPassword";
-            this.teacherPasswordDataGridViewTextBoxColumn.HeaderText = "teacherPassword";
-            this.teacherPasswordDataGridViewTextBoxColumn.Name = "teacherPasswordDataGridViewTextBoxColumn";
-            this.teacherPasswordDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // teacherURLDataGridViewTextBoxColumn
-            // 
-            this.teacherURLDataGridViewTextBoxColumn.DataPropertyName = "teacherURL";
-            this.teacherURLDataGridViewTextBoxColumn.HeaderText = "teacherURL";
-            this.teacherURLDataGridViewTextBoxColumn.Name = "teacherURLDataGridViewTextBoxColumn";
-            this.teacherURLDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // teacherTableBindingSource
-            // 
-            this.teacherTableBindingSource.DataMember = "teacherTable";
-            this.teacherTableBindingSource.DataSource = this.projectDataSet;
-            // 
-            // projectDataSet
-            // 
-            this.projectDataSet.DataSetName = "ProjectDataSet";
-            this.projectDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.teacherTableBindingSource1.DataMember = "teacherTable";
             // 
             // panel2
             // 
@@ -243,8 +207,6 @@
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.manager_teacherFName_add_txt);
-            this.panel2.Controls.Add(this.manager_teacherPassword_add_txt);
-            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.manager_teacherAdd_bt);
             this.panel2.Controls.Add(this.label1);
@@ -252,7 +214,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.manager_teacherLName_add_txt);
             this.panel2.Controls.Add(this.manager_teacherNumber_add_txt);
-            this.panel2.Controls.Add(this.manager_techerUsername_add_txt);
+            this.panel2.Controls.Add(this.manager_techerPassword_add_txt);
             this.panel2.Location = new System.Drawing.Point(22, 14);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(954, 285);
@@ -274,28 +236,11 @@
             this.manager_teacherFName_add_txt.Size = new System.Drawing.Size(176, 29);
             this.manager_teacherFName_add_txt.TabIndex = 16;
             // 
-            // manager_teacherPassword_add_txt
-            // 
-            this.manager_teacherPassword_add_txt.Location = new System.Drawing.Point(300, 119);
-            this.manager_teacherPassword_add_txt.Name = "manager_teacherPassword_add_txt";
-            this.manager_teacherPassword_add_txt.Size = new System.Drawing.Size(176, 29);
-            this.manager_teacherPassword_add_txt.TabIndex = 20;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label4.Location = new System.Drawing.Point(541, 79);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 21);
-            this.label4.TabIndex = 24;
-            this.label4.Text = "نام کاربری";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label5.Location = new System.Drawing.Point(555, 122);
+            this.label5.Location = new System.Drawing.Point(544, 79);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 21);
             this.label5.TabIndex = 25;
@@ -316,7 +261,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label1.Location = new System.Drawing.Point(863, 84);
+            this.label1.Location = new System.Drawing.Point(863, 79);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 21);
             this.label1.TabIndex = 21;
@@ -336,7 +281,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label2.Location = new System.Drawing.Point(879, 119);
+            this.label2.Location = new System.Drawing.Point(879, 118);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 21);
             this.label2.TabIndex = 22;
@@ -356,12 +301,12 @@
             this.manager_teacherNumber_add_txt.Size = new System.Drawing.Size(176, 29);
             this.manager_teacherNumber_add_txt.TabIndex = 15;
             // 
-            // manager_techerUsername_add_txt
+            // manager_techerPassword_add_txt
             // 
-            this.manager_techerUsername_add_txt.Location = new System.Drawing.Point(300, 76);
-            this.manager_techerUsername_add_txt.Name = "manager_techerUsername_add_txt";
-            this.manager_techerUsername_add_txt.Size = new System.Drawing.Size(176, 29);
-            this.manager_techerUsername_add_txt.TabIndex = 18;
+            this.manager_techerPassword_add_txt.Location = new System.Drawing.Point(300, 76);
+            this.manager_techerPassword_add_txt.Name = "manager_techerPassword_add_txt";
+            this.manager_techerPassword_add_txt.Size = new System.Drawing.Size(176, 29);
+            this.manager_techerPassword_add_txt.TabIndex = 18;
             // 
             // manager_students_tp
             // 
@@ -657,20 +602,20 @@
             this.manager_settnigs_tp.TabIndex = 5;
             this.manager_settnigs_tp.Text = "تنظیمات";
             // 
+            // teacherTableBindingSource
+            // 
+            this.teacherTableBindingSource.DataMember = "teacherTable";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("B Nazanin+ Bold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label7.Location = new System.Drawing.Point(936, 5);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(36, 21);
+            this.label7.Size = new System.Drawing.Size(41, 16);
             this.label7.TabIndex = 7;
             this.label7.Text = "خروج";
-            // 
-            // teacherTableTableAdapter
-            // 
-            this.teacherTableTableAdapter.ClearBeforeFill = true;
             // 
             // panel3
             // 
@@ -764,9 +709,9 @@
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // lessonTableTableAdapter1
+            // lessonTableBindingSource
             // 
-            this.lessonTableTableAdapter1.ClearBeforeFill = true;
+            this.lessonTableBindingSource.DataMember = "lessonTable";
             // 
             // ManagerForm1
             // 
@@ -786,8 +731,7 @@
             this.manager_teachers_add_tp.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teacherTableBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teacherTableBindingSource1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.manager_students_tp.ResumeLayout(false);
@@ -798,10 +742,12 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teacherTableBindingSource)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lessonTableBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -815,8 +761,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox manager_teacherFName_add_txt;
-        private System.Windows.Forms.TextBox manager_teacherPassword_add_txt;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button manager_teacherAdd_bt;
         private System.Windows.Forms.Label label1;
@@ -824,7 +768,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox manager_teacherLName_add_txt;
         private System.Windows.Forms.TextBox manager_teacherNumber_add_txt;
-        private System.Windows.Forms.TextBox manager_techerUsername_add_txt;
+        private System.Windows.Forms.TextBox manager_techerPassword_add_txt;
         private System.Windows.Forms.TabPage manager_students_tp;
         private System.Windows.Forms.TextBox manager_studentFName_add_txt;
         private System.Windows.Forms.TextBox manager_studentLName_add_txt;
@@ -851,15 +795,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private ProjectDataSet projectDataSet;
+   //     private ProjectDataSet projectDataSet;
         private System.Windows.Forms.BindingSource teacherTableBindingSource;
-        private ProjectDataSetTableAdapters.teacherTableTableAdapter teacherTableTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn teacherDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn teacherFNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn teacherLNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn teacherUsernameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn teacherPasswordDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn teacherURLDataGridViewTextBoxColumn;
+     //   private ProjectDataSetTableAdapters.teacherTableTableAdapter teacherTableTableAdapter;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
@@ -872,10 +810,16 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox manager_student_lessonNumber_txt;
         private System.Windows.Forms.TextBox manager_student_lessonGroupNumber_txt;
-        private ProjectDataSetTableAdapters.lessonTableTableAdapter lessonTableTableAdapter1;
+    //   private ProjectDataSetTableAdapters.lessonTableTableAdapter lessonTableTableAdapter1;
         private System.Windows.Forms.ToolStripMenuItem کپیCtrlCToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem الصاقCtrlVToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem جداکردنCtrlXToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem دربارهماToolStripMenuItem;
+        private System.Windows.Forms.BindingSource teacherTableBindingSource1;
+        private System.Windows.Forms.BindingSource lessonTableBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn teacherDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn teacherFName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn teacherLName;
+
     }
 }

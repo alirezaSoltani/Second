@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Windows.Forms;
+using Test;
 
 namespace Second
 {
@@ -36,8 +37,26 @@ namespace Second
         private void manager_teacherAdd_bt_Click(object sender, EventArgs e)
         {
             //this.Enabled=false;
-            Manager_techer_change k = new Manager_techer_change();
-            k.Show();
+
+            TeacherModel teacherObj = new TeacherModel();
+           
+            
+            teacherObj.setTeacherNumber(long.Parse(manager_teacherNumber_add_txt.Text));
+            teacherObj.setTeacherFName(manager_teacherFName_add_txt.Text);
+            teacherObj.setTeacherLName(manager_teacherLName_add_txt.Text);
+            teacherObj.setTeacherPassword(manager_techerPassword_add_txt.Text);
+            teacherObj.setTeacherURL("");
+
+            teacherObj.addTeacher();
+            MessageBox.Show("استاد مورد نظر افزوده شد ");
+            manager_teacherNumber_add_txt.Text="";
+            manager_teacherFName_add_txt.Text="";
+            manager_teacherLName_add_txt.Text="";
+            manager_techerPassword_add_txt.Text = "";
+
+
+            /*Manager_techer_change k = new Manager_techer_change();
+            k.Show();*/
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -63,6 +82,9 @@ namespace Second
 
         private void manager_lesson_add_bt_Click(object sender, EventArgs e)
         {
+
+
+
             Manager_lesson_change k = new Manager_lesson_change();
             k.Show();
         }
@@ -122,6 +144,11 @@ namespace Second
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -9,42 +9,42 @@ using System.Windows.Forms;
 
 namespace Test
 {
-    class TeacherModel
+    public class TeacherModel
     {
-        public long teacherNumber;
-        public String teacherFName;
-        public String teacherLName;
-        public String teacherUsername;
-        public String teacherPassword;
-        public String teacherURL;
+        private long teacherNumber;
+        public  String teacherFName;
+        public  String teacherLName;
+        public  String teacherPassword;
+        public  String teacherURL;
+
+        
 
         public TeacherModel()
         {
             teacherNumber = 0;
             teacherFName = "";
             teacherLName = "";
-            teacherUsername = "";
             teacherPassword = "";
             teacherURL = "";
-
-
         }
-        public static void addTeacher(TeacherModel teacherObject)
+
+     
+
+        public void addTeacher()
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString =
-            "Data Source=(local);" +
-            "Initial Catalog=Project;" +
-            "Integrated Security=True";
-
+              "Data Source= 185.159.152.5;" +
+                    "Initial Catalog=youshita_Test;" +
+                    "User id=youshita_co; " +
+                    "Password=P@hn1395;";
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "INSERT INTO teacherTable (teacher#,teacherFName,teacherLName,teacherUsername,teacherPassword,teacherURL) VALUES ( '" + teacherObject.teacherNumber
-                                                                                                            + "','" + teacherObject.teacherFName
-                                                                                                            + "','" + teacherObject.teacherLName
-                                                                                                            + "','" + teacherObject.teacherUsername
-                                                                                                            + "','" + teacherObject.teacherPassword
-                                                                                                            + "','" + teacherObject.teacherURL + "')";
+            sc.CommandText = "INSERT INTO teacherTable (teacher#,teacherFName,teacherLName,teacherPassword,teacherURL) VALUES ( '" + getTeacherNumber()
+                                                                                                            + "','" + getTeacherFName()
+                                                                                                            + "','" + getTeacherLName()
+                                                                                                            + "','" + getTeacherPassword()
+                                                                                                            + "','" + getTeacherURL() + "')";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -55,22 +55,24 @@ namespace Test
 
         }
 
-        public static void updateTeacher(TeacherModel teacherObject)
+       
+
+        public  void updateTeacher()
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString =
-            "Data Source=(local);" +
-            "Initial Catalog=Project;" +
-            "Integrated Security=True";
+             "Data Source= 185.159.152.5;" +
+                    "Initial Catalog=youshita_Test;" +
+                    "User id=youshita_co; " +
+                    "Password=P@hn1395;";
 
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "UPDATE taecherTable SET teacher# = '" + teacherObject.teacherNumber
-                                                                + "', studentFName ='" + teacherObject.teacherFName
-                                                                + "', studentLName ='" + teacherObject.teacherLName
-                                                                + "', teacherUsername ='" + teacherObject.teacherUsername
-                                                                + "', teacherPassword ='" + teacherObject.teacherPassword
-                                                                + "', teacherURL ='" + teacherObject.teacherURL + "')";
+            sc.CommandText = "UPDATE taecherTable SET teacher# = '" + getTeacherNumber()
+                                                                + "', studentFName ='" +getTeacherFName()
+                                                                + "', studentLName ='" + getTeacherLName()                       
+                                                                + "', teacherPassword ='" + getTeacherPassword()
+                                                                + "', teacherURL ='" + getTeacherURL() + "')";
 
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
@@ -79,18 +81,22 @@ namespace Test
             conn.Close();
 
 
+        
         }
-        public static void deleteTeacher(TeacherModel teacherObject)
+
+
+        public  void deleteTeacher()
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString =
-            "Data Source=(local);" +
-            "Initial Catalog=Project;" +
-            "Integrated Security=True";
+           "Data Source= 185.159.152.5;" +
+                    "Initial Catalog=youshita_Test;" +
+                    "User id=youshita_co; " +
+                    "Password=P@hn1395;";
 
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = " DELETE FROM teacherTable WHERE teacher# = " + teacherObject.teacherNumber + " ";
+            sc.CommandText = " DELETE FROM teacherTable WHERE teacher# = " + getTeacherNumber() + " ";
 
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
@@ -101,14 +107,17 @@ namespace Test
 
 
         }
-        public static List<TeacherModel> getAllTeacher(TeacherModel teacherObject)
+
+
+        public  List<TeacherModel> getAllTeacher()
         {
             List<TeacherModel> list = new List<TeacherModel>();
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString =
-            "Data Source=(local);" +
-            "Initial Catalog=Project;" +
-            "Integrated Security=True";
+            "Data Source= 185.159.152.5;" +
+                    "Initial Catalog=youshita_Test;" +
+                    "User id=youshita_co; " +
+                    "Password=P@hn1395;";
             SqlCommand sc = new SqlCommand();
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
@@ -121,22 +130,20 @@ namespace Test
                 rdr = sc.ExecuteReader();
                 while (rdr.Read())
                 {
-                    StudentModel person = new StudentModel();
-                    teacherObject.teacherNumber = (long)rdr["teacher#"];
-                    teacherObject.teacherFName = (String)rdr["teacherFName"];
-                    teacherObject.teacherLName = (String)rdr["teacherLName"];
-                    teacherObject.teacherUsername = (String)rdr["teacherUsername"];
-                    teacherObject.teacherPassword = (String)rdr["teacherPassword"];
-                    teacherObject.teacherURL = (String)rdr["teacherURL"];
-                    list.Add(teacherObject);
+                    TeacherModel teacherObj = new TeacherModel();
+                    teacherNumber = (long)rdr["teacher#"];
+                    teacherFName = (String)rdr["teacherFName"];
+                    teacherLName = (String)rdr["teacherLName"];
+                    teacherPassword = (String)rdr["teacherPassword"];
+                    teacherURL = (String)rdr["teacherURL"];
+                    list.Add(teacherObj);
                 }
-
-
             }
             finally { if (rdr != null) { rdr.Close(); } if (conn != null) { conn.Close(); } }
 
 
             return list;
+       
 
 
         }
@@ -185,6 +192,68 @@ namespace Test
             return Authenticate;
 
         }
+
+        /// <summary>
+        /// end of set and get
+        /// </summary>
+        /// <param name="teacherNumber"></param>
+
+        public void setTeacherNumber(long teacherNumber)
+        {
+            this.teacherNumber = teacherNumber;
+        }
+
+
+        public long getTeacherNumber()
+        {
+            return teacherNumber;
+        }
+
+        public void setTeacherFName(string teacherFName)
+        {
+            this.teacherFName = teacherFName;
+        }
+
+
+        public string getTeacherFName()
+        {
+            return teacherFName;
+        }
+        public void setTeacherLName(string teacherLName)
+        {
+            this.teacherLName = teacherLName;
+        }
+
+
+        public string getTeacherLName()
+        {
+            return teacherLName;
+        }
+
+        public void setTeacherPassword(string teacherPassword)
+        {
+            this.teacherPassword = teacherPassword;
+        }
+
+
+        public string getTeacherPassword()
+        {
+            return teacherPassword;
+        }
+        public void setTeacherURL(string teacherURL)
+        {
+            this.teacherURL = teacherURL;
+        }
+
+
+        public string getTeacherURL()
+        {
+            return teacherURL;
+        }
+
+        /// <summary>
+        /// end of set and gets
+        /// </summary>
 
 
 

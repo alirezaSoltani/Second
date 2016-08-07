@@ -32,5 +32,16 @@ namespace Second.Properties {
                 return ((string)(this["ProjectConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=185.159.152.5;Initial Catalog=youshita_Test;Persist Security Info=Tru" +
+            "e;User ID=youshita_co;Password=P@hn1395")]
+        public string conString {
+            get {
+                return ((string)(this["conString"]));
+            }
+        }
     }
 }
