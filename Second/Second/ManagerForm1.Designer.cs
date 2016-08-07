@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerForm1));
             this.manager_main_tc = new System.Windows.Forms.TabControl();
             this.manager_dashbord_tp = new System.Windows.Forms.TabPage();
@@ -83,14 +83,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeAltF4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CtrlCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CtrlVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CtrlXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lessonTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.manager_main_tc.SuspendLayout();
@@ -107,7 +99,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teacherTableBindingSource)).BeginInit();
             this.panel3.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lessonTableBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -165,8 +156,8 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Teal;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.teacherFName,
@@ -622,7 +613,6 @@
             this.panel3.BackColor = System.Drawing.Color.SlateGray;
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.menuStrip1);
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1010, 29);
@@ -636,69 +626,6 @@
             this.label6.Size = new System.Drawing.Size(25, 27);
             this.label6.TabIndex = 6;
             this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.editToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1010, 24);
-            this.menuStrip1.TabIndex = 8;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.closeAltF4ToolStripMenuItem,
-            this.ToolStripMenuItem});
-            this.fileToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // closeAltF4ToolStripMenuItem
-            // 
-            this.closeAltF4ToolStripMenuItem.Name = "closeAltF4ToolStripMenuItem";
-            this.closeAltF4ToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.closeAltF4ToolStripMenuItem.Text = "خروج           Alt+F4";
-            // 
-            // ToolStripMenuItem
-            // 
-            this.ToolStripMenuItem.Name = "ToolStripMenuItem";
-            this.ToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.ToolStripMenuItem.Text = "درباره ما";
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.CtrlCToolStripMenuItem,
-            this.CtrlVToolStripMenuItem,
-            this.CtrlXToolStripMenuItem});
-            this.editToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-            this.editToolStripMenuItem.Text = "Edit";
-            // 
-            // CtrlCToolStripMenuItem
-            // 
-            this.CtrlCToolStripMenuItem.Name = "CtrlCToolStripMenuItem";
-            this.CtrlCToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.CtrlCToolStripMenuItem.Text = "کپی               Ctrl+C";
-            // 
-            // CtrlVToolStripMenuItem
-            // 
-            this.CtrlVToolStripMenuItem.Name = "CtrlVToolStripMenuItem";
-            this.CtrlVToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.CtrlVToolStripMenuItem.Text = "الصاق           Ctrl+V";
-            // 
-            // CtrlXToolStripMenuItem
-            // 
-            this.CtrlXToolStripMenuItem.Name = "CtrlXToolStripMenuItem";
-            this.CtrlXToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.CtrlXToolStripMenuItem.Text = "جداکردن        Ctrl+X";
             // 
             // panel1
             // 
@@ -745,8 +672,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.teacherTableBindingSource)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lessonTableBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -799,10 +724,6 @@
         private System.Windows.Forms.BindingSource teacherTableBindingSource;
      //   private ProjectDataSetTableAdapters.teacherTableTableAdapter teacherTableTableAdapter;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem closeAltF4ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button1;
@@ -810,11 +731,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox manager_student_lessonNumber_txt;
         private System.Windows.Forms.TextBox manager_student_lessonGroupNumber_txt;
-    //   private ProjectDataSetTableAdapters.lessonTableTableAdapter lessonTableTableAdapter1;
-        private System.Windows.Forms.ToolStripMenuItem CtrlCToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem CtrlVToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem CtrlXToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem;
         private System.Windows.Forms.BindingSource teacherTableBindingSource1;
         private System.Windows.Forms.BindingSource lessonTableBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn teacherDataGridViewTextBoxColumn;

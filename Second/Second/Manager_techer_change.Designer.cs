@@ -37,14 +37,9 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeAltF4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.copyCtrlCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pastCtrlVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.teacher_delet_bt = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.teacherTeacherNumber_delet_txt = new System.Windows.Forms.TextBox();
@@ -54,12 +49,9 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.techer_password_update_txt = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel12.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // teacher_update_bt
@@ -151,88 +143,43 @@
             this.panel3.BackColor = System.Drawing.Color.SlateGray;
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.menuStrip1);
             this.panel3.Location = new System.Drawing.Point(0, 8);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(856, 30);
             this.panel3.TabIndex = 11;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
+            this.label2.Location = new System.Drawing.Point(818, 2);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 25);
+            this.label2.TabIndex = 8;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("B Nazanin+ Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(790, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 19);
+            this.label1.Size = new System.Drawing.Size(36, 15);
             this.label1.TabIndex = 9;
             this.label1.Text = "خروج";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // menuStrip1
+            // panel2
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.editToolStripMenuItem,
-            this.viewToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(856, 24);
-            this.menuStrip1.TabIndex = 10;
-            this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.closeAltF4ToolStripMenuItem,
-            this.copyCtrlCToolStripMenuItem,
-            this.pastCtrlVToolStripMenuItem});
-            this.fileToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
-            this.fileToolStripMenuItem.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
-            // 
-            // closeAltF4ToolStripMenuItem
-            // 
-            this.closeAltF4ToolStripMenuItem.Name = "closeAltF4ToolStripMenuItem";
-            this.closeAltF4ToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.closeAltF4ToolStripMenuItem.Text = "Close          Alt+F4";
-            this.closeAltF4ToolStripMenuItem.Click += new System.EventHandler(this.closeAltF4ToolStripMenuItem_Click);
-            // 
-            // copyCtrlCToolStripMenuItem
-            // 
-            this.copyCtrlCToolStripMenuItem.Name = "copyCtrlCToolStripMenuItem";
-            this.copyCtrlCToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.copyCtrlCToolStripMenuItem.Text = "Copy          Ctrl+C";
-            this.copyCtrlCToolStripMenuItem.Click += new System.EventHandler(this.copyCtrlCToolStripMenuItem_Click);
-            // 
-            // pastCtrlVToolStripMenuItem
-            // 
-            this.pastCtrlVToolStripMenuItem.Name = "pastCtrlVToolStripMenuItem";
-            this.pastCtrlVToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.pastCtrlVToolStripMenuItem.Text = "Past            Ctrl+V";
-            this.pastCtrlVToolStripMenuItem.Click += new System.EventHandler(this.pastCtrlVToolStripMenuItem_Click);
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-            this.editToolStripMenuItem.Text = "Edit";
-            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
-            // 
-            // viewToolStripMenuItem
-            // 
-            this.viewToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.viewToolStripMenuItem.Text = "View";
-            this.viewToolStripMenuItem.Click += new System.EventHandler(this.viewToolStripMenuItem_Click);
+            this.panel2.BackgroundImage = global::Second.Properties.Resources.Untitled_2311;
+            this.panel2.Location = new System.Drawing.Point(-7, 23);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(462, 114);
+            this.panel2.TabIndex = 10;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // teacher_delet_bt
             // 
@@ -322,25 +269,6 @@
             this.techer_password_update_txt.TabIndex = 34;
             this.techer_password_update_txt.TextChanged += new System.EventHandler(this.techer_password_update_txt_TextChanged);
             // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
-            this.label2.Location = new System.Drawing.Point(818, 2);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 25);
-            this.label2.TabIndex = 8;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::Second.Properties.Resources.Untitled_2311;
-            this.panel2.Location = new System.Drawing.Point(-7, 23);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(462, 114);
-            this.panel2.TabIndex = 10;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
             // Manager_techer_change
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -349,7 +277,6 @@
             this.ClientSize = new System.Drawing.Size(853, 411);
             this.Controls.Add(this.panel12);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Manager_techer_change";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manager_techer_change";
@@ -358,8 +285,6 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -385,13 +310,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem closeAltF4ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem copyCtrlCToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pastCtrlVToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.Panel panel2;
     }
 }

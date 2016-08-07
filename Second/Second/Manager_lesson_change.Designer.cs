@@ -30,16 +30,8 @@ namespace Second
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manager_lesson_change));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.copyCtrlCToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pastCtrlVToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.Ãœ«ò—œ‰CtrlXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
-            this.closeAltF4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.œ—»«—Â„«ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -60,7 +52,6 @@ namespace Second
             this.label23 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.manager_lesson_delet_bt = new System.Windows.Forms.Button();
-            this.menuStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -74,35 +65,6 @@ namespace Second
             this.panel2.Size = new System.Drawing.Size(462, 114);
             this.panel2.TabIndex = 10;
             // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.copyCtrlCToolStripMenuItem1,
-            this.pastCtrlVToolStripMenuItem1,
-            this.Ãœ«ò—œ‰CtrlXToolStripMenuItem});
-            this.editToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-            this.editToolStripMenuItem.Text = "Edit";
-            // 
-            // copyCtrlCToolStripMenuItem1
-            // 
-            this.copyCtrlCToolStripMenuItem1.Name = "copyCtrlCToolStripMenuItem1";
-            this.copyCtrlCToolStripMenuItem1.Size = new System.Drawing.Size(183, 22);
-            this.copyCtrlCToolStripMenuItem1.Text = "òÅÌ                  Ctrl+C";
-            // 
-            // pastCtrlVToolStripMenuItem1
-            // 
-            this.pastCtrlVToolStripMenuItem1.Name = "pastCtrlVToolStripMenuItem1";
-            this.pastCtrlVToolStripMenuItem1.Size = new System.Drawing.Size(183, 22);
-            this.pastCtrlVToolStripMenuItem1.Text = "«·’«ﬁ              Ctrl+V";
-            // 
-            // Ãœ«ò—œ‰CtrlXToolStripMenuItem
-            // 
-            this.Ãœ«ò—œ‰CtrlXToolStripMenuItem.Name = "Ãœ«ò—œ‰CtrlXToolStripMenuItem";
-            this.Ãœ«ò—œ‰CtrlXToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.Ãœ«ò—œ‰CtrlXToolStripMenuItem.Text = "Ãœ« ò—œ‰          Ctrl+X";
-            // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.Transparent;
@@ -113,58 +75,23 @@ namespace Second
             this.label2.TabIndex = 8;
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // closeAltF4ToolStripMenuItem
-            // 
-            this.closeAltF4ToolStripMenuItem.Name = "closeAltF4ToolStripMenuItem";
-            this.closeAltF4ToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.closeAltF4ToolStripMenuItem.Text = "Œ—ÊÃ           Alt+F4";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.closeAltF4ToolStripMenuItem,
-            this.œ—»«—Â„«ToolStripMenuItem});
-            this.fileToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // œ—»«—Â„«ToolStripMenuItem
-            // 
-            this.œ—»«—Â„«ToolStripMenuItem.Name = "œ—»«—Â„«ToolStripMenuItem";
-            this.œ—»«—Â„«ToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.œ—»«—Â„«ToolStripMenuItem.Text = "œ—»«—Â „«";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("B Nazanin+ Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(790, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 19);
+            this.label1.Size = new System.Drawing.Size(36, 15);
             this.label1.TabIndex = 9;
             this.label1.Text = "Œ—ÊÃ";
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.editToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(856, 24);
-            this.menuStrip1.TabIndex = 10;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.SlateGray;
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.menuStrip1);
             this.panel3.Location = new System.Drawing.Point(0, 8);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(856, 30);
@@ -377,8 +304,6 @@ namespace Second
             this.Name = "Manager_lesson_change";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -391,12 +316,8 @@ namespace Second
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ToolStripMenuItem closeAltF4ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel12;
@@ -417,9 +338,5 @@ namespace Second
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.ToolStripMenuItem copyCtrlCToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem pastCtrlVToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem Ãœ«ò—œ‰CtrlXToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem œ—»«—Â„«ToolStripMenuItem;
     }
 }
