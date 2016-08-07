@@ -86,11 +86,11 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeAltF4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.دربارهماToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.کپیCtrlCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.الصاقCtrlVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.جداکردنCtrlXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CtrlCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CtrlVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CtrlXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lessonTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.manager_main_tc.SuspendLayout();
@@ -138,7 +138,7 @@
             this.manager_dashbord_tp.Location = new System.Drawing.Point(4, 26);
             this.manager_dashbord_tp.Name = "manager_dashbord_tp";
             this.manager_dashbord_tp.Padding = new System.Windows.Forms.Padding(3);
-            this.manager_dashbord_tp.Size = new System.Drawing.Size(1000, 541);
+            this.manager_dashbord_tp.Size = new System.Drawing.Size(1004, 541);
             this.manager_dashbord_tp.TabIndex = 0;
             this.manager_dashbord_tp.Text = "داشبورد";
             // 
@@ -316,7 +316,7 @@
             this.manager_students_tp.Location = new System.Drawing.Point(4, 26);
             this.manager_students_tp.Name = "manager_students_tp";
             this.manager_students_tp.Padding = new System.Windows.Forms.Padding(3);
-            this.manager_students_tp.Size = new System.Drawing.Size(1000, 541);
+            this.manager_students_tp.Size = new System.Drawing.Size(1004, 541);
             this.manager_students_tp.TabIndex = 2;
             this.manager_students_tp.Text = "دانشجویان";
             // 
@@ -469,7 +469,7 @@
             this.manager_cours_tp.Location = new System.Drawing.Point(4, 26);
             this.manager_cours_tp.Name = "manager_cours_tp";
             this.manager_cours_tp.Padding = new System.Windows.Forms.Padding(3);
-            this.manager_cours_tp.Size = new System.Drawing.Size(1000, 541);
+            this.manager_cours_tp.Size = new System.Drawing.Size(1004, 541);
             this.manager_cours_tp.TabIndex = 3;
             this.manager_cours_tp.Text = "درس ها";
             // 
@@ -588,7 +588,7 @@
             this.manager_meesaging_tp.Location = new System.Drawing.Point(4, 26);
             this.manager_meesaging_tp.Name = "manager_meesaging_tp";
             this.manager_meesaging_tp.Padding = new System.Windows.Forms.Padding(3);
-            this.manager_meesaging_tp.Size = new System.Drawing.Size(1000, 541);
+            this.manager_meesaging_tp.Size = new System.Drawing.Size(1004, 541);
             this.manager_meesaging_tp.TabIndex = 4;
             this.manager_meesaging_tp.Text = "پیام رسانی";
             // 
@@ -598,7 +598,7 @@
             this.manager_settnigs_tp.Location = new System.Drawing.Point(4, 26);
             this.manager_settnigs_tp.Name = "manager_settnigs_tp";
             this.manager_settnigs_tp.Padding = new System.Windows.Forms.Padding(3);
-            this.manager_settnigs_tp.Size = new System.Drawing.Size(1000, 541);
+            this.manager_settnigs_tp.Size = new System.Drawing.Size(1004, 541);
             this.manager_settnigs_tp.TabIndex = 5;
             this.manager_settnigs_tp.Text = "تنظیمات";
             // 
@@ -653,7 +653,7 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.closeAltF4ToolStripMenuItem,
-            this.دربارهماToolStripMenuItem});
+            this.ToolStripMenuItem});
             this.fileToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -665,40 +665,40 @@
             this.closeAltF4ToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.closeAltF4ToolStripMenuItem.Text = "خروج           Alt+F4";
             // 
-            // دربارهماToolStripMenuItem
+            // ToolStripMenuItem
             // 
-            this.دربارهماToolStripMenuItem.Name = "دربارهماToolStripMenuItem";
-            this.دربارهماToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.دربارهماToolStripMenuItem.Text = "درباره ما";
+            this.ToolStripMenuItem.Name = "ToolStripMenuItem";
+            this.ToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.ToolStripMenuItem.Text = "درباره ما";
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.کپیCtrlCToolStripMenuItem,
-            this.الصاقCtrlVToolStripMenuItem,
-            this.جداکردنCtrlXToolStripMenuItem});
+            this.CtrlCToolStripMenuItem,
+            this.CtrlVToolStripMenuItem,
+            this.CtrlXToolStripMenuItem});
             this.editToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
             // 
-            // کپیCtrlCToolStripMenuItem
+            // CtrlCToolStripMenuItem
             // 
-            this.کپیCtrlCToolStripMenuItem.Name = "کپیCtrlCToolStripMenuItem";
-            this.کپیCtrlCToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.کپیCtrlCToolStripMenuItem.Text = "کپی               Ctrl+C";
+            this.CtrlCToolStripMenuItem.Name = "CtrlCToolStripMenuItem";
+            this.CtrlCToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.CtrlCToolStripMenuItem.Text = "کپی               Ctrl+C";
             // 
-            // الصاقCtrlVToolStripMenuItem
+            // CtrlVToolStripMenuItem
             // 
-            this.الصاقCtrlVToolStripMenuItem.Name = "الصاقCtrlVToolStripMenuItem";
-            this.الصاقCtrlVToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.الصاقCtrlVToolStripMenuItem.Text = "الصاق           Ctrl+V";
+            this.CtrlVToolStripMenuItem.Name = "CtrlVToolStripMenuItem";
+            this.CtrlVToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.CtrlVToolStripMenuItem.Text = "الصاق           Ctrl+V";
             // 
-            // جداکردنCtrlXToolStripMenuItem
+            // CtrlXToolStripMenuItem
             // 
-            this.جداکردنCtrlXToolStripMenuItem.Name = "جداکردنCtrlXToolStripMenuItem";
-            this.جداکردنCtrlXToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.جداکردنCtrlXToolStripMenuItem.Text = "جداکردن        Ctrl+X";
+            this.CtrlXToolStripMenuItem.Name = "CtrlXToolStripMenuItem";
+            this.CtrlXToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.CtrlXToolStripMenuItem.Text = "جداکردن        Ctrl+X";
             // 
             // panel1
             // 
@@ -811,10 +811,10 @@
         private System.Windows.Forms.TextBox manager_student_lessonNumber_txt;
         private System.Windows.Forms.TextBox manager_student_lessonGroupNumber_txt;
     //   private ProjectDataSetTableAdapters.lessonTableTableAdapter lessonTableTableAdapter1;
-        private System.Windows.Forms.ToolStripMenuItem کپیCtrlCToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem الصاقCtrlVToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem جداکردنCtrlXToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem دربارهماToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CtrlCToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CtrlVToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CtrlXToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem;
         private System.Windows.Forms.BindingSource teacherTableBindingSource1;
         private System.Windows.Forms.BindingSource lessonTableBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn teacherDataGridViewTextBoxColumn;
