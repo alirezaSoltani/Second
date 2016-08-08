@@ -34,6 +34,7 @@
             this.manager_dashbord_tp = new System.Windows.Forms.TabPage();
             this.manager_teachers_add_tp = new System.Windows.Forms.TabPage();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.manager_teacherFName_add_txt = new System.Windows.Forms.TextBox();
@@ -78,11 +79,18 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.manger_messaging_search_txt = new System.Windows.Forms.TextBox();
+            this.mananger_messaging_search_lbl = new System.Windows.Forms.Label();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.manager_main_tc.SuspendLayout();
             this.manager_teachers_add_tp.SuspendLayout();
             this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.manager_students_tp.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -90,9 +98,11 @@
             this.manager_cours_tp.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.manager_meesaging_tp.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.SuspendLayout();
             // 
             // manager_main_tc
@@ -146,6 +156,14 @@
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(1007, 584);
             this.panel12.TabIndex = 44;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(22, 311);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(953, 197);
+            this.dataGridView1.TabIndex = 43;
             // 
             // panel2
             // 
@@ -531,6 +549,13 @@
             // manager_meesaging_tp
             // 
             this.manager_meesaging_tp.BackColor = System.Drawing.Color.LightBlue;
+            this.manager_meesaging_tp.Controls.Add(this.textBox2);
+            this.manager_meesaging_tp.Controls.Add(this.label4);
+            this.manager_meesaging_tp.Controls.Add(this.textBox1);
+            this.manager_meesaging_tp.Controls.Add(this.dataGridView5);
+            this.manager_meesaging_tp.Controls.Add(this.dataGridView4);
+            this.manager_meesaging_tp.Controls.Add(this.mananger_messaging_search_lbl);
+            this.manager_meesaging_tp.Controls.Add(this.manger_messaging_search_txt);
             this.manager_meesaging_tp.Location = new System.Drawing.Point(4, 26);
             this.manager_meesaging_tp.Name = "manager_meesaging_tp";
             this.manager_meesaging_tp.Padding = new System.Windows.Forms.Padding(3);
@@ -587,13 +612,61 @@
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // dataGridView1
+            // manger_messaging_search_txt
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(22, 311);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(953, 197);
-            this.dataGridView1.TabIndex = 43;
+            this.manger_messaging_search_txt.Location = new System.Drawing.Point(10, 6);
+            this.manger_messaging_search_txt.Name = "manger_messaging_search_txt";
+            this.manger_messaging_search_txt.Size = new System.Drawing.Size(100, 25);
+            this.manger_messaging_search_txt.TabIndex = 0;
+            // 
+            // mananger_messaging_search_lbl
+            // 
+            this.mananger_messaging_search_lbl.AutoSize = true;
+            this.mananger_messaging_search_lbl.Location = new System.Drawing.Point(203, 9);
+            this.mananger_messaging_search_lbl.Name = "mananger_messaging_search_lbl";
+            this.mananger_messaging_search_lbl.Size = new System.Drawing.Size(45, 17);
+            this.mananger_messaging_search_lbl.TabIndex = 1;
+            this.mananger_messaging_search_lbl.Text = "کد درس";
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(10, 37);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.Size = new System.Drawing.Size(235, 488);
+            this.dataGridView4.TabIndex = 2;
+            // 
+            // dataGridView5
+            // 
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Location = new System.Drawing.Point(254, 6);
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.Size = new System.Drawing.Size(505, 519);
+            this.dataGridView5.TabIndex = 3;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(765, 48);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(185, 25);
+            this.textBox1.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(956, 53);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 17);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "موضوع";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(765, 79);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(229, 215);
+            this.textBox2.TabIndex = 6;
             // 
             // ManagerForm1
             // 
@@ -612,6 +685,7 @@
             this.manager_main_tc.ResumeLayout(false);
             this.manager_teachers_add_tp.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.manager_students_tp.ResumeLayout(false);
@@ -622,10 +696,13 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.manager_meesaging_tp.ResumeLayout(false);
+            this.manager_meesaging_tp.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -684,5 +761,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn teacherDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.Label mananger_messaging_search_lbl;
+        private System.Windows.Forms.TextBox manger_messaging_search_txt;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
