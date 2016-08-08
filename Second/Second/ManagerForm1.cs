@@ -212,7 +212,7 @@ namespace Second
                 table.Locale = System.Globalization.CultureInfo.InvariantCulture;
                 dataAdapter.Fill(table);
                 bindingSource1.DataSource = table;
-               
+
 
                 // Resize the DataGridView columns to fit the newly loaded content.
                 dataGridView1.AutoResizeColumns(
@@ -322,6 +322,11 @@ namespace Second
             panel5.Controls.Add(teacher_lbl_List[numberOfTeachers]);
             y += 45;
             numberOfTeachers++;
+        }
+
+        private void manager_main_tc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

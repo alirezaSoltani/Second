@@ -131,6 +131,7 @@
             this.manager_main_tc.Size = new System.Drawing.Size(1349, 703);
             this.manager_main_tc.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.manager_main_tc.TabIndex = 1;
+            this.manager_main_tc.SelectedIndexChanged += new System.EventHandler(this.manager_main_tc_SelectedIndexChanged);
             // 
             // manager_dashbord_tp
             // 
