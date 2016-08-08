@@ -84,9 +84,10 @@
             this.mananger_messaging_search_lbl = new System.Windows.Forms.Label();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.manager_messaging_title_txt = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.manager_messaging_main_txt = new System.Windows.Forms.TextBox();
+            this.manager_messaging_send_btn = new System.Windows.Forms.Button();
             this.manager_main_tc.SuspendLayout();
             this.manager_teachers_add_tp.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -549,9 +550,10 @@
             // manager_meesaging_tp
             // 
             this.manager_meesaging_tp.BackColor = System.Drawing.Color.LightBlue;
-            this.manager_meesaging_tp.Controls.Add(this.textBox2);
+            this.manager_meesaging_tp.Controls.Add(this.manager_messaging_send_btn);
+            this.manager_meesaging_tp.Controls.Add(this.manager_messaging_main_txt);
             this.manager_meesaging_tp.Controls.Add(this.label4);
-            this.manager_meesaging_tp.Controls.Add(this.textBox1);
+            this.manager_meesaging_tp.Controls.Add(this.manager_messaging_title_txt);
             this.manager_meesaging_tp.Controls.Add(this.dataGridView5);
             this.manager_meesaging_tp.Controls.Add(this.dataGridView4);
             this.manager_meesaging_tp.Controls.Add(this.mananger_messaging_search_lbl);
@@ -644,12 +646,12 @@
             this.dataGridView5.Size = new System.Drawing.Size(505, 519);
             this.dataGridView5.TabIndex = 3;
             // 
-            // textBox1
+            // manager_messaging_title_txt
             // 
-            this.textBox1.Location = new System.Drawing.Point(765, 48);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(185, 25);
-            this.textBox1.TabIndex = 4;
+            this.manager_messaging_title_txt.Location = new System.Drawing.Point(765, 48);
+            this.manager_messaging_title_txt.Name = "manager_messaging_title_txt";
+            this.manager_messaging_title_txt.Size = new System.Drawing.Size(185, 25);
+            this.manager_messaging_title_txt.TabIndex = 4;
             // 
             // label4
             // 
@@ -660,13 +662,22 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "موضوع";
             // 
-            // textBox2
+            // manager_messaging_main_txt
             // 
-            this.textBox2.Location = new System.Drawing.Point(765, 79);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(229, 215);
-            this.textBox2.TabIndex = 6;
+            this.manager_messaging_main_txt.Location = new System.Drawing.Point(765, 79);
+            this.manager_messaging_main_txt.Multiline = true;
+            this.manager_messaging_main_txt.Name = "manager_messaging_main_txt";
+            this.manager_messaging_main_txt.Size = new System.Drawing.Size(229, 215);
+            this.manager_messaging_main_txt.TabIndex = 6;
+            // 
+            // manager_messaging_send_btn
+            // 
+            this.manager_messaging_send_btn.Location = new System.Drawing.Point(835, 300);
+            this.manager_messaging_send_btn.Name = "manager_messaging_send_btn";
+            this.manager_messaging_send_btn.Size = new System.Drawing.Size(75, 23);
+            this.manager_messaging_send_btn.TabIndex = 8;
+            this.manager_messaging_send_btn.Text = "ارسال";
+            this.manager_messaging_send_btn.UseVisualStyleBackColor = true;
             // 
             // ManagerForm1
             // 
@@ -765,8 +776,9 @@
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.Label mananger_messaging_search_lbl;
         private System.Windows.Forms.TextBox manger_messaging_search_txt;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox manager_messaging_main_txt;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox manager_messaging_title_txt;
+        private System.Windows.Forms.Button manager_messaging_send_btn;
     }
 }
