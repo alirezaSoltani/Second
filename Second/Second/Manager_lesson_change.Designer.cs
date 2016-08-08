@@ -39,14 +39,12 @@ namespace Second
             this.manager_lessonGroupNumbet_update_txt = new System.Windows.Forms.TextBox();
             this.manager_lessonGroupNumbet_delet_txt = new System.Windows.Forms.TextBox();
             this.manager_lessonName_update_txt = new System.Windows.Forms.TextBox();
-            this.manager_lesson_techerNumber_update_txt = new System.Windows.Forms.TextBox();
             this.manager_lessonNumber_delet_txt = new System.Windows.Forms.TextBox();
             this.manager_lessonTime_update_txt = new System.Windows.Forms.TextBox();
             this.manager_lesson_update_bt = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -114,14 +112,12 @@ namespace Second
             this.panel12.Controls.Add(this.manager_lessonGroupNumbet_update_txt);
             this.panel12.Controls.Add(this.manager_lessonGroupNumbet_delet_txt);
             this.panel12.Controls.Add(this.manager_lessonName_update_txt);
-            this.panel12.Controls.Add(this.manager_lesson_techerNumber_update_txt);
             this.panel12.Controls.Add(this.manager_lessonNumber_delet_txt);
             this.panel12.Controls.Add(this.manager_lessonTime_update_txt);
             this.panel12.Controls.Add(this.manager_lesson_update_bt);
             this.panel12.Controls.Add(this.label19);
             this.panel12.Controls.Add(this.checkBox1);
             this.panel12.Controls.Add(this.label21);
-            this.panel12.Controls.Add(this.label20);
             this.panel12.Controls.Add(this.label18);
             this.panel12.Controls.Add(this.label22);
             this.panel12.Controls.Add(this.label23);
@@ -162,18 +158,10 @@ namespace Second
             // manager_lessonName_update_txt
             // 
             this.manager_lessonName_update_txt.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manager_lessonName_update_txt.Location = new System.Drawing.Point(453, 226);
+            this.manager_lessonName_update_txt.Location = new System.Drawing.Point(453, 261);
             this.manager_lessonName_update_txt.Name = "manager_lessonName_update_txt";
             this.manager_lessonName_update_txt.Size = new System.Drawing.Size(176, 29);
             this.manager_lessonName_update_txt.TabIndex = 51;
-            // 
-            // manager_lesson_techerNumber_update_txt
-            // 
-            this.manager_lesson_techerNumber_update_txt.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manager_lesson_techerNumber_update_txt.Location = new System.Drawing.Point(453, 296);
-            this.manager_lesson_techerNumber_update_txt.Name = "manager_lesson_techerNumber_update_txt";
-            this.manager_lesson_techerNumber_update_txt.Size = new System.Drawing.Size(176, 29);
-            this.manager_lesson_techerNumber_update_txt.TabIndex = 53;
             // 
             // manager_lessonNumber_delet_txt
             // 
@@ -186,7 +174,7 @@ namespace Second
             // manager_lessonTime_update_txt
             // 
             this.manager_lessonTime_update_txt.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.manager_lessonTime_update_txt.Location = new System.Drawing.Point(453, 261);
+            this.manager_lessonTime_update_txt.Location = new System.Drawing.Point(453, 226);
             this.manager_lessonTime_update_txt.Name = "manager_lessonTime_update_txt";
             this.manager_lessonTime_update_txt.Size = new System.Drawing.Size(176, 29);
             this.manager_lessonTime_update_txt.TabIndex = 52;
@@ -206,7 +194,7 @@ namespace Second
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label19.Location = new System.Drawing.Point(720, 229);
+            this.label19.Location = new System.Drawing.Point(720, 264);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(74, 21);
             this.label19.TabIndex = 58;
@@ -227,21 +215,11 @@ namespace Second
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label21.Location = new System.Drawing.Point(737, 269);
+            this.label21.Location = new System.Drawing.Point(737, 229);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(57, 21);
             this.label21.TabIndex = 56;
             this.label21.Text = "‰«„ œ—”";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label20.Location = new System.Drawing.Point(710, 304);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(84, 21);
-            this.label20.TabIndex = 57;
-            this.label20.Text = "”«⁄  »—ê“«—Ì";
             // 
             // label18
             // 
@@ -326,7 +304,6 @@ namespace Second
         private System.Windows.Forms.TextBox manager_lessonGroupNumbet_delet_txt;
         private System.Windows.Forms.TextBox manager_lessonName_update_txt;
         private System.Windows.Forms.Button manager_lesson_delet_bt;
-        private System.Windows.Forms.TextBox manager_lesson_techerNumber_update_txt;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox manager_lessonNumber_delet_txt;
         private System.Windows.Forms.Label label23;
@@ -335,7 +312,6 @@ namespace Second
         private System.Windows.Forms.Button manager_lesson_update_bt;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label21;
     }
