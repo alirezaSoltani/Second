@@ -197,5 +197,10 @@ namespace Second
                     "valid for your system.");
             }
         }
+
+        private void manager_main_tc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
     }
 }
