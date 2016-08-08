@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Test;
 
 namespace Second
 {
@@ -21,7 +22,7 @@ namespace Second
         {
             this.Hide();
             ManagerForm1 l = new ManagerForm1();
-            
+
         }
 
         private void panel12_Paint(object sender, PaintEventArgs e)
@@ -31,8 +32,30 @@ namespace Second
 
         private void teacher_update_bt_Click(object sender, EventArgs e)
         {
-            PasswordRequest k = new PasswordRequest();
-            k.Show();
+            if (teacher_teacherNumber_update_txt.Text != "" && teacher_FName_update_txt.Text != "" && teacher_LName_update_txt.Text != "" && teacher_password_update_txt.Text != "")
+            {
+
+                PasswordRequest k = new PasswordRequest();
+                k.Show();
+
+
+                if (k.authenPass() == true)
+                {
+                    TeacherModel teacherObj = new TeacherModel();
+                    teacherObj.setTeacherFName(teacher_FName_update_txt.Text);
+                    teacherObj.setTeacherLName(teacher_LName_update_txt.Text);
+                    teacherObj.setTeacherNumber(Int64.Parse(teacher_teacherNumber_update_txt.Text));
+                    teacherObj.setTeacherPassword(teacher_password_update_txt.Text);
+                    teacherObj.setTeacherURL("");
+
+                    teacherObj.updateTeacher();
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("اطلاعات را به طور کامل وارد کنید");
+            }
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -107,9 +130,33 @@ namespace Second
 
         private void teacher_delet_bt_Click(object sender, EventArgs e)
         {
-            PasswordRequest k = new PasswordRequest();
-            k.Show();
+            if (teacherTeacherNumber_delet_txt.Text != "")
+            {
+
+
+                PasswordRequest k = new PasswordRequest();
+                k.Show();
+
+
+                if (k.authenPass() == true)
+                {
+                    TeacherModel teacherObj = new TeacherModel();
+
+                    teacherObj.setTeacherNumber(Int64.Parse(teacher_teacherNumber_update_txt.Text));
+
+
+                    teacherObj.deleteTeacher();
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("شماره استاد را وارد کنید");
+            }
+
         }
+   
+        
 
         private void label6_Click(object sender, EventArgs e)
         {
@@ -152,6 +199,11 @@ namespace Second
         }
 
         private void teacher_LName_update_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

@@ -13,7 +13,8 @@ namespace Second
 {
     public partial class login1 : Form
     {
-        
+        private  long moderatorUsername;
+
         public login1()
         {
             InitializeComponent();
@@ -56,6 +57,7 @@ namespace Second
                 Checker = teacher.Authenticator(Int64.Parse(textBox1.Text), textBox2.Text);
                 if (Checker == true)
                 {
+                    setModeratorUsername(long.Parse(textBox1.Text));
                     this.Hide();
                     ManagerForm1 Form2 = new ManagerForm1();
                     Form2.Show();
@@ -71,5 +73,16 @@ namespace Second
                 MessageBox.Show(".نام کاربری یا رمز عبور وارد نشده است . لطفا پس از اطمینان مجدداً تلاش کنید");
             }
         }
+        public void setModeratorUsername(long moderatorUsername2)
+        {
+            this.moderatorUsername = moderatorUsername2;
+        }
+
+
+        public long getModeratorUsername()
+        {
+            return moderatorUsername;
+        }
+
     }
 }

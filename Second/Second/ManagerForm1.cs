@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace Second
     public partial class ManagerForm1 : Form
     {
         private object openFD;
-
+        private SqlDataAdapter dataAdapter = new SqlDataAdapter();
         public ManagerForm1()
         {
             InitializeComponent();
@@ -25,7 +26,9 @@ namespace Second
         private void ManagerForm1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'projectDataSet.teacherTable' table. You can move, or remove it, as needed.
-           // this.teacherTableTableAdapter.Fill(this.projectDataSet.teacherTable);
+            // this.teacherTableTableAdapter.Fill(this.projectDataSet.teacherTable);
+            dataGridView1.DataSource = bindingSource1;
+            GetData("select * from teacherTable");
 
         }
 
@@ -40,7 +43,6 @@ namespace Second
 
             TeacherModel teacherObj = new TeacherModel();
            
-            
             teacherObj.setTeacherNumber(long.Parse(manager_teacherNumber_add_txt.Text));
             teacherObj.setTeacherFName(manager_teacherFName_add_txt.Text);
             teacherObj.setTeacherLName(manager_teacherLName_add_txt.Text);
@@ -148,9 +150,52 @@ namespace Second
 
         }
 
+       
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void GetData(string selectCommand)
+        {
+            try
+            {
+                // Specify a connection string. Replace the given value with a 
+                // valid connection string for a Northwind SQL Server sample
+                // database accessible to your system.
+                String connectionString = "Data Source= 185.159.152.5;" +
+                    "Initial Catalog=youshita_Test;" +
+                    "User id=youshita_co; " +
+                    "Password=P@hn1395;";
+
+                // Create a new data adapter based on the specified query.
+                dataAdapter = new SqlDataAdapter(selectCommand, connectionString);
+
+                // Create a command builder to generate SQL update, insert, and
+                // delete commands based on selectCommand. These are used to
+                // update the database.
+
+                SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+
+                // Populate a new data table and bind it to the BindingSource.
+                DataTable table = new DataTable();
+                table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+                dataAdapter.Fill(table);
+                bindingSource1.DataSource = table;
+
+                // Resize the DataGridView columns to fit the newly loaded content.
+                dataGridView1.AutoResizeColumns(
+                    DataGridViewAutoSizeColumnsMode.AllCells);
+                dataGridView1.AutoResizeRows(
+                   DataGridViewAutoSizeRowsMode.AllCells);
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("To run this example, replace the value of the " +
+                    "connectionString variable with a connection string that is " +
+                    "valid for your system.");
+            }
         }
     }
 }

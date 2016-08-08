@@ -30,10 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manager_techer_change));
             this.teacher_update_bt = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
             this.teacher_FName_update_txt = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.techer_username_update_txt = new System.Windows.Forms.TextBox();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -48,16 +46,21 @@
             this.teacher_LName_update_txt = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.techer_password_update_txt = new System.Windows.Forms.TextBox();
+            this.teacher_password_update_txt = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel12.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // teacher_update_bt
             // 
             this.teacher_update_bt.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.teacher_update_bt.Location = new System.Drawing.Point(469, 283);
+            this.teacher_update_bt.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.teacher_update_bt.Location = new System.Drawing.Point(29, 154);
             this.teacher_update_bt.Name = "teacher_update_bt";
             this.teacher_update_bt.Size = new System.Drawing.Size(176, 33);
             this.teacher_update_bt.TabIndex = 40;
@@ -65,22 +68,11 @@
             this.teacher_update_bt.UseVisualStyleBackColor = true;
             this.teacher_update_bt.Click += new System.EventHandler(this.teacher_update_bt_Click);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label8.Location = new System.Drawing.Point(777, 218);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(63, 21);
-            this.label8.TabIndex = 38;
-            this.label8.Text = "نام کاربری";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
-            // 
             // teacher_FName_update_txt
             // 
-            this.teacher_FName_update_txt.Location = new System.Drawing.Point(469, 168);
+            this.teacher_FName_update_txt.Location = new System.Drawing.Point(29, 73);
             this.teacher_FName_update_txt.Name = "teacher_FName_update_txt";
-            this.teacher_FName_update_txt.Size = new System.Drawing.Size(176, 20);
+            this.teacher_FName_update_txt.Size = new System.Drawing.Size(176, 23);
             this.teacher_FName_update_txt.TabIndex = 31;
             this.teacher_FName_update_txt.TextChanged += new System.EventHandler(this.teacher_FName_update_txt_TextChanged);
             // 
@@ -88,38 +80,19 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label9.Location = new System.Drawing.Point(731, 194);
+            this.label9.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label9.Location = new System.Drawing.Point(291, 99);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(109, 21);
             this.label9.TabIndex = 37;
             this.label9.Text = "نام خانوادگی استاد";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
-            // techer_username_update_txt
-            // 
-            this.techer_username_update_txt.Location = new System.Drawing.Point(469, 220);
-            this.techer_username_update_txt.Name = "techer_username_update_txt";
-            this.techer_username_update_txt.Size = new System.Drawing.Size(176, 20);
-            this.techer_username_update_txt.TabIndex = 33;
-            this.techer_username_update_txt.TextChanged += new System.EventHandler(this.techer_username_update_txt_TextChanged);
-            // 
             // panel12
             // 
+            this.panel12.Controls.Add(this.groupBox2);
+            this.panel12.Controls.Add(this.groupBox1);
             this.panel12.Controls.Add(this.panel1);
-            this.panel12.Controls.Add(this.teacher_delet_bt);
-            this.panel12.Controls.Add(this.teacher_update_bt);
-            this.panel12.Controls.Add(this.label6);
-            this.panel12.Controls.Add(this.teacherTeacherNumber_delet_txt);
-            this.panel12.Controls.Add(this.label7);
-            this.panel12.Controls.Add(this.teacher_teacherNumber_update_txt);
-            this.panel12.Controls.Add(this.label8);
-            this.panel12.Controls.Add(this.teacher_FName_update_txt);
-            this.panel12.Controls.Add(this.label9);
-            this.panel12.Controls.Add(this.teacher_LName_update_txt);
-            this.panel12.Controls.Add(this.label10);
-            this.panel12.Controls.Add(this.techer_username_update_txt);
-            this.panel12.Controls.Add(this.label11);
-            this.panel12.Controls.Add(this.techer_password_update_txt);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel12.Location = new System.Drawing.Point(0, 0);
             this.panel12.Name = "panel12";
@@ -184,7 +157,8 @@
             // teacher_delet_bt
             // 
             this.teacher_delet_bt.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.teacher_delet_bt.Location = new System.Drawing.Point(12, 205);
+            this.teacher_delet_bt.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.teacher_delet_bt.Location = new System.Drawing.Point(28, 154);
             this.teacher_delet_bt.Name = "teacher_delet_bt";
             this.teacher_delet_bt.Size = new System.Drawing.Size(179, 34);
             this.teacher_delet_bt.TabIndex = 29;
@@ -196,7 +170,8 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label6.Location = new System.Drawing.Point(268, 154);
+            this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label6.Location = new System.Drawing.Point(284, 124);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(74, 21);
             this.label6.TabIndex = 28;
@@ -206,9 +181,9 @@
             // teacherTeacherNumber_delet_txt
             // 
             this.teacherTeacherNumber_delet_txt.AllowDrop = true;
-            this.teacherTeacherNumber_delet_txt.Location = new System.Drawing.Point(12, 155);
+            this.teacherTeacherNumber_delet_txt.Location = new System.Drawing.Point(28, 125);
             this.teacherTeacherNumber_delet_txt.Name = "teacherTeacherNumber_delet_txt";
-            this.teacherTeacherNumber_delet_txt.Size = new System.Drawing.Size(179, 20);
+            this.teacherTeacherNumber_delet_txt.Size = new System.Drawing.Size(179, 23);
             this.teacherTeacherNumber_delet_txt.TabIndex = 27;
             this.teacherTeacherNumber_delet_txt.TextChanged += new System.EventHandler(this.teacherTeacherNumber_delet_txt_TextChanged);
             // 
@@ -216,7 +191,8 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label7.Location = new System.Drawing.Point(792, 245);
+            this.label7.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label7.Location = new System.Drawing.Point(351, 123);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 21);
             this.label7.TabIndex = 39;
@@ -225,17 +201,17 @@
             // 
             // teacher_teacherNumber_update_txt
             // 
-            this.teacher_teacherNumber_update_txt.Location = new System.Drawing.Point(469, 142);
+            this.teacher_teacherNumber_update_txt.Location = new System.Drawing.Point(29, 47);
             this.teacher_teacherNumber_update_txt.Name = "teacher_teacherNumber_update_txt";
-            this.teacher_teacherNumber_update_txt.Size = new System.Drawing.Size(176, 20);
+            this.teacher_teacherNumber_update_txt.Size = new System.Drawing.Size(176, 23);
             this.teacher_teacherNumber_update_txt.TabIndex = 30;
             this.teacher_teacherNumber_update_txt.TextChanged += new System.EventHandler(this.teacher_teacherNumber_update_txt_TextChanged);
             // 
             // teacher_LName_update_txt
             // 
-            this.teacher_LName_update_txt.Location = new System.Drawing.Point(469, 194);
+            this.teacher_LName_update_txt.Location = new System.Drawing.Point(29, 99);
             this.teacher_LName_update_txt.Name = "teacher_LName_update_txt";
-            this.teacher_LName_update_txt.Size = new System.Drawing.Size(176, 20);
+            this.teacher_LName_update_txt.Size = new System.Drawing.Size(176, 23);
             this.teacher_LName_update_txt.TabIndex = 32;
             this.teacher_LName_update_txt.TextChanged += new System.EventHandler(this.teacher_LName_update_txt_TextChanged);
             // 
@@ -243,7 +219,8 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label10.Location = new System.Drawing.Point(783, 168);
+            this.label10.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label10.Location = new System.Drawing.Point(343, 73);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(58, 21);
             this.label10.TabIndex = 36;
@@ -254,20 +231,57 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label11.Location = new System.Drawing.Point(766, 140);
+            this.label11.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label11.Location = new System.Drawing.Point(326, 45);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(74, 21);
             this.label11.TabIndex = 35;
             this.label11.Text = "شماره استاد";
             this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
-            // techer_password_update_txt
+            // teacher_password_update_txt
             // 
-            this.techer_password_update_txt.Location = new System.Drawing.Point(469, 247);
-            this.techer_password_update_txt.Name = "techer_password_update_txt";
-            this.techer_password_update_txt.Size = new System.Drawing.Size(176, 20);
-            this.techer_password_update_txt.TabIndex = 34;
-            this.techer_password_update_txt.TextChanged += new System.EventHandler(this.techer_password_update_txt_TextChanged);
+            this.teacher_password_update_txt.Location = new System.Drawing.Point(29, 125);
+            this.teacher_password_update_txt.Name = "teacher_password_update_txt";
+            this.teacher_password_update_txt.Size = new System.Drawing.Size(176, 23);
+            this.teacher_password_update_txt.TabIndex = 34;
+            this.teacher_password_update_txt.TextChanged += new System.EventHandler(this.techer_password_update_txt_TextChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.LightBlue;
+            this.groupBox1.Controls.Add(this.teacher_update_bt);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.teacher_teacherNumber_update_txt);
+            this.groupBox1.Controls.Add(this.teacher_FName_update_txt);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.teacher_LName_update_txt);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.teacher_password_update_txt);
+            this.groupBox1.Font = new System.Drawing.Font("B Yekan+", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.groupBox1.Location = new System.Drawing.Point(418, 134);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(426, 257);
+            this.groupBox1.TabIndex = 42;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "تغییر اطلاعات اساتید";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.teacher_delet_bt);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.teacherTeacherNumber_delet_txt);
+            this.groupBox2.Font = new System.Drawing.Font("B Yekan+", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.groupBox2.Location = new System.Drawing.Point(11, 134);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(382, 256);
+            this.groupBox2.TabIndex = 43;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "حذف استاد";
             // 
             // Manager_techer_change
             // 
@@ -281,10 +295,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manager_techer_change";
             this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -292,10 +309,8 @@
         #endregion
 
         private System.Windows.Forms.Button teacher_update_bt;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox teacher_FName_update_txt;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox techer_username_update_txt;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Button teacher_delet_bt;
         private System.Windows.Forms.Label label6;
@@ -305,11 +320,13 @@
         private System.Windows.Forms.TextBox teacher_LName_update_txt;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox techer_password_update_txt;
+        private System.Windows.Forms.TextBox teacher_password_update_txt;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
