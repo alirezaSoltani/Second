@@ -11,11 +11,11 @@ namespace Test
 {
     public class TeacherModel
     {
-        private long teacherNumber;
-        public  String teacherFName;
-        public  String teacherLName;
-        public  String teacherPassword;
-        public  String teacherURL;
+        private  long teacherNumber;
+        private  String teacherFName;
+        private  String teacherLName;
+        private  String teacherPassword;
+        private  String teacherURL;
 
         
 
