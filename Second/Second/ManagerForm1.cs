@@ -18,6 +18,14 @@ namespace Second
     {
         private object openFD;
         private SqlDataAdapter dataAdapter = new SqlDataAdapter();
+
+
+        public List<TextBox> teacher_txtbx_List = new List<TextBox>();
+        public List<Label> teacher_lbl_List = new List<Label>();
+        public int x = 550, y = 25;
+        int numberOfTeachers = 0;
+
+
         public ManagerForm1()
         {
             InitializeComponent();
@@ -28,7 +36,30 @@ namespace Second
             // TODO: This line of code loads data into the 'projectDataSet.teacherTable' table. You can move, or remove it, as needed.
             // this.teacherTableTableAdapter.Fill(this.projectDataSet.teacherTable);
             dataGridView1.DataSource = bindingSource1;
-            GetData("select * from teacherTable");
+            GetData("SELECT * FROM teacherTable");
+
+            dataGridView3.DataSource = bindingSource2;
+            GetData3("SELECT DISTINCT lesson# , lessonGroup# ,lessonName FROM lessonTable");
+
+
+            ///////////////////////
+            //Add Multiple Teachers
+            panel5.CreateControl();
+
+            teacher_txtbx_List.Add(new TextBox());
+            teacher_txtbx_List[numberOfTeachers].SetBounds(x, y, 150, 30);
+
+            teacher_lbl_List.Add(new Label());
+            teacher_lbl_List[numberOfTeachers].SetBounds(x + 100, y, 150, 30);
+            teacher_lbl_List[numberOfTeachers].Text = "شماره استاد " + (numberOfTeachers + 1);
+
+            panel5.Controls.Add(teacher_txtbx_List[numberOfTeachers]);
+            panel5.Controls.Add(teacher_lbl_List[numberOfTeachers]);
+
+            y += 45;
+            numberOfTeachers++;
+            //Add Multiple Teachers
+            ///////////////////////
 
         }
 
@@ -42,7 +73,7 @@ namespace Second
             //this.Enabled=false;
 
             TeacherModel teacherObj = new TeacherModel();
-           
+
             teacherObj.setTeacherNumber(long.Parse(manager_teacherNumber_add_txt.Text));
             teacherObj.setTeacherFName(manager_teacherFName_add_txt.Text);
             teacherObj.setTeacherLName(manager_teacherLName_add_txt.Text);
@@ -51,9 +82,9 @@ namespace Second
 
             teacherObj.addTeacher();
             MessageBox.Show("استاد مورد نظر افزوده شد ");
-            manager_teacherNumber_add_txt.Text="";
-            manager_teacherFName_add_txt.Text="";
-            manager_teacherLName_add_txt.Text="";
+            manager_teacherNumber_add_txt.Text = "";
+            manager_teacherFName_add_txt.Text = "";
+            manager_teacherLName_add_txt.Text = "";
             manager_techerPassword_add_txt.Text = "";
 
 
@@ -85,6 +116,9 @@ namespace Second
         private void manager_lesson_add_bt_Click(object sender, EventArgs e)
         {
 
+            LessonModel lessonObj = new LessonModel();
+            //lessonObj.lessonNumber
+
 
 
             Manager_lesson_change k = new Manager_lesson_change();
@@ -108,8 +142,8 @@ namespace Second
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
-           
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -125,24 +159,24 @@ namespace Second
             }
             */
 
-          /* int size = -1;
-           DialogResult result = openFileDialog2.ShowDialog(); // Show the dialog.
-           if (result == DialogResult.OK) // Test result.
-           {
-               string file = openFileDialog2.FileName;
-               try
-               {
-                   string text = File.ReadAllText(file);
-                   size = text.Length;
-               }
-               catch (IOException)
-               {
-               }
-           }
-           Console.WriteLine(size); // <-- Shows file size in debugging mode.
-           Console.WriteLine(result); // <-- For debugging use.*/
+            /* int size = -1;
+             DialogResult result = openFileDialog2.ShowDialog(); // Show the dialog.
+             if (result == DialogResult.OK) // Test result.
+             {
+                 string file = openFileDialog2.FileName;
+                 try
+                 {
+                     string text = File.ReadAllText(file);
+                     size = text.Length;
+                 }
+                 catch (IOException)
+                 {
+                 }
+             }
+             Console.WriteLine(size); // <-- Shows file size in debugging mode.
+             Console.WriteLine(result); // <-- For debugging use.*/
 
-            
+
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
@@ -150,7 +184,7 @@ namespace Second
 
         }
 
-       
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -184,11 +218,15 @@ namespace Second
                 dataAdapter.Fill(table);
                 bindingSource1.DataSource = table;
 
+
                 // Resize the DataGridView columns to fit the newly loaded content.
                 dataGridView1.AutoResizeColumns(
                     DataGridViewAutoSizeColumnsMode.AllCells);
                 dataGridView1.AutoResizeRows(
                    DataGridViewAutoSizeRowsMode.AllCells);
+
+
+
             }
             catch (SqlException)
             {
@@ -196,6 +234,99 @@ namespace Second
                     "connectionString variable with a connection string that is " +
                     "valid for your system.");
             }
+        }
+        private void GetData3(string selectCommand)
+        {
+            try
+            {
+                // Specify a connection string. Replace the given value with a 
+                // valid connection string for a Northwind SQL Server sample
+                // database accessible to your system.
+                String connectionString = "Data Source= 185.159.152.5;" +
+                    "Initial Catalog=youshita_Test;" +
+                    "User id=youshita_co; " +
+                    "Password=P@hn1395;";
+
+                // Create a new data adapter based on the specified query.
+                dataAdapter = new SqlDataAdapter(selectCommand, connectionString);
+
+                // Create a command builder to generate SQL update, insert, and
+                // delete commands based on selectCommand. These are used to
+                // update the database.
+
+                SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+
+                // Populate a new data table and bind it to the BindingSource.
+                DataTable table2 = new DataTable();
+                table2.Locale = System.Globalization.CultureInfo.InvariantCulture;
+                dataAdapter.Fill(table2);
+                bindingSource2.DataSource = table2;
+
+
+                // Resize the DataGridView columns to fit the newly loaded content.
+                dataGridView3.AutoResizeColumns(
+                    DataGridViewAutoSizeColumnsMode.AllCells);
+                dataGridView3.AutoResizeRows(
+                   DataGridViewAutoSizeRowsMode.AllCells);
+
+
+
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("To run this example, replace the value of the " +
+                    "connectionString variable with a connection string that is " +
+                    "valid for your system.");
+            }
+        }
+
+        private void add_lesson_teacher_bt_Click(object sender, EventArgs e)
+        {
+            if (numberOfTeachers == 7)
+            {
+                x = 150; y = 25;
+            }
+            if (numberOfTeachers == 9)
+            {
+                add_lesson_teacher_bt.Enabled = false;
+            }
+
+            del_lesson_teacher_bt.Enabled = true;
+            teacher_txtbx_List.Add(new TextBox());
+            teacher_txtbx_List[numberOfTeachers].SetBounds(x, y, 150, 30);
+
+            teacher_lbl_List.Add(new Label());
+            teacher_lbl_List[numberOfTeachers].SetBounds(x + 100, y, 150, 30);
+            teacher_lbl_List[numberOfTeachers].Text = "شماره استاد " + (numberOfTeachers + 1);
+
+            panel5.Controls.Add(teacher_txtbx_List[numberOfTeachers]);
+            panel5.Controls.Add(teacher_lbl_List[numberOfTeachers]);
+            y += 45;
+            numberOfTeachers++;
+        }
+
+        private void del_lesson_teacher_bt_Click(object sender, EventArgs e)
+        {
+            if (numberOfTeachers == 6)
+            {
+                x = 550; y = 295;
+            }
+
+            if (numberOfTeachers == 2)
+            {
+                del_lesson_teacher_bt.Enabled = false;
+            }
+
+            add_lesson_teacher_bt.Enabled = true;
+
+            panel5.Controls.Remove(teacher_txtbx_List[numberOfTeachers - 1]);
+            panel5.Controls.Remove(teacher_lbl_List[numberOfTeachers - 1]);
+
+            teacher_txtbx_List.RemoveAt(numberOfTeachers - 1);
+            teacher_lbl_List.RemoveAt(numberOfTeachers - 1);
+
+            numberOfTeachers--;
+            y -= 45;
         }
     }
 }
