@@ -18,6 +18,15 @@ namespace Second
     {
         private object openFD;
         private SqlDataAdapter dataAdapter = new SqlDataAdapter();
+
+
+        public List<TextBox> teacher_txtbx_List = new List<TextBox>();
+        public List<Label> teacher_lbl_List = new List<Label>();
+        public int x = 550, y = 25;
+        int numberOfTeachers = 0;
+
+
+
         public ManagerForm1()
         {
             InitializeComponent();
@@ -30,6 +39,20 @@ namespace Second
             dataGridView1.DataSource = bindingSource1;
             GetData("select * from teacherTable");
 
+            panel5.CreateControl();
+
+            teacher_txtbx_List.Add(new TextBox());
+            teacher_txtbx_List[numberOfTeachers].SetBounds(x, y, 150, 30);
+
+            teacher_lbl_List.Add(new Label());
+            teacher_lbl_List[numberOfTeachers].SetBounds(x+100, y, 150, 30);
+            teacher_lbl_List[numberOfTeachers].Text = "شماره استاد " + (numberOfTeachers + 1);
+
+            panel5.Controls.Add(teacher_txtbx_List[numberOfTeachers]);
+            panel5.Controls.Add(teacher_lbl_List[numberOfTeachers]);
+
+            y += 45;
+            numberOfTeachers++;
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -196,6 +219,55 @@ namespace Second
                     "connectionString variable with a connection string that is " +
                     "valid for your system.");
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (numberOfTeachers == 6)
+            {
+                x = 550; y = 295;
+            }
+
+            if (numberOfTeachers == 2)
+            {
+                del_lesson_teacher_bt.Enabled = false;
+            }
+
+            add_lesson_teacher_bt.Enabled = true;
+
+            panel5.Controls.Remove(teacher_txtbx_List[numberOfTeachers - 1]);
+            panel5.Controls.Remove(teacher_lbl_List[numberOfTeachers - 1]);
+
+            teacher_txtbx_List.RemoveAt(numberOfTeachers - 1);
+            teacher_lbl_List.RemoveAt(numberOfTeachers - 1);
+
+            numberOfTeachers--;
+            y -= 45;
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            if(numberOfTeachers == 7)
+            {
+                x = 150;  y = 25;
+            }
+            if(numberOfTeachers == 9)
+            {
+                add_lesson_teacher_bt.Enabled = false;
+            }
+
+            del_lesson_teacher_bt.Enabled = true;
+            teacher_txtbx_List.Add(new TextBox());
+            teacher_txtbx_List[numberOfTeachers].SetBounds(x, y, 150, 30);
+
+            teacher_lbl_List.Add(new Label());
+            teacher_lbl_List[numberOfTeachers].SetBounds(x+100, y, 150, 30);
+            teacher_lbl_List[numberOfTeachers].Text = "شماره استاد " + (numberOfTeachers + 1);
+
+            panel5.Controls.Add(teacher_txtbx_List[numberOfTeachers]);
+            panel5.Controls.Add(teacher_lbl_List[numberOfTeachers]);
+            y += 45;
+            numberOfTeachers++;
         }
     }
 }

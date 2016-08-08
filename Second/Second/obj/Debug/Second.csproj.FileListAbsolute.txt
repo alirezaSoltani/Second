@@ -80,3 +80,17 @@ C:\Users\SE7EN\Source\Repos\Second3\Second\Second\obj\Debug\Second.pdb
 C:\Users\SE7EN\Source\Repos\Second4\Second\Second\bin\Debug\Second.exe.config
 C:\Users\SE7EN\Source\Repos\Second4\Second\Second\obj\Debug\Second.exe
 C:\Users\SE7EN\Source\Repos\Second4\Second\Second\obj\Debug\Second.pdb
+C:\Users\ASUS\Source\Repos\Second5\Second\Second\bin\Debug\Second.exe.config
+C:\Users\ASUS\Source\Repos\Second5\Second\Second\obj\Debug\Second.exe
+C:\Users\ASUS\Source\Repos\Second5\Second\Second\obj\Debug\Second.pdb
+C:\Users\ASUS\Source\Repos\Second5\Second\Second\bin\Debug\Second.exe
+C:\Users\ASUS\Source\Repos\Second5\Second\Second\bin\Debug\Second.pdb
+C:\Users\ASUS\Source\Repos\Second5\Second\Second\obj\Debug\Second.csprojResolveAssemblyReference.cache
+C:\Users\ASUS\Source\Repos\Second5\Second\Second\obj\Debug\Second.Manager_lesson_change.resources
+C:\Users\ASUS\Source\Repos\Second5\Second\Second\obj\Debug\Second.login1.resources
+C:\Users\ASUS\Source\Repos\Second5\Second\Second\obj\Debug\Second.ManagerForm1.resources
+C:\Users\ASUS\Source\Repos\Second5\Second\Second\obj\Debug\Second.Manager_student_change.resources
+C:\Users\ASUS\Source\Repos\Second5\Second\Second\obj\Debug\Second.Manager_techer_change.resources
+C:\Users\ASUS\Source\Repos\Second5\Second\Second\obj\Debug\Second.PasswordRequest.resources
+C:\Users\ASUS\Source\Repos\Second5\Second\Second\obj\Debug\Second.Properties.Resources.resources
+C:\Users\ASUS\Source\Repos\Second5\Second\Second\obj\Debug\Second.csproj.GenerateResource.Cache
