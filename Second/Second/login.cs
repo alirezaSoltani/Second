@@ -64,7 +64,8 @@ namespace Second
                 }
                 else
                 {
-                    MessageBox.Show(".نام کاربری یا رمز عبور صحیح نمیباشد");
+                    Error errorObj = new Error(".نام کاربری یا رمز عبور صحیح نمی باشد");
+                    errorObj.Show();
 
                 }
             }

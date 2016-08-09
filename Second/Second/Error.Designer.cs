@@ -31,17 +31,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Error));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.Location = new System.Drawing.Point(-2, 12);
+            this.label1.Location = new System.Drawing.Point(172, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(227, 53);
             this.label1.TabIndex = 0;
@@ -49,13 +49,34 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BackColor = System.Drawing.Color.LightBlue;
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Location = new System.Drawing.Point(-5, 69);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(407, 91);
             this.panel1.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.LightBlue;
+            this.label4.Font = new System.Drawing.Font("B Yekan+", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label4.Location = new System.Drawing.Point(49, 18);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(300, 23);
+            this.label4.TabIndex = 1;
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(165, 58);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "تایید";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -75,26 +96,6 @@
             this.label3.TabIndex = 3;
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(165, 58);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "تایید";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label4.Location = new System.Drawing.Point(49, 18);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(300, 23);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "p";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
             // Error
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -107,6 +108,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Error";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Error";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -38,5 +38,10 @@ namespace Second
             PasswordRequest k = new PasswordRequest();
             k.Show();
         }
+
+        private void panel12_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

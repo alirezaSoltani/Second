@@ -12,27 +12,26 @@ namespace Second
 {
     public partial class Error : Form
     {
-        public String k;
-        public Error()
+       
+        public Error(String s)
         {
-            k = "hi";
+           
             InitializeComponent();
+
+            label4.Text = s;
         }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
-      /*  private void lable4 (object sender , EventArgs e)
-        {
-            label4.Text = k;
-            
-        }*/
+   
 
         private void button1_Click(object sender, EventArgs e)
         {
-            label4.Text = "";
-            label4.Text = k;
+            
+           
         }
 
         private void label4_Click(object sender, EventArgs e)

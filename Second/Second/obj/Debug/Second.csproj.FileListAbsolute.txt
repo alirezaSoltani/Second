@@ -94,3 +94,4 @@ C:\Users\ASUS\Source\Repos\Second5\Second\Second\obj\Debug\Second.Manager_techer
 C:\Users\ASUS\Source\Repos\Second5\Second\Second\obj\Debug\Second.PasswordRequest.resources
 C:\Users\ASUS\Source\Repos\Second5\Second\Second\obj\Debug\Second.Properties.Resources.resources
 C:\Users\ASUS\Source\Repos\Second5\Second\Second\obj\Debug\Second.csproj.GenerateResource.Cache
+C:\Users\Nimaa\Source\Repos\Second\Second\Second\obj\Debug\Second.Error.resources

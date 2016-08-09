@@ -114,11 +114,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("B Nazanin+ Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(785, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 19);
+            this.label1.Size = new System.Drawing.Size(36, 15);
             this.label1.TabIndex = 9;
             this.label1.Text = "خروج";
             // 
@@ -175,6 +175,7 @@
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(853, 411);
             this.panel12.TabIndex = 46;
+            this.panel12.Paint += new System.Windows.Forms.PaintEventHandler(this.panel12_Paint);
             // 
             // manager_studentNumber_delet_txt
             // 
