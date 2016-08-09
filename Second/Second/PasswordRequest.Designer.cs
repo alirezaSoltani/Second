@@ -29,24 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PasswordRequest));
-            this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.authenticatePassword = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.authenticatePassword = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.Location = new System.Drawing.Point(-3, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(265, 75);
-            this.label1.TabIndex = 0;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox1
             // 
@@ -77,6 +68,17 @@
             this.panel1.Size = new System.Drawing.Size(480, 85);
             this.panel1.TabIndex = 3;
             // 
+            // authenticatePassword
+            // 
+            this.authenticatePassword.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.authenticatePassword.Location = new System.Drawing.Point(105, 41);
+            this.authenticatePassword.Name = "authenticatePassword";
+            this.authenticatePassword.Size = new System.Drawing.Size(75, 33);
+            this.authenticatePassword.TabIndex = 3;
+            this.authenticatePassword.Text = "ثبت";
+            this.authenticatePassword.UseVisualStyleBackColor = true;
+            this.authenticatePassword.Click += new System.EventHandler(this.authenticatePassword_Click);
+            // 
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.SlateGray;
@@ -95,16 +97,14 @@
             this.label4.TabIndex = 5;
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // authenticatePassword
+            // label1
             // 
-            this.authenticatePassword.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.authenticatePassword.Location = new System.Drawing.Point(105, 41);
-            this.authenticatePassword.Name = "authenticatePassword";
-            this.authenticatePassword.Size = new System.Drawing.Size(75, 33);
-            this.authenticatePassword.TabIndex = 3;
-            this.authenticatePassword.Text = "ثبت";
-            this.authenticatePassword.UseVisualStyleBackColor = true;
-            this.authenticatePassword.Click += new System.EventHandler(this.authenticatePassword_Click);
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.Location = new System.Drawing.Point(-3, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(265, 75);
+            this.label1.TabIndex = 0;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // PasswordRequest
             // 

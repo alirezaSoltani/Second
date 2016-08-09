@@ -26,7 +26,6 @@ namespace Second
         int numberOfTeachers = 0;
 
 
-
         public ManagerForm1()
         {
             InitializeComponent();
@@ -42,13 +41,16 @@ namespace Second
             dataGridView3.DataSource = bindingSource2;
             GetData3("SELECT DISTINCT lesson# , lessonGroup# ,lessonName FROM lessonTable");
 
+
+            ///////////////////////
+            //Add Multiple Teachers
             panel5.CreateControl();
 
             teacher_txtbx_List.Add(new TextBox());
             teacher_txtbx_List[numberOfTeachers].SetBounds(x, y, 150, 30);
 
             teacher_lbl_List.Add(new Label());
-            teacher_lbl_List[numberOfTeachers].SetBounds(x+100, y, 150, 30);
+            teacher_lbl_List[numberOfTeachers].SetBounds(x + 100, y, 150, 30);
             teacher_lbl_List[numberOfTeachers].Text = "شماره استاد " + (numberOfTeachers + 1);
 
             panel5.Controls.Add(teacher_txtbx_List[numberOfTeachers]);
@@ -56,6 +58,9 @@ namespace Second
 
             y += 45;
             numberOfTeachers++;
+            //Add Multiple Teachers
+            ///////////////////////
+
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -68,7 +73,7 @@ namespace Second
             //this.Enabled=false;
 
             TeacherModel teacherObj = new TeacherModel();
-           
+
             teacherObj.setTeacherNumber(long.Parse(manager_teacherNumber_add_txt.Text));
             teacherObj.setTeacherFName(manager_teacherFName_add_txt.Text);
             teacherObj.setTeacherLName(manager_teacherLName_add_txt.Text);
@@ -77,9 +82,9 @@ namespace Second
 
             teacherObj.addTeacher();
             MessageBox.Show("استاد مورد نظر افزوده شد ");
-            manager_teacherNumber_add_txt.Text="";
-            manager_teacherFName_add_txt.Text="";
-            manager_teacherLName_add_txt.Text="";
+            manager_teacherNumber_add_txt.Text = "";
+            manager_teacherFName_add_txt.Text = "";
+            manager_teacherLName_add_txt.Text = "";
             manager_techerPassword_add_txt.Text = "";
 
 
@@ -137,8 +142,8 @@ namespace Second
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
-           
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -154,24 +159,24 @@ namespace Second
             }
             */
 
-          /* int size = -1;
-           DialogResult result = openFileDialog2.ShowDialog(); // Show the dialog.
-           if (result == DialogResult.OK) // Test result.
-           {
-               string file = openFileDialog2.FileName;
-               try
-               {
-                   string text = File.ReadAllText(file);
-                   size = text.Length;
-               }
-               catch (IOException)
-               {
-               }
-           }
-           Console.WriteLine(size); // <-- Shows file size in debugging mode.
-           Console.WriteLine(result); // <-- For debugging use.*/
+            /* int size = -1;
+             DialogResult result = openFileDialog2.ShowDialog(); // Show the dialog.
+             if (result == DialogResult.OK) // Test result.
+             {
+                 string file = openFileDialog2.FileName;
+                 try
+                 {
+                     string text = File.ReadAllText(file);
+                     size = text.Length;
+                 }
+                 catch (IOException)
+                 {
+                 }
+             }
+             Console.WriteLine(size); // <-- Shows file size in debugging mode.
+             Console.WriteLine(result); // <-- For debugging use.*/
 
-            
+
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
@@ -179,7 +184,7 @@ namespace Second
 
         }
 
-       
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -220,7 +225,7 @@ namespace Second
                 dataGridView1.AutoResizeRows(
                    DataGridViewAutoSizeRowsMode.AllCells);
 
-              
+
 
             }
             catch (SqlException)
@@ -275,7 +280,32 @@ namespace Second
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void add_lesson_teacher_bt_Click(object sender, EventArgs e)
+        {
+            if (numberOfTeachers == 7)
+            {
+                x = 150; y = 25;
+            }
+            if (numberOfTeachers == 9)
+            {
+                add_lesson_teacher_bt.Enabled = false;
+            }
+
+            del_lesson_teacher_bt.Enabled = true;
+            teacher_txtbx_List.Add(new TextBox());
+            teacher_txtbx_List[numberOfTeachers].SetBounds(x, y, 150, 30);
+
+            teacher_lbl_List.Add(new Label());
+            teacher_lbl_List[numberOfTeachers].SetBounds(x + 100, y, 150, 30);
+            teacher_lbl_List[numberOfTeachers].Text = "شماره استاد " + (numberOfTeachers + 1);
+
+            panel5.Controls.Add(teacher_txtbx_List[numberOfTeachers]);
+            panel5.Controls.Add(teacher_lbl_List[numberOfTeachers]);
+            y += 45;
+            numberOfTeachers++;
+        }
+
+        private void del_lesson_teacher_bt_Click(object sender, EventArgs e)
         {
             if (numberOfTeachers == 6)
             {
@@ -297,36 +327,6 @@ namespace Second
 
             numberOfTeachers--;
             y -= 45;
-        }
-
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            if(numberOfTeachers == 7)
-            {
-                x = 150;  y = 25;
-            }
-            if(numberOfTeachers == 9)
-            {
-                add_lesson_teacher_bt.Enabled = false;
-            }
-
-            del_lesson_teacher_bt.Enabled = true;
-            teacher_txtbx_List.Add(new TextBox());
-            teacher_txtbx_List[numberOfTeachers].SetBounds(x, y, 150, 30);
-
-            teacher_lbl_List.Add(new Label());
-            teacher_lbl_List[numberOfTeachers].SetBounds(x+100, y, 150, 30);
-            teacher_lbl_List[numberOfTeachers].Text = "شماره استاد " + (numberOfTeachers + 1);
-
-            panel5.Controls.Add(teacher_txtbx_List[numberOfTeachers]);
-            panel5.Controls.Add(teacher_lbl_List[numberOfTeachers]);
-            y += 45;
-            numberOfTeachers++;
-        }
-
-        private void manager_main_tc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
         }
     }
 }
