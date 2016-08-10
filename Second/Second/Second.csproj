@@ -84,6 +84,7 @@
     <Compile Include="Manager_techer_change.Designer.cs">
       <DependentUpon>Manager_techer_change.cs</DependentUpon>
     </Compile>
+    <Compile Include="MessageModel.cs" />
     <Compile Include="PasswordRequest.cs">
       <SubType>Form</SubType>
     </Compile>
