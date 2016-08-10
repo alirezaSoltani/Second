@@ -9,6 +9,7 @@ using System.Windows.Forms;
 
 namespace Second
 {
+
     class MessageModel
     {
         private long messageNumber;
