@@ -8,7 +8,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using System.Windows.Forms;
 using Test;
 
@@ -16,14 +15,38 @@ namespace Second
 {
     public partial class ManagerForm1 : Form
     {
-        private object openFD;
-        private SqlDataAdapter dataAdapter = new SqlDataAdapter();
+        /// <summary>
+        /// Data gridview attributes
+        /// </summary>
+            private SqlDataAdapter dataAdapter = new SqlDataAdapter();
+        /// <summary>
+        /// Data gridview attributes
+        /// </summary>
 
 
-        public List<TextBox> teacher_txtbx_List = new List<TextBox>();
-        public List<Label> teacher_lbl_List = new List<Label>();
-        public int x = 550, y = 25;
-        int numberOfTeachers = 0;
+
+        /// <summary>
+        /// Multiple teacher attributes
+        /// </summary>
+            private List<TextBox> teacher_txtbx_List = new List<TextBox>();
+            private List<Label> teacher_lbl_List = new List<Label>();
+            private int x = 550, y = 25;
+            private int numberOfTeachers = 0;
+        /// <summary>
+        /// Multiple teacher attributes
+        /// </summary>
+
+
+
+        /// <summary>
+        /// MultiResolution Attributes
+        /// </summary>
+            private int width; //Width of system resolution
+            private int height;  //Height of system resolution
+        /// <summary>
+        /// MultiResolution Attributes
+        /// </summary>
+
 
 
         public ManagerForm1()
@@ -31,19 +54,43 @@ namespace Second
             InitializeComponent();
         }
 
+
         private void ManagerForm1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'projectDataSet.teacherTable' table. You can move, or remove it, as needed.
-            // this.teacherTableTableAdapter.Fill(this.projectDataSet.teacherTable);
+            /// <summary>
+            /// MultiResolution
+            /// </summary>
+            width = SystemInformation.PrimaryMonitorSize.Width;
+            height = SystemInformation.PrimaryMonitorSize.Height;
+
+            this.SetBounds(0, 0, width, height - (height/22));
+            manager_main_tc.SetBounds(0, (height / 8), width, ((90 * height)/100));
+            logo_pictureBox.SetBounds(((4*width)/5), (height/40), (width / 3), (height/10));
+            //MessageBox.Show(((95 * width) / 100).ToString());
+            //teachers_panel.SetBounds((width/96), (height/56), width, height);
+            /// <summary>
+            /// MultiResolution
+            /// </summary>
+
+
+
+            /// <summary>
+            /// datagridview intialization
+            /// </summary>
             dataGridView1.DataSource = bindingSource1;
             GetData("SELECT * FROM teacherTable");
 
             dataGridView3.DataSource = bindingSource2;
             GetData3("SELECT DISTINCT lesson# , lessonGroup# ,lessonName FROM lessonTable");
+            /// <summary>
+            /// datagridview intialization
+            /// </summary>
 
 
-            ///////////////////////
-            //Add Multiple Teachers
+
+            /// <summary>
+            /// Multiple teacher
+            /// </summary>
             panel5.CreateControl();
 
             teacher_txtbx_List.Add(new TextBox());
@@ -58,8 +105,10 @@ namespace Second
 
             y += 45;
             numberOfTeachers++;
-            //Add Multiple Teachers
-            ///////////////////////
+            /// <summary>
+            /// Multiple teacher
+            /// </summary>
+
 
         }
 
@@ -70,8 +119,6 @@ namespace Second
 
         private void manager_teacherAdd_bt_Click(object sender, EventArgs e)
         {
-            //this.Enabled=false;
-
             TeacherModel teacherObj = new TeacherModel();
 
             teacherObj.setTeacherNumber(long.Parse(manager_teacherNumber_add_txt.Text));
@@ -86,15 +133,6 @@ namespace Second
             manager_teacherFName_add_txt.Text = "";
             manager_teacherLName_add_txt.Text = "";
             manager_techerPassword_add_txt.Text = "";
-
-
-            /*Manager_techer_change k = new Manager_techer_change();
-            k.Show();*/
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -102,10 +140,6 @@ namespace Second
 
         }
 
-        private void copyCtrlCToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void manager_studentAdd_bt_Click(object sender, EventArgs e)
         {
@@ -115,11 +149,19 @@ namespace Second
 
         private void manager_lesson_add_bt_Click(object sender, EventArgs e)
         {
-
             LessonModel lessonObj = new LessonModel();
-            //lessonObj.lessonNumber
 
+            lessonObj.setLessonNumber(long.Parse(manager_lessonNumber_add_txt.Text));
+            lessonObj.setLessonGroupNumber(int.Parse(manager_lessonGroupNumbet_add_txt.Text));
+            lessonObj.setLessonName(manager_lessonName_add_txt.Text);
 
+            for (int counter = 0; counter < numberOfTeachers; counter++)
+            {
+                lessonObj.setLessonTeacherNumber(long.Parse(teacher_txtbx_List[counter].Text));
+                lessonObj.addLesson();
+            }
+
+            lessonObj.createLessonTable();
 
             Manager_lesson_change k = new Manager_lesson_change();
             k.Show();
@@ -132,17 +174,6 @@ namespace Second
 
         private void panel5_Paint(object sender, PaintEventArgs e)
         {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
 
         }
 
@@ -176,18 +207,6 @@ namespace Second
              Console.WriteLine(size); // <-- Shows file size in debugging mode.
              Console.WriteLine(result); // <-- For debugging use.*/
 
-
-        }
-
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-
-        }
-
-
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
         }
 
@@ -268,8 +287,6 @@ namespace Second
                     DataGridViewAutoSizeColumnsMode.AllCells);
                 dataGridView3.AutoResizeRows(
                    DataGridViewAutoSizeRowsMode.AllCells);
-
-
 
             }
             catch (SqlException)

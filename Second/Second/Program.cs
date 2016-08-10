@@ -16,7 +16,8 @@ namespace Second
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new login1());
+            //Application.Run(new login1());
+            Application.Run(new ManagerForm1());
         }
     }
 }
