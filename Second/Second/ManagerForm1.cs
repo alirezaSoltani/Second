@@ -117,6 +117,19 @@ namespace Second
         {
 
             LessonModel lessonObj = new LessonModel();
+
+
+            lessonObj.setLessonNumber(long.Parse(manager_lessonNumber_add_txt.Text));
+            lessonObj.setLessonGroupNumber(int.Parse(manager_lessonGroupNumbet_add_txt.Text));
+            lessonObj.setLessonName(manager_lessonName_add_txt.Text);
+
+            for (int counter = 0; counter < numberOfTeachers; counter++)
+            {
+                lessonObj.setLessonTeacherNumber(long.Parse(teacher_txtbx_List[counter].Text));
+                lessonObj.addLesson();
+            }
+
+            lessonObj.createLessonTable();
             //lessonObj.lessonNumber
 
 

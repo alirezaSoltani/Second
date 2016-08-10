@@ -54,7 +54,31 @@ namespace Test
                 sc.Connection = conn;
                 conn.Open();
                 reader = sc.ExecuteReader();
+                conn.Close();
 
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
+
+
+        }
+
+        public void createLessonTable()
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString =
+                         "Data Source= 185.159.152.5;" +
+                         "Initial Catalog=youshita_Test;" +
+                         "User id=youshita_co; " +
+                         "Password=P@hn1395;";
+
+
+               
 
                 using (SqlCommand cmd = new SqlCommand("CREATE TABLE [dbo].[" + getLessonNumber() + "-" + getLessonGroupNumber() + "_Table" + "]("
                                  + "[student#] [bigint] NOT NULL ,"
@@ -71,16 +95,12 @@ namespace Test
                     cmd.Connection.Close();
                 }
 
-                conn.Close();
-
+               
             }
-            catch (Exception e)
+            catch(Exception e)
             {
                 MessageBox.Show(e.Message);
             }
-
-
-
         }
 
         public void updateLesson()
