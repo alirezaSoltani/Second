@@ -79,7 +79,7 @@ namespace Second
             manager_main_tc.SetBounds( 0, ((125* height)/1000), ((99* width)/100) , ((80* height)/100));
             logo_pictureBox.SetBounds( ((79 * width) / 100), ((24 * height) / 1000), ((192 * width) / 1000), ((74 * height) / 1000));
             //teachers_panel.SetBounds( ((5 * width) / 400), ((2 * height) / 100) , ((96 * width) / 100), ((29 * height) / 100));
-            panel2.SetBounds(((5 * width) / 400), ((2 * height) / 100), ((96 * width) / 100), ((29 * height) / 100));
+            panel2.SetBounds(((5 * width) / 400), ((2 * height) / 100), ((96 * width) / 100), ((31 * height) / 100));
             dataGridView1.SetBounds( ((5* width)/400), (38*height)/100 , ((96*width)/100), ((36*height)/100) );
             information_lbl.SetBounds( ((50 * width) / 100) , ((34 * height) / 100) , ((47 * width) / 100), ((5 * height) / 100) );
 
