@@ -24,8 +24,9 @@ namespace Test
 
 
         }
-        public static void addStudent(StudentModel studentObject)
+        public void addStudent()
         {
+            
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString =
             "Data Source=(local);" +
@@ -34,10 +35,10 @@ namespace Test
 
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "INSERT INTO studentTable (student#,studentFName,studentLName,studetURL) VALUES ( '" + studentObject.studentNumber
-                                                                                                            + "','" + studentObject.studentFName
-                                                                                                            + "','" + studentObject.studentLName
-                                                                                                            + "','" + studentObject.studentURL + "')";
+            sc.CommandText = "INSERT INTO studentTable (student#,studentFName,studentLName,studetURL) VALUES ( '" + getStudentNumber()
+                                                                                                            + "','" + getStudentFName()
+                                                                                                            + "','" + getStudentLName()
+                                                                                                            + "','" + getStudentURL() + "')";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -48,7 +49,7 @@ namespace Test
 
         }
 
-        public static void updateStudent(StudentModel studentObject)
+        public void updateStudent()
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString =
@@ -58,10 +59,10 @@ namespace Test
 
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "UPDATE studentTable SET student# = '" + studentObject.studentNumber
-                                                                + "', studentFName ='" + studentObject.studentFName
-                                                                + "', studentLName ='" + studentObject.studentLName
-                                                                + "', studetURL ='" + studentObject.studentURL + "')";
+            sc.CommandText = "UPDATE studentTable SET student# = '" + getStudentNumber()
+                                                                + "', studentFName ='" + getStudentFName()
+                                                                + "', studentLName ='" + getStudentLName()
+                                                                + "', studetURL ='" + getStudentURL() + "')";
 
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
@@ -71,7 +72,7 @@ namespace Test
 
 
         }
-        public static void deleteStudent(StudentModel studentObject)
+        public void deleteStudent()
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString =
@@ -81,7 +82,7 @@ namespace Test
 
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = " DELETE FROM studentTable WHERE student# = " + studentObject.studentNumber + " ";
+            sc.CommandText = " DELETE FROM studentTable WHERE student# = " + getStudentNumber() + " ";
 
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
@@ -92,7 +93,7 @@ namespace Test
 
 
         }
-        public static List<StudentModel> getAllStudent(StudentModel studentObject)
+        public  List<StudentModel> getAllStudent()
         {
             List<StudentModel> list = new List<StudentModel>();
             SqlConnection conn = new SqlConnection();
@@ -112,7 +113,7 @@ namespace Test
                 rdr = sc.ExecuteReader();
                 while (rdr.Read())
                 {
-                    StudentModel person = new StudentModel();
+                    StudentModel studentObject = new StudentModel();
                     studentObject.studentNumber = (long)rdr["student#"];
                     studentObject.studentFName = (String)rdr["studentFName"];
                     studentObject.studentLName = (String)rdr["studentLName"];
@@ -128,6 +129,51 @@ namespace Test
             return list;
 
 
+       }
+
+
+
+
+
+        public void setStudentNumber(long StudentNumber)
+        {
+            this.studentNumber= StudentNumber;
+        }
+
+
+        public long getStudentNumber()
+        {
+            return studentNumber;
+        }
+        public void setStudentFName(String StudentFName)
+        {
+            this.studentFName = StudentFName;
+        }
+
+
+        public String getStudentFName()
+        {
+            return studentFName;
+        }
+        public void setStudentLName(String StudentLName)
+        {
+            this.studentLName = StudentLName;
+        }
+
+
+        public String getStudentLName()
+        {
+            return studentFName;
+        }
+        public void setStudentURL(String StudentURL)
+        {
+            this.studentURL = StudentURL;
+        }
+
+
+        public String getStudentURL()
+        {
+            return studentURL;
         }
     }
 }
