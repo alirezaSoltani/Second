@@ -25,6 +25,8 @@ namespace Second
 
 
 
+
+
         /// <summary>
         /// Multiple teacher attributes
         /// </summary>
@@ -35,6 +37,8 @@ namespace Second
         /// <summary>
         /// Multiple teacher attributes
         /// </summary>
+
+
 
 
 
@@ -63,14 +67,41 @@ namespace Second
             width = SystemInformation.PrimaryMonitorSize.Width;
             height = SystemInformation.PrimaryMonitorSize.Height;
 
-            this.SetBounds(0, 0, width, height - (height/22));
-            manager_main_tc.SetBounds(0, (height / 8), width, ((90 * height)/100));
-            logo_pictureBox.SetBounds(((4*width)/5), (height/40), (width / 3), (height/10));
-            //MessageBox.Show(((95 * width) / 100).ToString());
-            //teachers_panel.SetBounds((width/96), (height/56), width, height);
+            MessageBox.Show(SystemInformation.PrimaryMonitorSize.ToString());
+
+
+            /*Manager form*/
+            this.SetBounds(0, 0, width, ((955*height)/1000));
+            /*Manager form*/
+
+
+            /*teachers tab*/
+            manager_main_tc.SetBounds(0, ((125* height)/1000), ((99* width)/100) , ((80* height)/100));
+            logo_pictureBox.SetBounds(((79 * width) / 100), ((24 * height) / 1000), ((192 * width) / 1000), ((74 * height) / 1000));
+            teachers_panel.SetBounds(((5 * width) / 400), ((2 * height) / 100) , ((96 * width) / 100), ((32 * height) / 100));
+            dataGridView1.SetBounds( ((5* width)/400), (38*height)/100 , ((96*width)/100), ((36*height)/100)  );
+            information_lbl.SetBounds( ((60 * width) / 100) , ((34 * height) / 100) , ((37 * width) / 100), ((3 * height) / 100) );
+
+            teachers_teacherNumber_lbl.SetBounds( ((85*width)/100) , ((15 * height) / 300) , ((83 * width) / 1000), ((27 * height) / 1000));
+            teachers_teacherName_lbl.SetBounds(((85 * width) / 100), ((29 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            teachers_teacherFamily_lbl.SetBounds(((85 * width) / 100), ((43 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            teachers_teacher_password_lbl.SetBounds(((85 * width) / 100), ((57 * height) / 300), ((83 * width) / 1000), ((30 * height) / 1000));
+
+            teachers_teacherNumber_txtbx.SetBounds( ((72 * width) / 100), ((15 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            teachers_teacherName_txtbx.SetBounds(((72 * width) / 100), ((29 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            teachers_teacherFamily_txtbx.SetBounds(((72 * width) / 100), ((43 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            teachers_teacher_password_txtbx.SetBounds(((72 * width) / 100), ((57 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+
+            teachers_addTeacher_btn.SetBounds(((72 * width) / 100), ((80 * height) / 300), ((100 * width) / 1000), ((30 * height) / 1000));
+            teachers_clear_btn.SetBounds(((167 * width) / 200), ((80 * height) / 300), ((10 * width) / 100), ((30 * height) / 1000));
+            /*teachers tab*/
+
+
             /// <summary>
             /// MultiResolution
             /// </summary>
+
+
 
 
 
@@ -121,18 +152,18 @@ namespace Second
         {
             TeacherModel teacherObj = new TeacherModel();
 
-            teacherObj.setTeacherNumber(long.Parse(manager_teacherNumber_add_txt.Text));
-            teacherObj.setTeacherFName(manager_teacherFName_add_txt.Text);
-            teacherObj.setTeacherLName(manager_teacherLName_add_txt.Text);
-            teacherObj.setTeacherPassword(manager_techerPassword_add_txt.Text);
+            teacherObj.setTeacherNumber(long.Parse(teachers_teacherNumber_txtbx.Text));
+            teacherObj.setTeacherFName(teachers_teacherName_txtbx.Text);
+            teacherObj.setTeacherLName(teachers_teacherFamily_txtbx.Text);
+            teacherObj.setTeacherPassword(teachers_teacher_password_txtbx.Text);
             teacherObj.setTeacherURL("");
 
             teacherObj.addTeacher();
             MessageBox.Show("استاد مورد نظر افزوده شد ");
-            manager_teacherNumber_add_txt.Text = "";
-            manager_teacherFName_add_txt.Text = "";
-            manager_teacherLName_add_txt.Text = "";
-            manager_techerPassword_add_txt.Text = "";
+            teachers_teacherNumber_txtbx.Text = "";
+            teachers_teacherName_txtbx.Text = "";
+            teachers_teacherFamily_txtbx.Text = "";
+            teachers_teacher_password_txtbx.Text = "";
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -320,6 +351,14 @@ namespace Second
             panel5.Controls.Add(teacher_lbl_List[numberOfTeachers]);
             y += 45;
             numberOfTeachers++;
+        }
+
+        private void teachers_clear_btn_Click_1(object sender, EventArgs e)
+        {
+            teachers_teacherNumber_txtbx.Clear();
+            teachers_teacherName_txtbx.Clear();
+            teachers_teacherFamily_txtbx.Clear();
+            teachers_teacher_password_txtbx.Clear();
         }
 
         private void del_lesson_teacher_bt_Click(object sender, EventArgs e)
