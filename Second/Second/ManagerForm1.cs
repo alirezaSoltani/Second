@@ -76,11 +76,11 @@ namespace Second
 
 
             /*teachers tab*/
-            manager_main_tc.SetBounds(0, ((125* height)/1000), ((99* width)/100) , ((80* height)/100));
-            logo_pictureBox.SetBounds(((79 * width) / 100), ((24 * height) / 1000), ((192 * width) / 1000), ((74 * height) / 1000));
-            teachers_panel.SetBounds(((5 * width) / 400), ((2 * height) / 100) , ((96 * width) / 100), ((32 * height) / 100));
+            manager_main_tc.SetBounds( 0, ((125* height)/1000), ((99* width)/100) , ((80* height)/100));
+            logo_pictureBox.SetBounds( ((79 * width) / 100), ((24 * height) / 1000), ((192 * width) / 1000), ((74 * height) / 1000));
+            teachers_panel.SetBounds( ((5 * width) / 400), ((2 * height) / 100) , ((96 * width) / 100), ((29 * height) / 100));
             dataGridView1.SetBounds( ((5* width)/400), (38*height)/100 , ((96*width)/100), ((36*height)/100)  );
-            information_lbl.SetBounds( ((60 * width) / 100) , ((34 * height) / 100) , ((37 * width) / 100), ((3 * height) / 100) );
+            information_lbl.SetBounds( ((50 * width) / 100) , ((34 * height) / 100) , ((47 * width) / 100), ((5 * height) / 100) );
 
             teachers_teacherNumber_lbl.SetBounds( ((85*width)/100) , ((15 * height) / 300) , ((83 * width) / 1000), ((27 * height) / 1000));
             teachers_teacherName_lbl.SetBounds(((85 * width) / 100), ((29 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
@@ -111,11 +111,42 @@ namespace Second
             dataGridView1.DataSource = bindingSource1;
             GetData("SELECT * FROM teacherTable");
 
+            dataGridView1.Columns[0].Width = 250;
+            dataGridView1.Columns[0].HeaderText = "شماره استاد";
+
+            dataGridView1.Columns[1].Width = 250;
+            dataGridView1.Columns[1].HeaderText = "نام استاد";
+
+            dataGridView1.Columns[2].Width = 250;
+            dataGridView1.Columns[2].HeaderText = "نام خانوادگی استاد";
+
+            dataGridView1.Columns[3].Width = 250;
+            dataGridView1.Columns[3].HeaderText = "رمز عبور";
+
+            dataGridView1.Columns[4].Width = 250;
+            dataGridView1.Columns[4].HeaderText = "آدرس اینترنتی";
+
+            foreach (DataGridViewColumn col in dataGridView1.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            }
+
+            foreach (DataGridViewRow r in dataGridView1.Rows)
+            {
+                dataGridView1.Rows[r.Index].HeaderCell.Value = (r.Index + 1).ToString();
+            }
+
+
+
+
+
             dataGridView3.DataSource = bindingSource2;
             GetData3("SELECT DISTINCT lesson# , lessonGroup# ,lessonName FROM lessonTable");
             /// <summary>
             /// datagridview intialization
             /// </summary>
+
+
 
 
 
@@ -146,24 +177,6 @@ namespace Second
         private void label6_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void manager_teacherAdd_bt_Click(object sender, EventArgs e)
-        {
-            TeacherModel teacherObj = new TeacherModel();
-
-            teacherObj.setTeacherNumber(long.Parse(teachers_teacherNumber_txtbx.Text));
-            teacherObj.setTeacherFName(teachers_teacherName_txtbx.Text);
-            teacherObj.setTeacherLName(teachers_teacherFamily_txtbx.Text);
-            teacherObj.setTeacherPassword(teachers_teacher_password_txtbx.Text);
-            teacherObj.setTeacherURL("");
-
-            teacherObj.addTeacher();
-            MessageBox.Show("استاد مورد نظر افزوده شد ");
-            teachers_teacherNumber_txtbx.Text = "";
-            teachers_teacherName_txtbx.Text = "";
-            teachers_teacherFamily_txtbx.Text = "";
-            teachers_teacher_password_txtbx.Text = "";
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -359,6 +372,24 @@ namespace Second
             teachers_teacherName_txtbx.Clear();
             teachers_teacherFamily_txtbx.Clear();
             teachers_teacher_password_txtbx.Clear();
+        }
+
+        private void teachers_addTeacher_btn_Click(object sender, EventArgs e)
+        {
+            TeacherModel teacherObj = new TeacherModel();
+
+            teacherObj.setTeacherNumber(long.Parse(teachers_teacherNumber_txtbx.Text));
+            teacherObj.setTeacherFName(teachers_teacherName_txtbx.Text);
+            teacherObj.setTeacherLName(teachers_teacherFamily_txtbx.Text);
+            teacherObj.setTeacherPassword(teachers_teacher_password_txtbx.Text);
+            teacherObj.setTeacherURL("");
+
+            teacherObj.addTeacher();
+            MessageBox.Show("استاد مورد نظر افزوده شد ");
+            teachers_teacherNumber_txtbx.Text = "";
+            teachers_teacherName_txtbx.Text = "";
+            teachers_teacherFamily_txtbx.Text = "";
+            teachers_teacher_password_txtbx.Text = "";
         }
 
         private void del_lesson_teacher_bt_Click(object sender, EventArgs e)
