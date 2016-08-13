@@ -49,20 +49,16 @@ namespace Second
                 Checker = teacherObj.Authenticator(loginObj.getModeratorUsername(), textBox1.Text);
                 if (Checker == true)
                 {
-
                     this.Hide();
-                   
                 }
                 else
                 {
                     MessageBox.Show(".رمز عبور صحیح نمیباشد. در صورت منصرف شدن روی دکمه ی بستن کلیک کنید");
-                   
                 }
             }
             else
             {
                 MessageBox.Show(".رمز عبور وارد نشده است . لطفا پس از اطمینان مجدداً تلاش کنید");
-                
             }
         }
         public bool authenPass()

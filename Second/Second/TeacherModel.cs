@@ -16,6 +16,7 @@ namespace Test
         private  String teacherLName;
         private  String teacherPassword;
         private  String teacherURL;
+        private long teacherNewNumber;
 
         
 
@@ -51,8 +52,7 @@ namespace Test
             reader = sc.ExecuteReader();
             conn.Close();
 
-
-
+            MessageBox.Show("اطلاعات مورد نظر با موفقیت ثبت شد.");
         }
 
        
@@ -68,11 +68,11 @@ namespace Test
 
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "UPDATE taecherTable SET teacher# = '" + getTeacherNumber()
-                                                                + "', studentFName ='" +getTeacherFName()
-                                                                + "', studentLName ='" + getTeacherLName()                       
+            sc.CommandText = "UPDATE teacherTable SET teacher# = '" + getTeacherNewNumber()
+                                                                + "', teacherFName ='" +getTeacherFName()
+                                                                + "', teacherLName ='" + getTeacherLName()                       
                                                                 + "', teacherPassword ='" + getTeacherPassword()
-                                                                + "', teacherURL ='" + getTeacherURL() + "')";
+                                                                + "', teacherURL ='" + getTeacherURL()+"' WHERE teacher# ="+getTeacherNumber()+ "";
 
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
@@ -80,32 +80,38 @@ namespace Test
             reader = sc.ExecuteReader();
             conn.Close();
 
-
-        
+            MessageBox.Show("اطلاعات مورد با موفقیت تغییر یافت.");
         }
+
+
 
 
         public  void deleteTeacher()
         {
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString =
-           "Data Source= 185.159.152.5;" +
-                    "Initial Catalog=youshita_Test;" +
-                    "User id=youshita_co; " +
-                    "Password=P@hn1395;";
+            try {
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString =
+               "Data Source= 185.159.152.5;" +
+                        "Initial Catalog=youshita_Test;" +
+                        "User id=youshita_co; " +
+                        "Password=P@hn1395;";
 
-            SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = " DELETE FROM teacherTable WHERE teacher# = " + getTeacherNumber() + " ";
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
+                sc.CommandText = " DELETE FROM teacherTable WHERE teacher# = " + getTeacherNumber() + "";
 
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
-            conn.Close();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                conn.Open();
+                reader = sc.ExecuteReader();
+                conn.Close();
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
 
-
-
+            MessageBox.Show("اطلاعات مورد نظر با موفقیت حذف شد.");
         }
 
 
@@ -249,6 +255,17 @@ namespace Test
         public string getTeacherURL()
         {
             return teacherURL;
+        }
+
+        public void setTeacherNewNumber(long teacherNewNumber)
+        {
+            this.teacherNewNumber = teacherNewNumber;
+        }
+
+
+        public long getTeacherNewNumber()
+        {
+            return teacherNewNumber;
         }
 
         /// <summary>

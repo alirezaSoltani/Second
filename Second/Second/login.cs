@@ -20,11 +20,6 @@ namespace Second
             InitializeComponent();
             this.BackColor = Color.LightBlue;
             this.TransparencyKey = Color.LightBlue;
-
-           
-
-             
-
         }
        
         private void login1_Load(object sender, EventArgs e)

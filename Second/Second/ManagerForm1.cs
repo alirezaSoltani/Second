@@ -16,9 +16,21 @@ namespace Second
     public partial class ManagerForm1 : Form
     {
         /// <summary>
+        /// Project temp attributes
+        /// </summary>
+            private string currentTeacherNumber = "";
+        /// <summary>
+        /// Project temp attributes
+        /// </summary>
+
+
+
+
+
+        /// <summary>
         /// Data gridview attributes
         /// </summary>
-            private SqlDataAdapter dataAdapter = new SqlDataAdapter();
+        private SqlDataAdapter dataAdapter = new SqlDataAdapter();
         /// <summary>
         /// Data gridview attributes
         /// </summary>
@@ -93,10 +105,37 @@ namespace Second
             teachers_teacher_password_txtbx.SetBounds(((70 * width) / 100), ((57 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
 
             teachers_addTeacher_btn.SetBounds(((70 * width) / 100), ((80 * height) / 300), ((100 * width) / 1000), ((30 * height) / 1000));
-            teachers_clear_btn.SetBounds(((163 * width) / 200), ((80 * height) / 300), ((10 * width) / 100), ((30 * height) / 1000));
+            teachers_clear_btn.SetBounds(((162 * width) / 200), ((80 * height) / 300), ((10 * width) / 100), ((30 * height) / 1000));
 
-            groupBox1.SetBounds(((65 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
-            groupBox2.SetBounds(((3 * width) / 100), ((1 * height) / 300), ((600 * width) / 1000), ((290 * height) / 1000));
+
+
+
+            teachers_edit_teacherNumber_lbl.SetBounds(((17 * width) / 100), ((8 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            teachers_edit_teacherName_lbl.SetBounds(((17 * width) / 100), ((22 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            teachers_edit_teacherFamily_lbl.SetBounds(((17 * width) / 100), ((36 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            teachers_edit_teacher_password_lbl.SetBounds(((17 * width) / 100), ((50 * height) / 300), ((83 * width) / 1000), ((30 * height) / 1000));
+
+            teachers_edit_teacherNumber_txtbx.SetBounds(((4 * width) / 100), ((8 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            teachers_edit_teacherName_txtbx.SetBounds(((4 * width) / 100), ((22 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            teachers_edit_teacherFamily_txtbx.SetBounds(((4 * width) / 100), ((36 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            teachers_edit_teacher_password_txtbx.SetBounds(((4 * width) / 100), ((50 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+
+            teachers_editTeacher_btn.SetBounds(((4 * width) / 100), ((73 * height) / 300), ((100 * width) / 1000), ((30 * height) / 1000));
+            teachers_edit_clear_btn.SetBounds(((30 * width) / 200), ((73 * height) / 300), ((10 * width) / 100), ((30 * height) / 1000));
+
+
+
+
+            teachers_delete_teacherNumber_lbl.SetBounds(((17 * width) / 100), ((30 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            teachers_delete_teacherNumber_txtbx.SetBounds(((4 * width) / 100), ((30 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+
+            teachers_deleteTeacher_btn.SetBounds(((4 * width) / 100), ((73 * height) / 300), ((100 * width) / 1000), ((30 * height) / 1000));
+            teachers_delete_clear_btn.SetBounds(((30 * width) / 200), ((73 * height) / 300), ((10 * width) / 100), ((30 * height) / 1000));
+
+
+            teachers_addTeacher_gpb.SetBounds(((65 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
+            teachers_editTeacher_gpb.SetBounds(((34 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
+            teachers_deleteTeacher_gpb.SetBounds(((3 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
             /*teachers tab design*/
 
 
@@ -369,40 +408,273 @@ namespace Second
 
         private void teachers_addTeacher_btn_Click(object sender, EventArgs e)
         {
-            TeacherModel teacherObj = new TeacherModel();
+            try
+            {
+                /// <summary>
+                /// Checks whether strings have integers or not
+                /// </summary>
 
-            teacherObj.setTeacherNumber(long.Parse(teachers_teacherNumber_txtbx.Text));
-            teacherObj.setTeacherFName(teachers_teacherName_txtbx.Text);
-            teacherObj.setTeacherLName(teachers_teacherFamily_txtbx.Text);
-            teacherObj.setTeacherPassword(teachers_teacher_password_txtbx.Text);
-            teacherObj.setTeacherURL("");
+                bool fnameContainsInt = false;
+                bool lnameContainsInt = false;
 
-            teacherObj.addTeacher();
-            MessageBox.Show("استاد مورد نظر افزوده شد ");
-            teachers_teacherNumber_txtbx.Text = "";
-            teachers_teacherName_txtbx.Text = "";
-            teachers_teacherFamily_txtbx.Text = "";
-            teachers_teacher_password_txtbx.Text = "";
+                fnameContainsInt = teachers_teacherName_txtbx.Text.Any(char.IsDigit);
+                lnameContainsInt = teachers_teacherFamily_txtbx.Text.Any(char.IsDigit);
+
+                if (fnameContainsInt || lnameContainsInt || teachers_teacherNumber_txtbx.Text == "" && teachers_teacherName_txtbx.Text == "" && teachers_teacherFamily_txtbx.Text == "" && teachers_teacher_password_txtbx.Text == "")
+                {
+                    throw new System.FormatException(".اطلاعات را تصحیح کنید");
+                }
+                /// <summary>
+                /// Checks whether strings have integers or not
+                /// </summary>
+                /// 
+
+
+                TeacherModel teacherObj = new TeacherModel();
+
+                teacherObj.setTeacherNumber(long.Parse(teachers_teacherNumber_txtbx.Text));
+                teacherObj.setTeacherFName(teachers_teacherName_txtbx.Text);
+                teacherObj.setTeacherLName(teachers_teacherFamily_txtbx.Text);
+                teacherObj.setTeacherPassword(teachers_teacher_password_txtbx.Text);
+                teacherObj.setTeacherURL("");
+
+                teacherObj.addTeacher();
+
+
+                /// <summary>
+                /// Clear textBoxes
+                /// </summary>
+                teachers_teacherNumber_txtbx.Clear();
+                teachers_teacherName_txtbx.Clear();
+                teachers_teacherFamily_txtbx.Clear();
+                teachers_teacher_password_txtbx.Clear();
+                /// <summary>
+                /// Clear textBoxes
+                /// </summary>
 
 
 
-            //////
+                /// <summary>
+                /// Reset dataGridView
+                /// </summary>
+                dataGridView1.DataSource = bindingSource1;
+                GetData("SELECT * FROM teacherTable");
+
+                dataGridView1.Columns[0].HeaderText = "شماره استاد";
+                dataGridView1.Columns[1].HeaderText = "نام استاد";
+                dataGridView1.Columns[2].HeaderText = "نام خانوادگی استاد";
+                dataGridView1.Columns[3].HeaderText = "رمز عبور";
+                dataGridView1.Columns[4].HeaderText = "آدرس اینترنتی";
+
+                foreach (DataGridViewColumn col in dataGridView1.Columns)
+                {
+                    col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                }
+
+                foreach (DataGridViewRow r in dataGridView1.Rows)
+                {
+                    dataGridView1.Rows[r.Index].HeaderCell.Value = (r.Index + 1).ToString();
+                }
+                /// <summary>
+                /// Reset dataGridView
+                /// </summary>
+            }
+
+            catch (FormatException e1)
+            {
+                MessageBox.Show(".اطلاعات را تصحیح کنید");
+            }
+        }
+
+        private void teachers_delete_clear_btn_Click(object sender, EventArgs e)
+        {
+            teachers_delete_teacherNumber_txtbx.Clear();
+        }
+
+        private void teachers_edit_clear_btn_Click(object sender, EventArgs e)
+        {
+            teachers_edit_teacherNumber_txtbx.Clear();
+            teachers_edit_teacherName_txtbx.Clear();
+            teachers_edit_teacherFamily_txtbx.Clear();
+            teachers_edit_teacher_password_txtbx.Clear();
+        }
+
+        private void teachers_editTeacher_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bool fnameContainsInt = false;
+                bool lnameContainsInt = false;
+
+                fnameContainsInt = teachers_edit_teacherName_txtbx.Text.Any(char.IsDigit);
+                lnameContainsInt = teachers_edit_teacherFamily_txtbx.Text.Any(char.IsDigit);
+
+                if (fnameContainsInt || lnameContainsInt || teachers_edit_teacherNumber_txtbx.Text == "" && teachers_edit_teacherName_txtbx.Text == "" && teachers_edit_teacherFamily_txtbx.Text == "" && teachers_edit_teacher_password_txtbx.Text == "")
+                {
+                    throw new System.FormatException("اطلاعات را تصحیح کنید1.");
+                }
+
+                //PasswordRequest k = new PasswordRequest();
+                //k.Show();
+
+                if (/*k.authenPass() ==*/ true)
+                {
+                    TeacherModel teacherObj = new TeacherModel();
+                    teacherObj.setTeacherNewNumber(Int64.Parse(teachers_edit_teacherNumber_txtbx.Text));
+                    teacherObj.setTeacherNumber(Int64.Parse(currentTeacherNumber));
+                    teacherObj.setTeacherFName(teachers_edit_teacherName_txtbx.Text);
+                    teacherObj.setTeacherLName(teachers_edit_teacherFamily_txtbx.Text);
+                    teacherObj.setTeacherPassword(teachers_edit_teacher_password_txtbx.Text);
+                    teacherObj.setTeacherURL("");
+                    teacherObj.updateTeacher();
+                }
+
+
+
+                /// <summary>
+                /// Clear TextBoxes
+                /// </summary>
+                teachers_edit_teacherNumber_txtbx.Clear();
+                teachers_edit_teacherName_txtbx.Clear();
+                teachers_edit_teacherFamily_txtbx.Clear();
+                teachers_edit_teacher_password_txtbx.Clear();
+                /// <summary>
+                /// Clear TextBoxes
+                /// </summary>
+
+
+
+                /// <summary>
+                /// Reset dataGridView
+                /// </summary>
+                dataGridView1.DataSource = bindingSource1;
+                GetData("SELECT * FROM teacherTable");
+
+                dataGridView1.Columns[0].HeaderText = "شماره استاد";
+                dataGridView1.Columns[1].HeaderText = "نام استاد";
+                dataGridView1.Columns[2].HeaderText = "نام خانوادگی استاد";
+                dataGridView1.Columns[3].HeaderText = "رمز عبور";
+                dataGridView1.Columns[4].HeaderText = "آدرس اینترنتی";
+
+                foreach (DataGridViewColumn col in dataGridView1.Columns)
+                {
+                    col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                }
+
+                foreach (DataGridViewRow r in dataGridView1.Rows)
+                {
+                    dataGridView1.Rows[r.Index].HeaderCell.Value = (r.Index + 1).ToString();
+                }
+                /// <summary>
+                /// Reset dataGridView
+                /// </summary>
+                /// 
+
+
+                /// <summary>
+                /// Disable EditGroupBox Components
+                /// </summary>
+                
+                teachers_edit_teacherNumber_txtbx.Enabled = true;
+                teachers_edit_teacherName_txtbx.Enabled = true;
+                teachers_edit_teacherFamily_txtbx.Enabled = true;
+                teachers_edit_teacher_password_txtbx.Enabled = true;
+
+                teachers_edit_teacherNumber_lbl.Enabled = true;
+                teachers_edit_teacherName_lbl.Enabled = true;
+                teachers_edit_teacherFamily_lbl.Enabled = true;
+                teachers_edit_teacher_password_lbl.Enabled = true;
+                /// <summary>
+                /// Disable EditGroupBox Components
+                /// </summary>
+
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show(".اطلاعات را تصحیح کنید");
+            }
+        }
+
+
+
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                teachers_edit_teacherNumber_txtbx.Enabled = true;
+                teachers_edit_teacherName_txtbx.Enabled = true;
+                teachers_edit_teacherFamily_txtbx.Enabled = true;
+                teachers_edit_teacher_password_txtbx.Enabled = true;
+
+                teachers_edit_teacherNumber_lbl.Enabled = true;
+                teachers_edit_teacherName_lbl.Enabled = true;
+                teachers_edit_teacherFamily_lbl.Enabled = true;
+                teachers_edit_teacher_password_lbl.Enabled = true;
+
+                teachers_editTeacher_btn.Enabled = true;
+                teachers_edit_clear_btn.Enabled = true;
+
+                currentTeacherNumber = dataGridView1.Rows[e.RowIndex].Cells["teacher#"].Value.ToString();
+
+                teachers_edit_teacherNumber_txtbx.Text = dataGridView1.Rows[e.RowIndex].Cells["teacher#"].Value.ToString();
+                teachers_edit_teacherName_txtbx.Text = dataGridView1.Rows[e.RowIndex].Cells["teacherFName"].Value.ToString();
+                teachers_edit_teacherFamily_txtbx.Text = dataGridView1.Rows[e.RowIndex].Cells["teacherLName"].Value.ToString();
+                teachers_edit_teacher_password_txtbx.Text = dataGridView1.Rows[e.RowIndex].Cells["teacherPassword"].Value.ToString();
+            }
+
+            catch (System.ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("روی رکورد کلیک کنید");
+            }
+        }
+
+
+
+
+        private void teachers_deleteTeacher_btn_Click(object sender, EventArgs e)
+        {
+            if(teachers_delete_teacherNumber_txtbx.Text != "")
+            {
+                /*PasswordRequest k = new PasswordRequest();
+                k.Show();*/
+
+
+                if (/*k.authenPass() == */true)
+                {
+                    TeacherModel teacherObj = new TeacherModel();
+                    teacherObj.setTeacherNumber(Int64.Parse(teachers_delete_teacherNumber_txtbx.Text));
+                    teacherObj.deleteTeacher();
+                }
+            }
+            else
+            {
+                MessageBox.Show("شماره استاد را وارد کنید");
+            }
+
+
+
+            /// <summary>
+            /// Reset TextBoxes
+            /// </summary>
+            teachers_delete_teacherNumber_txtbx.Clear();
+            /// <summary>
+            /// Reset TextBoxes
+            /// </summary>
+
+
+
+
+            /// <summary>
+            /// Reset dataGridView
+            /// </summary>
             dataGridView1.DataSource = bindingSource1;
             GetData("SELECT * FROM teacherTable");
 
-            dataGridView1.Columns[0].Width = 250;
             dataGridView1.Columns[0].HeaderText = "شماره استاد";
-
-            dataGridView1.Columns[1].Width = 250;
             dataGridView1.Columns[1].HeaderText = "نام استاد";
-
-            dataGridView1.Columns[2].Width = 250;
             dataGridView1.Columns[2].HeaderText = "نام خانوادگی استاد";
-
-            dataGridView1.Columns[3].Width = 250;
             dataGridView1.Columns[3].HeaderText = "رمز عبور";
-
-            dataGridView1.Columns[4].Width = 250;
             dataGridView1.Columns[4].HeaderText = "آدرس اینترنتی";
 
             foreach (DataGridViewColumn col in dataGridView1.Columns)
@@ -414,7 +686,9 @@ namespace Second
             {
                 dataGridView1.Rows[r.Index].HeaderCell.Value = (r.Index + 1).ToString();
             }
-            /////
+            /// <summary>
+            /// Reset dataGridView
+            /// </summary>
         }
 
         private void del_lesson_teacher_bt_Click(object sender, EventArgs e)
