@@ -420,7 +420,7 @@ namespace Second
                 fnameContainsInt = teachers_teacherName_txtbx.Text.Any(char.IsDigit);
                 lnameContainsInt = teachers_teacherFamily_txtbx.Text.Any(char.IsDigit);
 
-                if (fnameContainsInt || lnameContainsInt || teachers_teacherNumber_txtbx.Text == "" && teachers_teacherName_txtbx.Text == "" && teachers_teacherFamily_txtbx.Text == "" && teachers_teacher_password_txtbx.Text == "")
+                if (fnameContainsInt || lnameContainsInt || teachers_teacherNumber_txtbx.Text == "" || teachers_teacherName_txtbx.Text == "" || teachers_teacherFamily_txtbx.Text == "" || teachers_teacher_password_txtbx.Text == "")
                 {
                     throw new System.FormatException(".اطلاعات را تصحیح کنید");
                 }
@@ -509,7 +509,7 @@ namespace Second
                 fnameContainsInt = teachers_edit_teacherName_txtbx.Text.Any(char.IsDigit);
                 lnameContainsInt = teachers_edit_teacherFamily_txtbx.Text.Any(char.IsDigit);
 
-                if (fnameContainsInt || lnameContainsInt || teachers_edit_teacherNumber_txtbx.Text == "" && teachers_edit_teacherName_txtbx.Text == "" && teachers_edit_teacherFamily_txtbx.Text == "" && teachers_edit_teacher_password_txtbx.Text == "")
+                if (fnameContainsInt || lnameContainsInt || teachers_edit_teacherNumber_txtbx.Text == "" || teachers_edit_teacherName_txtbx.Text == "" || teachers_edit_teacherFamily_txtbx.Text == "" || teachers_edit_teacher_password_txtbx.Text == "")
                 {
                     throw new System.FormatException("اطلاعات را تصحیح کنید1.");
                 }
