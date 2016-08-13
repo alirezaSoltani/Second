@@ -70,32 +70,34 @@ namespace Second
             MessageBox.Show(SystemInformation.PrimaryMonitorSize.ToString());
 
 
-            /*Manager form*/
+            /*Manager form design*/
             this.SetBounds(0, 0, width, ((955*height)/1000));
-            /*Manager form*/
+            /*Manager form design*/
 
 
-            /*teachers tab*/
+            /*teachers tab design*/
             manager_main_tc.SetBounds( 0, ((125* height)/1000), ((99* width)/100) , ((80* height)/100));
             logo_pictureBox.SetBounds( ((79 * width) / 100), ((24 * height) / 1000), ((192 * width) / 1000), ((74 * height) / 1000));
-            //teachers_panel.SetBounds( ((5 * width) / 400), ((2 * height) / 100) , ((96 * width) / 100), ((29 * height) / 100));
-            panel2.SetBounds(((5 * width) / 400), ((2 * height) / 100), ((96 * width) / 100), ((31 * height) / 100));
+            teachers_panel.SetBounds(((5 * width) / 400), ((2 * height) / 100), ((96 * width) / 100), ((31 * height) / 100));
             dataGridView1.SetBounds( ((5* width)/400), (38*height)/100 , ((96*width)/100), ((36*height)/100) );
-            information_lbl.SetBounds( ((50 * width) / 100) , ((34 * height) / 100) , ((47 * width) / 100), ((5 * height) / 100) );
+            information_lbl.SetBounds( ((50 * width) / 100) , ((35 * height) / 100) , ((47 * width) / 100), ((5 * height) / 100) );
 
-            teachers_teacherNumber_lbl.SetBounds( ((85*width)/100) , ((15 * height) / 300) , ((83 * width) / 1000), ((27 * height) / 1000));
-            teachers_teacherName_lbl.SetBounds(((85 * width) / 100), ((29 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
-            teachers_teacherFamily_lbl.SetBounds(((85 * width) / 100), ((43 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
-            teachers_teacher_password_lbl.SetBounds(((85 * width) / 100), ((57 * height) / 300), ((83 * width) / 1000), ((30 * height) / 1000));
+            teachers_teacherNumber_lbl.SetBounds( ((83*width)/100) , ((15 * height) / 300) , ((83 * width) / 1000), ((27 * height) / 1000));
+            teachers_teacherName_lbl.SetBounds(((83 * width) / 100), ((29 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            teachers_teacherFamily_lbl.SetBounds(((83 * width) / 100), ((43 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            teachers_teacher_password_lbl.SetBounds(((83 * width) / 100), ((57 * height) / 300), ((83 * width) / 1000), ((30 * height) / 1000));
 
-            teachers_teacherNumber_txtbx.SetBounds( ((72 * width) / 100), ((15 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
-            teachers_teacherName_txtbx.SetBounds(((72 * width) / 100), ((29 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
-            teachers_teacherFamily_txtbx.SetBounds(((72 * width) / 100), ((43 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
-            teachers_teacher_password_txtbx.SetBounds(((72 * width) / 100), ((57 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            teachers_teacherNumber_txtbx.SetBounds( ((70 * width) / 100), ((15 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            teachers_teacherName_txtbx.SetBounds(((70 * width) / 100), ((29 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            teachers_teacherFamily_txtbx.SetBounds(((70 * width) / 100), ((43 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            teachers_teacher_password_txtbx.SetBounds(((70 * width) / 100), ((57 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
 
-            teachers_addTeacher_btn.SetBounds(((72 * width) / 100), ((80 * height) / 300), ((100 * width) / 1000), ((30 * height) / 1000));
-            teachers_clear_btn.SetBounds(((167 * width) / 200), ((80 * height) / 300), ((10 * width) / 100), ((30 * height) / 1000));
-            /*teachers tab*/
+            teachers_addTeacher_btn.SetBounds(((70 * width) / 100), ((80 * height) / 300), ((100 * width) / 1000), ((30 * height) / 1000));
+            teachers_clear_btn.SetBounds(((163 * width) / 200), ((80 * height) / 300), ((10 * width) / 100), ((30 * height) / 1000));
+
+            groupBox1.SetBounds(((65 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
+            groupBox2.SetBounds(((3 * width) / 100), ((1 * height) / 300), ((600 * width) / 1000), ((290 * height) / 1000));
+            /*teachers tab design*/
 
 
             /// <summary>
@@ -112,20 +114,12 @@ namespace Second
             dataGridView1.DataSource = bindingSource1;
             GetData("SELECT * FROM teacherTable");
 
-            dataGridView1.Columns[0].Width = 250;
             dataGridView1.Columns[0].HeaderText = "شماره استاد";
-
-            dataGridView1.Columns[1].Width = 250;
             dataGridView1.Columns[1].HeaderText = "نام استاد";
-
-            dataGridView1.Columns[2].Width = 250;
             dataGridView1.Columns[2].HeaderText = "نام خانوادگی استاد";
-
-            dataGridView1.Columns[3].Width = 250;
             dataGridView1.Columns[3].HeaderText = "رمز عبور";
-
-            dataGridView1.Columns[4].Width = 250;
             dataGridView1.Columns[4].HeaderText = "آدرس اینترنتی";
+
 
             foreach (DataGridViewColumn col in dataGridView1.Columns)
             {
@@ -136,8 +130,6 @@ namespace Second
             {
                 dataGridView1.Rows[r.Index].HeaderCell.Value = (r.Index + 1).ToString();
             }
-
-
 
 
 
@@ -391,6 +383,38 @@ namespace Second
             teachers_teacherName_txtbx.Text = "";
             teachers_teacherFamily_txtbx.Text = "";
             teachers_teacher_password_txtbx.Text = "";
+
+
+
+            //////
+            dataGridView1.DataSource = bindingSource1;
+            GetData("SELECT * FROM teacherTable");
+
+            dataGridView1.Columns[0].Width = 250;
+            dataGridView1.Columns[0].HeaderText = "شماره استاد";
+
+            dataGridView1.Columns[1].Width = 250;
+            dataGridView1.Columns[1].HeaderText = "نام استاد";
+
+            dataGridView1.Columns[2].Width = 250;
+            dataGridView1.Columns[2].HeaderText = "نام خانوادگی استاد";
+
+            dataGridView1.Columns[3].Width = 250;
+            dataGridView1.Columns[3].HeaderText = "رمز عبور";
+
+            dataGridView1.Columns[4].Width = 250;
+            dataGridView1.Columns[4].HeaderText = "آدرس اینترنتی";
+
+            foreach (DataGridViewColumn col in dataGridView1.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            }
+
+            foreach (DataGridViewRow r in dataGridView1.Rows)
+            {
+                dataGridView1.Rows[r.Index].HeaderCell.Value = (r.Index + 1).ToString();
+            }
+            /////
         }
 
         private void del_lesson_teacher_bt_Click(object sender, EventArgs e)
