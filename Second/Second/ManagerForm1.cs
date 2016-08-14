@@ -532,14 +532,36 @@ namespace Second
 
 
                 /// <summary>
-                /// Clear TextBoxes
+                /// Reset GroupBoxes and their components
                 /// </summary>
+                teachers_edit_teacherNumber_txtbx.Enabled = false;
+                teachers_edit_teacherName_txtbx.Enabled = false;
+                teachers_edit_teacherFamily_txtbx.Enabled = false;
+                teachers_edit_teacher_password_txtbx.Enabled = false;
+
+                teachers_edit_teacherNumber_lbl.Enabled = false;
+                teachers_edit_teacherName_lbl.Enabled = false;
+                teachers_edit_teacherFamily_lbl.Enabled = false;
+                teachers_edit_teacher_password_lbl.Enabled = false;
+
+                teachers_delete_teacherNumber_lbl.Enabled = false;
+                teachers_edit_clear_btn.Enabled = false;
+                teachers_editTeacher_btn.Enabled = false;
+
+
+                teachers_delete_teacherNumber_lbl.Enabled = false;
+                teachers_delete_teacherNumber_txtbx.Enabled = false;
+                teachers_delete_clear_btn.Enabled = false;
+                teachers_deleteTeacher_btn.Enabled = false;
+
                 teachers_edit_teacherNumber_txtbx.Clear();
                 teachers_edit_teacherName_txtbx.Clear();
                 teachers_edit_teacherFamily_txtbx.Clear();
                 teachers_edit_teacher_password_txtbx.Clear();
+
+                teachers_delete_teacherNumber_txtbx.Clear();
                 /// <summary>
-                /// Clear TextBoxes
+                /// Reset GroupBoxes and their components
                 /// </summary>
 
 
@@ -571,23 +593,6 @@ namespace Second
                 /// 
 
 
-                /// <summary>
-                /// Disable EditGroupBox Components
-                /// </summary>
-                
-                teachers_edit_teacherNumber_txtbx.Enabled = true;
-                teachers_edit_teacherName_txtbx.Enabled = true;
-                teachers_edit_teacherFamily_txtbx.Enabled = true;
-                teachers_edit_teacher_password_txtbx.Enabled = true;
-
-                teachers_edit_teacherNumber_lbl.Enabled = true;
-                teachers_edit_teacherName_lbl.Enabled = true;
-                teachers_edit_teacherFamily_lbl.Enabled = true;
-                teachers_edit_teacher_password_lbl.Enabled = true;
-                /// <summary>
-                /// Disable EditGroupBox Components
-                /// </summary>
-
             }
             catch (FormatException)
             {
@@ -612,11 +617,19 @@ namespace Second
                 teachers_edit_teacherFamily_lbl.Enabled = true;
                 teachers_edit_teacher_password_lbl.Enabled = true;
 
-                teachers_editTeacher_btn.Enabled = true;
+                teachers_delete_teacherNumber_lbl.Enabled = true;
                 teachers_edit_clear_btn.Enabled = true;
+                teachers_editTeacher_btn.Enabled = true;
+
+
+                teachers_delete_teacherNumber_lbl.Enabled = true;
+                teachers_delete_teacherNumber_txtbx.Enabled = true;
+                teachers_delete_clear_btn.Enabled = true;
+                teachers_deleteTeacher_btn.Enabled = true;
 
                 currentTeacherNumber = dataGridView1.Rows[e.RowIndex].Cells["teacher#"].Value.ToString();
 
+                teachers_delete_teacherNumber_txtbx.Text = dataGridView1.Rows[e.RowIndex].Cells["teacher#"].Value.ToString();
                 teachers_edit_teacherNumber_txtbx.Text = dataGridView1.Rows[e.RowIndex].Cells["teacher#"].Value.ToString();
                 teachers_edit_teacherName_txtbx.Text = dataGridView1.Rows[e.RowIndex].Cells["teacherFName"].Value.ToString();
                 teachers_edit_teacherFamily_txtbx.Text = dataGridView1.Rows[e.RowIndex].Cells["teacherLName"].Value.ToString();
@@ -660,6 +673,42 @@ namespace Second
             teachers_delete_teacherNumber_txtbx.Clear();
             /// <summary>
             /// Reset TextBoxes
+            /// </summary>
+            /// 
+
+
+
+            /// <summary>
+            /// Reset GroupBoxes and their components
+            /// </summary>
+            teachers_edit_teacherNumber_txtbx.Enabled = false;
+            teachers_edit_teacherName_txtbx.Enabled = false;
+            teachers_edit_teacherFamily_txtbx.Enabled = false;
+            teachers_edit_teacher_password_txtbx.Enabled = false;
+
+            teachers_edit_teacherNumber_lbl.Enabled = false;
+            teachers_edit_teacherName_lbl.Enabled = false;
+            teachers_edit_teacherFamily_lbl.Enabled = false;
+            teachers_edit_teacher_password_lbl.Enabled = false;
+
+            teachers_delete_teacherNumber_lbl.Enabled = false;
+            teachers_edit_clear_btn.Enabled = false;
+            teachers_editTeacher_btn.Enabled = false;
+
+
+            teachers_delete_teacherNumber_lbl.Enabled = false;
+            teachers_delete_teacherNumber_txtbx.Enabled = false;
+            teachers_delete_clear_btn.Enabled = false;
+            teachers_deleteTeacher_btn.Enabled = false;
+
+            teachers_edit_teacherNumber_txtbx.Clear();
+            teachers_edit_teacherName_txtbx.Clear();
+            teachers_edit_teacherFamily_txtbx.Clear();
+            teachers_edit_teacher_password_txtbx.Clear();
+
+            teachers_delete_teacherNumber_txtbx.Clear();
+            /// <summary>
+            /// Reset GroupBoxes and their components
             /// </summary>
 
 
