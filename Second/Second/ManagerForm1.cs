@@ -30,7 +30,7 @@ namespace Second
         /// <summary>
         /// Data gridview attributes
         /// </summary>
-        private SqlDataAdapter dataAdapter = new SqlDataAdapter();
+            private SqlDataAdapter dataAdapter = new SqlDataAdapter();
         /// <summary>
         /// Data gridview attributes
         /// </summary>
@@ -87,30 +87,110 @@ namespace Second
             /*Manager form design*/
 
 
-            /*teachers tab design*/
+            /****************************************************teachers tab design**********************************************************/
             manager_main_tc.SetBounds( 0, ((125* height)/1000), ((99* width)/100) , ((80* height)/100));
             logo_pictureBox.SetBounds( ((79 * width) / 100), ((24 * height) / 1000), ((192 * width) / 1000), ((74 * height) / 1000));
             teachers_panel.SetBounds(((5 * width) / 400), ((2 * height) / 100), ((96 * width) / 100), ((31 * height) / 100));
             dataGridView1.SetBounds( ((5* width)/400), (38*height)/100 , ((96*width)/100), ((36*height)/100) );
-            information_lbl.SetBounds( ((50 * width) / 100) , ((35 * height) / 100) , ((47 * width) / 100), ((5 * height) / 100) );
-
-            teachers_teacherNumber_lbl.SetBounds( ((83*width)/100) , ((15 * height) / 300) , ((83 * width) / 1000), ((27 * height) / 1000));
-            teachers_teacherName_lbl.SetBounds(((83 * width) / 100), ((29 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
-            teachers_teacherFamily_lbl.SetBounds(((83 * width) / 100), ((43 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
-            teachers_teacher_password_lbl.SetBounds(((83 * width) / 100), ((57 * height) / 300), ((83 * width) / 1000), ((30 * height) / 1000));
-
-            teachers_teacherNumber_txtbx.SetBounds( ((70 * width) / 100), ((15 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
-            teachers_teacherName_txtbx.SetBounds(((70 * width) / 100), ((29 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
-            teachers_teacherFamily_txtbx.SetBounds(((70 * width) / 100), ((43 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
-            teachers_teacher_password_txtbx.SetBounds(((70 * width) / 100), ((57 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
-
-            teachers_addTeacher_btn.SetBounds(((70 * width) / 100), ((80 * height) / 300), ((100 * width) / 1000), ((30 * height) / 1000));
-            teachers_clear_btn.SetBounds(((162 * width) / 200), ((80 * height) / 300), ((10 * width) / 100), ((30 * height) / 1000));
-
-
-
-
+            teachers_information_lbl.SetBounds( ((50 * width) / 100) , ((35 * height) / 100) , ((47 * width) / 100), ((5 * height) / 100) );
+            //***add
+            teachers_add_teacherNumber_lbl.SetBounds( ((83*width)/100) , ((15 * height) / 300) , ((83 * width) / 1000), ((27 * height) / 1000));
+            teachers_add_teacherName_lbl.SetBounds(((83 * width) / 100), ((29 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            teachers_add_teacherFamily_lbl.SetBounds(((83 * width) / 100), ((43 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            teachers_add_teacher_password_lbl.SetBounds(((83 * width) / 100), ((57 * height) / 300), ((83 * width) / 1000), ((30 * height) / 1000));
+            teachers_add_teacherNumber_txtbx.SetBounds( ((70 * width) / 100), ((15 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            teachers_add_teacherName_txtbx.SetBounds(((70 * width) / 100), ((29 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            teachers_add_teacherFamily_txtbx.SetBounds(((70 * width) / 100), ((43 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            teachers_add_teacher_password_txtbx.SetBounds(((70 * width) / 100), ((57 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            teachers_add_addTeacher_btn.SetBounds(((70 * width) / 100), ((80 * height) / 300), ((100 * width) / 1000), ((30 * height) / 1000));
+            teachers_add_clear_btn.SetBounds(((162 * width) / 200), ((80 * height) / 300), ((10 * width) / 100), ((30 * height) / 1000));
+            //***edit
             teachers_edit_teacherNumber_lbl.SetBounds(((17 * width) / 100), ((8 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            teachers_edit_teacherName_lbl.SetBounds(((17 * width) / 100), ((22 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            teachers_edit_teacherFamily_lbl.SetBounds(((17 * width) / 100), ((36 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            teachers_edit_teacher_password_lbl.SetBounds(((17 * width) / 100), ((50 * height) / 300), ((83 * width) / 1000), ((30 * height) / 1000));
+            teachers_edit_teacherNumber_txtbx.SetBounds(((4 * width) / 100), ((8 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            teachers_edit_teacherName_txtbx.SetBounds(((4 * width) / 100), ((22 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            teachers_edit_teacherFamily_txtbx.SetBounds(((4 * width) / 100), ((36 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            teachers_edit_teacher_password_txtbx.SetBounds(((4 * width) / 100), ((50 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            teachers_editTeacher_btn.SetBounds(((4 * width) / 100), ((73 * height) / 300), ((100 * width) / 1000), ((30 * height) / 1000));
+            teachers_edit_clear_btn.SetBounds(((30 * width) / 200), ((73 * height) / 300), ((10 * width) / 100), ((30 * height) / 1000));
+            //***delete
+            teachers_delete_teacherNumber_lbl.SetBounds(((17 * width) / 100), ((30 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            teachers_delete_teacherNumber_txtbx.SetBounds(((4 * width) / 100), ((30 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            teachers_deleteTeacher_btn.SetBounds(((4 * width) / 100), ((73 * height) / 300), ((100 * width) / 1000), ((30 * height) / 1000));
+            teachers_delete_clear_btn.SetBounds(((30 * width) / 200), ((73 * height) / 300), ((10 * width) / 100), ((30 * height) / 1000));
+            //***groupBoxes
+            teachers_addTeacher_gpb.SetBounds(((65 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
+            teachers_editTeacher_gpb.SetBounds(((34 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
+            teachers_deleteTeacher_gpb.SetBounds(((3 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
+
+
+
+
+            /// <summary>
+            /// datagridview intialization
+            /// </summary>
+            dataGridView1.DataSource = bindingSource1;
+            GetData("SELECT * FROM teacherTable");
+
+            dataGridView1.Columns[0].HeaderText = "شماره استاد";
+            dataGridView1.Columns[1].HeaderText = "نام استاد";
+            dataGridView1.Columns[2].HeaderText = "نام خانوادگی استاد";
+            dataGridView1.Columns[3].HeaderText = "رمز عبور";
+            dataGridView1.Columns[4].HeaderText = "آدرس اینترنتی";
+
+
+            foreach (DataGridViewColumn col in dataGridView1.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            }
+
+            foreach (DataGridViewRow r in dataGridView1.Rows)
+            {
+                dataGridView1.Rows[r.Index].HeaderCell.Value = (r.Index + 1).ToString();
+            }
+
+            dataGridView3.DataSource = bindingSource2;
+            GetData3("SELECT DISTINCT lesson# , lessonGroup# ,lessonName FROM lessonTable");
+            /// <summary>
+            /// datagridview intialization
+            /// </summary>
+            /****************************************************teachers tab design**********************************************************/
+
+
+
+
+
+
+            /****************************************************students tab design**********************************************************/
+            students_panel.SetBounds(((5 * width) / 400), ((2 * height) / 100), ((96 * width) / 100), ((31 * height) / 100));
+            dataGridView2.SetBounds(((5 * width) / 400), (38 * height) / 100, ((96 * width) / 100), ((36 * height) / 100));
+            teachers_information_lbl.SetBounds(((50 * width) / 100), ((35 * height) / 100), ((47 * width) / 100), ((5 * height) / 100));
+
+            students_studentNumber_lbl.SetBounds(((17 * width) / 100), ((8 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            students_studentName_lbl.SetBounds(((17 * width) / 100), ((20 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            students_studentFamily_lbl.SetBounds(((17 * width) / 100), ((32 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            students_lessonNumber_lbl.SetBounds(((17 * width) / 100), ((44 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            students_lessonGroupNumber_lbl.SetBounds(((17 * width) / 100), ((56 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+
+            students_studentNumber_txtbx.SetBounds(((4 * width) / 100), ((8 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            students_studentName_txtbx.SetBounds(((4 * width) / 100), ((20 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            students_studentFamily_txtbx.SetBounds(((4 * width) / 100), ((32 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            students_lessonNumber_txtbx.SetBounds(((4 * width) / 100), ((44 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            students_lessonGroupNumber_txtbx.SetBounds(((4 * width) / 100), ((56 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+           
+            students_add_addStudent_btn.SetBounds(((4 * width) / 100), ((73 * height) / 300), ((100 * width) / 1000), ((30 * height) / 1000));
+            students_add_clear_btn.SetBounds(((30 * width) / 200), ((73 * height) / 300), ((10 * width) / 100), ((30 * height) / 1000));
+
+            students_addStudent_gpb.SetBounds(((65 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
+            teachers_editTeacher_gpb.SetBounds(((34 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
+            teachers_deleteTeacher_gpb.SetBounds(((3 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
+
+
+
+
+            /*teachers_edit_teacherNumber_lbl.SetBounds(((17 * width) / 100), ((8 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
             teachers_edit_teacherName_lbl.SetBounds(((17 * width) / 100), ((22 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
             teachers_edit_teacherFamily_lbl.SetBounds(((17 * width) / 100), ((36 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
             teachers_edit_teacher_password_lbl.SetBounds(((17 * width) / 100), ((50 * height) / 300), ((83 * width) / 1000), ((30 * height) / 1000));
@@ -124,8 +204,6 @@ namespace Second
             teachers_edit_clear_btn.SetBounds(((30 * width) / 200), ((73 * height) / 300), ((10 * width) / 100), ((30 * height) / 1000));
 
 
-
-
             teachers_delete_teacherNumber_lbl.SetBounds(((17 * width) / 100), ((30 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
             teachers_delete_teacherNumber_txtbx.SetBounds(((4 * width) / 100), ((30 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
 
@@ -135,14 +213,7 @@ namespace Second
 
             teachers_addTeacher_gpb.SetBounds(((65 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
             teachers_editTeacher_gpb.SetBounds(((34 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
-            teachers_deleteTeacher_gpb.SetBounds(((3 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
-            /*teachers tab design*/
-
-
-            /// <summary>
-            /// MultiResolution
-            /// </summary>
-
+            teachers_deleteTeacher_gpb.SetBounds(((3 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));*/
 
 
 
@@ -177,6 +248,20 @@ namespace Second
             /// <summary>
             /// datagridview intialization
             /// </summary>
+            /****************************************************students tab design**********************************************************/
+
+
+
+
+            /// <summary>
+            /// MultiResolution
+            /// </summary>
+
+
+
+
+
+
 
 
 
@@ -400,10 +485,10 @@ namespace Second
 
         private void teachers_clear_btn_Click_1(object sender, EventArgs e)
         {
-            teachers_teacherNumber_txtbx.Clear();
-            teachers_teacherName_txtbx.Clear();
-            teachers_teacherFamily_txtbx.Clear();
-            teachers_teacher_password_txtbx.Clear();
+            teachers_add_teacherNumber_txtbx.Clear();
+            teachers_add_teacherName_txtbx.Clear();
+            teachers_add_teacherFamily_txtbx.Clear();
+            teachers_add_teacher_password_txtbx.Clear();
         }
 
         private void teachers_addTeacher_btn_Click(object sender, EventArgs e)
@@ -417,10 +502,10 @@ namespace Second
                 bool fnameContainsInt = false;
                 bool lnameContainsInt = false;
 
-                fnameContainsInt = teachers_teacherName_txtbx.Text.Any(char.IsDigit);
-                lnameContainsInt = teachers_teacherFamily_txtbx.Text.Any(char.IsDigit);
+                fnameContainsInt = teachers_add_teacherName_txtbx.Text.Any(char.IsDigit);
+                lnameContainsInt = teachers_add_teacherFamily_txtbx.Text.Any(char.IsDigit);
 
-                if (fnameContainsInt || lnameContainsInt || teachers_teacherNumber_txtbx.Text == "" || teachers_teacherName_txtbx.Text == "" || teachers_teacherFamily_txtbx.Text == "" || teachers_teacher_password_txtbx.Text == "")
+                if (fnameContainsInt || lnameContainsInt || teachers_add_teacherNumber_txtbx.Text == "" || teachers_add_teacherName_txtbx.Text == "" || teachers_add_teacherFamily_txtbx.Text == "" || teachers_add_teacher_password_txtbx.Text == "")
                 {
                     throw new System.FormatException(".اطلاعات را تصحیح کنید");
                 }
@@ -432,10 +517,10 @@ namespace Second
 
                 TeacherModel teacherObj = new TeacherModel();
 
-                teacherObj.setTeacherNumber(long.Parse(teachers_teacherNumber_txtbx.Text));
-                teacherObj.setTeacherFName(teachers_teacherName_txtbx.Text);
-                teacherObj.setTeacherLName(teachers_teacherFamily_txtbx.Text);
-                teacherObj.setTeacherPassword(teachers_teacher_password_txtbx.Text);
+                teacherObj.setTeacherNumber(long.Parse(teachers_add_teacherNumber_txtbx.Text));
+                teacherObj.setTeacherFName(teachers_add_teacherName_txtbx.Text);
+                teacherObj.setTeacherLName(teachers_add_teacherFamily_txtbx.Text);
+                teacherObj.setTeacherPassword(teachers_add_teacher_password_txtbx.Text);
                 teacherObj.setTeacherURL("");
 
                 teacherObj.addTeacher();
@@ -444,10 +529,10 @@ namespace Second
                 /// <summary>
                 /// Clear textBoxes
                 /// </summary>
-                teachers_teacherNumber_txtbx.Clear();
-                teachers_teacherName_txtbx.Clear();
-                teachers_teacherFamily_txtbx.Clear();
-                teachers_teacher_password_txtbx.Clear();
+                teachers_add_teacherNumber_txtbx.Clear();
+                teachers_add_teacherName_txtbx.Clear();
+                teachers_add_teacherFamily_txtbx.Clear();
+                teachers_add_teacher_password_txtbx.Clear();
                 /// <summary>
                 /// Clear textBoxes
                 /// </summary>
@@ -621,7 +706,6 @@ namespace Second
                 teachers_edit_clear_btn.Enabled = true;
                 teachers_editTeacher_btn.Enabled = true;
 
-
                 teachers_delete_teacherNumber_lbl.Enabled = true;
                 teachers_delete_teacherNumber_txtbx.Enabled = true;
                 teachers_delete_clear_btn.Enabled = true;
@@ -652,7 +736,6 @@ namespace Second
                 /*PasswordRequest k = new PasswordRequest();
                 k.Show();*/
 
-
                 if (/*k.authenPass() == */true)
                 {
                     TeacherModel teacherObj = new TeacherModel();
@@ -667,7 +750,7 @@ namespace Second
 
 
 
-            /// <summary>
+            /// <summary>3
             /// Reset TextBoxes
             /// </summary>
             teachers_delete_teacherNumber_txtbx.Clear();
@@ -738,6 +821,56 @@ namespace Second
             /// <summary>
             /// Reset dataGridView
             /// </summary>
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void manager_student_lessonNumber_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void manager_student_lessonGroupNumber_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void manager_studentNumber_add_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void manager_studentFName_add_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label25_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void manager_studentLName_add_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label24_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label26_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void del_lesson_teacher_bt_Click(object sender, EventArgs e)
