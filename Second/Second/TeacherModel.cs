@@ -57,7 +57,7 @@ namespace Test
 
        
 
-        public  void updateTeacher()
+        public void updateTeacher()
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString =

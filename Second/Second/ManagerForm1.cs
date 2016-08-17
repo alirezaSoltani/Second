@@ -109,7 +109,8 @@ namespace Second
             teachers_panel.SetBounds(((5 * width) / 400), ((2 * height) / 100), ((96 * width) / 100), ((31 * height) / 100));
             dataGridView1.SetBounds(((5 * width) / 400), (38 * height) / 100, ((96 * width) / 100), ((36 * height) / 100));
             teachers_information_lbl.SetBounds(((50 * width) / 100), ((35 * height) / 100), ((47 * width) / 100), ((5 * height) / 100));
-            teachers_cancel_btn.SetBounds(((5 * width) / 400), ((35 * height) / 100), ((80 * width) / 1000), ((25 * height) / 1000));
+            teachers_cancel_btn.SetBounds(((5 * width) / 400), ((34 * height) / 100), ((80 * width) / 1000), ((25 * height) / 1000));
+            tooltip.SetToolTip(teachers_cancel_btn, "لغو تغییرات");
             //***add
             teachers_add_teacherNumber_lbl.SetBounds(((83 * width) / 100), ((15 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
             teachers_add_teacherName_lbl.SetBounds(((83 * width) / 100), ((29 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
@@ -141,13 +142,10 @@ namespace Second
             teachers_addTeacher_gpb.SetBounds(((65 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
             teachers_editTeacher_gpb.SetBounds(((34 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
             teachers_deleteTeacher_gpb.SetBounds(((3 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
-
-
-
-
             /// <summary>
             /// datagridview intialization
             /// </summary>
+            
             dataGridView1.DataSource = bindingSource1;
             GetData("SELECT * FROM teacherTable");
 
@@ -180,9 +178,10 @@ namespace Second
             students_panel.SetBounds(((5 * width) / 400), ((2 * height) / 100), ((96 * width) / 100), ((31 * height) / 100));
             dataGridView2.SetBounds(((5 * width) / 400), (38 * height) / 100, ((96 * width) / 100), ((36 * height) / 100));
             teachers_information_lbl.SetBounds(((50 * width) / 100), ((35 * height) / 100), ((47 * width) / 100), ((5 * height) / 100));
-            students_return_btn.SetBounds(((5 * width) / 400), ((35 * height) / 100), ((80 * width) / 1000), ((25 * height) / 1000));
-            students_cancel_btn.SetBounds(((40 * width) / 400), ((35 * height) / 100), ((80 * width) / 1000), ((25 * height) / 1000));
+            students_return_btn.SetBounds(((5 * width) / 400), ((34 * height) / 100), ((80 * width) / 1000), ((25 * height) / 1000));
+            students_cancel_btn.SetBounds(((40 * width) / 400), ((34 * height) / 100), ((80 * width) / 1000), ((25 * height) / 1000));
             tooltip.SetToolTip(students_return_btn, "مشاهده جدول دروس");
+            tooltip.SetToolTip(students_cancel_btn, "لغو تغییرات");
             //***add
             students_add_studentNumber_lbl.SetBounds(((17 * width) / 100), ((8 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
             students_add_studentName_lbl.SetBounds(((17 * width) / 100), ((20 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
@@ -295,8 +294,11 @@ namespace Second
 
         private void manager_studentAdd_bt_Click(object sender, EventArgs e)
         {
-            Manager_student_change k = new Manager_student_change();
-            k.Show();
+            StudentModel studentObj = new StudentModel();
+            studentObj.setStudentNumber(long.Parse(students_add_studentNumber_txtbx.Text));
+            studentObj.setStudentFName(students_add_studentName_txtbx.Text);
+            studentObj.setStudentLName(students_add_studentFamily_txtbx.Text);
+            studentObj.addStudent(long.Parse(students_add_lessonNumber_txtbx.Text), int.Parse(students_add_lessonGroupNumber_txtbx.Text));
         }
 
         private void manager_lesson_add_bt_Click(object sender, EventArgs e)

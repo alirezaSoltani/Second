@@ -14,6 +14,7 @@ namespace Test
         public String studentFName;
         public String studentLName;
         public String studentURL;
+        public long studentNewNumber;
 
         public StudentModel()
         {
@@ -24,21 +25,21 @@ namespace Test
 
 
         }
-        public void addStudent()
+        public void addStudent(long lessonNumber , int lessonGroupNumber)
         {
             
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString =
-            "Data Source=(local);" +
-            "Initial Catalog=Project;" +
-            "Integrated Security=True";
+            "Data Source= 185.159.152.5;" +
+                    "Initial Catalog=youshita_Test;" +
+                    "User id=youshita_co; " +
+                    "Password=P@hn1395;";
 
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "INSERT INTO studentTable (student#,studentFName,studentLName,studetURL) VALUES ( '" + getStudentNumber()
+            sc.CommandText = "INSERT INTO [dbo].["+lessonNumber+"-"+lessonGroupNumber+"_Table] (student#,studentFName,studentLName) VALUES ( '" + getStudentNumber()
                                                                                                             + "','" + getStudentFName()
-                                                                                                            + "','" + getStudentLName()
-                                                                                                            + "','" + getStudentURL() + "')";
+                                                                                                            + "','" + getStudentLName() + "')";
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
             conn.Open();
@@ -49,20 +50,20 @@ namespace Test
 
         }
 
-        public void updateStudent()
+        public void updateStudent(long lessonNumber, int lessonGroupNumber)
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString =
-            "Data Source=(local);" +
-            "Initial Catalog=Project;" +
-            "Integrated Security=True";
+            "Data Source= 185.159.152.5;" +
+                    "Initial Catalog=youshita_Test;" +
+                    "User id=youshita_co; " +
+                    "Password=P@hn1395;";
 
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "UPDATE studentTable SET student# = '" + getStudentNumber()
+            sc.CommandText = "UPDATE [dbo].[" + lessonNumber + "-" + lessonGroupNumber + "_Table] SET student# = '" + getStudentNewNumber()
                                                                 + "', studentFName ='" + getStudentFName()
-                                                                + "', studentLName ='" + getStudentLName()
-                                                                + "', studetURL ='" + getStudentURL() + "')";
+                                                                + "', studentLName ='" + getStudentLName()  + "') WHERE student# = "+getStudentNumber()+"";
 
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
@@ -72,17 +73,18 @@ namespace Test
 
 
         }
-        public void deleteStudent()
+        public void deleteStudent(long lessonNumber, int lessonGroupNumber)
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString =
-            "Data Source=(local);" +
-            "Initial Catalog=Project;" +
-            "Integrated Security=True";
+            "Data Source= 185.159.152.5;" +
+                    "Initial Catalog=youshita_Test;" +
+                    "User id=youshita_co; " +
+                    "Password=P@hn1395;";
 
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = " DELETE FROM studentTable WHERE student# = " + getStudentNumber() + " ";
+            sc.CommandText = " DELETE FROM [dbo].[" + lessonNumber + "-" + lessonGroupNumber + "_Table] WHERE student# = " + getStudentNumber() + " ";
 
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
@@ -98,9 +100,10 @@ namespace Test
             List<StudentModel> list = new List<StudentModel>();
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString =
-            "Data Source=(local);" +
-            "Initial Catalog=Project;" +
-            "Integrated Security=True";
+                     "Data Source= 185.159.152.5;" +
+                    "Initial Catalog=youshita_Test;" +
+                    "User id=youshita_co; " +
+                    "Password=P@hn1395;";
             SqlCommand sc = new SqlCommand();
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;
@@ -163,7 +166,7 @@ namespace Test
 
         public String getStudentLName()
         {
-            return studentFName;
+            return studentLName;
         }
         public void setStudentURL(String StudentURL)
         {
@@ -174,6 +177,18 @@ namespace Test
         public String getStudentURL()
         {
             return studentURL;
+        }
+
+
+        public void setStudentNewNumber(long StudentNewNumber)
+        {
+            this.studentNewNumber = StudentNewNumber;
+        }
+
+
+        public long getStudentNewNumber()
+        {
+            return studentNewNumber;
         }
     }
 }
