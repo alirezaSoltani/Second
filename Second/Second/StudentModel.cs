@@ -45,9 +45,6 @@ namespace Test
             conn.Open();
             reader = sc.ExecuteReader();
             conn.Close();
-
-
-
         }
 
         public void updateStudent(long lessonNumber, int lessonGroupNumber)

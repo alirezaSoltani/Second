@@ -175,8 +175,9 @@ namespace Second
 
 
             /****************************************************students tab design**********************************************************/
-            students_panel.SetBounds(((5 * width) / 400), ((2 * height) / 100), ((96 * width) / 100), ((31 * height) / 100));
-            dataGridView2.SetBounds(((5 * width) / 400), (38 * height) / 100, ((96 * width) / 100), ((36 * height) / 100));
+            students_addEditDelete_panel.SetBounds(((5 * width) / 400), ((2 * height) / 100), ((97 * width) / 100), ((31 * height) / 100));
+            students_dataGridView_panel.SetBounds(((5 * width) / 400), (38 * height) / 100, ((96 * width) / 100), ((36 * height) / 100));
+            dataGridView2.SetBounds(0, 0, ((96 * width) / 100), ((36 * height) / 100));
             students_information_lbl.SetBounds(((50 * width) / 100), ((35 * height) / 100), ((47 * width) / 100), ((5 * height) / 100));
             students_return_btn.SetBounds(((5 * width) / 400), ((34 * height) / 100), ((80 * width) / 1000), ((25 * height) / 1000));
             students_cancel_btn.SetBounds(((40 * width) / 400), ((34 * height) / 100), ((80 * width) / 1000), ((25 * height) / 1000));
@@ -240,18 +241,9 @@ namespace Second
             /// </summary>
             /****************************************************students tab design**********************************************************/
 
-
-
-
             /// <summary>
             /// MultiResolution
             /// </summary>
-
-
-
-
-
-
 
 
 
@@ -300,13 +292,7 @@ namespace Second
             studentObj.setStudentLName(students_add_studentFamily_txtbx.Text);
             studentObj.addStudent(long.Parse(students_add_lessonNumber_txtbx.Text), int.Parse(students_add_lessonGroupNumber_txtbx.Text));
 
-            students_add_studentNumber_txtbx.Clear();
-            students_add_studentName_txtbx.Clear();
-            students_add_studentFamily_txtbx.Clear();
-            students_add_lessonNumber_txtbx.Clear();
-            students_add_lessonGroupNumber_txtbx.Clear();
             MessageBox.Show("اطلاعات با موفقیت ثبت شد", "ثبت موفقیت آمیز", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
 
             try
             {
@@ -331,6 +317,13 @@ namespace Second
             {
                 MessageBox.Show("!بر روی رکورد کلیک کنید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            //***clear textBoxes
+            students_add_studentNumber_txtbx.Clear();
+            students_add_studentName_txtbx.Clear();
+            students_add_studentFamily_txtbx.Clear();
+            students_add_lessonNumber_txtbx.Clear();
+            students_add_lessonGroupNumber_txtbx.Clear();
         }
 
         private void manager_lesson_add_bt_Click(object sender, EventArgs e)
@@ -428,13 +421,10 @@ namespace Second
                 dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
                 dataGridView1.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells);
 
-                dataGridView2.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-                dataGridView2.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells);
-
             }
             catch (SqlException)
             {
-                MessageBox.Show("To run this example, replace the value of the " +
+                MessageBox.Show("1- To run this example, replace the value of the " +
                     "connectionString variable with a connection string that is " +
                     "valid for your system.");
             }
@@ -469,15 +459,15 @@ namespace Second
 
 
                 // Resize the DataGridView columns to fit the newly loaded content.
-                dataGridView3.AutoResizeColumns(
+                dataGridView2.AutoResizeColumns(
                     DataGridViewAutoSizeColumnsMode.AllCells);
-                dataGridView3.AutoResizeRows(
+                dataGridView2.AutoResizeRows(
                    DataGridViewAutoSizeRowsMode.AllCells);
 
             }
             catch (SqlException)
             {
-                MessageBox.Show("To run this example, replace the value of the " +
+                MessageBox.Show("2- To run this example, replace the value of the " +
                     "connectionString variable with a connection string that is " +
                     "valid for your system.");
             }
@@ -932,7 +922,6 @@ namespace Second
                     MessageBox.Show("!بر روی رکورد کلیک کنید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
 
             else if (dataGridView2.Columns[0].HeaderText == "شماره دانشجویی")
             {
