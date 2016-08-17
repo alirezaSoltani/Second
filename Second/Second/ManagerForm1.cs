@@ -112,16 +112,16 @@ namespace Second
             teachers_cancel_btn.SetBounds(((5 * width) / 400), ((34 * height) / 100), ((80 * width) / 1000), ((25 * height) / 1000));
             tooltip.SetToolTip(teachers_cancel_btn, "لغو تغییرات");
             //***add
-            teachers_add_teacherNumber_lbl.SetBounds(((83 * width) / 100), ((15 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
-            teachers_add_teacherName_lbl.SetBounds(((83 * width) / 100), ((29 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
-            teachers_add_teacherFamily_lbl.SetBounds(((83 * width) / 100), ((43 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
-            teachers_add_teacher_password_lbl.SetBounds(((83 * width) / 100), ((57 * height) / 300), ((83 * width) / 1000), ((30 * height) / 1000));
-            teachers_add_teacherNumber_txtbx.SetBounds(((70 * width) / 100), ((15 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
-            teachers_add_teacherName_txtbx.SetBounds(((70 * width) / 100), ((29 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
-            teachers_add_teacherFamily_txtbx.SetBounds(((70 * width) / 100), ((43 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
-            teachers_add_teacher_password_txtbx.SetBounds(((70 * width) / 100), ((57 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
-            teachers_add_addTeacher_btn.SetBounds(((70 * width) / 100), ((80 * height) / 300), ((100 * width) / 1000), ((30 * height) / 1000));
-            teachers_add_clear_btn.SetBounds(((162 * width) / 200), ((80 * height) / 300), ((10 * width) / 100), ((30 * height) / 1000));
+            teachers_add_teacherNumber_lbl.SetBounds(((17 * width) / 100), ((8 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            teachers_add_teacherName_lbl.SetBounds(((17 * width) / 100), ((20 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            teachers_add_teacherFamily_lbl.SetBounds(((17 * width) / 100), ((32 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            teachers_add_teacher_password_lbl.SetBounds(((17 * width) / 100), ((44 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            teachers_add_teacherNumber_txtbx.SetBounds(((4 * width) / 100), ((8 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            teachers_add_teacherName_txtbx.SetBounds(((4 * width) / 100), ((20 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            teachers_add_teacherFamily_txtbx.SetBounds(((4 * width) / 100), ((32 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            teachers_add_teacher_password_txtbx.SetBounds(((4 * width) / 100), ((44 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            teachers_add_addTeacher_btn.SetBounds(((4 * width) / 100), ((73 * height) / 300), ((10 * width) / 100), ((30 * height) / 1000));
+            teachers_add_clear_btn.SetBounds(((30 * width) / 200), ((73 * height) / 300), ((10 * width) / 100), ((30 * height) / 1000));
             //***edit
             teachers_edit_teacherNumber_lbl.SetBounds(((17 * width) / 100), ((8 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
             teachers_edit_teacherName_lbl.SetBounds(((17 * width) / 100), ((22 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
@@ -177,7 +177,7 @@ namespace Second
             /****************************************************students tab design**********************************************************/
             students_panel.SetBounds(((5 * width) / 400), ((2 * height) / 100), ((96 * width) / 100), ((31 * height) / 100));
             dataGridView2.SetBounds(((5 * width) / 400), (38 * height) / 100, ((96 * width) / 100), ((36 * height) / 100));
-            teachers_information_lbl.SetBounds(((50 * width) / 100), ((35 * height) / 100), ((47 * width) / 100), ((5 * height) / 100));
+            students_information_lbl.SetBounds(((50 * width) / 100), ((35 * height) / 100), ((47 * width) / 100), ((5 * height) / 100));
             students_return_btn.SetBounds(((5 * width) / 400), ((34 * height) / 100), ((80 * width) / 1000), ((25 * height) / 1000));
             students_cancel_btn.SetBounds(((40 * width) / 400), ((34 * height) / 100), ((80 * width) / 1000), ((25 * height) / 1000));
             tooltip.SetToolTip(students_return_btn, "مشاهده جدول دروس");
@@ -299,6 +299,38 @@ namespace Second
             studentObj.setStudentFName(students_add_studentName_txtbx.Text);
             studentObj.setStudentLName(students_add_studentFamily_txtbx.Text);
             studentObj.addStudent(long.Parse(students_add_lessonNumber_txtbx.Text), int.Parse(students_add_lessonGroupNumber_txtbx.Text));
+
+            students_add_studentNumber_txtbx.Clear();
+            students_add_studentName_txtbx.Clear();
+            students_add_studentFamily_txtbx.Clear();
+            students_add_lessonNumber_txtbx.Clear();
+            students_add_lessonGroupNumber_txtbx.Clear();
+            MessageBox.Show("اطلاعات با موفقیت ثبت شد", "ثبت موفقیت آمیز", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+            try
+            {
+                /// <summary>
+                /// Reset dataGridView to the desired class
+                /// </summary>
+                GetData2("SELECT * FROM [dbo].[" + students_add_lessonNumber_txtbx.Text + "-" + students_add_lessonGroupNumber_txtbx.Text + "_Table]");
+
+                dataGridView2.Columns[0].HeaderText = "شماره دانشجویی";
+                dataGridView2.Columns[1].HeaderText = "نام دانشجو";
+                dataGridView2.Columns[2].HeaderText = "نام خانوادگی دانشجو";
+
+                foreach (DataGridViewColumn col in dataGridView2.Columns)
+                {
+                    col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                }
+                /// <summary>
+                /// Reset dataGridView to the desired class
+                /// </summary>
+            }
+            catch (System.ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("!بر روی رکورد کلیک کنید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void manager_lesson_add_bt_Click(object sender, EventArgs e)
