@@ -106,7 +106,7 @@ namespace Second
             /****************************************************teachers tab design**********************************************************/
             manager_main_tc.SetBounds(0, ((125 * height) / 1000), ((99 * width) / 100), ((80 * height) / 100));
             logo_pictureBox.SetBounds(((79 * width) / 100), ((24 * height) / 1000), ((192 * width) / 1000), ((74 * height) / 1000));
-            teachers_panel.SetBounds(((5 * width) / 400), ((2 * height) / 100), ((96 * width) / 100), ((31 * height) / 100));
+            teachers_addEditDelete_panel.SetBounds(((5 * width) / 400), ((2 * height) / 100), ((96 * width) / 100), ((31 * height) / 100));
             dataGridView1.SetBounds(((5 * width) / 400), (38 * height) / 100, ((96 * width) / 100), ((36 * height) / 100));
             teachers_information_lbl.SetBounds(((50 * width) / 100), ((35 * height) / 100), ((47 * width) / 100), ((5 * height) / 100));
             teachers_cancel_btn.SetBounds(((5 * width) / 400), ((34 * height) / 100), ((80 * width) / 1000), ((25 * height) / 1000));
@@ -149,6 +149,7 @@ namespace Second
             dataGridView1.DataSource = bindingSource1;
             GetData("SELECT * FROM teacherTable");
 
+            dataGridView1.RowHeadersWidth = (width / 30);
             dataGridView1.Columns[0].HeaderText = "شماره استاد";
             dataGridView1.Columns[1].HeaderText = "نام استاد";
             dataGridView1.Columns[2].HeaderText = "نام خانوادگی استاد";
@@ -160,22 +161,23 @@ namespace Second
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
             }
 
-            foreach (DataGridViewRow r in dataGridView1.Rows)
+            foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                dataGridView1.Rows[r.Index].HeaderCell.Value = (r.Index + 1).ToString();
+                //dataGridView1.Rows[r.Index].HeaderCell.Value = (r.Index + 1).ToString();
+                //row.HeaderCell.Value = String.Format("{0}", row.Index + 1);
             }
 
-            /// <summary>
-            /// datagridview intialization
-            /// </summary>
-            /****************************************************teachers tab design**********************************************************/
+        /// <summary>
+        /// datagridview intialization
+        /// </summary>
+        /****************************************************teachers tab design**********************************************************/
 
 
 
 
 
-            /****************************************************students tab design**********************************************************/
-            students_addEditDelete_panel.SetBounds(((5 * width) / 400), ((2 * height) / 100), ((97 * width) / 100), ((31 * height) / 100));
+        /****************************************************students tab design**********************************************************/
+        students_addEditDelete_panel.SetBounds(((5 * width) / 400), ((2 * height) / 100), ((96 * width) / 100), ((31 * height) / 100));
             students_dataGridView_panel.SetBounds(((5 * width) / 400), (38 * height) / 100, ((96 * width) / 100), ((36 * height) / 100));
             dataGridView2.SetBounds(0, 0, ((96 * width) / 100), ((36 * height) / 100));
             students_information_lbl.SetBounds(((50 * width) / 100), ((35 * height) / 100), ((47 * width) / 100), ((5 * height) / 100));
@@ -893,6 +895,9 @@ namespace Second
 
         private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            //***enable return button
+            students_return_btn.Enabled = true;
+
             //This "if" statement determines the dataGridView's dataSource then decides what should happen there.
             if(dataGridView2.Columns[0].HeaderText == "شماره درس")
             {
@@ -990,7 +995,6 @@ namespace Second
             dataGridView2.Columns[2].HeaderText = "عنوان درس";
 
 
-
             foreach (DataGridViewColumn col in dataGridView2.Columns)
             {
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -1040,6 +1044,8 @@ namespace Second
             students_delete_studentNumber_txtbx.Clear();
             students_delete_lessonNumber_txtbx.Clear();
             students_delete_lessonGroupNumber_txtbx.Clear();
+            //***Disable return button
+            students_return_btn.Enabled = false;
         }
 
         private void manager_main_tc_SelectedIndexChanged(object sender, EventArgs e)
@@ -1155,6 +1161,8 @@ namespace Second
             students_delete_studentNumber_txtbx.Clear();
             students_delete_lessonNumber_txtbx.Clear();
             students_delete_lessonGroupNumber_txtbx.Clear();
+            //***Disable Cancel Button
+            students_cancel_btn.Enabled = false;
         }
 
         private void teachers_cancel_btn_Click(object sender, EventArgs e)
@@ -1198,7 +1206,111 @@ namespace Second
 
         private void students_edit_addStudent_btn_Click(object sender, EventArgs e)
         {
+            try
+            {
+                bool fnameContainsInt = false;
+                bool lnameContainsInt = false;
 
+                fnameContainsInt = students_edit_studentName_txtbx.Text.Any(char.IsDigit);
+                lnameContainsInt = students_edit_studentFamily_txtbx.Text.Any(char.IsDigit);
+
+                if (fnameContainsInt || lnameContainsInt || students_edit_studentName_txtbx.Text == "" || students_edit_studentFamily_txtbx.Text == "" || students_edit_studentNumber_txtbx.Text == "")
+                {
+                    throw new System.FormatException("اطلاعات را تصحیح کنید.");
+                }
+
+                //PasswordRequest k = new PasswordRequest();
+                //k.Show();
+
+                if (/*k.authenPass() ==*/ true)
+                {
+                    TeacherModel teacherObj = new TeacherModel();
+                    teacherObj.setTeacherNewNumber(Int64.Parse(teachers_edit_teacherNumber_txtbx.Text));
+                    teacherObj.setTeacherNumber(Int64.Parse(currentNumber));
+                    teacherObj.setTeacherFName(teachers_edit_teacherName_txtbx.Text);
+                    teacherObj.setTeacherLName(teachers_edit_teacherFamily_txtbx.Text);
+                    teacherObj.setTeacherPassword(teachers_edit_teacher_password_txtbx.Text);
+                    teacherObj.setTeacherURL("");
+                    teacherObj.updateTeacher();
+                }
+
+
+
+                /// <summary>
+                /// Reset GroupBoxes and their components
+                /// </summary>
+                //***disable cancel button
+                teachers_cancel_btn.Enabled = false;
+                //***enable add components
+                teachers_add_teacherNumber_txtbx.Enabled = true;
+                teachers_add_teacherName_txtbx.Enabled = true;
+                teachers_add_teacherFamily_txtbx.Enabled = true;
+                teachers_add_teacher_password_txtbx.Enabled = true;
+                teachers_add_teacherNumber_lbl.Enabled = true;
+                teachers_add_teacherName_lbl.Enabled = true;
+                teachers_add_teacherFamily_lbl.Enabled = true;
+                teachers_add_teacher_password_lbl.Enabled = true;
+                teachers_add_addTeacher_btn.Enabled = true;
+                teachers_add_clear_btn.Enabled = true;
+                //***disable edit & delete components
+                teachers_edit_teacherNumber_txtbx.Enabled = false;
+                teachers_edit_teacherName_txtbx.Enabled = false;
+                teachers_edit_teacherFamily_txtbx.Enabled = false;
+                teachers_edit_teacher_password_txtbx.Enabled = false;
+                teachers_edit_teacherNumber_lbl.Enabled = false;
+                teachers_edit_teacherName_lbl.Enabled = false;
+                teachers_edit_teacherFamily_lbl.Enabled = false;
+                teachers_edit_teacher_password_lbl.Enabled = false;
+                teachers_edit_clear_btn.Enabled = false;
+                teachers_editTeacher_btn.Enabled = false;
+                teachers_delete_teacherNumber_lbl.Enabled = false;
+                teachers_delete_teacherNumber_txtbx.Enabled = false;
+                teachers_delete_clear_btn.Enabled = false;
+                teachers_deleteTeacher_btn.Enabled = false;
+                //***clear textBoxes
+                teachers_edit_teacherNumber_txtbx.Clear();
+                teachers_edit_teacherName_txtbx.Clear();
+                teachers_edit_teacherFamily_txtbx.Clear();
+                teachers_edit_teacher_password_txtbx.Clear();
+                teachers_delete_teacherNumber_txtbx.Clear();
+                /// <summary>
+                /// Reset GroupBoxes and their components
+                /// </summary>
+
+
+
+                /// <summary>
+                /// Reset dataGridView
+                /// </summary>
+                dataGridView1.DataSource = bindingSource1;
+                GetData("SELECT * FROM teacherTable");
+
+                dataGridView1.Columns[0].HeaderText = "شماره استاد";
+                dataGridView1.Columns[1].HeaderText = "نام استاد";
+                dataGridView1.Columns[2].HeaderText = "نام خانوادگی استاد";
+                dataGridView1.Columns[3].HeaderText = "رمز عبور";
+                dataGridView1.Columns[4].HeaderText = "آدرس اینترنتی";
+
+                foreach (DataGridViewColumn col in dataGridView1.Columns)
+                {
+                    col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                }
+
+                foreach (DataGridViewRow r in dataGridView1.Rows)
+                {
+                    dataGridView1.Rows[r.Index].HeaderCell.Value = (r.Index + 1).ToString();
+                }
+                /// <summary>
+                /// Reset dataGridView
+                /// </summary>
+                /// 
+
+
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("!اطلاعات را تصحیح نمایید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void students_delete_addStudent_btn_Click(object sender, EventArgs e)
