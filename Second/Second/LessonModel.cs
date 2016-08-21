@@ -207,21 +207,9 @@ namespace Test
                     reader= sc.ExecuteReader();
                     conn.Close();
                 }
-                else if(teacherCount == 1)
-                {
-                    SqlCommand sc2 = new SqlCommand();
-                    SqlDataReader reader2;
-                    sc2.CommandText = " UPDATE lessonTable SET lessonTeacher# = '"+" "+"' WHERE lesson# = " + getLessonNumber() + "AND lessonGroup# = " + getLessonGroupNumber() + "";
-                    sc2.CommandType = CommandType.Text;
-                    sc2.Connection = conn;
-                    conn.Open();
-                    reader2 = sc2.ExecuteReader();
-                    conn.Close();
-                    MessageBox.Show("استاد مورد نظر تنها استاد این درس بوده ");
-                }
                 else
                 {
-                    MessageBox.Show("هیچ استادی برای حذف وجود ندارد .");
+                    MessageBox.Show("به دلیل وجود فقط یک استاد در این درس، نمی توان استاد مورد نظر را حذف کرد.");
                 }
             }
             catch

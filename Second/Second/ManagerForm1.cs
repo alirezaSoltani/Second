@@ -366,16 +366,37 @@ namespace Second
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /*OpenFileDialog dlg = new OpenFileDialog();
-            dlg.ShowDialog();
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Title = "افزودن فایل اکسل";
+            fileDialog.Filter = "All Excel Files|*.xlsx;*.xls";
+            fileDialog.InitialDirectory = @"D:\temp";
 
-            if (dlg.ShowDialog() == DialogResult.OK)
+            if (fileDialog.ShowDialog() == DialogResult.OK)
             {
-                string fileName;
-                fileName = dlg.FileName;
-                MessageBox.Show(fileName);
+                string fileDirectory = fileDialog.FileName;
+                MessageBox.Show(fileDirectory);
+
+                //***Importing excel to gridview
+                System.Data.OleDb.OleDbConnection MyConnection;
+                System.Data.DataSet DtSet;
+                System.Data.OleDb.OleDbDataAdapter MyCommand;
+                MyConnection = new System.Data.OleDb.OleDbConnection(@"provider=Microsoft.Jet.OLEDB.4.0;Data Source='" + fileDirectory + "';Extended Properties=Excel 8.0;");
+                MyCommand = new System.Data.OleDb.OleDbDataAdapter("select * from [Sheet1$]", MyConnection);
+                MyCommand.TableMappings.Add("Table", "Net-informations.com");
+                DtSet = new System.Data.DataSet();
+                MyCommand.Fill(DtSet);
+                dataGridView2.DataSource = DtSet.Tables[0];
+                MyConnection.Close();
+                foreach (DataGridViewColumn col in dataGridView2.Columns)
+                {
+                    col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                }
+                foreach (DataGridViewRow r in dataGridView2.Rows)
+                {
+                    dataGridView2.Rows[r.Index].HeaderCell.Value = (r.Index + 1).ToString();
+                }
             }
-            */
+            
 
             /* int size = -1;
              DialogResult result = openFileDialog2.ShowDialog(); // Show the dialog.
