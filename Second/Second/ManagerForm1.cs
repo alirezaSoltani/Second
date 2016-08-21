@@ -182,6 +182,7 @@ namespace Second
             students_information_lbl.SetBounds(((50 * width) / 100), ((35 * height) / 100), ((47 * width) / 100), ((5 * height) / 100));
             students_return_btn.SetBounds(((5 * width) / 400), ((34 * height) / 100), ((80 * width) / 1000), ((25 * height) / 1000));
             students_cancel_btn.SetBounds(((40 * width) / 400), ((34 * height) / 100), ((80 * width) / 1000), ((25 * height) / 1000));
+            students_groupAdd_btn.SetBounds(((75 * width) / 400), ((34 * height) / 100), ((80 * width) / 1000), ((25 * height) / 1000));
             tooltip.SetToolTip(students_return_btn, "مشاهده جدول دروس");
             tooltip.SetToolTip(students_cancel_btn, "لغو تغییرات");
             //***add
@@ -369,7 +370,7 @@ namespace Second
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Title = "افزودن فایل اکسل";
             fileDialog.Filter = "All Excel Files|*.xlsx;*.xls";
-            fileDialog.InitialDirectory = @"D:\temp";
+            fileDialog.InitialDirectory = @"C:\";
 
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
