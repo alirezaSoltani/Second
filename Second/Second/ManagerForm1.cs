@@ -380,7 +380,7 @@ namespace Second
                 System.Data.OleDb.OleDbConnection MyConnection;
                 System.Data.DataSet DtSet;
                 System.Data.OleDb.OleDbDataAdapter MyCommand;
-                MyConnection = new System.Data.OleDb.OleDbConnection(@"provider=Microsoft.Jet.OLEDB.4.0;Data Source='" + fileDirectory + "';Extended Properties=Excel 8.0;");
+                MyConnection = new System.Data.OleDb.OleDbConnection(@"provider=Microsoft.ACE.OLEDB.12.0;Data Source='" + fileDirectory + "';Extended Properties=Excel 8.0;");
                 MyCommand = new System.Data.OleDb.OleDbDataAdapter("select * from [Sheet1$]", MyConnection);
                 MyCommand.TableMappings.Add("Table", "Net-informations.com");
                 DtSet = new System.Data.DataSet();
