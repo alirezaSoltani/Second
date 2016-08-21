@@ -60,7 +60,7 @@ namespace Test
             SqlDataReader reader;
             sc.CommandText = "UPDATE [dbo].[" + lessonNumber + "-" + lessonGroupNumber + "_Table] SET student# = '" + getStudentNewNumber()
                                                                 + "', studentFName ='" + getStudentFName()
-                                                                + "', studentLName ='" + getStudentLName()  + "') WHERE student# = "+getStudentNumber()+"";
+                                                                + "', studentLName ='" + getStudentLName()  + "' WHERE student# = "+getStudentNumber()+"";
 
             sc.CommandType = CommandType.Text;
             sc.Connection = conn;

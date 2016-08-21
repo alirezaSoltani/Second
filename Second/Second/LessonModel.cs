@@ -171,6 +171,65 @@ namespace Test
             }
 
         }
+
+        public void deleteLessonTeacher ()
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString =
+                "Data Source= 185.159.152.5;" +
+                    "Initial Catalog=youshita_Test;" +
+                    "User id=youshita_co; " +
+                    "Password=P@hn1395;";
+
+
+                SqlCommand sc1 = new SqlCommand();
+                SqlDataReader reader1;
+                sc1.CommandText = " SELECT COUNT(*) FROM lessonTable WHERE lesson# = " + getLessonNumber() + "AND lessonGroup# = " + getLessonGroupNumber() + "  ";
+                sc1.CommandType = CommandType.Text;
+                sc1.Connection = conn;
+                conn.Open();
+                reader1 = sc1.ExecuteReader();
+                reader1.Read();
+                int teacherCount = reader1.GetInt32(0);
+                conn.Close();
+
+                if (teacherCount > 1)
+                {
+
+                    SqlCommand sc = new SqlCommand();
+                    SqlDataReader reader;
+                    sc.CommandText = " DELETE FROM lessonTable WHERE lesson# = " + getLessonNumber() + "AND lessonGroup# = " + getLessonGroupNumber() + " AND lessonTeacher#= " + getLessonTeacherNumber() + " ";
+                    sc.CommandType = CommandType.Text;
+                    sc.Connection = conn;
+                    conn.Open();
+                    reader= sc.ExecuteReader();
+                    conn.Close();
+                }
+                else if(teacherCount == 1)
+                {
+                    SqlCommand sc2 = new SqlCommand();
+                    SqlDataReader reader2;
+                    sc2.CommandText = " UPDATE lessonTable SET lessonTeacher# = '"+" "+"' WHERE lesson# = " + getLessonNumber() + "AND lessonGroup# = " + getLessonGroupNumber() + "";
+                    sc2.CommandType = CommandType.Text;
+                    sc2.Connection = conn;
+                    conn.Open();
+                    reader2 = sc2.ExecuteReader();
+                    conn.Close();
+                    MessageBox.Show("استاد مورد نظر تنها استاد این درس بوده ");
+                }
+                else
+                {
+                    MessageBox.Show("هیچ استادی برای حذف وجود ندارد .");
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
         public List<LessonModel> getAllLesson()
         {
             List<LessonModel> list = new List<LessonModel>();
