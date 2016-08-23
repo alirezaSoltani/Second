@@ -98,7 +98,7 @@ namespace Second
 
 
             /*Manager form design*/
-            this.SetBounds(0, 0, width, ((955*height)/1000));
+            this.SetBounds(0, 0, width, ((955 * height) / 1000));
             /*Manager form design*/
 
 
@@ -176,13 +176,13 @@ namespace Second
 
 
         /****************************************************students tab design**********************************************************/
-        students_addEditDelete_panel.SetBounds(((5 * width) / 400), ((2 * height) / 100), ((96 * width) / 100), ((31 * height) / 100));
+            students_addEditDelete_panel.SetBounds(((5 * width) / 400), ((2 * height) / 100), ((96 * width) / 100), ((31 * height) / 100));
             students_dataGridView_panel.SetBounds(((5 * width) / 400), (38 * height) / 100, ((96 * width) / 100), ((36 * height) / 100));
             dataGridView2.SetBounds(0, 0, ((96 * width) / 100), ((36 * height) / 100));
             students_information_lbl.SetBounds(((50 * width) / 100), ((35 * height) / 100), ((47 * width) / 100), ((5 * height) / 100));
             students_return_btn.SetBounds(((5 * width) / 400), ((34 * height) / 100), ((80 * width) / 1000), ((25 * height) / 1000));
             students_cancel_btn.SetBounds(((40 * width) / 400), ((34 * height) / 100), ((80 * width) / 1000), ((25 * height) / 1000));
-            students_groupAdd_btn.SetBounds(((75 * width) / 400), ((34 * height) / 100), ((80 * width) / 1000), ((25 * height) / 1000));
+            students_finalRegister_btn.SetBounds(((75 * width) / 400), ((34 * height) / 100), ((80 * width) / 1000), ((25 * height) / 1000));
             tooltip.SetToolTip(students_return_btn, "مشاهده جدول دروس");
             tooltip.SetToolTip(students_cancel_btn, "لغو تغییرات");
             //***add
@@ -196,8 +196,9 @@ namespace Second
             students_add_studentFamily_txtbx.SetBounds(((4 * width) / 100), ((32 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
             students_add_lessonNumber_txtbx.SetBounds(((4 * width) / 100), ((44 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
             students_add_lessonGroupNumber_txtbx.SetBounds(((4 * width) / 100), ((56 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
-            students_add_addStudent_btn.SetBounds(((4 * width) / 100), ((73 * height) / 300), ((10 * width) / 100), ((30 * height) / 1000));
-            students_add_clear_btn.SetBounds(((30 * width) / 200), ((73 * height) / 300), ((10 * width) / 100), ((30 * height) / 1000));
+            students_add_addStudent_btn.SetBounds(((8 * width) / 200), ((73 * height) / 300), ((20 * width) / 300), ((30 * height) / 1000));
+            students_add_groupAdd_btn.SetBounds(((45 * width) / 400), ((73 * height) / 300), ((20 * width) / 300), ((30 * height) / 1000));
+            students_add_clear_btn.SetBounds(((37 * width) / 200), ((73 * height) / 300), ((20 * width) / 300), ((30 * height) / 1000));
             //***edit
             students_edit_studentNumber_lbl.SetBounds(((17 * width) / 100), ((8 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
             students_edit_studentName_lbl.SetBounds(((17 * width) / 100), ((20 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
@@ -295,44 +296,51 @@ namespace Second
 
         private void manager_studentAdd_bt_Click(object sender, EventArgs e)
         {
-            StudentModel studentObj = new StudentModel();
-            studentObj.setStudentNumber(long.Parse(students_add_studentNumber_txtbx.Text));
-            studentObj.setStudentFName(students_add_studentName_txtbx.Text);
-            studentObj.setStudentLName(students_add_studentFamily_txtbx.Text);
-            studentObj.addStudent(long.Parse(students_add_lessonNumber_txtbx.Text), int.Parse(students_add_lessonGroupNumber_txtbx.Text));
-
-            MessageBox.Show("اطلاعات با موفقیت ثبت شد", "ثبت موفقیت آمیز", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             try
             {
-                /// <summary>
-                /// Reset dataGridView to the desired class
-                /// </summary>
-                GetData2("SELECT * FROM [dbo].[" + students_add_lessonNumber_txtbx.Text + "-" + students_add_lessonGroupNumber_txtbx.Text + "_Table]");
+                StudentModel studentObj = new StudentModel();
+                studentObj.setStudentNumber(long.Parse(students_add_studentNumber_txtbx.Text));
+                studentObj.setStudentFName(students_add_studentName_txtbx.Text);
+                studentObj.setStudentLName(students_add_studentFamily_txtbx.Text);
+                studentObj.addStudent(long.Parse(students_add_lessonNumber_txtbx.Text), int.Parse(students_add_lessonGroupNumber_txtbx.Text));
+                MessageBox.Show("اطلاعات با موفقیت ثبت شد", "ثبت موفقیت آمیز", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                dataGridView2.Columns[0].HeaderText = "شماره دانشجویی";
-                dataGridView2.Columns[1].HeaderText = "نام دانشجو";
-                dataGridView2.Columns[2].HeaderText = "نام خانوادگی دانشجو";
+                //***clear textBoxes
+                students_add_studentNumber_txtbx.Clear();
+                students_add_studentName_txtbx.Clear();
+                students_add_studentFamily_txtbx.Clear();
+                students_add_lessonNumber_txtbx.Clear();
+                students_add_lessonGroupNumber_txtbx.Clear();
 
-                foreach (DataGridViewColumn col in dataGridView2.Columns)
+                try
                 {
-                    col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                }
-                /// <summary>
-                /// Reset dataGridView to the desired class
-                /// </summary>
-            }
-            catch (System.ArgumentOutOfRangeException)
-            {
-                MessageBox.Show("!بر روی رکورد کلیک کنید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                    /// <summary>
+                    /// Reset dataGridView to the desired class
+                    /// </summary>
+                    GetData2("SELECT * FROM [dbo].[" + currentLessonNumber + "-" + currentLessonGroupNumber + "_Table]");
 
-            //***clear textBoxes
-            students_add_studentNumber_txtbx.Clear();
-            students_add_studentName_txtbx.Clear();
-            students_add_studentFamily_txtbx.Clear();
-            students_add_lessonNumber_txtbx.Clear();
-            students_add_lessonGroupNumber_txtbx.Clear();
+                    dataGridView2.Columns[0].HeaderText = "شماره دانشجویی";
+                    dataGridView2.Columns[1].HeaderText = "نام دانشجو";
+                    dataGridView2.Columns[2].HeaderText = "نام خانوادگی دانشجو";
+
+                    foreach (DataGridViewColumn col in dataGridView2.Columns)
+                    {
+                        col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                    }
+                    /// <summary>
+                    /// Reset dataGridView to the desired class
+                    /// </summary>
+                }
+                catch (System.ArgumentOutOfRangeException)
+                {
+                    MessageBox.Show("!بر روی رکورد کلیک کنید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            catch(FormatException)
+            {
+                MessageBox.Show(".اطلاعات ورودی ناقص یا اشتباه هستند", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void manager_lesson_add_bt_Click(object sender, EventArgs e)
@@ -360,63 +368,9 @@ namespace Second
 
         }
 
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            OpenFileDialog fileDialog = new OpenFileDialog();
-            fileDialog.Title = "افزودن فایل اکسل";
-            fileDialog.Filter = "All Excel Files|*.xlsx;*.xls";
-            fileDialog.InitialDirectory = @"C:\";
-
-            if (fileDialog.ShowDialog() == DialogResult.OK)
-            {
-                string fileDirectory = fileDialog.FileName;
-                MessageBox.Show(fileDirectory);
-
-                //***Importing excel to gridview
-                System.Data.OleDb.OleDbConnection MyConnection;
-                System.Data.DataSet DtSet;
-                System.Data.OleDb.OleDbDataAdapter MyCommand;
-                MyConnection = new System.Data.OleDb.OleDbConnection(@"provider=Microsoft.ACE.OLEDB.12.0;Data Source='" + fileDirectory + "';Extended Properties=Excel 8.0;");
-                MyCommand = new System.Data.OleDb.OleDbDataAdapter("select * from [Sheet1$]", MyConnection);
-                MyCommand.TableMappings.Add("Table", "Net-informations.com");
-                DtSet = new System.Data.DataSet();
-                MyCommand.Fill(DtSet);
-                dataGridView2.DataSource = DtSet.Tables[0];
-                MyConnection.Close();
-                foreach (DataGridViewColumn col in dataGridView2.Columns)
-                {
-                    col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                }
-                foreach (DataGridViewRow r in dataGridView2.Rows)
-                {
-                    dataGridView2.Rows[r.Index].HeaderCell.Value = (r.Index + 1).ToString();
-                }
-            }
             
-
-            /* int size = -1;
-             DialogResult result = openFileDialog2.ShowDialog(); // Show the dialog.
-             if (result == DialogResult.OK) // Test result.
-             {
-                 string file = openFileDialog2.FileName;
-                 try
-                 {
-                     string text = File.ReadAllText(file);
-                     size = text.Length;
-                 }
-                 catch (IOException)
-                 {
-                 }
-             }
-             Console.WriteLine(size); // <-- Shows file size in debugging mode.
-             Console.WriteLine(result); // <-- For debugging use.*/
-
-
         }
 
         private void GetData(string selectCommand)
@@ -486,6 +440,49 @@ namespace Second
                 table2.Locale = System.Globalization.CultureInfo.InvariantCulture;
                 dataAdapter.Fill(table2);
                 bindingSource2.DataSource = table2;
+
+
+                // Resize the DataGridView columns to fit the newly loaded content.
+                dataGridView2.AutoResizeColumns(
+                    DataGridViewAutoSizeColumnsMode.AllCells);
+                dataGridView2.AutoResizeRows(
+                   DataGridViewAutoSizeRowsMode.AllCells);
+
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("2- To run this example, replace the value of the " +
+                    "connectionString variable with a connection string that is " +
+                    "valid for your system.");
+            }
+        }
+
+        private void GetData3(string selectCommand)
+        {
+            try
+            {
+                // Specify a connection string. Replace the given value with a 
+                // valid connection string for a Northwind SQL Server sample
+                // database accessible to your system.
+                String connectionString = "Data Source= 185.159.152.5;" +
+                    "Initial Catalog=youshita_Test;" +
+                    "User id=youshita_co; " +
+                    "Password=P@hn1395;";
+
+                // Create a new data adapter based on the specified query.
+                dataAdapter = new SqlDataAdapter(selectCommand, connectionString);
+
+                // Create a command builder to generate SQL update, insert, and
+                // delete commands based on selectCommand. These are used to
+                // update the database.
+
+                SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+
+                // Populate a new data table and bind it to the BindingSource.
+                DataTable table2 = new DataTable();
+                table2.Locale = System.Globalization.CultureInfo.InvariantCulture;
+                dataAdapter.Fill(table2);
+                bindingSource3.DataSource = table2;
 
 
                 // Resize the DataGridView columns to fit the newly loaded content.
@@ -945,22 +942,23 @@ namespace Second
             /// <summary>
             /// datagridview intialization
             /// </summary>
-            /// 
+            
+
+
             //***disable cancel button
             students_cancel_btn.Enabled = false;
-            //***enable add components
-            students_add_studentNumber_lbl.Enabled = true;
-            students_add_studentName_lbl.Enabled = true;
-            students_add_studentFamily_lbl.Enabled = true;
-            students_add_studentNumber_txtbx.Enabled = true;
-            students_add_studentName_txtbx.Enabled = true;
-            students_add_studentFamily_txtbx.Enabled = true;
+            //***disable add components
+            students_add_studentNumber_lbl.Enabled = false;
+            students_add_studentName_lbl.Enabled = false;
+            students_add_studentFamily_lbl.Enabled = false;
             students_add_lessonNumber_lbl.Enabled = true;
-            students_add_lessonNumber_txtbx.Enabled = true;
             students_add_lessonGroupNumber_lbl.Enabled = true;
-            students_add_lessonGroupNumber_txtbx.Enabled = true;
-            students_add_addStudent_btn.Enabled = true;
-            students_add_clear_btn.Enabled = true;
+            students_add_studentNumber_txtbx.Enabled = false;
+            students_add_studentName_txtbx.Enabled = false;
+            students_add_studentFamily_txtbx.Enabled = false;
+            students_add_addStudent_btn.Enabled = false;
+            students_add_groupAdd_btn.Enabled = false;
+            students_add_clear_btn.Enabled = false;
             //***disable edit components
             students_edit_studentNumber_lbl.Enabled = false;
             students_edit_studentName_lbl.Enabled = false;
@@ -979,7 +977,12 @@ namespace Second
             students_delete_lessonGroupNumber_txtbx.Enabled = false;
             students_delete_deleteStudent_btn.Enabled = false;
             students_delete_clear_btn.Enabled = false;
-            //***Clear edit & delete textBoxes
+            //***Clear add & edit & delete textBoxes
+            students_add_studentNumber_txtbx.Clear();
+            students_add_studentName_txtbx.Clear();
+            students_add_studentFamily_txtbx.Clear();
+            students_add_lessonNumber_txtbx.Clear();
+            students_add_lessonGroupNumber_txtbx.Clear();
             students_edit_studentNumber_txtbx.Clear();
             students_edit_studentName_txtbx.Clear();
             students_edit_studentFamily_txtbx.Clear();
@@ -1086,9 +1089,9 @@ namespace Second
             students_add_studentName_txtbx.Enabled = true;
             students_add_studentFamily_txtbx.Enabled = true;
             students_add_lessonNumber_lbl.Enabled = true;
-            students_add_lessonNumber_txtbx.Enabled = true;
+            //students_add_lessonNumber_txtbx.Enabled = true;
             students_add_lessonGroupNumber_lbl.Enabled = true;
-            students_add_lessonGroupNumber_txtbx.Enabled = true;
+            //students_add_lessonGroupNumber_txtbx.Enabled = true;
             students_add_addStudent_btn.Enabled = true;
             students_add_clear_btn.Enabled = true;
             //***disable edit components
@@ -1226,7 +1229,17 @@ namespace Second
         {
             //***enable return button
             students_return_btn.Enabled = true;
-            
+            //***enable add components
+            students_add_addStudent_btn.Enabled = true;
+            students_add_groupAdd_btn.Enabled = true;
+            students_add_clear_btn.Enabled = true;
+            students_add_studentNumber_txtbx.Enabled = true;
+            students_add_studentName_txtbx.Enabled = true;
+            students_add_studentFamily_txtbx.Enabled = true;
+            students_add_studentNumber_lbl.Enabled = true;
+            students_add_studentName_lbl.Enabled = true;
+            students_add_studentFamily_lbl.Enabled = true;
+
             //This "if" statement determines the dataGridView's dataSource then decides what should happen there.
             if (dataGridView2.Columns[0].HeaderText == "شماره درس")
             {
@@ -1234,6 +1247,10 @@ namespace Second
                 {
                     currentLessonNumber = dataGridView2.Rows[e.RowIndex].Cells["lesson#"].Value.ToString();
                     currentLessonGroupNumber = dataGridView2.Rows[e.RowIndex].Cells["lessonGroup#"].Value.ToString();
+                    
+                    students_add_lessonNumber_txtbx.Text = currentLessonNumber;
+                    students_add_lessonGroupNumber_txtbx.Text = currentLessonGroupNumber;
+
                     /// <summary>
                     /// Reset dataGridView to the desired class
                     /// </summary>
@@ -1279,9 +1296,9 @@ namespace Second
                     students_add_studentName_txtbx.Enabled = false;
                     students_add_studentFamily_txtbx.Enabled = false;
                     students_add_lessonNumber_lbl.Enabled = false;
-                    students_add_lessonNumber_txtbx.Enabled = false;
+                    //students_add_lessonNumber_txtbx.Enabled = false;
                     students_add_lessonGroupNumber_lbl.Enabled = false;
-                    students_add_lessonGroupNumber_txtbx.Enabled = false;
+                    //students_add_lessonGroupNumber_txtbx.Enabled = false;
                     students_add_addStudent_btn.Enabled = false;
                     students_add_clear_btn.Enabled = false;
                     //***enable edit components
@@ -1309,6 +1326,7 @@ namespace Second
                     students_edit_studentNumber_txtbx.Text = dataGridView2.Rows[e.RowIndex].Cells["student#"].Value.ToString();
                     students_edit_studentName_txtbx.Text = dataGridView2.Rows[e.RowIndex].Cells["studentFName"].Value.ToString();
                     students_edit_studentFamily_txtbx.Text = dataGridView2.Rows[e.RowIndex].Cells["studentLName"].Value.ToString();
+
                     students_delete_studentNumber_txtbx.Text = dataGridView2.Rows[e.RowIndex].Cells["student#"].Value.ToString();
                     students_delete_lessonNumber_txtbx.Text = currentLessonNumber;
                     students_delete_lessonGroupNumber_txtbx.Text = currentLessonGroupNumber;
@@ -1396,6 +1414,20 @@ namespace Second
             }
         }
 
+        private void students_add_clear_btn_Click(object sender, EventArgs e)
+        {
+            students_add_studentNumber_txtbx.Clear();
+            students_add_studentName_txtbx.Clear();
+            students_add_studentFamily_txtbx.Clear();
+        }
+
+        private void students_add_groupAdd_btn_Click(object sender, EventArgs e)
+        {
+            Excel_Import excel_Import_object = new Excel_Import(currentLessonNumber, currentLessonGroupNumber);
+            excel_Import_object.Show();
+            students_return_btn.PerformClick();
+        }
+
         private void disableStudentsTabComponents()
         {
             //***disable cancel button
@@ -1408,9 +1440,9 @@ namespace Second
             students_add_studentName_txtbx.Enabled = true;
             students_add_studentFamily_txtbx.Enabled = true;
             students_add_lessonNumber_lbl.Enabled = true;
-            students_add_lessonNumber_txtbx.Enabled = true;
+            //students_add_lessonNumber_txtbx.Enabled = true;
             students_add_lessonGroupNumber_lbl.Enabled = true;
-            students_add_lessonGroupNumber_txtbx.Enabled = true;
+            //students_add_lessonGroupNumber_txtbx.Enabled = true;
             students_add_addStudent_btn.Enabled = true;
             students_add_clear_btn.Enabled = true;
             //***disable edit components

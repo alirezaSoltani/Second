@@ -54,6 +54,12 @@
     <Compile Include="Error.Designer.cs">
       <DependentUpon>Error.cs</DependentUpon>
     </Compile>
+    <Compile Include="Excel_Import.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Excel_Import.Designer.cs">
+      <DependentUpon>Excel_Import.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager_lesson_change.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     <Compile Include="TeacherModel.cs" />
     <EmbeddedResource Include="Error.resx">
       <DependentUpon>Error.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Excel_Import.resx">
+      <DependentUpon>Excel_Import.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager_lesson_change.resx">
       <DependentUpon>Manager_lesson_change.cs</DependentUpon>

@@ -18,6 +18,7 @@ namespace Second
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new login1());
             Application.Run(new ManagerForm1());
+            //Application.Run(new Excel_Import());
         }
     }
 }

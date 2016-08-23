@@ -110,3 +110,4 @@ C:\Users\ASUS\Source\Repos\Second6\Second\Second\obj\Debug\Second.Manager_techer
 C:\Users\ASUS\Source\Repos\Second6\Second\Second\obj\Debug\Second.PasswordRequest.resources
 C:\Users\ASUS\Source\Repos\Second6\Second\Second\obj\Debug\Second.Properties.Resources.resources
 C:\Users\ASUS\Source\Repos\Second6\Second\Second\obj\Debug\Second.csproj.GenerateResource.Cache
+C:\Users\ASUS\Source\Repos\Second6\Second\Second\obj\Debug\Second.Excel_Import.resources

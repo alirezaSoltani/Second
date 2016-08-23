@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Test
 {
@@ -27,24 +28,24 @@ namespace Test
         }
         public void addStudent(long lessonNumber , int lessonGroupNumber)
         {
-            
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString =
-            "Data Source= 185.159.152.5;" +
-                    "Initial Catalog=youshita_Test;" +
-                    "User id=youshita_co; " +
-                    "Password=P@hn1395;";
 
-            SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "INSERT INTO [dbo].["+lessonNumber+"-"+lessonGroupNumber+"_Table] (student#,studentFName,studentLName) VALUES ( '" + getStudentNumber()
-                                                                                                            + "','" + getStudentFName()
-                                                                                                            + "','" + getStudentLName() + "')";
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
-            conn.Close();
+            SqlConnection conn = new SqlConnection();
+                conn.ConnectionString =
+                "Data Source= 185.159.152.5;" +
+                        "Initial Catalog=youshita_Test;" +
+                        "User id=youshita_co; " +
+                        "Password=P@hn1395;";
+
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
+                sc.CommandText = "INSERT INTO [dbo].["+lessonNumber+"-"+lessonGroupNumber+"_Table] (student#,studentFName,studentLName) VALUES ( '" + getStudentNumber()
+                                                                                                                + "','" + getStudentFName()
+                                                                                                                + "','" + getStudentLName() + "')";
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                conn.Open();
+                reader = sc.ExecuteReader();
+                conn.Close();
         }
 
         public void updateStudent(long lessonNumber, int lessonGroupNumber)
