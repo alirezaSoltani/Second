@@ -149,7 +149,7 @@ namespace Second
             dataGridView1.DataSource = bindingSource1;
             GetData("SELECT * FROM teacherTable");
 
-            dataGridView1.RowHeadersWidth = (width / 30);
+            dataGridView1.RowHeadersWidth = (width / 25);
             dataGridView1.Columns[0].HeaderText = "شماره استاد";
             dataGridView1.Columns[1].HeaderText = "نام استاد";
             dataGridView1.Columns[2].HeaderText = "نام خانوادگی استاد";
@@ -182,7 +182,6 @@ namespace Second
             students_information_lbl.SetBounds(((50 * width) / 100), ((35 * height) / 100), ((47 * width) / 100), ((5 * height) / 100));
             students_return_btn.SetBounds(((5 * width) / 400), ((34 * height) / 100), ((80 * width) / 1000), ((25 * height) / 1000));
             students_cancel_btn.SetBounds(((40 * width) / 400), ((34 * height) / 100), ((80 * width) / 1000), ((25 * height) / 1000));
-            students_finalRegister_btn.SetBounds(((75 * width) / 400), ((34 * height) / 100), ((80 * width) / 1000), ((25 * height) / 1000));
             tooltip.SetToolTip(students_return_btn, "مشاهده جدول دروس");
             tooltip.SetToolTip(students_cancel_btn, "لغو تغییرات");
             //***add
@@ -228,7 +227,7 @@ namespace Second
             dataGridView2.DataSource = bindingSource2;
             GetData2("SELECT DISTINCT lesson# , lessonGroup# ,lessonName FROM lessonTable");
 
-            dataGridView2.RowHeadersWidth = (width / 30);
+            dataGridView2.RowHeadersWidth = (width / 25);
             dataGridView2.Columns[0].HeaderText = "شماره درس";
             dataGridView2.Columns[1].HeaderText = "شماره گروه ";
             dataGridView2.Columns[2].HeaderText = "عنوان درس";
@@ -283,17 +282,6 @@ namespace Second
 
         }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
         private void manager_studentAdd_bt_Click(object sender, EventArgs e)
         {
             try
@@ -309,8 +297,6 @@ namespace Second
                 students_add_studentNumber_txtbx.Clear();
                 students_add_studentName_txtbx.Clear();
                 students_add_studentFamily_txtbx.Clear();
-                students_add_lessonNumber_txtbx.Clear();
-                students_add_lessonGroupNumber_txtbx.Clear();
 
                 try
                 {
@@ -1005,7 +991,7 @@ namespace Second
 
                 //***change mode of columns to Fill
                 dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dataGridView1.RowHeadersWidth = (width / 30);
+                dataGridView1.RowHeadersWidth = (width / 25);
                 dataGridView1.Columns[0].HeaderText = "شماره استاد";
                 dataGridView1.Columns[1].HeaderText = "نام استاد";
                 dataGridView1.Columns[2].HeaderText = "نام خانوادگی استاد";
@@ -1038,7 +1024,7 @@ namespace Second
                 dataGridView2.DataSource = bindingSource2;
                 GetData2("SELECT DISTINCT lesson# , lessonGroup# ,lessonName FROM lessonTable");
 
-                dataGridView2.RowHeadersWidth = (width / 30);
+                dataGridView2.RowHeadersWidth = (width / 25);
                 dataGridView2.Columns[0].HeaderText = "شماره درس";
                 dataGridView2.Columns[1].HeaderText = "شماره گروه";
                 dataGridView2.Columns[2].HeaderText = "عنوان درس";
@@ -1093,6 +1079,7 @@ namespace Second
             students_add_lessonGroupNumber_lbl.Enabled = true;
             //students_add_lessonGroupNumber_txtbx.Enabled = true;
             students_add_addStudent_btn.Enabled = true;
+            students_add_groupAdd_btn.Enabled = true;
             students_add_clear_btn.Enabled = true;
             //***disable edit components
             students_edit_studentNumber_lbl.Enabled = false;
@@ -1227,22 +1214,22 @@ namespace Second
 
         private void dataGridView2_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            //***enable return button
-            students_return_btn.Enabled = true;
-            //***enable add components
-            students_add_addStudent_btn.Enabled = true;
-            students_add_groupAdd_btn.Enabled = true;
-            students_add_clear_btn.Enabled = true;
-            students_add_studentNumber_txtbx.Enabled = true;
-            students_add_studentName_txtbx.Enabled = true;
-            students_add_studentFamily_txtbx.Enabled = true;
-            students_add_studentNumber_lbl.Enabled = true;
-            students_add_studentName_lbl.Enabled = true;
-            students_add_studentFamily_lbl.Enabled = true;
-
             //This "if" statement determines the dataGridView's dataSource then decides what should happen there.
             if (dataGridView2.Columns[0].HeaderText == "شماره درس")
             {
+                //***enable return button
+                students_return_btn.Enabled = true;
+                //***enable add components
+                students_add_addStudent_btn.Enabled = true;
+                students_add_groupAdd_btn.Enabled = true;
+                students_add_clear_btn.Enabled = true;
+                students_add_studentNumber_txtbx.Enabled = true;
+                students_add_studentName_txtbx.Enabled = true;
+                students_add_studentFamily_txtbx.Enabled = true;
+                students_add_studentNumber_lbl.Enabled = true;
+                students_add_studentName_lbl.Enabled = true;
+                students_add_studentFamily_lbl.Enabled = true;
+
                 try
                 {
                     currentLessonNumber = dataGridView2.Rows[e.RowIndex].Cells["lesson#"].Value.ToString();
@@ -1300,6 +1287,7 @@ namespace Second
                     students_add_lessonGroupNumber_lbl.Enabled = false;
                     //students_add_lessonGroupNumber_txtbx.Enabled = false;
                     students_add_addStudent_btn.Enabled = false;
+                    students_add_groupAdd_btn.Enabled = false;
                     students_add_clear_btn.Enabled = false;
                     //***enable edit components
                     students_edit_studentNumber_lbl.Enabled = true;

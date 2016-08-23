@@ -228,7 +228,7 @@
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -237,7 +237,7 @@
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -251,7 +251,7 @@
             this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("B Yekan+", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1125,6 +1125,7 @@
             // 
             // students_add_studentFamily_lbl
             // 
+            this.students_add_studentFamily_lbl.Enabled = false;
             this.students_add_studentFamily_lbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.students_add_studentFamily_lbl.Location = new System.Drawing.Point(296, 115);
             this.students_add_studentFamily_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -1138,6 +1139,7 @@
             // 
             // students_add_lessonGroupNumber_lbl
             // 
+            this.students_add_lessonGroupNumber_lbl.Enabled = false;
             this.students_add_lessonGroupNumber_lbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.students_add_lessonGroupNumber_lbl.Location = new System.Drawing.Point(319, 204);
             this.students_add_lessonGroupNumber_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -1152,6 +1154,7 @@
             // students_add_studentNumber_lbl
             // 
             this.students_add_studentNumber_lbl.BackColor = System.Drawing.Color.Transparent;
+            this.students_add_studentNumber_lbl.Enabled = false;
             this.students_add_studentNumber_lbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.students_add_studentNumber_lbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.students_add_studentNumber_lbl.Location = new System.Drawing.Point(324, 25);
@@ -1166,6 +1169,7 @@
             // 
             // students_add_lessonNumber_lbl
             // 
+            this.students_add_lessonNumber_lbl.Enabled = false;
             this.students_add_lessonNumber_lbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.students_add_lessonNumber_lbl.Location = new System.Drawing.Point(354, 158);
             this.students_add_lessonNumber_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -1201,6 +1205,7 @@
             // 
             // students_add_studentName_lbl
             // 
+            this.students_add_studentName_lbl.Enabled = false;
             this.students_add_studentName_lbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.students_add_studentName_lbl.Location = new System.Drawing.Point(361, 72);
             this.students_add_studentName_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
