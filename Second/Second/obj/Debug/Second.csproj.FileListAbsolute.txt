@@ -111,3 +111,8 @@ C:\Users\ASUS\Source\Repos\Second6\Second\Second\obj\Debug\Second.PasswordReques
 C:\Users\ASUS\Source\Repos\Second6\Second\Second\obj\Debug\Second.Properties.Resources.resources
 C:\Users\ASUS\Source\Repos\Second6\Second\Second\obj\Debug\Second.csproj.GenerateResource.Cache
 C:\Users\ASUS\Source\Repos\Second6\Second\Second\obj\Debug\Second.Excel_Import.resources
+C:\Users\ASUS\Source\Repos\Second6\Second\Second\bin\Debug\FarsiCalendarComponent.dll
+C:\Users\ASUS\Source\Repos\Second6\Second\Second\bin\Debug\GHNet.Win.dll
+C:\Users\ASUS\Source\Repos\Second6\Second\Second\bin\Debug\GHNet.dll
+C:\Users\ASUS\Source\Repos\Second6\Second\Second\bin\Debug\FarsiCalendarComponent.pdb
+C:\Users\ASUS\Source\Repos\Second6\Second\Second\bin\Debug\fa\FarsiCalendarComponent.resources.dll

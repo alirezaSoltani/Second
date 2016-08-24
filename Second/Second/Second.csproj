@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FarsiCalendarComponent">
+      <HintPath>..\..\..\..\..\Desktop\ll\FarsiCalendarComponent\bin\Release\FarsiCalendarComponent.dll</HintPath>
+    </Reference>
+    <Reference Include="GHNet.Win">
+      <HintPath>..\..\..\..\..\Desktop\an\analog\Analog_Clock\Analog_Clock\Analog_Clock\Clock\bin\Debug\GHNet.Win.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
@@ -175,6 +181,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Untitled-2311.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AC-System %28135-135px%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

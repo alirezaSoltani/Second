@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using Test;
 
 namespace Second
@@ -59,7 +61,6 @@ namespace Second
         /// </summary>
             private List<TextBox> teacher_txtbx_List = new List<TextBox>();
             private List<Label> teacher_lbl_List = new List<Label>();
-            private int x = 550, y = 25;
             private int numberOfTeachers = 0;
         /// <summary>
         /// Multiple teacher attributes
@@ -100,6 +101,31 @@ namespace Second
             /*Manager form design*/
             this.SetBounds(0, 0, width, ((955 * height) / 1000));
             /*Manager form design*/
+
+
+            /****************************************************dashboard tab design********************************************************/
+            dashboard_greeting_panel.SetBounds(((354 * width) / 800), ((2 * height) / 100), ((53 * width) / 100), ((20 * height) / 100));
+            dashboard_greeting_gpb.SetBounds(((3 * width) / 400), ((3 * height) / 400), ((51 * width) / 100), ((17 * height) / 100));
+            dashboard_greeting_lbl.SetBounds(((174 * width) / 400), ((5 * height) / 100), ((30 * width) / 100), ((5 * height) / 100));
+            dashboard_info_lbl.Text = " شما با شماره ی کاربری  " + 123 + " و نام و نام خانوادگی " + "  نیما کاظمی  " + " وارد سامانه شده اید.  ";
+            dashboard_info_lbl.SetBounds(((5 * width) / 400), ((8 * height) / 100), ((48 * width) / 100), ((5 * height) / 100));
+
+
+            dashboard_news_panel.SetBounds(((354 * width) / 800), ((24 * height) / 100), ((53 * width) / 100), ((45 * height) / 100));
+            dashboard_news_gpb.SetBounds(((3 * width) / 400), ((3 * height) / 400), ((51 * width) / 100), ((42 * height) / 100));
+            dashboard_news_cob.SetBounds(((70 * width) / 400), ((12 * height) / 400), ((14 * width) / 100), ((5 * height) / 100));
+            dashboard_news_chooseAg_lbl.SetBounds(((130 * width) / 400), ((12 * height) / 400), ((14 * width) / 100), ((5 * height) / 100));
+            dashboard_news_titr_lbl.SetBounds(((175 * width) / 400), ((22 * height) / 400), ((14 * width) / 100), ((5 * height) / 100));
+            dataGridView4.SetBounds(((6 * width) / 400), ((33 * height) / 400), ((48 * width) / 100), ((15 * height) / 100));
+            dashboard_news_descriptions_lbl.SetBounds(((6 * width) / 400), ((105 * height) / 400), ((48 * width) / 100), ((15 * height) / 100));
+            dashboard_news_description_lbl.SetBounds(((180 * width) / 400), ((94 * height) / 400), ((14 * width) / 100), ((5 * height) / 100));
+
+
+            dashboard_date_panel.SetBounds(((10 * width) / 800), ((2 * height) / 100), ((39 * width) / 100), ((67 * height) / 100));
+            dashboard_date_gpb.SetBounds(((13 * width) / 400), ((11 * height) / 400), ((35 * width) / 100), ((64 * height) / 100));
+            dashboard_date_calendar.SetBounds(((10 * width) / 400), ((22 * height) / 400), ((30 * width) / 100), ((30 * height) / 100));
+            analogueClock1.SetBounds(((30 * width) / 400), ((160 * height) / 400), ((20 * width) / 100), ((20 * height) / 100));
+            /*****************************************************dashboard tab design*******************************************************/
 
 
 
@@ -250,35 +276,91 @@ namespace Second
             /// </summary>
             /****************************************************students tab design**********************************************************/
 
-            /// <summary>
-            /// MultiResolution
-            /// </summary>
 
 
 
+
+            /****************************************************lessons tab design**********************************************************/
+            lessons_addEditDelete_panel.SetBounds(((5 * width) / 400), ((2 * height) / 100), ((96 * width) / 100), ((31 * height) / 100));
+            lessons_dataGridView_panel.SetBounds(((5 * width) / 400), (38 * height) / 100, ((96 * width) / 100), ((36 * height) / 100));
+            lessons_add_teachers_panel.SetBounds(((2 * width) / 100), ((12 * height) / 300), ((235 * width) / 1000), ((200 * height) / 1000));
+            lessons_add_teachers_panel_hidden_lbl.SetBounds(((5 * width) / 1000), ((1 * height) / 300), ((10 * width) / 1000), ((200 * height) / 1000));
+            dataGridView3.SetBounds(0, 0, ((96 * width) / 100), ((36 * height) / 100));
+
+            //***add
+            lessons_add_lessonNumber_lbl.SetBounds(((38 * width) / 100), ((18 * height) / 300), ((75 * width) / 1000), ((27 * height) / 1000));
+            lessons_add_lessonNumber_txtbx.SetBounds(((28 * width) / 100), ((18 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            lessons_add_lessonName_lbl.SetBounds(((38 * width) / 100), ((33 * height) / 300), ((75 * width) / 1000), ((27 * height) / 1000));
+            lessons_add_lessonName_txtbx.SetBounds(((28 * width) / 100), ((33 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            lessons_add_lessonGroupNumber_lbl.SetBounds(((38 * width) / 100), ((48 * height) / 300), ((75 * width) / 1000), ((27 * height) / 1000));
+            lessons_add_lessonGroupNumber_txtbx.SetBounds(((28 * width) / 100), ((48 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+
+            //***buttons
+            lessons_add_deleteTeacher_btn.SetBounds(((28 * width) / 100), ((62 * height) / 300), ((85 * width) / 1000), ((30 * height) / 1000));
+            lessons_add_addTeacher_btn.SetBounds(((37 * width) / 100), ((62 * height) / 300), ((85 * width) / 1000), ((30 * height) / 1000));
+            lessons_add_registerTeacher_btn.SetBounds(((2 * width) / 100), ((75 * height) / 300), ((235 * width) / 1000), ((30 * height) / 1000));
+            lessons_add_clear_btn.SetBounds(((28 * width) / 100), ((75 * height) / 300), ((176 * width) / 1000), ((30 * height) / 1000));
+
+            //***groupBoxes
+            lessons_addLesson_gpb.SetBounds(((45 * width) / 100), ((1 * height) / 300), ((482 * width) / 1000), ((290 * height) / 1000));
 
 
             /// <summary>
             /// Multiple teacher
             /// </summary>
-            panel5.CreateControl();
-
-            teacher_txtbx_List.Add(new TextBox());
-            teacher_txtbx_List[numberOfTeachers].SetBounds(x, y, 150, 30);
+            lessons_add_teachers_panel.CreateControl();
 
             teacher_lbl_List.Add(new Label());
-            teacher_lbl_List[numberOfTeachers].SetBounds(x + 100, y, 150, 30);
+            teacher_lbl_List[numberOfTeachers].Font = new Font("B Yekan+", 9 , FontStyle.Regular);
+            teacher_lbl_List[numberOfTeachers].SetBounds(((133 * width) / 1000), ((5 * height) / 300), ((75 * width) / 1000),  (27 * height) / 1000);
             teacher_lbl_List[numberOfTeachers].Text = "شماره استاد " + (numberOfTeachers + 1);
 
-            panel5.Controls.Add(teacher_txtbx_List[numberOfTeachers]);
-            panel5.Controls.Add(teacher_lbl_List[numberOfTeachers]);
+            teacher_txtbx_List.Add(new TextBox());
+            teacher_txtbx_List[numberOfTeachers].Font = new Font("B Yekan+", 9, FontStyle.Regular);
+            teacher_txtbx_List[numberOfTeachers].SetBounds(((33* width) / 1000), ((5 * height) / 300), ((115 * width) / 1000),  (27 * height) / 1000);
 
-            y += 45;
+            lessons_add_teachers_panel.Controls.Add(teacher_txtbx_List[numberOfTeachers]);
+            lessons_add_teachers_panel.Controls.Add(teacher_lbl_List[numberOfTeachers]);
+
             numberOfTeachers++;
             /// <summary>
             /// Multiple teacher
             /// </summary>
 
+
+
+            /// <summary>
+            /// datagridview intialization
+            /// </summary>
+            dataGridView3.DataSource = bindingSource3;
+            GetData3("SELECT DISTINCT lesson# , lessonGroup# ,lessonName FROM lessonTable");
+
+            dataGridView3.RowHeadersWidth = (width / 25);
+            dataGridView3.Columns[0].HeaderText = "شماره درس";
+            dataGridView3.Columns[1].HeaderText = "شماره گروه ";
+            dataGridView3.Columns[2].HeaderText = "عنوان درس";
+
+            foreach (DataGridViewColumn col in dataGridView3.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            }
+
+            foreach (DataGridViewRow row in dataGridView3.Rows)
+            {
+                dataGridView3.Rows[row.Index].HeaderCell.Value = (row.Index + 1).ToString();
+                row.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+
+            /// <summary>
+            /// datagridview intialization
+            /// </summary>
+
+
+            /****************************************************lessons tab design**********************************************************/
+
+            /// <summary>
+            /// MultiResolution
+            /// </summary>
 
         }
 
@@ -333,9 +415,9 @@ namespace Second
         {
             LessonModel lessonObj = new LessonModel();
 
-            lessonObj.setLessonNumber(long.Parse(manager_lessonNumber_add_txt.Text));
-            lessonObj.setLessonGroupNumber(int.Parse(manager_lessonGroupNumbet_add_txt.Text));
-            lessonObj.setLessonName(manager_lessonName_add_txt.Text);
+            lessonObj.setLessonNumber(long.Parse(lessons_add_lessonNumber_txtbx.Text));
+            lessonObj.setLessonGroupNumber(int.Parse(lessons_add_lessonGroupNumber_txtbx.Text));
+            lessonObj.setLessonName(lessons_add_lessonName_txtbx.Text);
 
             for (int counter = 0; counter < numberOfTeachers; counter++)
             {
@@ -345,8 +427,63 @@ namespace Second
 
             lessonObj.createLessonTable();
 
-            Manager_lesson_change k = new Manager_lesson_change();
-            k.Show();
+
+            /// <summary>
+            /// datagridview intialization
+            /// </summary>
+            dataGridView3.DataSource = bindingSource3;
+            GetData3("SELECT DISTINCT lesson# , lessonGroup# ,lessonName FROM lessonTable");
+
+            dataGridView3.RowHeadersWidth = (width / 25);
+            dataGridView3.Columns[0].HeaderText = "شماره درس";
+            dataGridView3.Columns[1].HeaderText = "شماره گروه";
+            dataGridView3.Columns[2].HeaderText = "عنوان درس";
+            dataGridView3.Columns[2].Width = (width / 3);
+
+
+
+            foreach (DataGridViewColumn col in dataGridView3.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            }
+
+            foreach (DataGridViewRow row in dataGridView3.Rows)
+            {
+                //row.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dataGridView3.Rows[row.Index].HeaderCell.Value = (row.Index + 1).ToString();
+                //row.HeaderCell.Value = String.Format("{0}", row.Index + 1);
+            }
+
+            /// <summary>
+            /// datagridview intialization
+            /// </summary>
+            /// 
+
+
+
+            //***Reset Components
+            lessons_add_lessonNumber_txtbx.Clear();
+            lessons_add_lessonGroupNumber_txtbx.Clear();
+            lessons_add_lessonName_txtbx.Clear();
+
+            for (int i = numberOfTeachers - 1; i > 0; i--)
+            {
+                lessons_add_teachers_panel.Controls.Remove(teacher_txtbx_List[i]);
+                lessons_add_teachers_panel.Controls.Remove(teacher_lbl_List[i]);
+
+                teacher_txtbx_List.RemoveAt(i);
+                teacher_lbl_List.RemoveAt(i);
+            }
+
+            numberOfTeachers = 1;
+
+            //***disable deleteTeacher Button
+            lessons_add_deleteTeacher_btn.Enabled = false;
+
+            //***clear first teacher textBox
+            teacher_txtbx_List[0].Clear();
+
+            //***Reset Components
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
@@ -465,16 +602,16 @@ namespace Second
                 SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
 
                 // Populate a new data table and bind it to the BindingSource.
-                DataTable table2 = new DataTable();
-                table2.Locale = System.Globalization.CultureInfo.InvariantCulture;
-                dataAdapter.Fill(table2);
-                bindingSource3.DataSource = table2;
+                DataTable table3 = new DataTable();
+                table3.Locale = System.Globalization.CultureInfo.InvariantCulture;
+                dataAdapter.Fill(table3);
+                bindingSource3.DataSource = table3;
 
 
                 // Resize the DataGridView columns to fit the newly loaded content.
-                dataGridView2.AutoResizeColumns(
+                dataGridView3.AutoResizeColumns(
                     DataGridViewAutoSizeColumnsMode.AllCells);
-                dataGridView2.AutoResizeRows(
+                dataGridView3.AutoResizeRows(
                    DataGridViewAutoSizeRowsMode.AllCells);
 
             }
@@ -488,25 +625,30 @@ namespace Second
 
         private void add_lesson_teacher_bt_Click(object sender, EventArgs e)
         {
-            if (numberOfTeachers == 7)
-            {
-                x = 150; y = 25;
-            }
+            //lessons_add_teachers_panel.VerticalScroll.Value = lessons_add_teachers_panel.VerticalScroll.Minimum;
+            lessons_add_deleteTeacher_btn.Enabled = true;
+
             if (numberOfTeachers == 9)
             {
-                add_lesson_teacher_bt.Enabled = false;
+                lessons_add_addTeacher_btn.Enabled = false;
             }
 
-            del_lesson_teacher_bt.Enabled = true;
-            teacher_txtbx_List.Add(new TextBox());
-            teacher_txtbx_List[numberOfTeachers].SetBounds(x, y, 150, 30);
             teacher_lbl_List.Add(new Label());
-            teacher_lbl_List[numberOfTeachers].SetBounds(x + 100, y, 150, 30);
+            teacher_lbl_List[numberOfTeachers].Font = new Font("B Yekan+", 9, FontStyle.Regular);
+            teacher_lbl_List[numberOfTeachers].SetBounds(((133 * width) / 1000), ((35 * height) / 1000) + teacher_lbl_List[numberOfTeachers-1].Bounds.Y, ((75 * width) / 1000), ((27 * height) / 1000));
+            teacher_lbl_List[numberOfTeachers].BringToFront();
             teacher_lbl_List[numberOfTeachers].Text = "شماره استاد " + (numberOfTeachers + 1);
 
-            panel5.Controls.Add(teacher_txtbx_List[numberOfTeachers]);
-            panel5.Controls.Add(teacher_lbl_List[numberOfTeachers]);
-            y += 45;
+            teacher_txtbx_List.Add(new TextBox());
+            teacher_txtbx_List[numberOfTeachers].Font = new Font("B Yekan+", 9, FontStyle.Regular);
+            teacher_txtbx_List[numberOfTeachers].SetBounds(((33 * width) / 1000), ((35 * height) / 1000) + teacher_txtbx_List[numberOfTeachers-1].Bounds.Y, ((115 * width) / 1000), ((27 * height) / 1000));
+            teacher_txtbx_List[numberOfTeachers].BringToFront();
+
+            lessons_add_teachers_panel.Controls.Add(teacher_txtbx_List[numberOfTeachers]);
+            lessons_add_teachers_panel.Controls.Add(teacher_lbl_List[numberOfTeachers]);
+
+            lessons_add_teachers_panel.VerticalScroll.Value = lessons_add_teachers_panel.VerticalScroll.Maximum;
+
             numberOfTeachers++;
         }
 
@@ -1030,8 +1172,6 @@ namespace Second
                 dataGridView2.Columns[2].HeaderText = "عنوان درس";
                 dataGridView2.Columns[2].Width = (width / 3);
 
-
-
                 foreach(DataGridViewColumn col in dataGridView2.Columns)
                 {
                     col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -1041,6 +1181,39 @@ namespace Second
                 {
                     //row.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                     dataGridView2.Rows[row.Index].HeaderCell.Value = (row.Index + 1).ToString();
+                    //row.HeaderCell.Value = String.Format("{0}", row.Index + 1);
+                }
+
+                /// <summary>
+                /// datagridview intialization
+                /// </summary>
+            }
+
+            else if (manager_main_tc.SelectedTab == manager_main_tc.TabPages["lessons"])
+            {
+                /// <summary>
+                /// datagridview intialization
+                /// </summary>
+                dataGridView3.DataSource = bindingSource3;
+                GetData3("SELECT DISTINCT lesson# , lessonGroup# ,lessonName FROM lessonTable");
+
+                dataGridView3.RowHeadersWidth = (width / 25);
+                dataGridView3.Columns[0].HeaderText = "شماره درس";
+                dataGridView3.Columns[1].HeaderText = "شماره گروه";
+                dataGridView3.Columns[2].HeaderText = "عنوان درس";
+                dataGridView3.Columns[2].Width = (width / 3);
+
+
+
+                foreach (DataGridViewColumn col in dataGridView3.Columns)
+                {
+                    col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                }
+
+                foreach (DataGridViewRow row in dataGridView3.Rows)
+                {
+                    //row.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    dataGridView3.Rows[row.Index].HeaderCell.Value = (row.Index + 1).ToString();
                     //row.HeaderCell.Value = String.Format("{0}", row.Index + 1);
                 }
 
@@ -1328,26 +1501,20 @@ namespace Second
 
         private void del_lesson_teacher_bt_Click(object sender, EventArgs e)
         {
-            if (numberOfTeachers == 6)
-            {
-                x = 550; y = 295;
-            }
-
             if (numberOfTeachers == 2)
             {
-                del_lesson_teacher_bt.Enabled = false;
+                lessons_add_deleteTeacher_btn.Enabled = false;
             }
 
-            add_lesson_teacher_bt.Enabled = true;
+            lessons_add_addTeacher_btn.Enabled = true;
 
-            panel5.Controls.Remove(teacher_txtbx_List[numberOfTeachers - 1]);
-            panel5.Controls.Remove(teacher_lbl_List[numberOfTeachers - 1]);
+            lessons_add_teachers_panel.Controls.Remove(teacher_txtbx_List[numberOfTeachers - 1]);
+            lessons_add_teachers_panel.Controls.Remove(teacher_lbl_List[numberOfTeachers - 1]);
 
             teacher_txtbx_List.RemoveAt(numberOfTeachers - 1);
             teacher_lbl_List.RemoveAt(numberOfTeachers - 1);
 
             numberOfTeachers--;
-            y -= 45;
         }
 
         private void students_delete_deleteStudent_btn_Click(object sender, EventArgs e)
@@ -1416,6 +1583,30 @@ namespace Second
             students_return_btn.PerformClick();
         }
 
+        private void lessons_add_clear_btn_Click(object sender, EventArgs e)
+        {
+            lessons_add_lessonNumber_txtbx.Clear();
+            lessons_add_lessonGroupNumber_txtbx.Clear();
+            lessons_add_lessonName_txtbx.Clear();
+
+            for(int i = numberOfTeachers-1; i>0; i--)
+            {
+                lessons_add_teachers_panel.Controls.Remove(teacher_txtbx_List[i]);
+                lessons_add_teachers_panel.Controls.Remove(teacher_lbl_List[i]);
+
+                teacher_txtbx_List.RemoveAt(i);
+                teacher_lbl_List.RemoveAt(i);
+            }
+
+            numberOfTeachers = 1;
+
+            //***disable deleteTeacher Button
+            lessons_add_deleteTeacher_btn.Enabled = false;
+
+            //***clear first teacher textBox
+            teacher_txtbx_List[0].Clear();
+        }
+
         private void disableStudentsTabComponents()
         {
             //***disable cancel button
@@ -1459,5 +1650,136 @@ namespace Second
             students_delete_lessonNumber_txtbx.Clear();
             students_delete_lessonGroupNumber_txtbx.Clear();
         }
+
+        /// <summary>
+        /// newsAgancys
+        /// </summary>
+        private void isnaNews()
+        {
+            List<xmlReaderClass> my = new List<xmlReaderClass>();
+            var doc = System.Xml.Linq.XDocument.Load("http://isna.ir/rss/tp/38");
+            var rssFeed = from el in doc.Elements("rss").Elements("channel").Elements("item")
+                          select new xmlReaderClass()
+                          {
+                              url = el.Element("link").Value,
+                              title = el.Element("title").Value,
+                              description = el.Element("description").Value,
+
+                          };
+
+            foreach (var i in rssFeed)
+            {
+
+
+                my.Add(i);
+            }
+            dataGridView4.DataSource = my;
+            dataGridView4.Columns[1].Visible = false;
+            dataGridView4.Columns[2].Visible = false;
+            dataGridView4.Columns[0].HeaderText = "عنوان";
+        }
+
+        private void mehrNews()
+        {
+            List<xmlReaderClass> my = new List<xmlReaderClass>();
+            var doc = System.Xml.Linq.XDocument.Load("http://www.mehrnews.com/rss/tp/550");
+            var rssFeed = from el in doc.Elements("rss").Elements("channel").Elements("item")
+                          select new xmlReaderClass()
+                          {
+                              url = el.Element("link").Value,
+                              title = el.Element("title").Value,
+                              description = el.Element("description").Value,
+
+                          };
+
+            foreach (var i in rssFeed)
+            {
+
+
+                my.Add(i);
+            }
+            dataGridView4.DataSource = my;
+            dataGridView4.Columns[1].Visible = false;
+            dataGridView4.Columns[2].Visible = false;
+            dataGridView4.Columns[0].Name = "عنوان";
+        }
+
+
+        private void yjcNews()
+        {
+            List<xmlReaderClass> my = new List<xmlReaderClass>();
+            var doc = System.Xml.Linq.XDocument.Load(" http://www.yjc.ir/fa/rss/7/57");
+            var rssFeed = from el in doc.Elements("rss").Elements("channel").Elements("item")
+                          select new xmlReaderClass()
+                          {
+                              url = el.Element("link").Value,
+                              title = el.Element("title").Value,
+                              description = el.Element("description").Value,
+
+                          };
+
+            foreach (var i in rssFeed)
+            {
+
+
+                my.Add(i);
+            }
+            dataGridView4.DataSource = my;
+            dataGridView4.Columns[1].Visible = false;
+            dataGridView4.Columns[2].Visible = false;
+            dataGridView4.Columns[0].Name = "عنوان";
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (dashboard_news_cob.SelectedIndex == 0)
+            {
+                isnaNews();
+            }
+            if (dashboard_news_cob.SelectedIndex == 1)
+            {
+                mehrNews();
+            }
+            if (dashboard_news_cob.SelectedIndex == 2)
+            {
+                yjcNews();
+            }
+
+
+        }
+
+        private void dataGridView4_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                dashboard_news_descriptions_lbl.Text = dataGridView4.Rows[e.RowIndex].Cells["description"].Value.ToString();
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+
+            }
+        }
+
+        private void dataGridView4_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                ProcessStartInfo sInfo = new ProcessStartInfo(dataGridView4.Rows[e.RowIndex].Cells["url"].Value.ToString());
+                Process.Start(sInfo);
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+
+            }
+        }
+    }
+
+    class xmlReaderClass
+    {
+        public string title { get; set; }
+        public string url { get; set; }
+        public string description { get; set; }
+
     }
 }
+    
