@@ -33,8 +33,7 @@ namespace Test
         }
         public void addLesson()
         {
-            try
-            {
+           
                 SqlConnection conn = new SqlConnection();
                 conn.ConnectionString =
                      "Data Source= 185.159.152.5;" +
@@ -56,11 +55,7 @@ namespace Test
                 reader = sc.ExecuteReader();
                 conn.Close();
 
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
+           
 
 
 
@@ -68,8 +63,7 @@ namespace Test
 
         public void createLessonTable()
         {
-            try
-            {
+            
                 SqlConnection conn = new SqlConnection();
                 conn.ConnectionString =
                          "Data Source= 185.159.152.5;" +
@@ -96,18 +90,13 @@ namespace Test
                 }
 
                
-            }
-            catch(Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
+           
         }
 
         public void updateLesson()
         {
-            try
-            {
-                SqlConnection conn = new SqlConnection();
+
+            SqlConnection conn = new SqlConnection();
                 conn.ConnectionString =
                 "Data Source= 185.159.152.5;" +
                     "Initial Catalog=youshita_Test;" +
@@ -130,16 +119,10 @@ namespace Test
 
 
 
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
         }
         public void deleteLesson()
         {
-            try
-            {
+            
                 SqlConnection conn = new SqlConnection();
                 conn.ConnectionString =
                 "Data Source= 185.159.152.5;" +
@@ -164,18 +147,13 @@ namespace Test
                 reader = sc.ExecuteReader();
                 reader2 = sc.ExecuteReader();
                 conn.Close();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
+           
 
         }
 
         public void deleteLessonTeacher ()
         {
-            try
-            {
+            
                 SqlConnection conn = new SqlConnection();
                 conn.ConnectionString =
                 "Data Source= 185.159.152.5;" +
@@ -211,12 +189,11 @@ namespace Test
                 {
                     MessageBox.Show("به دلیل وجود فقط یک استاد در این درس، نمی توان استاد مورد نظر را حذف کرد.");
                 }
-            }
-            catch
-            {
-
-            }
+            
+           
         }
+
+
 
         public List<LessonModel> getAllLesson()
         {
