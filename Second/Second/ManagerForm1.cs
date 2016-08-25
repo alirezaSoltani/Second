@@ -133,7 +133,8 @@ namespace Second
             manager_main_tc.SetBounds(0, ((125 * height) / 1000), ((99 * width) / 100), ((80 * height) / 100));
             logo_pictureBox.SetBounds(((79 * width) / 100), ((24 * height) / 1000), ((192 * width) / 1000), ((74 * height) / 1000));
             teachers_addEditDelete_panel.SetBounds(((5 * width) / 400), ((2 * height) / 100), ((96 * width) / 100), ((31 * height) / 100));
-            dataGridView1.SetBounds(((5 * width) / 400), (38 * height) / 100, ((96 * width) / 100), ((36 * height) / 100));
+            teachers_dataGridView_panel.SetBounds(((5 * width) / 400), (38 * height) / 100, ((96 * width) / 100), ((36 * height) / 100));
+            dataGridView1.SetBounds(0, 0, ((96 * width) / 100), ((36 * height) / 100));
             teachers_information_lbl.SetBounds(((50 * width) / 100), ((35 * height) / 100), ((47 * width) / 100), ((5 * height) / 100));
             teachers_cancel_btn.SetBounds(((5 * width) / 400), ((34 * height) / 100), ((80 * width) / 1000), ((25 * height) / 1000));
             tooltip.SetToolTip(teachers_cancel_btn, "لغو تغییرات");
@@ -298,11 +299,12 @@ namespace Second
             //***buttons
             lessons_add_deleteTeacher_btn.SetBounds(((28 * width) / 100), ((62 * height) / 300), ((85 * width) / 1000), ((30 * height) / 1000));
             lessons_add_addTeacher_btn.SetBounds(((37 * width) / 100), ((62 * height) / 300), ((85 * width) / 1000), ((30 * height) / 1000));
-            lessons_add_registerTeacher_btn.SetBounds(((2 * width) / 100), ((75 * height) / 300), ((235 * width) / 1000), ((30 * height) / 1000));
-            lessons_add_clear_btn.SetBounds(((28 * width) / 100), ((75 * height) / 300), ((176 * width) / 1000), ((30 * height) / 1000));
+            lessons_add_registerTeacher_btn.SetBounds(((2 * width) / 100), ((75 * height) / 300), ((235 * width) / 1000), ((33 * height) / 1000));
+            lessons_add_clear_btn.SetBounds(((28 * width) / 100), ((75 * height) / 300), ((176 * width) / 1000), ((33 * height) / 1000));
 
             //***groupBoxes
             lessons_addLesson_gpb.SetBounds(((45 * width) / 100), ((1 * height) / 300), ((482 * width) / 1000), ((290 * height) / 1000));
+            lessons_editLesson_gpb.SetBounds(((23 * width) / 100), ((1 * height) / 300), ((235 * width) / 1000), ((290 * height) / 1000));
 
 
             /// <summary>
