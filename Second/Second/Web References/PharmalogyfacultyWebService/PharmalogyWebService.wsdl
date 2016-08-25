@@ -1,0 +1,1684 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://youshitaco.ir/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://youshitaco.ir/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://youshitaco.ir/">
+      <s:element name="getDateTime">
+        <s:complexType />
+      </s:element>
+      <s:element name="getDateTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDateTimeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Authenticator">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="username" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthenticatorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AuthenticatorResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTeacherLessons">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="username" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTeacherLessonsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTeacherLessonsResult" type="tns:ArrayOfLessonModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfLessonModel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LessonModel" nillable="true" type="tns:LessonModel" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LessonModel">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="lessonNumber" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="lessonName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="lessonGroupNumber" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="lessonTeacherNumber" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="newLessonNumber" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="newLessonGroupNumber" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="lessonMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lessonNumber" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="lessonGroupNumber" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="lessonMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lessonMessageResult" type="tns:ArrayOfMessageModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMessageModel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MessageModel" nillable="true" type="tns:MessageModel" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MessageModel">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="messageNumber" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="messageTitle" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="messageMain" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="messageDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="messageLessonNumber" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="senderTeacherNumber" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="messageLessonGroupNumber" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="messageRead" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="sendMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="username" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="messageObj" type="tns:MessageModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sendMessageResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="username" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="messageObj" type="tns:MessageModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteMessageResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="changePass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="username" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="newPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="changePassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="changePassResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="attendanceLesson">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lessonNumber" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="lessonGroupNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="username" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="attendanceLessonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="attendanceLessonResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="attend">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="state" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="lessonObj" type="tns:LessonModel" />
+            <s:element minOccurs="0" maxOccurs="1" name="studentObj" type="tns:StudentModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="StudentModel">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="studentNumber" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="studentFName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="studentLName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="studentURL" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="attendResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="attendResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getNumberOfStudents">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lessonNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lessonGroupNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getNumberOfStudentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getNumberOfStudentsResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTeacher">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="username" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTeacherResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTeacherResult" type="tns:TeacherModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TeacherModel">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="teacherNumber" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="teacherFName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="teacherLName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="teacherPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="teacherURL" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="teacherNewNumber" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="zelloWorld1">
+        <s:complexType />
+      </s:element>
+      <s:element name="zelloWorld1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zelloWorld1Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="zelloWorld2">
+        <s:complexType />
+      </s:element>
+      <s:element name="zelloWorld2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zelloWorld2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="zelloWorld3">
+        <s:complexType />
+      </s:element>
+      <s:element name="zelloWorld3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zelloWorld3Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="zelloWorld4">
+        <s:complexType />
+      </s:element>
+      <s:element name="zelloWorld4Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zelloWorld4Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="zelloWorld5">
+        <s:complexType />
+      </s:element>
+      <s:element name="zelloWorld5Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zelloWorld5Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="zelloWorld6">
+        <s:complexType />
+      </s:element>
+      <s:element name="zelloWorld6Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zelloWorld6Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="zelloWorld7">
+        <s:complexType />
+      </s:element>
+      <s:element name="zelloWorld7Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zelloWorld7Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="zelloWorld8">
+        <s:complexType />
+      </s:element>
+      <s:element name="zelloWorld8Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zelloWorld8Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="zelloWorld9">
+        <s:complexType />
+      </s:element>
+      <s:element name="zelloWorld9Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zelloWorld9Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="zelloWorld10">
+        <s:complexType />
+      </s:element>
+      <s:element name="zelloWorld10Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zelloWorld10Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="zelloWorld11">
+        <s:complexType />
+      </s:element>
+      <s:element name="zelloWorld11Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zelloWorld11Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="zelloWorld12">
+        <s:complexType />
+      </s:element>
+      <s:element name="zelloWorld12Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zelloWorld12Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="zelloWorld13">
+        <s:complexType />
+      </s:element>
+      <s:element name="zelloWorld13Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zelloWorld13Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="zelloWorld14">
+        <s:complexType />
+      </s:element>
+      <s:element name="zelloWorld14Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zelloWorld14Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="zelloWorld15">
+        <s:complexType />
+      </s:element>
+      <s:element name="zelloWorld15Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zelloWorld15Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="zelloWorld16">
+        <s:complexType />
+      </s:element>
+      <s:element name="zelloWorld16Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zelloWorld16Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="zelloWorld17">
+        <s:complexType />
+      </s:element>
+      <s:element name="zelloWorld17Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zelloWorld17Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="zelloWorld18">
+        <s:complexType />
+      </s:element>
+      <s:element name="zelloWorld18Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zelloWorld18Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="zelloWorld19">
+        <s:complexType />
+      </s:element>
+      <s:element name="zelloWorld19Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zelloWorld19Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="zelloWorld20">
+        <s:complexType />
+      </s:element>
+      <s:element name="zelloWorld20Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zelloWorld20Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="zelloWorld21">
+        <s:complexType />
+      </s:element>
+      <s:element name="zelloWorld21Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zelloWorld21Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="zelloWorld22">
+        <s:complexType />
+      </s:element>
+      <s:element name="zelloWorld22Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zelloWorld22Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="zelloWorld23">
+        <s:complexType />
+      </s:element>
+      <s:element name="zelloWorld23Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zelloWorld23Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="zelloWorld24">
+        <s:complexType />
+      </s:element>
+      <s:element name="zelloWorld24Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zelloWorld24Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="zelloWorld25">
+        <s:complexType />
+      </s:element>
+      <s:element name="zelloWorld25Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zelloWorld25Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="zelloWorld26">
+        <s:complexType />
+      </s:element>
+      <s:element name="zelloWorld26Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zelloWorld26Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="zelloWorld27">
+        <s:complexType />
+      </s:element>
+      <s:element name="zelloWorld27Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zelloWorld27Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="zelloWorld28">
+        <s:complexType />
+      </s:element>
+      <s:element name="zelloWorld28Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zelloWorld28Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="zelloWorld29">
+        <s:complexType />
+      </s:element>
+      <s:element name="zelloWorld29Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zelloWorld29Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="zelloWorld30">
+        <s:complexType />
+      </s:element>
+      <s:element name="zelloWorld30Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zelloWorld30Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getDateTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:getDateTime" />
+  </wsdl:message>
+  <wsdl:message name="getDateTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:getDateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticatorSoapIn">
+    <wsdl:part name="parameters" element="tns:Authenticator" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticatorSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthenticatorResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTeacherLessonsSoapIn">
+    <wsdl:part name="parameters" element="tns:getTeacherLessons" />
+  </wsdl:message>
+  <wsdl:message name="getTeacherLessonsSoapOut">
+    <wsdl:part name="parameters" element="tns:getTeacherLessonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="lessonMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:lessonMessage" />
+  </wsdl:message>
+  <wsdl:message name="lessonMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:lessonMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:sendMessage" />
+  </wsdl:message>
+  <wsdl:message name="sendMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:sendMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteMessage" />
+  </wsdl:message>
+  <wsdl:message name="deleteMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="changePassSoapIn">
+    <wsdl:part name="parameters" element="tns:changePass" />
+  </wsdl:message>
+  <wsdl:message name="changePassSoapOut">
+    <wsdl:part name="parameters" element="tns:changePassResponse" />
+  </wsdl:message>
+  <wsdl:message name="attendanceLessonSoapIn">
+    <wsdl:part name="parameters" element="tns:attendanceLesson" />
+  </wsdl:message>
+  <wsdl:message name="attendanceLessonSoapOut">
+    <wsdl:part name="parameters" element="tns:attendanceLessonResponse" />
+  </wsdl:message>
+  <wsdl:message name="attendSoapIn">
+    <wsdl:part name="parameters" element="tns:attend" />
+  </wsdl:message>
+  <wsdl:message name="attendSoapOut">
+    <wsdl:part name="parameters" element="tns:attendResponse" />
+  </wsdl:message>
+  <wsdl:message name="getNumberOfStudentsSoapIn">
+    <wsdl:part name="parameters" element="tns:getNumberOfStudents" />
+  </wsdl:message>
+  <wsdl:message name="getNumberOfStudentsSoapOut">
+    <wsdl:part name="parameters" element="tns:getNumberOfStudentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTeacherSoapIn">
+    <wsdl:part name="parameters" element="tns:getTeacher" />
+  </wsdl:message>
+  <wsdl:message name="getTeacherSoapOut">
+    <wsdl:part name="parameters" element="tns:getTeacherResponse" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld1SoapIn">
+    <wsdl:part name="parameters" element="tns:zelloWorld1" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld1SoapOut">
+    <wsdl:part name="parameters" element="tns:zelloWorld1Response" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld2SoapIn">
+    <wsdl:part name="parameters" element="tns:zelloWorld2" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld2SoapOut">
+    <wsdl:part name="parameters" element="tns:zelloWorld2Response" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld3SoapIn">
+    <wsdl:part name="parameters" element="tns:zelloWorld3" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld3SoapOut">
+    <wsdl:part name="parameters" element="tns:zelloWorld3Response" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld4SoapIn">
+    <wsdl:part name="parameters" element="tns:zelloWorld4" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld4SoapOut">
+    <wsdl:part name="parameters" element="tns:zelloWorld4Response" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld5SoapIn">
+    <wsdl:part name="parameters" element="tns:zelloWorld5" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld5SoapOut">
+    <wsdl:part name="parameters" element="tns:zelloWorld5Response" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld6SoapIn">
+    <wsdl:part name="parameters" element="tns:zelloWorld6" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld6SoapOut">
+    <wsdl:part name="parameters" element="tns:zelloWorld6Response" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld7SoapIn">
+    <wsdl:part name="parameters" element="tns:zelloWorld7" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld7SoapOut">
+    <wsdl:part name="parameters" element="tns:zelloWorld7Response" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld8SoapIn">
+    <wsdl:part name="parameters" element="tns:zelloWorld8" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld8SoapOut">
+    <wsdl:part name="parameters" element="tns:zelloWorld8Response" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld9SoapIn">
+    <wsdl:part name="parameters" element="tns:zelloWorld9" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld9SoapOut">
+    <wsdl:part name="parameters" element="tns:zelloWorld9Response" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld10SoapIn">
+    <wsdl:part name="parameters" element="tns:zelloWorld10" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld10SoapOut">
+    <wsdl:part name="parameters" element="tns:zelloWorld10Response" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld11SoapIn">
+    <wsdl:part name="parameters" element="tns:zelloWorld11" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld11SoapOut">
+    <wsdl:part name="parameters" element="tns:zelloWorld11Response" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld12SoapIn">
+    <wsdl:part name="parameters" element="tns:zelloWorld12" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld12SoapOut">
+    <wsdl:part name="parameters" element="tns:zelloWorld12Response" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld13SoapIn">
+    <wsdl:part name="parameters" element="tns:zelloWorld13" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld13SoapOut">
+    <wsdl:part name="parameters" element="tns:zelloWorld13Response" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld14SoapIn">
+    <wsdl:part name="parameters" element="tns:zelloWorld14" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld14SoapOut">
+    <wsdl:part name="parameters" element="tns:zelloWorld14Response" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld15SoapIn">
+    <wsdl:part name="parameters" element="tns:zelloWorld15" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld15SoapOut">
+    <wsdl:part name="parameters" element="tns:zelloWorld15Response" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld16SoapIn">
+    <wsdl:part name="parameters" element="tns:zelloWorld16" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld16SoapOut">
+    <wsdl:part name="parameters" element="tns:zelloWorld16Response" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld17SoapIn">
+    <wsdl:part name="parameters" element="tns:zelloWorld17" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld17SoapOut">
+    <wsdl:part name="parameters" element="tns:zelloWorld17Response" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld18SoapIn">
+    <wsdl:part name="parameters" element="tns:zelloWorld18" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld18SoapOut">
+    <wsdl:part name="parameters" element="tns:zelloWorld18Response" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld19SoapIn">
+    <wsdl:part name="parameters" element="tns:zelloWorld19" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld19SoapOut">
+    <wsdl:part name="parameters" element="tns:zelloWorld19Response" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld20SoapIn">
+    <wsdl:part name="parameters" element="tns:zelloWorld20" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld20SoapOut">
+    <wsdl:part name="parameters" element="tns:zelloWorld20Response" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld21SoapIn">
+    <wsdl:part name="parameters" element="tns:zelloWorld21" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld21SoapOut">
+    <wsdl:part name="parameters" element="tns:zelloWorld21Response" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld22SoapIn">
+    <wsdl:part name="parameters" element="tns:zelloWorld22" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld22SoapOut">
+    <wsdl:part name="parameters" element="tns:zelloWorld22Response" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld23SoapIn">
+    <wsdl:part name="parameters" element="tns:zelloWorld23" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld23SoapOut">
+    <wsdl:part name="parameters" element="tns:zelloWorld23Response" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld24SoapIn">
+    <wsdl:part name="parameters" element="tns:zelloWorld24" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld24SoapOut">
+    <wsdl:part name="parameters" element="tns:zelloWorld24Response" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld25SoapIn">
+    <wsdl:part name="parameters" element="tns:zelloWorld25" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld25SoapOut">
+    <wsdl:part name="parameters" element="tns:zelloWorld25Response" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld26SoapIn">
+    <wsdl:part name="parameters" element="tns:zelloWorld26" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld26SoapOut">
+    <wsdl:part name="parameters" element="tns:zelloWorld26Response" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld27SoapIn">
+    <wsdl:part name="parameters" element="tns:zelloWorld27" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld27SoapOut">
+    <wsdl:part name="parameters" element="tns:zelloWorld27Response" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld28SoapIn">
+    <wsdl:part name="parameters" element="tns:zelloWorld28" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld28SoapOut">
+    <wsdl:part name="parameters" element="tns:zelloWorld28Response" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld29SoapIn">
+    <wsdl:part name="parameters" element="tns:zelloWorld29" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld29SoapOut">
+    <wsdl:part name="parameters" element="tns:zelloWorld29Response" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld30SoapIn">
+    <wsdl:part name="parameters" element="tns:zelloWorld30" />
+  </wsdl:message>
+  <wsdl:message name="zelloWorld30SoapOut">
+    <wsdl:part name="parameters" element="tns:zelloWorld30Response" />
+  </wsdl:message>
+  <wsdl:portType name="PharmalogyWebServiceSoap">
+    <wsdl:operation name="getDateTime">
+      <wsdl:input message="tns:getDateTimeSoapIn" />
+      <wsdl:output message="tns:getDateTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Authenticator">
+      <wsdl:input message="tns:AuthenticatorSoapIn" />
+      <wsdl:output message="tns:AuthenticatorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTeacherLessons">
+      <wsdl:input message="tns:getTeacherLessonsSoapIn" />
+      <wsdl:output message="tns:getTeacherLessonsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="lessonMessage">
+      <wsdl:input message="tns:lessonMessageSoapIn" />
+      <wsdl:output message="tns:lessonMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendMessage">
+      <wsdl:input message="tns:sendMessageSoapIn" />
+      <wsdl:output message="tns:sendMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteMessage">
+      <wsdl:input message="tns:deleteMessageSoapIn" />
+      <wsdl:output message="tns:deleteMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="changePass">
+      <wsdl:input message="tns:changePassSoapIn" />
+      <wsdl:output message="tns:changePassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="attendanceLesson">
+      <wsdl:input message="tns:attendanceLessonSoapIn" />
+      <wsdl:output message="tns:attendanceLessonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="attend">
+      <wsdl:input message="tns:attendSoapIn" />
+      <wsdl:output message="tns:attendSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getNumberOfStudents">
+      <wsdl:input message="tns:getNumberOfStudentsSoapIn" />
+      <wsdl:output message="tns:getNumberOfStudentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTeacher">
+      <wsdl:input message="tns:getTeacherSoapIn" />
+      <wsdl:output message="tns:getTeacherSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld1">
+      <wsdl:input message="tns:zelloWorld1SoapIn" />
+      <wsdl:output message="tns:zelloWorld1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld2">
+      <wsdl:input message="tns:zelloWorld2SoapIn" />
+      <wsdl:output message="tns:zelloWorld2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld3">
+      <wsdl:input message="tns:zelloWorld3SoapIn" />
+      <wsdl:output message="tns:zelloWorld3SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld4">
+      <wsdl:input message="tns:zelloWorld4SoapIn" />
+      <wsdl:output message="tns:zelloWorld4SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld5">
+      <wsdl:input message="tns:zelloWorld5SoapIn" />
+      <wsdl:output message="tns:zelloWorld5SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld6">
+      <wsdl:input message="tns:zelloWorld6SoapIn" />
+      <wsdl:output message="tns:zelloWorld6SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld7">
+      <wsdl:input message="tns:zelloWorld7SoapIn" />
+      <wsdl:output message="tns:zelloWorld7SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld8">
+      <wsdl:input message="tns:zelloWorld8SoapIn" />
+      <wsdl:output message="tns:zelloWorld8SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld9">
+      <wsdl:input message="tns:zelloWorld9SoapIn" />
+      <wsdl:output message="tns:zelloWorld9SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld10">
+      <wsdl:input message="tns:zelloWorld10SoapIn" />
+      <wsdl:output message="tns:zelloWorld10SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld11">
+      <wsdl:input message="tns:zelloWorld11SoapIn" />
+      <wsdl:output message="tns:zelloWorld11SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld12">
+      <wsdl:input message="tns:zelloWorld12SoapIn" />
+      <wsdl:output message="tns:zelloWorld12SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld13">
+      <wsdl:input message="tns:zelloWorld13SoapIn" />
+      <wsdl:output message="tns:zelloWorld13SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld14">
+      <wsdl:input message="tns:zelloWorld14SoapIn" />
+      <wsdl:output message="tns:zelloWorld14SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld15">
+      <wsdl:input message="tns:zelloWorld15SoapIn" />
+      <wsdl:output message="tns:zelloWorld15SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld16">
+      <wsdl:input message="tns:zelloWorld16SoapIn" />
+      <wsdl:output message="tns:zelloWorld16SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld17">
+      <wsdl:input message="tns:zelloWorld17SoapIn" />
+      <wsdl:output message="tns:zelloWorld17SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld18">
+      <wsdl:input message="tns:zelloWorld18SoapIn" />
+      <wsdl:output message="tns:zelloWorld18SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld19">
+      <wsdl:input message="tns:zelloWorld19SoapIn" />
+      <wsdl:output message="tns:zelloWorld19SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld20">
+      <wsdl:input message="tns:zelloWorld20SoapIn" />
+      <wsdl:output message="tns:zelloWorld20SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld21">
+      <wsdl:input message="tns:zelloWorld21SoapIn" />
+      <wsdl:output message="tns:zelloWorld21SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld22">
+      <wsdl:input message="tns:zelloWorld22SoapIn" />
+      <wsdl:output message="tns:zelloWorld22SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld23">
+      <wsdl:input message="tns:zelloWorld23SoapIn" />
+      <wsdl:output message="tns:zelloWorld23SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld24">
+      <wsdl:input message="tns:zelloWorld24SoapIn" />
+      <wsdl:output message="tns:zelloWorld24SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld25">
+      <wsdl:input message="tns:zelloWorld25SoapIn" />
+      <wsdl:output message="tns:zelloWorld25SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld26">
+      <wsdl:input message="tns:zelloWorld26SoapIn" />
+      <wsdl:output message="tns:zelloWorld26SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld27">
+      <wsdl:input message="tns:zelloWorld27SoapIn" />
+      <wsdl:output message="tns:zelloWorld27SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld28">
+      <wsdl:input message="tns:zelloWorld28SoapIn" />
+      <wsdl:output message="tns:zelloWorld28SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld29">
+      <wsdl:input message="tns:zelloWorld29SoapIn" />
+      <wsdl:output message="tns:zelloWorld29SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld30">
+      <wsdl:input message="tns:zelloWorld30SoapIn" />
+      <wsdl:output message="tns:zelloWorld30SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PharmalogyWebServiceSoap" type="tns:PharmalogyWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getDateTime">
+      <soap:operation soapAction="http://youshitaco.ir/getDateTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authenticator">
+      <soap:operation soapAction="http://youshitaco.ir/Authenticator" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTeacherLessons">
+      <soap:operation soapAction="http://youshitaco.ir/getTeacherLessons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lessonMessage">
+      <soap:operation soapAction="http://youshitaco.ir/lessonMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendMessage">
+      <soap:operation soapAction="http://youshitaco.ir/sendMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteMessage">
+      <soap:operation soapAction="http://youshitaco.ir/deleteMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changePass">
+      <soap:operation soapAction="http://youshitaco.ir/changePass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="attendanceLesson">
+      <soap:operation soapAction="http://youshitaco.ir/attendanceLesson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="attend">
+      <soap:operation soapAction="http://youshitaco.ir/attend" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNumberOfStudents">
+      <soap:operation soapAction="http://youshitaco.ir/getNumberOfStudents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTeacher">
+      <soap:operation soapAction="http://youshitaco.ir/getTeacher" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld1">
+      <soap:operation soapAction="http://youshitaco.ir/zelloWorld1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld2">
+      <soap:operation soapAction="http://youshitaco.ir/zelloWorld2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld3">
+      <soap:operation soapAction="http://youshitaco.ir/zelloWorld3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld4">
+      <soap:operation soapAction="http://youshitaco.ir/zelloWorld4" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld5">
+      <soap:operation soapAction="http://youshitaco.ir/zelloWorld5" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld6">
+      <soap:operation soapAction="http://youshitaco.ir/zelloWorld6" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld7">
+      <soap:operation soapAction="http://youshitaco.ir/zelloWorld7" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld8">
+      <soap:operation soapAction="http://youshitaco.ir/zelloWorld8" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld9">
+      <soap:operation soapAction="http://youshitaco.ir/zelloWorld9" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld10">
+      <soap:operation soapAction="http://youshitaco.ir/zelloWorld10" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld11">
+      <soap:operation soapAction="http://youshitaco.ir/zelloWorld11" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld12">
+      <soap:operation soapAction="http://youshitaco.ir/zelloWorld12" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld13">
+      <soap:operation soapAction="http://youshitaco.ir/zelloWorld13" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld14">
+      <soap:operation soapAction="http://youshitaco.ir/zelloWorld14" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld15">
+      <soap:operation soapAction="http://youshitaco.ir/zelloWorld15" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld16">
+      <soap:operation soapAction="http://youshitaco.ir/zelloWorld16" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld17">
+      <soap:operation soapAction="http://youshitaco.ir/zelloWorld17" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld18">
+      <soap:operation soapAction="http://youshitaco.ir/zelloWorld18" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld19">
+      <soap:operation soapAction="http://youshitaco.ir/zelloWorld19" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld20">
+      <soap:operation soapAction="http://youshitaco.ir/zelloWorld20" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld21">
+      <soap:operation soapAction="http://youshitaco.ir/zelloWorld21" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld22">
+      <soap:operation soapAction="http://youshitaco.ir/zelloWorld22" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld23">
+      <soap:operation soapAction="http://youshitaco.ir/zelloWorld23" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld24">
+      <soap:operation soapAction="http://youshitaco.ir/zelloWorld24" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld25">
+      <soap:operation soapAction="http://youshitaco.ir/zelloWorld25" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld26">
+      <soap:operation soapAction="http://youshitaco.ir/zelloWorld26" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld27">
+      <soap:operation soapAction="http://youshitaco.ir/zelloWorld27" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld28">
+      <soap:operation soapAction="http://youshitaco.ir/zelloWorld28" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld29">
+      <soap:operation soapAction="http://youshitaco.ir/zelloWorld29" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld30">
+      <soap:operation soapAction="http://youshitaco.ir/zelloWorld30" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PharmalogyWebServiceSoap12" type="tns:PharmalogyWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getDateTime">
+      <soap12:operation soapAction="http://youshitaco.ir/getDateTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authenticator">
+      <soap12:operation soapAction="http://youshitaco.ir/Authenticator" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTeacherLessons">
+      <soap12:operation soapAction="http://youshitaco.ir/getTeacherLessons" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lessonMessage">
+      <soap12:operation soapAction="http://youshitaco.ir/lessonMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendMessage">
+      <soap12:operation soapAction="http://youshitaco.ir/sendMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteMessage">
+      <soap12:operation soapAction="http://youshitaco.ir/deleteMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changePass">
+      <soap12:operation soapAction="http://youshitaco.ir/changePass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="attendanceLesson">
+      <soap12:operation soapAction="http://youshitaco.ir/attendanceLesson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="attend">
+      <soap12:operation soapAction="http://youshitaco.ir/attend" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNumberOfStudents">
+      <soap12:operation soapAction="http://youshitaco.ir/getNumberOfStudents" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTeacher">
+      <soap12:operation soapAction="http://youshitaco.ir/getTeacher" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld1">
+      <soap12:operation soapAction="http://youshitaco.ir/zelloWorld1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld2">
+      <soap12:operation soapAction="http://youshitaco.ir/zelloWorld2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld3">
+      <soap12:operation soapAction="http://youshitaco.ir/zelloWorld3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld4">
+      <soap12:operation soapAction="http://youshitaco.ir/zelloWorld4" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld5">
+      <soap12:operation soapAction="http://youshitaco.ir/zelloWorld5" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld6">
+      <soap12:operation soapAction="http://youshitaco.ir/zelloWorld6" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld7">
+      <soap12:operation soapAction="http://youshitaco.ir/zelloWorld7" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld8">
+      <soap12:operation soapAction="http://youshitaco.ir/zelloWorld8" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld9">
+      <soap12:operation soapAction="http://youshitaco.ir/zelloWorld9" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld10">
+      <soap12:operation soapAction="http://youshitaco.ir/zelloWorld10" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld11">
+      <soap12:operation soapAction="http://youshitaco.ir/zelloWorld11" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld12">
+      <soap12:operation soapAction="http://youshitaco.ir/zelloWorld12" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld13">
+      <soap12:operation soapAction="http://youshitaco.ir/zelloWorld13" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld14">
+      <soap12:operation soapAction="http://youshitaco.ir/zelloWorld14" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld15">
+      <soap12:operation soapAction="http://youshitaco.ir/zelloWorld15" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld16">
+      <soap12:operation soapAction="http://youshitaco.ir/zelloWorld16" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld17">
+      <soap12:operation soapAction="http://youshitaco.ir/zelloWorld17" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld18">
+      <soap12:operation soapAction="http://youshitaco.ir/zelloWorld18" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld19">
+      <soap12:operation soapAction="http://youshitaco.ir/zelloWorld19" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld20">
+      <soap12:operation soapAction="http://youshitaco.ir/zelloWorld20" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld21">
+      <soap12:operation soapAction="http://youshitaco.ir/zelloWorld21" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld22">
+      <soap12:operation soapAction="http://youshitaco.ir/zelloWorld22" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld23">
+      <soap12:operation soapAction="http://youshitaco.ir/zelloWorld23" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld24">
+      <soap12:operation soapAction="http://youshitaco.ir/zelloWorld24" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld25">
+      <soap12:operation soapAction="http://youshitaco.ir/zelloWorld25" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld26">
+      <soap12:operation soapAction="http://youshitaco.ir/zelloWorld26" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld27">
+      <soap12:operation soapAction="http://youshitaco.ir/zelloWorld27" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld28">
+      <soap12:operation soapAction="http://youshitaco.ir/zelloWorld28" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld29">
+      <soap12:operation soapAction="http://youshitaco.ir/zelloWorld29" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zelloWorld30">
+      <soap12:operation soapAction="http://youshitaco.ir/zelloWorld30" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PharmalogyWebService">
+    <wsdl:port name="PharmalogyWebServiceSoap" binding="tns:PharmalogyWebServiceSoap">
+      <soap:address location="http://pharmalogyfaculty.youshitaco.ir/PharmalogyWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PharmalogyWebServiceSoap12" binding="tns:PharmalogyWebServiceSoap12">
+      <soap12:address location="http://pharmalogyfaculty.youshitaco.ir/PharmalogyWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

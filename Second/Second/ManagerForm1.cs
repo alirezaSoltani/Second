@@ -284,27 +284,28 @@ namespace Second
             /****************************************************lessons tab design**********************************************************/
             lessons_addEditDelete_panel.SetBounds(((5 * width) / 400), ((2 * height) / 100), ((96 * width) / 100), ((31 * height) / 100));
             lessons_dataGridView_panel.SetBounds(((5 * width) / 400), (38 * height) / 100, ((96 * width) / 100), ((36 * height) / 100));
-            lessons_add_teachers_panel.SetBounds(((2 * width) / 100), ((12 * height) / 300), ((235 * width) / 1000), ((200 * height) / 1000));
+            lessons_add_teachers_panel.SetBounds(((5 * width) / 1000), ((12 * height) / 300), ((200 * width) / 1000), ((200 * height) / 1000));
             lessons_add_teachers_panel_hidden_lbl.SetBounds(((5 * width) / 1000), ((1 * height) / 300), ((10 * width) / 1000), ((200 * height) / 1000));
             dataGridView3.SetBounds(0, 0, ((96 * width) / 100), ((36 * height) / 100));
 
             //***add
-            lessons_add_lessonNumber_lbl.SetBounds(((38 * width) / 100), ((18 * height) / 300), ((75 * width) / 1000), ((27 * height) / 1000));
-            lessons_add_lessonNumber_txtbx.SetBounds(((28 * width) / 100), ((18 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
-            lessons_add_lessonName_lbl.SetBounds(((38 * width) / 100), ((33 * height) / 300), ((75 * width) / 1000), ((27 * height) / 1000));
-            lessons_add_lessonName_txtbx.SetBounds(((28 * width) / 100), ((33 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
-            lessons_add_lessonGroupNumber_lbl.SetBounds(((38 * width) / 100), ((48 * height) / 300), ((75 * width) / 1000), ((27 * height) / 1000));
-            lessons_add_lessonGroupNumber_txtbx.SetBounds(((28 * width) / 100), ((48 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            lessons_add_lessonNumber_lbl.SetBounds(((315 * width) / 1000), ((18 * height) / 300), ((75 * width) / 1000), ((27 * height) / 1000));
+            lessons_add_lessonNumber_txtbx.SetBounds(((215 * width) / 1000), ((18 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            lessons_add_lessonName_lbl.SetBounds(((315 * width) / 1000), ((33 * height) / 300), ((75 * width) / 1000), ((27 * height) / 1000));
+            lessons_add_lessonName_txtbx.SetBounds(((215 * width) / 1000), ((33 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            lessons_add_lessonGroupNumber_lbl.SetBounds(((315 * width) / 1000), ((48 * height) / 300), ((75 * width) / 1000), ((27 * height) / 1000));
+            lessons_add_lessonGroupNumber_txtbx.SetBounds(((215 * width) / 1000), ((48 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
 
             //***buttons
-            lessons_add_deleteTeacher_btn.SetBounds(((28 * width) / 100), ((62 * height) / 300), ((85 * width) / 1000), ((30 * height) / 1000));
-            lessons_add_addTeacher_btn.SetBounds(((37 * width) / 100), ((62 * height) / 300), ((85 * width) / 1000), ((30 * height) / 1000));
-            lessons_add_registerTeacher_btn.SetBounds(((2 * width) / 100), ((75 * height) / 300), ((235 * width) / 1000), ((33 * height) / 1000));
-            lessons_add_clear_btn.SetBounds(((28 * width) / 100), ((75 * height) / 300), ((176 * width) / 1000), ((33 * height) / 1000));
+            lessons_add_deleteTeacher_btn.SetBounds(((300 * width) / 1000), ((62 * height) / 300), ((85 * width) / 1000), ((30 * height) / 1000));
+            lessons_add_addTeacher_btn.SetBounds(((29 * width) / 1000), ((62 * height) / 300), ((85 * width) / 1000), ((30 * height) / 1000));
+            lessons_add_registerTeacher_btn.SetBounds(((5 * width) / 1000), ((75 * height) / 300), ((200 * width) / 1000), ((33 * height) / 1000));
+            lessons_add_clear_btn.SetBounds(((230 * width) / 1000), ((75 * height) / 300), ((176 * width) / 1000), ((33 * height) / 1000));
 
             //***groupBoxes
-            lessons_addLesson_gpb.SetBounds(((45 * width) / 100), ((1 * height) / 300), ((482 * width) / 1000), ((290 * height) / 1000));
-            lessons_editLesson_gpb.SetBounds(((23 * width) / 100), ((1 * height) / 300), ((235 * width) / 1000), ((290 * height) / 1000));
+            lessons_addLesson_gpb.SetBounds(((450 * width) / 1000), ((1 * height) / 300), ((480 * width) / 1000), ((290 * height) / 1000));
+            lessons_editLesson_gpb.SetBounds(((230 * width) / 1000), ((1 * height) / 300), ((215 * width) / 1000), ((290 * height) / 1000));
+            lessons_deleteTeacher_gpb.SetBounds(((15 * width) / 1000), ((1 * height) / 300), ((215 * width) / 1000), ((290 * height) / 1000));
 
 
             /// <summary>
@@ -314,12 +315,12 @@ namespace Second
 
             teacher_lbl_List.Add(new Label());
             teacher_lbl_List[numberOfTeachers].Font = new Font("B Yekan+", 9 , FontStyle.Regular);
-            teacher_lbl_List[numberOfTeachers].SetBounds(((133 * width) / 1000), ((5 * height) / 300), ((75 * width) / 1000),  (27 * height) / 1000);
+            teacher_lbl_List[numberOfTeachers].SetBounds(((100 * width) / 1000), ((5 * height) / 300), ((75 * width) / 1000),  (27 * height) / 1000);
             teacher_lbl_List[numberOfTeachers].Text = "شماره استاد " + (numberOfTeachers + 1);
 
             teacher_txtbx_List.Add(new TextBox());
             teacher_txtbx_List[numberOfTeachers].Font = new Font("B Yekan+", 9, FontStyle.Regular);
-            teacher_txtbx_List[numberOfTeachers].SetBounds(((33* width) / 1000), ((5 * height) / 300), ((115 * width) / 1000),  (27 * height) / 1000);
+            teacher_txtbx_List[numberOfTeachers].SetBounds(((15* width) / 1000), ((5 * height) / 300), ((115 * width) / 1000),  (27 * height) / 1000);
 
             lessons_add_teachers_panel.Controls.Add(teacher_txtbx_List[numberOfTeachers]);
             lessons_add_teachers_panel.Controls.Add(teacher_lbl_List[numberOfTeachers]);

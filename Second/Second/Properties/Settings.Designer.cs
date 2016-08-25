@@ -43,5 +43,15 @@ namespace Second.Properties {
                 return ((string)(this["conString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://pharmalogyfaculty.youshitaco.ir/PharmalogyWebService.asmx")]
+        public string Second_PharmalogyfacultyWebService_PharmalogyWebService {
+            get {
+                return ((string)(this["Second_PharmalogyfacultyWebService_PharmalogyWebService"]));
+            }
+        }
     }
 }
