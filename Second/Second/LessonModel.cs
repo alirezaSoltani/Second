@@ -96,26 +96,45 @@ namespace Test
         public void updateLesson()
         {
 
+
             SqlConnection conn = new SqlConnection();
-                conn.ConnectionString =
+            conn.ConnectionString =
+            "Data Source= 185.159.152.5;" +
+                "Initial Catalog=youshita_Test;" +
+                "User id=youshita_co; " +
+                "Password=P@hn1395;";
+
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "UPDATE lessonTable SET lesson# = '" + getNewLessonNumber()
+                                                                + "', lessonName ='" + getLessonName()
+                                                                + "', lessonGroup# ='" + getNewLessonGroupNumber() + "' WHERE lesson# =" + getLessonNumber() + "AND lessonGroup#= " + getLessonGroupNumber() + "";
+
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            conn.Close();
+
+
+
+            SqlConnection conn2 = new SqlConnection();
+            conn2.ConnectionString =
                 "Data Source= 185.159.152.5;" +
-                    "Initial Catalog=youshita_Test;" +
-                    "User id=youshita_co; " +
-                    "Password=P@hn1395;";
+                "Initial Catalog=youshita_Test;" +
+                "User id=youshita_co; " +
+                "Password=P@hn1395;";
 
-                SqlCommand sc = new SqlCommand();
-                SqlDataReader reader;
-                sc.CommandText = "UPDATE lessonTable SET lesson# = '" + getNewLessonNumber()
-                                                                    + "', lessonName ='" + getLessonName()
-                                                                    + "', lessonGroup# ='" + getNewLessonGroupNumber()
-                                                                    + "', lessonTeacher# ='" + getLessonTeacherNumber() + "')";
 
-                sc.CommandType = CommandType.Text;
-                sc.Connection = conn;
-                conn.Open();
-                reader = sc.ExecuteReader();
-                conn.Close();
 
+            SqlCommand sc2 = new SqlCommand();
+            SqlDataReader reader2;
+            sc2.Connection = conn2;
+            conn2.Open();
+            sc2.CommandText = "EXEC sp_rename '" + getLessonNumber() + "-" + getLessonGroupNumber() + "_Table', '" + getNewLessonNumber() + "-" + getNewLessonGroupNumber() + "_Table'";
+            sc2.CommandType = CommandType.Text;
+            reader2 = sc2.ExecuteReader();
+            conn2.Close();
 
 
 
@@ -277,38 +296,7 @@ namespace Test
             return lessonTeacherNumber;
         }
 
-        public void renameLessonTable(String newName, String lastName)
-        {
 
-            try
-            {
-
-                SqlConnection conn = new SqlConnection();
-                conn.ConnectionString =
-                    "Data Source= 185.159.152.5;" +
-                    "Initial Catalog=youshita_Test;" +
-                    "User id=youshita_co; " +
-                    "Password=P@hn1395;";
-
-
-                SqlCommand sc = new SqlCommand();
-                SqlDataReader reader;
-                sc.CommandText = "EXEC sp_rename '" + lastName + "', '" + newName + "'";
-
-                sc.CommandType = CommandType.Text;
-                sc.Connection = conn;
-                conn.Open();
-                reader = sc.ExecuteReader();
-                conn.Close();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-
-            }
-
-
-        }
 
         public void setNewLessonNumber(long NewLessonNumber)
         {
