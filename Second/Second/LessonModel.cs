@@ -55,10 +55,6 @@ namespace Test
                 reader = sc.ExecuteReader();
                 conn.Close();
 
-           
-
-
-
         }
 
         public void createLessonTable()
@@ -96,29 +92,45 @@ namespace Test
         public void updateLesson()
         {
 
+
             SqlConnection conn = new SqlConnection();
-                conn.ConnectionString =
+            conn.ConnectionString =
+            "Data Source= 185.159.152.5;" +
+                "Initial Catalog=youshita_Test;" +
+                "User id=youshita_co; " +
+                "Password=P@hn1395;";
+
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "UPDATE lessonTable SET lesson# = '" + getNewLessonNumber()
+                                                                + "', lessonName ='" + getLessonName()
+                                                                + "', lessonGroup# ='" + getNewLessonGroupNumber() + "' WHERE lesson# =" + getLessonNumber() + "AND lessonGroup#= " + getLessonGroupNumber() + "";
+
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            conn.Close();
+
+
+
+            SqlConnection conn2 = new SqlConnection();
+            conn2.ConnectionString =
                 "Data Source= 185.159.152.5;" +
-                    "Initial Catalog=youshita_Test;" +
-                    "User id=youshita_co; " +
-                    "Password=P@hn1395;";
-
-                SqlCommand sc = new SqlCommand();
-                SqlDataReader reader;
-                sc.CommandText = "UPDATE lessonTable SET lesson# = '" + getNewLessonNumber()
-                                                                    + "', lessonName ='" + getLessonName()
-                                                                    + "', lessonGroup# ='" + getNewLessonGroupNumber()
-                                                                    + "', lessonTeacher# ='" + getLessonTeacherNumber() + "')";
-
-                sc.CommandType = CommandType.Text;
-                sc.Connection = conn;
-                conn.Open();
-                reader = sc.ExecuteReader();
-                conn.Close();
+                "Initial Catalog=youshita_Test;" +
+                "User id=youshita_co; " +
+                "Password=P@hn1395;";
 
 
 
-
+            SqlCommand sc2 = new SqlCommand();
+            SqlDataReader reader2;
+            sc2.Connection = conn2;
+            conn2.Open();
+            sc2.CommandText = "EXEC sp_rename '" + getLessonNumber() + "-" + getLessonGroupNumber() + "_Table', '" + getNewLessonNumber() + "-" + getNewLessonGroupNumber() + "_Table'";
+            sc2.CommandType = CommandType.Text;
+            reader2 = sc2.ExecuteReader();
+            conn2.Close();
         }
         public void deleteLesson()
         {
@@ -132,28 +144,36 @@ namespace Test
 
                 SqlCommand sc = new SqlCommand();
                 SqlDataReader reader;
+
                 sc.CommandText = " DELETE FROM lessonTable WHERE lesson# = " + getLessonNumber() + "AND lessonGroup# = " + getLessonGroupNumber() + " ";
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                conn.Open();
+                reader = sc.ExecuteReader();
+                conn.Close();
+
+
+                SqlConnection conn2 = new SqlConnection();
+                 conn2.ConnectionString =
+                    "Data Source= 185.159.152.5;" +
+                    "Initial Catalog=youshita_Test;" +
+                    "User id=youshita_co; " +
+                    "Password=P@hn1395;";
 
 
                 SqlCommand sc1 = new SqlCommand();
                 SqlDataReader reader2;
-                sc1.CommandText = " DROP TABLE [dbo].[" + getLessonNumber() + "-" + getLessonGroupNumber() + "_Table]";
+
+                sc1.CommandText = "DROP TABLE [dbo].["+ getLessonNumber() + "-" + getLessonGroupNumber() + "_Table]";
                 sc1.CommandType = CommandType.Text;
-
-                sc.CommandType = CommandType.Text;
-                sc.Connection = conn;
-                sc1.Connection = conn;
-                conn.Open();
-                reader = sc.ExecuteReader();
-                reader2 = sc.ExecuteReader();
-                conn.Close();
-           
-
+                sc1.Connection = conn2;
+                conn2.Open();
+                reader2 = sc1.ExecuteReader();
+                conn2.Close();
         }
 
         public void deleteLessonTeacher ()
         {
-            
                 SqlConnection conn = new SqlConnection();
                 conn.ConnectionString =
                 "Data Source= 185.159.152.5;" +
@@ -189,8 +209,6 @@ namespace Test
                 {
                     MessageBox.Show("به دلیل وجود فقط یک استاد در این درس، نمی توان استاد مورد نظر را حذف کرد.");
                 }
-            
-           
         }
 
 
@@ -277,38 +295,7 @@ namespace Test
             return lessonTeacherNumber;
         }
 
-        public void renameLessonTable(String newName, String lastName)
-        {
 
-            try
-            {
-
-                SqlConnection conn = new SqlConnection();
-                conn.ConnectionString =
-                    "Data Source= 185.159.152.5;" +
-                    "Initial Catalog=youshita_Test;" +
-                    "User id=youshita_co; " +
-                    "Password=P@hn1395;";
-
-
-                SqlCommand sc = new SqlCommand();
-                SqlDataReader reader;
-                sc.CommandText = "EXEC sp_rename '" + lastName + "', '" + newName + "'";
-
-                sc.CommandType = CommandType.Text;
-                sc.Connection = conn;
-                conn.Open();
-                reader = sc.ExecuteReader();
-                conn.Close();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-
-            }
-
-
-        }
 
         public void setNewLessonNumber(long NewLessonNumber)
         {
