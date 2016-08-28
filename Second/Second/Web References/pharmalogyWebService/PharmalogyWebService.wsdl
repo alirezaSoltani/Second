@@ -515,6 +515,26 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="getLessonTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lessonNumber" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="lessonGroupNumber" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getLessonTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getLessonTableResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="getDateTimeSoapIn">
@@ -763,6 +783,12 @@
   <wsdl:message name="zelloWorld30SoapOut">
     <wsdl:part name="parameters" element="tns:zelloWorld30Response" />
   </wsdl:message>
+  <wsdl:message name="getLessonTableSoapIn">
+    <wsdl:part name="parameters" element="tns:getLessonTable" />
+  </wsdl:message>
+  <wsdl:message name="getLessonTableSoapOut">
+    <wsdl:part name="parameters" element="tns:getLessonTableResponse" />
+  </wsdl:message>
   <wsdl:portType name="PharmalogyWebServiceSoap">
     <wsdl:operation name="getDateTime">
       <wsdl:input message="tns:getDateTimeSoapIn" />
@@ -927,6 +953,10 @@
     <wsdl:operation name="zelloWorld30">
       <wsdl:input message="tns:zelloWorld30SoapIn" />
       <wsdl:output message="tns:zelloWorld30SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getLessonTable">
+      <wsdl:input message="tns:getLessonTableSoapIn" />
+      <wsdl:output message="tns:getLessonTableSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="PharmalogyWebServiceSoap" type="tns:PharmalogyWebServiceSoap">
@@ -1300,6 +1330,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getLessonTable">
+      <soap:operation soapAction="http://youshitaco.ir/getLessonTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="PharmalogyWebServiceSoap12" type="tns:PharmalogyWebServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -1665,6 +1704,15 @@
     </wsdl:operation>
     <wsdl:operation name="zelloWorld30">
       <soap12:operation soapAction="http://youshitaco.ir/zelloWorld30" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLessonTable">
+      <soap12:operation soapAction="http://youshitaco.ir/getLessonTable" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

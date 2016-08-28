@@ -110,7 +110,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentModel.cs" />
     <Compile Include="TeacherModel.cs" />
-    <Compile Include="Web References\PharmalogyfacultyWebService\Reference.cs">
+    <Compile Include="Web References\pharmalogyWebService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -158,18 +158,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Web References\PharmalogyfacultyWebService\LessonModel.datasource">
+    <None Include="Web References\pharmalogyWebService\LessonModel.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\PharmalogyfacultyWebService\MessageModel.datasource">
+    <None Include="Web References\pharmalogyWebService\MessageModel.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\PharmalogyfacultyWebService\PharmalogyWebService.wsdl" />
-    <None Include="Web References\PharmalogyfacultyWebService\Reference.map">
+    <None Include="Web References\pharmalogyWebService\PharmalogyWebService.wsdl" />
+    <None Include="Web References\pharmalogyWebService\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Web References\PharmalogyfacultyWebService\TeacherModel.datasource">
+    <None Include="Web References\pharmalogyWebService\TeacherModel.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
   </ItemGroup>
@@ -213,22 +213,6 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://pharmalogyfaculty.youshitaco.ir/PharmalogyWebService.asmx">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\PharmalogyfacultyWebService\</RelPath>
-      <UpdateFromURL>http://pharmalogyfaculty.youshitaco.ir/PharmalogyWebService.asmx</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>Second_PharmalogyfacultyWebService_PharmalogyWebService</CachedSettingsPropName>
-    </WebReferenceUrl>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Web References\PharmalogyfacultyWebService\PharmalogyWebService.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Untitled-1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -245,6 +229,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Status-dialog-error-isdfcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://pharmalogyfaculty.youshitaco.ir/PharmalogyWebService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\pharmalogyWebService\</RelPath>
+      <UpdateFromURL>http://pharmalogyfaculty.youshitaco.ir/PharmalogyWebService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Second_pharmalogyWebService_PharmalogyWebService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\pharmalogyWebService\PharmalogyWebService.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

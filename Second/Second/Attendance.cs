@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Second.pharmalogyWebService;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -13,6 +14,7 @@ namespace Second
     {
         public long lessonNumber;
         public short lessonGroupNumber;
+        PharmalogyWebService pharmaObj = new PharmalogyWebService();
 
         public Attendance()
         {
@@ -20,11 +22,10 @@ namespace Second
             lessonGroupNumber = 0;
         }
 
-        public void attendanceLesson(string date)
+        public void attendanceLesson(string date , long username)
         {
-
-            try
-            {
+           
+           
                 SqlConnection conn = new SqlConnection();
                 conn.ConnectionString =
                   "Data Source= 185.159.152.5;" +
@@ -40,18 +41,28 @@ namespace Second
                     cmd.Connection.Close();
                 }
 
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
+                ///////log
+                SqlCommand sc1 = new SqlCommand();
+                SqlDataReader reader2;
+                sc1.Connection = conn;
+                conn.Open();
+                sc1.CommandText = "INSERT INTO logTable VALUES ( 'Attendance' , 'Attendance with username : " + username + " for this class number " + getLessonNumber() + " and this class group number " + getLessonGroupNumber() + " at " + date + "' , '" + pharmaObj.getDateTime() + "' , '" + username + "','at')";
+                sc1.CommandType = CommandType.Text;
+                reader2 = sc1.ExecuteReader();
+                conn.Close();
+                ////////log
+
+          
+
+          
+
         }
 
 
         public void attend(String date,bool state)
         {
             Attendance attendanceObj = new Attendance();
-            StudentModel studentObj = new StudentModel();
+            Test.StudentModel studentObj = new Test.StudentModel();
             try
             {
 

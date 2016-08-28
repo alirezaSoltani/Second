@@ -22,6 +22,8 @@ namespace Second
         private Int16 messageLessonGroupNumber;
         private bool messageRead;
 
+        pharmalogyWebService.PharmalogyWebService pharmaObj = new pharmalogyWebService.PharmalogyWebService();
+
         public MessageModel()
         {
             messageNumber = 0;
@@ -35,6 +37,7 @@ namespace Second
         }
         public void sendMessage()
         {
+           string dateAndTime = pharmaObj.getDateTime();
             try
             {
 
@@ -62,6 +65,19 @@ namespace Second
                 conn.Open();
                 reader = sc.ExecuteReader();
                 conn.Close();
+
+
+                ///////log
+                SqlCommand sc2 = new SqlCommand();
+                SqlDataReader reader3;
+                sc2.Connection = conn;
+                conn.Open();
+                sc2.CommandText = "INSERT INTO logTable VALUES ( 'Send Message' , 'sending message with " + getSenderTeacherNumber() + " ' , '" + dateAndTime  + "' , '" + getSenderTeacherNumber() + "','s m')";
+                sc2.CommandType = CommandType.Text;
+                reader3 = sc2.ExecuteReader();
+                conn.Close();
+                ////////log
+
             }
             catch (Exception e)
             {
@@ -82,6 +98,7 @@ namespace Second
                     "Initial Catalog=youshita_Test;" +
                     "User id=youshita_co; " +
                     "Password=P@hn1395;";
+
 
                 SqlCommand sc = new SqlCommand();
                 SqlDataReader reader;

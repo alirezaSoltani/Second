@@ -18,7 +18,7 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=185.159.152.5;Initial Catalog=youshita_Test;Persist Security Info=True;User ID=youshita_co;Password=P@hn1395</Value>
     </Setting>
-    <Setting Name="Second_PharmalogyfacultyWebService_PharmalogyWebService" Type="(Web Service URL)" Scope="Application">
+    <Setting Name="Second_pharmalogyWebService_PharmalogyWebService" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://pharmalogyfaculty.youshitaco.ir/PharmalogyWebService.asmx</Value>
     </Setting>
   </Settings>
