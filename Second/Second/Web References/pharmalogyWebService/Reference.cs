@@ -116,7 +116,7 @@ namespace Second.pharmalogyWebService {
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
-        public PharmalogyWebService() {
+      /*  public PharmalogyWebService() {
             this.Url = global::Second.Properties.Settings.Default.Second_PharmalogyfacultyWebService_PharmalogyWebService;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
@@ -125,7 +125,7 @@ namespace Second.pharmalogyWebService {
             else {
                 this.useDefaultCredentialsSetExplicitly = true;
             }
-        }
+        }*/
         
         public new string Url {
             get {
