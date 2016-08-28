@@ -28,8 +28,8 @@ namespace Second
             //*********************************************Design************************************************\\
             width = SystemInformation.PrimaryMonitorSize.Width;
             height = SystemInformation.PrimaryMonitorSize.Height;
-            this.SetBounds((650 * (width / 1000)), (300 * (height / 1000)), (600 * (width / 1000)), (300 * (height / 1000)));
-            toolbar_lbl.SetBounds(0, 0, (600 * (width / 1000)), (50 * (height / 1000)));
+            this.SetBounds( ((310 * width) / 1000), ((300 * height) / 1000), ((300 * width) / 1000), ((250 * height) / 1000) );
+            toolbar_lbl.SetBounds(0, 0, ((300 * width) / 1000), ((45 * height) / 1000));
             icon_lbl.SetBounds((480 * (width / 1000)), (80 * (height / 1000)), (75 * (height / 1000)), (75 * (height / 1000)));
             context_lbl.SetBounds((60 * (width / 1000)), (85 * (height / 1000)), (400 * (width / 1000)), (170 * (height / 1000)));
 
