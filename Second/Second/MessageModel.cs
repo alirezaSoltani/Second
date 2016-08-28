@@ -34,6 +34,7 @@ namespace Second
             messageRead = false;
             messageLessonGroupNumber = 0;
 
+
         }
         public void sendMessage()
         {
@@ -48,17 +49,37 @@ namespace Second
                     "User id=youshita_co; " +
                     "Password=P@hn1395;";
 
+                long teacherNumber = getSenderTeacherNumber();
+
+                SqlCommand sc1 = new SqlCommand();
+                SqlDataReader reader2;
+                sc1.Connection = conn;
+                conn.Open();
+
+                sc1.CommandText = "SELECT teacherFName , teacherLName FROM teacherTable WHERE teacher# = " + teacherNumber + "";
+
+
+                sc1.CommandType = CommandType.Text;
+                reader2 = sc1.ExecuteReader();
+                reader2.Read();
+                setMessageTitle( " " + reader2.GetString(0) + " " + reader2.GetString(1) + " ");
+
+
+                conn.Close();
+
+
+
 
                 SqlCommand sc = new SqlCommand();
                 SqlDataReader reader;
                 sc.CommandText = "INSERT INTO messageTable (message#,messageTitle,messageMain,messageDate,messageLesson#,senderTeacher#,messageLessonGroup#,messageRead) VALUES ( '" + getMessageNumber()
                                                                                                                 + "','" + getMessageTtile()
                                                                                                                 + "','" + getMessageMain()
-                                                                                                                + "','" + getMessageDate()
+                                                                                                                + "','" + dateAndTime
                                                                                                                 + "','" + getMessageLessonNumber()
                                                                                                                 + "','" + getSenderTeacherNumber()
                                                                                                                 + "','" + getMessageLessonGroupNumber()
-                                                                                                                + "','" + getMessageRead() + "')";
+                                                                                                                + "','" + 0 + "')";
 
                 sc.CommandType = CommandType.Text;
                 sc.Connection = conn;
@@ -86,8 +107,9 @@ namespace Second
 
         }
 
-        public void deleteMessage()
+        public void deleteMessage(String username)
         {
+            string dateAndTime = pharmaObj.getDateTime();
             try
             {
 
@@ -108,6 +130,17 @@ namespace Second
                 conn.Open();
                 reader = sc.ExecuteReader();
                 conn.Close();
+
+                /////log
+                SqlCommand sc1 = new SqlCommand();
+                SqlDataReader reader2;
+                sc1.Connection = conn;
+                conn.Open();
+                sc1.CommandText = "INSERT INTO logTable VALUES ( 'Delete Message' , 'deleting message # " +getMessageNumber() + " with " + username + " ' , '" + dateAndTime + "' , '" + username + "','d m')";
+                sc1.CommandType = CommandType.Text;
+                reader2 = sc1.ExecuteReader();
+                conn.Close();
+                //////log
             }
             catch (Exception e)
             {
