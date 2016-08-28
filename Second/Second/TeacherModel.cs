@@ -41,18 +41,31 @@ namespace Test
                     "Password=P@hn1395;";
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "INSERT INTO teacherTable (teacher#,teacherFName,teacherLName,teacherPassword,teacherURL) VALUES ( '" + getTeacherNumber()
+
+            if(getTeacherFName() == "" || getTeacherLName() == "" || getTeacherPassword() == "")
+            {
+                throw new System.ArgumentNullException();
+            }
+            
+            else if(getTeacherFName().Any(char.IsNumber) || getTeacherLName().Any(char.IsNumber) || getTeacherPassword().Any(char.IsWhiteSpace) )
+            {
+                throw new System.FormatException();
+            }
+
+            else
+            {
+                sc.CommandText = "INSERT INTO teacherTable (teacher#,teacherFName,teacherLName,teacherPassword,teacherURL) VALUES ( '" + getTeacherNumber()
                                                                                                             + "','" + getTeacherFName()
                                                                                                             + "','" + getTeacherLName()
                                                                                                             + "','" + getTeacherPassword()
                                                                                                             + "','" + getTeacherURL() + "')";
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
-            conn.Close();
-
-            MessageBox.Show("اطلاعات مورد نظر با موفقیت ثبت شد.");
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                conn.Open();
+                reader = sc.ExecuteReader();
+                conn.Close();
+                throw new Exception("success");
+            }
         }
 
        
@@ -68,19 +81,33 @@ namespace Test
 
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "UPDATE teacherTable SET teacher# = '" + getTeacherNewNumber()
-                                                                + "', teacherFName ='" +getTeacherFName()
-                                                                + "', teacherLName ='" + getTeacherLName()                       
-                                                                + "', teacherPassword ='" + getTeacherPassword()
-                                                                + "', teacherURL ='" + getTeacherURL()+"' WHERE teacher# ="+getTeacherNumber()+ "";
 
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
-            conn.Close();
+            if (getTeacherFName() == "" || getTeacherLName() == "" || getTeacherPassword() == "")
+            {
+                throw new System.ArgumentNullException();
+            }
 
-            MessageBox.Show("اطلاعات مورد با موفقیت تغییر یافت.");
+            else if (getTeacherFName().Any(char.IsNumber) || getTeacherLName().Any(char.IsNumber) || getTeacherPassword().Any(char.IsWhiteSpace))
+            {
+                throw new System.FormatException();
+            }
+
+            else
+            {
+
+                sc.CommandText = "UPDATE teacherTable SET teacher# = '" + getTeacherNewNumber()
+                                                                    + "', teacherFName ='" + getTeacherFName()
+                                                                    + "', teacherLName ='" + getTeacherLName()
+                                                                    + "', teacherPassword ='" + getTeacherPassword()
+                                                                    + "', teacherURL ='" + getTeacherURL() + "' WHERE teacher# =" + getTeacherNumber() + "";
+
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                conn.Open();
+                reader = sc.ExecuteReader();
+                conn.Close();
+                throw new Exception("success");
+            }
         }
 
 
@@ -88,30 +115,23 @@ namespace Test
 
         public  void deleteTeacher()
         {
-            try {
-                SqlConnection conn = new SqlConnection();
-                conn.ConnectionString =
-               "Data Source= 185.159.152.5;" +
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString =
+            "Data Source= 185.159.152.5;" +
                         "Initial Catalog=youshita_Test;" +
                         "User id=youshita_co; " +
                         "Password=P@hn1395;";
 
-                SqlCommand sc = new SqlCommand();
-                SqlDataReader reader;
-                sc.CommandText = " DELETE FROM teacherTable WHERE teacher# = " + getTeacherNumber() + "";
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = " DELETE FROM teacherTable WHERE teacher# = " + getTeacherNumber() + "";
 
-                sc.CommandType = CommandType.Text;
-                sc.Connection = conn;
-                conn.Open();
-                reader = sc.ExecuteReader();
-                conn.Close();
-            }
-            catch (Exception e1)
-            {
-                MessageBox.Show(e1.Message);
-            }
-
-            MessageBox.Show("اطلاعات مورد نظر با موفقیت حذف شد.");
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            conn.Open();
+            reader = sc.ExecuteReader();
+            conn.Close();
+            throw new Exception("success");
         }
 
 

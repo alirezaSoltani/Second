@@ -98,7 +98,6 @@ namespace Second
 
             MessageBox.Show(SystemInformation.PrimaryMonitorSize.ToString());
 
-
             /*Manager form design*/
             this.SetBounds(0, 0, width, ((955 * height) / 1000));
             /*Manager form design*/
@@ -164,40 +163,23 @@ namespace Second
             teachers_edit_clear_btn.SetBounds(((30 * width) / 200), ((73 * height) / 300), ((10 * width) / 100), ((30 * height) / 1000));
             //***delete
             teachers_delete_teacherNumber_lbl.SetBounds(((17 * width) / 100), ((30 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
-            teachers_delete_teacherNumber_txtbx.SetBounds(((4 * width) / 100), ((30 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            teachers_delete_teacherNumber_text_lbl.SetBounds(((4 * width) / 100), ((30 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
             teachers_deleteTeacher_btn.SetBounds(((4 * width) / 100), ((73 * height) / 300), ((100 * width) / 1000), ((30 * height) / 1000));
             teachers_delete_clear_btn.SetBounds(((30 * width) / 200), ((73 * height) / 300), ((10 * width) / 100), ((30 * height) / 1000));
             //***groupBoxes
             teachers_addTeacher_gpb.SetBounds(((65 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
             teachers_editTeacher_gpb.SetBounds(((34 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
             teachers_deleteTeacher_gpb.SetBounds(((3 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
-            /// <summary>
-            /// datagridview intialization
-            /// </summary>
 
-            dataGridView1.DataSource = bindingSource1;
-            GetData("SELECT * FROM teacherTable");
-
-            dataGridView1.RowHeadersWidth = (width / 25);
-            dataGridView1.Columns[0].HeaderText = "شماره استاد";
-            dataGridView1.Columns[1].HeaderText = "نام استاد";
-            dataGridView1.Columns[2].HeaderText = "نام خانوادگی استاد";
-            dataGridView1.Columns[3].HeaderText = "رمز عبور";
-            dataGridView1.Columns[4].HeaderText = "آدرس اینترنتی";
-
-            foreach (DataGridViewColumn col in dataGridView1.Columns)
-            {
-                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            }
-
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                row.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            }
 
             /// <summary>
             /// datagridview intialization
             /// </summary>
+                teachersDataGridViewUpdate_1();
+            /// <summary>
+            /// datagridview intialization
+            /// </summary>
+            
             /****************************************************teachers tab design**********************************************************/
 
 
@@ -708,26 +690,6 @@ namespace Second
         {
             try
             {
-                /// <summary>
-                /// Checks whether strings have integers or not
-                /// </summary>
-
-                bool fnameContainsInt = false;
-                bool lnameContainsInt = false;
-
-                fnameContainsInt = teachers_add_teacherName_txtbx.Text.Any(char.IsDigit);
-                lnameContainsInt = teachers_add_teacherFamily_txtbx.Text.Any(char.IsDigit);
-
-                if (fnameContainsInt || lnameContainsInt || teachers_add_teacherNumber_txtbx.Text == "" || teachers_add_teacherName_txtbx.Text == "" || teachers_add_teacherFamily_txtbx.Text == "" || teachers_add_teacher_password_txtbx.Text == "")
-                {
-                    throw new System.FormatException(".اطلاعات را تصحیح کنید");
-                }
-                /// <summary>
-                /// Checks whether strings have integers or not
-                /// </summary>
-                /// 
-
-
                 TeacherModel teacherObj = new TeacherModel();
 
                 teacherObj.setTeacherNumber(long.Parse(teachers_add_teacherNumber_txtbx.Text));
@@ -735,58 +697,38 @@ namespace Second
                 teacherObj.setTeacherLName(teachers_add_teacherFamily_txtbx.Text);
                 teacherObj.setTeacherPassword(teachers_add_teacher_password_txtbx.Text);
                 teacherObj.setTeacherURL("");
-
                 teacherObj.addTeacher();
-
-
-                /// <summary>
-                /// Clear textBoxes
-                /// </summary>
-                teachers_add_teacherNumber_txtbx.Clear();
-                teachers_add_teacherName_txtbx.Clear();
-                teachers_add_teacherFamily_txtbx.Clear();
-                teachers_add_teacher_password_txtbx.Clear();
-                /// <summary>
-                /// Clear textBoxes
-                /// </summary>
-
-
-
-                /// <summary>
-                /// Reset dataGridView
-                /// </summary>
-                dataGridView1.DataSource = bindingSource1;
-                GetData("SELECT * FROM teacherTable");
-
-                dataGridView1.Columns[0].HeaderText = "شماره استاد";
-                dataGridView1.Columns[1].HeaderText = "نام استاد";
-                dataGridView1.Columns[2].HeaderText = "نام خانوادگی استاد";
-                dataGridView1.Columns[3].HeaderText = "رمز عبور";
-                dataGridView1.Columns[4].HeaderText = "آدرس اینترنتی";
-
-                foreach (DataGridViewColumn col in dataGridView1.Columns)
-                {
-                    col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                }
-
-                foreach (DataGridViewRow r in dataGridView1.Rows)
-                {
-                    dataGridView1.Rows[r.Index].HeaderCell.Value = (r.Index + 1).ToString();
-                }
-                /// <summary>
-                /// Reset dataGridView
-                /// </summary>
             }
 
-            catch (FormatException e1)
+            catch (FormatException)
             {
-                MessageBox.Show(".اطلاعات را تصحیح کنید");
+                DialogForm dialog = new DialogForm("فرمت اطلاعات ورودی اشتباه است.", "خطا", "error", this);
+            }
+             
+            catch (ArgumentNullException)
+            {
+                DialogForm dialog = new DialogForm("اطلاعات ورودی ناقص هستند.", "خطا", "error", this);
+            }
+
+            catch (SqlException)
+            {
+                DialogForm dialog = new DialogForm("اطلاعات ورودی تکراری یا اشتباه است.", "خطا", "error", this);
+            }
+
+            catch (Exception e1)
+            {
+                if(e1.Message == "success")
+                {
+                    DialogForm dialog = new DialogForm("اطلاعات ورودی با موفقیت ثبت شدند.", "ثبت موفقیت آمیز", "success", this);
+                    teachersDataGridViewUpdate_1();
+                    addTeacher_resetComponents();
+                }
             }
         }
 
         private void teachers_delete_clear_btn_Click(object sender, EventArgs e)
         {
-            teachers_delete_teacherNumber_txtbx.Clear();
+            teachers_delete_teacherNumber_text_lbl.Text = "";
         }
 
         private void teachers_edit_clear_btn_Click(object sender, EventArgs e)
@@ -801,17 +743,6 @@ namespace Second
         {
             try
             {
-                bool fnameContainsInt = false;
-                bool lnameContainsInt = false;
-
-                fnameContainsInt = teachers_edit_teacherName_txtbx.Text.Any(char.IsDigit);
-                lnameContainsInt = teachers_edit_teacherFamily_txtbx.Text.Any(char.IsDigit);
-
-                if (fnameContainsInt || lnameContainsInt || teachers_edit_teacherNumber_txtbx.Text == "" || teachers_edit_teacherName_txtbx.Text == "" || teachers_edit_teacherFamily_txtbx.Text == "" || teachers_edit_teacher_password_txtbx.Text == "")
-                {
-                    throw new System.FormatException("اطلاعات را تصحیح کنید.");
-                }
-
                 //PasswordRequest k = new PasswordRequest();
                 //k.Show();
 
@@ -826,83 +757,36 @@ namespace Second
                     teacherObj.setTeacherURL("");
                     teacherObj.updateTeacher();
                 }
-
-
-
-                /// <summary>
-                /// Reset GroupBoxes and their components
-                /// </summary>
-                //***disable cancel button
-                teachers_cancel_btn.Enabled = false;
-                //***enable add components
-                teachers_add_teacherNumber_txtbx.Enabled = true;
-                teachers_add_teacherName_txtbx.Enabled = true;
-                teachers_add_teacherFamily_txtbx.Enabled = true;
-                teachers_add_teacher_password_txtbx.Enabled = true;
-                teachers_add_teacherNumber_lbl.Enabled = true;
-                teachers_add_teacherName_lbl.Enabled = true;
-                teachers_add_teacherFamily_lbl.Enabled = true;
-                teachers_add_teacher_password_lbl.Enabled = true;
-                teachers_add_addTeacher_btn.Enabled = true;
-                teachers_add_clear_btn.Enabled = true;
-                //***disable edit & delete components
-                teachers_edit_teacherNumber_txtbx.Enabled = false;
-                teachers_edit_teacherName_txtbx.Enabled = false;
-                teachers_edit_teacherFamily_txtbx.Enabled = false;
-                teachers_edit_teacher_password_txtbx.Enabled = false;
-                teachers_edit_teacherNumber_lbl.Enabled = false;
-                teachers_edit_teacherName_lbl.Enabled = false;
-                teachers_edit_teacherFamily_lbl.Enabled = false;
-                teachers_edit_teacher_password_lbl.Enabled = false;
-                teachers_edit_clear_btn.Enabled = false;
-                teachers_editTeacher_btn.Enabled = false;
-                teachers_delete_teacherNumber_lbl.Enabled = false;
-                teachers_delete_teacherNumber_txtbx.Enabled = false;
-                teachers_delete_clear_btn.Enabled = false;
-                teachers_deleteTeacher_btn.Enabled = false;
-                //***clear textBoxes
-                teachers_edit_teacherNumber_txtbx.Clear();
-                teachers_edit_teacherName_txtbx.Clear();
-                teachers_edit_teacherFamily_txtbx.Clear();
-                teachers_edit_teacher_password_txtbx.Clear();
-                teachers_delete_teacherNumber_txtbx.Clear();
-                /// <summary>
-                /// Reset GroupBoxes and their components
-                /// </summary>
-
-
-
-                /// <summary>
-                /// Reset dataGridView
-                /// </summary>
-                dataGridView1.DataSource = bindingSource1;
-                GetData("SELECT * FROM teacherTable");
-
-                dataGridView1.Columns[0].HeaderText = "شماره استاد";
-                dataGridView1.Columns[1].HeaderText = "نام استاد";
-                dataGridView1.Columns[2].HeaderText = "نام خانوادگی استاد";
-                dataGridView1.Columns[3].HeaderText = "رمز عبور";
-                dataGridView1.Columns[4].HeaderText = "آدرس اینترنتی";
-
-                foreach (DataGridViewColumn col in dataGridView1.Columns)
+                else
                 {
-                    col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                    DialogForm dialog = new DialogForm("فرمت اطلاعات ورودی اشتباه است.", "خطا", "error", this);
                 }
-
-                foreach (DataGridViewRow r in dataGridView1.Rows)
-                {
-                    dataGridView1.Rows[r.Index].HeaderCell.Value = (r.Index + 1).ToString();
-                }
-                /// <summary>
-                /// Reset dataGridView
-                /// </summary>
-                /// 
-
 
             }
+
             catch (FormatException)
             {
-                MessageBox.Show("!اطلاعات را تصحیح نمایید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DialogForm dialog = new DialogForm("فرمت اطلاعات ورودی اشتباه است.", "خطا", "error", this);
+            }
+
+            catch (ArgumentNullException)
+            {
+                DialogForm dialog = new DialogForm("اطلاعات ورودی ناقص هستند.", "خطا", "error", this);
+            }
+
+            catch (SqlException)
+            {
+                DialogForm dialog = new DialogForm("اطلاعات ورودی تکراری یا اشتباه است.", "خطا", "error", this);
+            }
+
+            catch (Exception e1)
+            {
+                if (e1.Message == "success")
+                {
+                    DialogForm dialog = new DialogForm("اطلاعات ورودی با موفقیت تغییر یافتند.", "تغییر موفقیت آمیز", "success", this);
+                    edit_Delete_Teacher_resetComponents();
+                    teachersDataGridViewUpdate_1();
+                }
             }
         }
 
@@ -936,13 +820,13 @@ namespace Second
                 teachers_edit_clear_btn.Enabled = true;
                 teachers_editTeacher_btn.Enabled = true;
                 teachers_delete_teacherNumber_lbl.Enabled = true;
-                teachers_delete_teacherNumber_txtbx.Enabled = true;
+                teachers_delete_teacherNumber_text_lbl.Enabled = true;
                 teachers_delete_clear_btn.Enabled = true;
                 teachers_deleteTeacher_btn.Enabled = true;
 
                 currentNumber = dataGridView1.Rows[e.RowIndex].Cells["teacher#"].Value.ToString();
 
-                teachers_delete_teacherNumber_txtbx.Text = dataGridView1.Rows[e.RowIndex].Cells["teacher#"].Value.ToString();
+                teachers_delete_teacherNumber_text_lbl.Text = dataGridView1.Rows[e.RowIndex].Cells["teacher#"].Value.ToString();
                 teachers_edit_teacherNumber_txtbx.Text = dataGridView1.Rows[e.RowIndex].Cells["teacher#"].Value.ToString();
                 teachers_edit_teacherName_txtbx.Text = dataGridView1.Rows[e.RowIndex].Cells["teacherFName"].Value.ToString();
                 teachers_edit_teacherFamily_txtbx.Text = dataGridView1.Rows[e.RowIndex].Cells["teacherLName"].Value.ToString();
@@ -956,17 +840,54 @@ namespace Second
 
         private void teachers_deleteTeacher_btn_Click(object sender, EventArgs e)
         {
-            if (teachers_delete_teacherNumber_txtbx.Text != "")
+            /*PasswordRequest k = new PasswordRequest();
+            k.Show();*/
+            try
             {
-                /*PasswordRequest k = new PasswordRequest();
-                k.Show();*/
-
                 if (/*k.authenPass() == */true)
                 {
                     TeacherModel teacherObj = new TeacherModel();
-                    teacherObj.setTeacherNumber(Int64.Parse(teachers_delete_teacherNumber_txtbx.Text));
+                    teacherObj.setTeacherNumber(Int64.Parse(teachers_delete_teacherNumber_text_lbl.Text));
                     teacherObj.deleteTeacher();
+                }
+                else
+                {
+                    DialogForm dialog = new DialogForm("رمز عبور اشتباه است.", "خطا", "error", this);
+                }
+            }
+            catch (FormatException)
+            {
+                DialogForm dialog = new DialogForm("فرمت اطلاعات ورودی اشتباه است.", "خطا", "error", this);
+            }
 
+            catch (ArgumentNullException)
+            {
+                DialogForm dialog = new DialogForm("اطلاعات ورودی ناقص هستند.", "خطا", "error", this);
+            }
+
+            catch (SqlException e1)
+            {
+                if(e1.Message.Contains("server"))
+                {
+                    DialogForm dialog = new DialogForm("ارتباط با سرور برقرار نشد.", "خطای سرور", "error", this);
+                }
+                else
+                {
+                    DialogForm dialog = new DialogForm("اطلاعات ورودی تکراری یا اشتباه است.", "خطا", "error", this);
+                }
+            }
+
+            catch (Exception e1)
+            {
+                if (e1.Message == "success")
+                {
+                    DialogForm dialog = new DialogForm("اطلاعات ورودی با موفقیت تغییر یافتند.", "حذف موفقیت آمیز", "success", this);
+                    edit_Delete_Teacher_resetComponents();
+                    teachersDataGridViewUpdate_1();
+                }
+            }
+        }
+            /*}
 
                     /// <summary>
                     /// Reset GroupBoxes and their components
@@ -997,7 +918,7 @@ namespace Second
                     teachers_edit_clear_btn.Enabled = false;
                     teachers_editTeacher_btn.Enabled = false;
                     teachers_delete_teacherNumber_lbl.Enabled = false;
-                    teachers_delete_teacherNumber_txtbx.Enabled = false;
+                    teachers_delete_teacherNumber_text_lbl.Enabled = false;
                     teachers_delete_clear_btn.Enabled = false;
                     teachers_deleteTeacher_btn.Enabled = false;
                     //***clear textBoxes
@@ -1005,7 +926,7 @@ namespace Second
                     teachers_edit_teacherName_txtbx.Clear();
                     teachers_edit_teacherFamily_txtbx.Clear();
                     teachers_edit_teacher_password_txtbx.Clear();
-                    teachers_delete_teacherNumber_txtbx.Clear();
+                    teachers_delete_teacherNumber_text_lbl.Text = "";
                     /// <summary>
                     /// Reset GroupBoxes and their components
                     /// </summary>
@@ -1032,13 +953,9 @@ namespace Second
                     /// <summary>
                     /// Reset dataGridView
                     /// </summary>
-                }
-            }
-            else
-            {
-                MessageBox.Show("!اطلاعات را تصحیح نمایید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+             }
+
+        }*/
 
         private void label9_Click(object sender, EventArgs e)
         {
@@ -1355,11 +1272,11 @@ namespace Second
             teachers_editTeacher_btn.Enabled = false;
             teachers_delete_teacherNumber_lbl.Enabled = false;
             teachers_delete_teacherNumber_lbl.Enabled = false;
-            teachers_delete_teacherNumber_txtbx.Enabled = false;
+            teachers_delete_teacherNumber_text_lbl.Enabled = false;
             teachers_delete_clear_btn.Enabled = false;
             teachers_deleteTeacher_btn.Enabled = false;
             //***clear textBoxes
-            teachers_delete_teacherNumber_txtbx.Clear();
+            teachers_delete_teacherNumber_text_lbl.Text = "";
             teachers_edit_teacherNumber_txtbx.Clear();
             teachers_edit_teacherName_txtbx.Clear();
             teachers_edit_teacherFamily_txtbx.Clear();
@@ -2225,6 +2142,93 @@ namespace Second
         private void lessons_edit_lessonName_txtbx_TextChanged(object sender, EventArgs e)
         {
             lessons_edit_deleteLesson_btn.Enabled = false;
+        }
+
+        private void teachersDataGridViewUpdate_1()
+        {
+            /// <summary>
+            /// Reset dataGridView
+            /// </summary>
+            dataGridView1.DataSource = bindingSource1;
+            GetData("SELECT * FROM teacherTable");
+
+            dataGridView1.Columns[0].HeaderText = "شماره استاد";
+            dataGridView1.Columns[1].HeaderText = "نام استاد";
+            dataGridView1.Columns[2].HeaderText = "نام خانوادگی استاد";
+            dataGridView1.Columns[3].HeaderText = "رمز عبور";
+            dataGridView1.Columns[4].HeaderText = "آدرس اینترنتی";
+            dataGridView1.Columns[4].Visible = false;
+
+            foreach (DataGridViewColumn col in dataGridView1.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            }
+
+            foreach (DataGridViewRow r in dataGridView1.Rows)
+            {
+                dataGridView1.Rows[r.Index].HeaderCell.Value = (r.Index + 1).ToString();
+            }
+            /// <summary>
+            /// Reset dataGridView
+            /// </summary>
+        }
+
+        private void addTeacher_resetComponents()
+        {
+            /// <summary>
+            /// Clear textBoxes
+            /// </summary>
+            teachers_add_teacherNumber_txtbx.Clear();
+            teachers_add_teacherName_txtbx.Clear();
+            teachers_add_teacherFamily_txtbx.Clear();
+            teachers_add_teacher_password_txtbx.Clear();
+            /// <summary>
+            /// Clear textBoxes
+            /// </summary>
+        }
+
+        private void edit_Delete_Teacher_resetComponents()
+        {
+            /// <summary>
+            /// Reset GroupBoxes and their components
+            /// </summary>
+            //***disable cancel button
+            teachers_cancel_btn.Enabled = false;
+            //***enable add components
+            teachers_add_teacherNumber_txtbx.Enabled = true;
+            teachers_add_teacherName_txtbx.Enabled = true;
+            teachers_add_teacherFamily_txtbx.Enabled = true;
+            teachers_add_teacher_password_txtbx.Enabled = true;
+            teachers_add_teacherNumber_lbl.Enabled = true;
+            teachers_add_teacherName_lbl.Enabled = true;
+            teachers_add_teacherFamily_lbl.Enabled = true;
+            teachers_add_teacher_password_lbl.Enabled = true;
+            teachers_add_addTeacher_btn.Enabled = true;
+            teachers_add_clear_btn.Enabled = true;
+            //***disable edit & delete components
+            teachers_edit_teacherNumber_txtbx.Enabled = false;
+            teachers_edit_teacherName_txtbx.Enabled = false;
+            teachers_edit_teacherFamily_txtbx.Enabled = false;
+            teachers_edit_teacher_password_txtbx.Enabled = false;
+            teachers_edit_teacherNumber_lbl.Enabled = false;
+            teachers_edit_teacherName_lbl.Enabled = false;
+            teachers_edit_teacherFamily_lbl.Enabled = false;
+            teachers_edit_teacher_password_lbl.Enabled = false;
+            teachers_edit_clear_btn.Enabled = false;
+            teachers_editTeacher_btn.Enabled = false;
+            teachers_delete_teacherNumber_lbl.Enabled = false;
+            teachers_delete_teacherNumber_text_lbl.Enabled = false;
+            teachers_delete_clear_btn.Enabled = false;
+            teachers_deleteTeacher_btn.Enabled = false;
+            //***clear textBoxes
+            teachers_edit_teacherNumber_txtbx.Clear();
+            teachers_edit_teacherName_txtbx.Clear();
+            teachers_edit_teacherFamily_txtbx.Clear();
+            teachers_edit_teacher_password_txtbx.Clear();
+            teachers_delete_teacherNumber_text_lbl.Text = "";
+            /// <summary>
+            /// Reset GroupBoxes and their components
+            /// </summary>
         }
     }
 
