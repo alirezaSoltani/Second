@@ -1,6 +1,6 @@
 ﻿namespace Second
 {
-    partial class Error
+    partial class DialogForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.toolbar_lbl = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DialogForm));
+            this.titleBar_lbl = new System.Windows.Forms.Label();
             this.error_panel = new System.Windows.Forms.Panel();
             this.ok_btn = new System.Windows.Forms.Button();
             this.context_lbl = new System.Windows.Forms.Label();
@@ -37,21 +38,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.icon_lbl)).BeginInit();
             this.SuspendLayout();
             // 
-            // toolbar_lbl
+            // titleBar_lbl
             // 
-            this.toolbar_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
-            this.toolbar_lbl.Font = new System.Drawing.Font("B Nazanin", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.toolbar_lbl.ForeColor = System.Drawing.Color.White;
-            this.toolbar_lbl.Location = new System.Drawing.Point(0, 0);
-            this.toolbar_lbl.Name = "toolbar_lbl";
-            this.toolbar_lbl.Size = new System.Drawing.Size(538, 44);
-            this.toolbar_lbl.TabIndex = 0;
-            this.toolbar_lbl.Text = "خطا";
-            this.toolbar_lbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.titleBar_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
+            this.titleBar_lbl.Font = new System.Drawing.Font("B Nazanin", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.titleBar_lbl.ForeColor = System.Drawing.Color.White;
+            this.titleBar_lbl.Location = new System.Drawing.Point(0, 0);
+            this.titleBar_lbl.Name = "titleBar_lbl";
+            this.titleBar_lbl.Size = new System.Drawing.Size(538, 44);
+            this.titleBar_lbl.TabIndex = 0;
+            this.titleBar_lbl.Text = "خطا";
+            this.titleBar_lbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // error_panel
             // 
-            this.error_panel.BackColor = System.Drawing.Color.Gainsboro;
+            this.error_panel.BackColor = System.Drawing.Color.White;
             this.error_panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.error_panel.Controls.Add(this.ok_btn);
             this.error_panel.Controls.Add(this.context_lbl);
@@ -63,7 +64,7 @@
             // 
             // ok_btn
             // 
-            this.ok_btn.BackColor = System.Drawing.Color.White;
+            this.ok_btn.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ok_btn.Font = new System.Drawing.Font("B Yekan+", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.ok_btn.Location = new System.Drawing.Point(30, 126);
             this.ok_btn.Name = "ok_btn";
@@ -90,7 +91,7 @@
             // icon_lbl
             // 
             this.icon_lbl.BackColor = System.Drawing.Color.Transparent;
-            this.icon_lbl.BackgroundImage = global::Second.Properties.Resources.Status_dialog_error_isdfcon;
+            this.icon_lbl.BackgroundImage = global::Second.Properties.Resources.success_icon;
             this.icon_lbl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.icon_lbl.Location = new System.Drawing.Point(415, 13);
             this.icon_lbl.Name = "icon_lbl";
@@ -102,11 +103,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(536, 242);
             this.Controls.Add(this.error_panel);
-            this.Controls.Add(this.toolbar_lbl);
+            this.Controls.Add(this.titleBar_lbl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Error";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -120,7 +122,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label toolbar_lbl;
+        private System.Windows.Forms.Label titleBar_lbl;
         private System.Windows.Forms.Panel error_panel;
         private System.Windows.Forms.Button ok_btn;
         private System.Windows.Forms.Label context_lbl;

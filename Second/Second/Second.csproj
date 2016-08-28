@@ -56,11 +56,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attendance.cs" />
-    <Compile Include="Error.cs">
+    <Compile Include="DialogForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Error.Designer.cs">
-      <DependentUpon>Error.cs</DependentUpon>
+    <Compile Include="DialogForm.Designer.cs">
+      <DependentUpon>DialogForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Excel_Import.cs">
       <SubType>Form</SubType>
@@ -115,8 +115,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Error.resx">
-      <DependentUpon>Error.cs</DependentUpon>
+    <EmbeddedResource Include="DialogForm.resx">
+      <DependentUpon>DialogForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Excel_Import.resx">
       <DependentUpon>Excel_Import.cs</DependentUpon>
@@ -158,10 +158,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Web References\pharmalogyWebService\LessonModel.datasource">
+    <None Include="Web References\pharmalogyWebService\LessonModel1.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\pharmalogyWebService\MessageModel.datasource">
+    <None Include="Web References\pharmalogyWebService\MessageModel1.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
     <None Include="Web References\pharmalogyWebService\PharmalogyWebService.wsdl" />
@@ -169,7 +169,7 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Web References\pharmalogyWebService\TeacherModel.datasource">
+    <None Include="Web References\pharmalogyWebService\TeacherModel1.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
   </ItemGroup>
@@ -245,6 +245,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Web References\pharmalogyWebService\PharmalogyWebService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ok-256x256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\success_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
