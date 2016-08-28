@@ -133,6 +133,7 @@ namespace Second
             /****************************************************teachers tab design**********************************************************/
             manager_main_tc.SetBounds(0, ((125 * height) / 1000), ((99 * width) / 100), ((80 * height) / 100));
             logo_pictureBox.SetBounds(((79 * width) / 100), ((24 * height) / 1000), ((192 * width) / 1000), ((74 * height) / 1000));
+            facultyName_pictureBox.SetBounds(((2 * width) / 100), ((40 * height) / 1000), ((160 * width) / 1000), ((85 * height) / 1000));
             teachers_addEditDelete_panel.SetBounds(((5 * width) / 400), ((2 * height) / 100), ((96 * width) / 100), ((31 * height) / 100));
             teachers_dataGridView_panel.SetBounds(((5 * width) / 400), (38 * height) / 100, ((96 * width) / 100), ((36 * height) / 100));
             dataGridView1.SetBounds(0, 0, ((96 * width) / 100), ((36 * height) / 100));
@@ -1770,14 +1771,17 @@ namespace Second
             if (dashboard_news_cob.SelectedIndex == 0)
             {
                 isnaNews();
+                dataGridView4.Columns[0].HeaderText = "عنوان";
             }
             if (dashboard_news_cob.SelectedIndex == 1)
             {
                 mehrNews();
+                dataGridView4.Columns[0].HeaderText = "عنوان";
             }
             if (dashboard_news_cob.SelectedIndex == 2)
             {
                 yjcNews();
+                dataGridView4.Columns[0].HeaderText = "عنوان";
             }
 
 
@@ -1788,6 +1792,7 @@ namespace Second
             try
             {
                 dashboard_news_descriptions_lbl.Text = dataGridView4.Rows[e.RowIndex].Cells["description"].Value.ToString();
+                dataGridView4.Columns[0].HeaderText = "عنوان";
             }
             catch (ArgumentOutOfRangeException)
             {

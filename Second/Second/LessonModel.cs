@@ -28,8 +28,6 @@ namespace Test
             newLessonNumber = 0;
             newLessonGroupNumber = 0;
 
-
-
         }
         public void addLesson()
         {

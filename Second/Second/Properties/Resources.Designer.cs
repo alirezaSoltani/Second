@@ -63,6 +63,16 @@ namespace Second.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1195445190322000997molumen_red_round_error_warning_icon_svg_med {
+            get {
+                object obj = ResourceManager.GetObject("1195445190322000997molumen_red_round_error_warning_icon.svg.med", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AC_System__135_135px_ {
             get {
                 object obj = ResourceManager.GetObject("AC-System (135-135px)", resourceCulture);
@@ -106,6 +116,56 @@ namespace Second.Properties {
         internal static System.Drawing.Bitmap new_form21 {
             get {
                 object obj = ResourceManager.GetObject("new form21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Status_dialog_error_isdfcon {
+            get {
+                object obj = ResourceManager.GetObject("Status-dialog-error-isdfcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled_1 {
+            get {
+                object obj = ResourceManager.GetObject("Untitled-1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled_11 {
+            get {
+                object obj = ResourceManager.GetObject("Untitled-11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled_12 {
+            get {
+                object obj = ResourceManager.GetObject("Untitled-12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled_13 {
+            get {
+                object obj = ResourceManager.GetObject("Untitled-13", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

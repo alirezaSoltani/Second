@@ -228,6 +228,24 @@
   <ItemGroup>
     <None Include="Web References\PharmalogyfacultyWebService\PharmalogyWebService.disco" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1195445190322000997molumen_red_round_error_warning_icon.svg.med.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Status-dialog-error-isdfcon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

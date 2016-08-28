@@ -17,8 +17,9 @@ namespace Second
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new login1());
-            Application.Run(new ManagerForm1());
+            //Application.Run(new ManagerForm1());
             //Application.Run(new Excel_Import());
+            Application.Run(new Error("فایل ورودی اشتباه است، تعداد ستون ها یا یکی از اطلاعات اشتباه می باشد."));
         }
     }
 }

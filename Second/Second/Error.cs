@@ -12,36 +12,28 @@ namespace Second
 {
     public partial class Error : Form
     {
-       
+        private int width; //Width of system resolution
+        private int height;  //Height of system resolution
+
+
         public Error(String s)
-        {
-           
+        {         
             InitializeComponent();
-
-            label4.Text = s;
+            context_lbl.Text = s;
         }
 
-
-        private void label1_Click(object sender, EventArgs e)
+        
+        private void Error_Load(object sender, EventArgs e)
         {
+            //*********************************************Design************************************************\\
+            width = SystemInformation.PrimaryMonitorSize.Width;
+            height = SystemInformation.PrimaryMonitorSize.Height;
+            this.SetBounds((650 * (width / 1000)), (300 * (height / 1000)), (600 * (width / 1000)), (300 * (height / 1000)));
+            toolbar_lbl.SetBounds(0, 0, (600 * (width / 1000)), (50 * (height / 1000)));
+            icon_lbl.SetBounds((480 * (width / 1000)), (80 * (height / 1000)), (75 * (height / 1000)), (75 * (height / 1000)));
+            context_lbl.SetBounds((60 * (width / 1000)), (85 * (height / 1000)), (400 * (width / 1000)), (170 * (height / 1000)));
 
-        }
-   
-
-        private void button1_Click(object sender, EventArgs e)
-        {
             
-           
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-            this.Hide();
         }
     }
 }
