@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Test;
 
 namespace Second
 {
@@ -20,7 +21,7 @@ namespace Second
         private long messageLessonNumber;
         private long senderTeacherNumber;
         private Int16 messageLessonGroupNumber;
-        private bool messageRead;
+        private int messageRead;
 
         pharmalogyWebService.PharmalogyWebService pharmaObj = new pharmalogyWebService.PharmalogyWebService();
 
@@ -31,7 +32,7 @@ namespace Second
             messageMain = "";
             messageLessonNumber = 0;
             senderTeacherNumber = 0;
-            messageRead = false;
+            messageRead = 0;
             messageLessonGroupNumber = 0;
 
 
@@ -72,8 +73,7 @@ namespace Second
 
                 SqlCommand sc = new SqlCommand();
                 SqlDataReader reader;
-                sc.CommandText = "INSERT INTO messageTable (message#,messageTitle,messageMain,messageDate,messageLesson#,senderTeacher#,messageLessonGroup#,messageRead) VALUES ( '" + getMessageNumber()
-                                                                                                                + "','" + getMessageTtile()
+                sc.CommandText = "INSERT INTO messageTable (messageTitle,messageMain,messageDate,messageLesson#,senderTeacher#,messageLessonGroup#,messageRead) VALUES ( '" + getMessageTtile()
                                                                                                                 + "','" + getMessageMain()
                                                                                                                 + "','" + dateAndTime
                                                                                                                 + "','" + getMessageLessonNumber()
@@ -147,13 +147,147 @@ namespace Second
                 MessageBox.Show(e.Message);
             }
         }
-            
+
+        public List<LessonModel> getTeacherLessons(long username)
+        {
+
+            List<LessonModel> allLesson = new List<LessonModel>();
+            LessonModel lessonObj = new LessonModel();
+
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString =
+                "Data Source= 185.159.152.5;" +
+                "Initial Catalog=youshita_Test;" +
+                "User id=youshita_co; " +
+                "Password=P@hn1395;";
+
+
+            SqlCommand sc = new SqlCommand();
+
+            SqlDataReader rdr = null;
+            sc.CommandText = "SELECT * FROM lessonTable where lessonTeacher# = " + username + "";
+            sc.Connection = conn;
+            conn.Open();
+            rdr = sc.ExecuteReader();
+            while (rdr.Read())
+            {
+
+                lessonObj.setLessonNumber((long)rdr["lesson#"]);
+                lessonObj.setLessonName((String)rdr["lessonName"]);
+                lessonObj.setLessonGroupNumber((Int16)rdr["lessonGroup#"]);
+                lessonObj.setLessonTeacherNumber((Int64)rdr["lessonTeacher#"]);
+                lessonObj.setNewLessonNumber(0);
+                lessonObj.setNewLessonGroupNumber(0);
+
+
+                LessonModel number = new LessonModel();
+                number.setLessonNumber(lessonObj.getLessonNumber());
+                number.setLessonGroupNumber(lessonObj.getLessonGroupNumber());
+                number.setLessonName(lessonObj.getLessonName());
+                number.setLessonTeacherNumber( lessonObj.getLessonTeacherNumber());
+                
+                allLesson.Add(number);
+            }
+
+
+
+
+
+
+            return allLesson;
+
+
+        }
+       
+        public List<MessageModel> lessonMessage(long lessonNumber, int lessonGroupNumber)
+        {
+
+            List<MessageModel> allMessage = new List<MessageModel>();
+            MessageModel messageObj = new MessageModel();
+
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString =
+                "Data Source= 185.159.152.5;" +
+                "Initial Catalog=youshita_Test;" +
+                "User id=youshita_co; " +
+                "Password=P@hn1395;";
+
+
+            SqlCommand sc = new SqlCommand();
+
+            SqlDataReader rdr = null;
+            sc.CommandText = "SELECT * FROM messageTable where messageLesson# = " + lessonNumber + "AND messageLessonGroup# = " + lessonGroupNumber + "";
+            sc.Connection = conn;
+            conn.Open();
+            rdr = sc.ExecuteReader();
+            while (rdr.Read())
+            {
+
+                messageObj.setMessageNumber((long)rdr["message#"]);
+                messageObj.setMessageTitle((String)rdr["messageTitle"]);
+                messageObj.setMessageMain((String)rdr["messageMain"]);
+                messageObj.setMessageDate((String)rdr["messageDate"]);
+                messageObj.setMessageLessonNumber((long)rdr["messageLesson#"]);
+                messageObj.setMessageLessonGroupNumber((Int16)rdr["messageLessonGroup#"]);
+                messageObj.setSenderTeacherNumber((Int64)rdr["senderTeacher#"]);
+                messageObj.setMessageRead((int)rdr["messageRead"]);
+
+                MessageModel number = new MessageModel { messageNumber = messageObj.getMessageNumber(), messageTitle = messageObj.getMessageTtile(), messageMain = messageObj.getMessageMain(), messageDate = messageObj.getMessageDate(), messageLessonGroupNumber = messageObj.getMessageLessonGroupNumber(), messageLessonNumber = messageObj.getMessageLessonNumber(), messageRead = messageObj.getMessageRead(), senderTeacherNumber = messageObj.getSenderTeacherNumber() };
+                allMessage.Add(number);
+            }
+
+            return allMessage;
+
+
+        }
+
+
+        public List<MessageModel>  sentMessages()
+        {
+
+            List<MessageModel> allMessage = new List<MessageModel>();
+            MessageModel messageObj = new MessageModel();
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString =
+                "Data Source= 185.159.152.5;" +
+                "Initial Catalog=youshita_Test;" +
+                "User id=youshita_co; " +
+                "Password=P@hn1395;";
+
+
+            SqlCommand sc = new SqlCommand();
+
+            SqlDataReader rdr;
+            sc.CommandText = "SELECT * FROM messageTable where messageLesson# = " + senderTeacherNumber +"";
+            sc.Connection = conn;
+            conn.Open();
+            rdr = sc.ExecuteReader();
+            while (rdr.Read())
+            {
+
+                messageObj.setMessageNumber((long)rdr["message#"]);
+                messageObj.setMessageTitle((String)rdr["messageTitle"]);
+                messageObj.setMessageMain((String)rdr["messageMain"]);
+                messageObj.setMessageDate((String)rdr["messageDate"]);
+                messageObj.setMessageLessonNumber((long)rdr["messageLesson#"]);
+                messageObj.setMessageLessonGroupNumber((Int16)rdr["messageLessonGroup#"]);
+                messageObj.setSenderTeacherNumber((Int64)rdr["senderTeacher#"]);
+                messageObj.setMessageRead((int)rdr["messageRead"]);
+
+                MessageModel number = new MessageModel { messageNumber = messageObj.getMessageNumber(), messageTitle = messageObj.getMessageTtile(), messageMain = messageObj.getMessageMain(), messageDate = messageObj.getMessageDate(), messageLessonGroupNumber = messageObj.getMessageLessonGroupNumber(), messageLessonNumber = messageObj.getMessageLessonNumber(), messageRead = messageObj.getMessageRead(), senderTeacherNumber = messageObj.getSenderTeacherNumber() };
+                allMessage.Add(number);
+            }
+
+            return allMessage;
+
+        }
 
 
         public void setMessageNumber(long MessageNumber)
         {
             this.messageNumber = MessageNumber;
         }
+
 
 
         public long getMessageNumber()
@@ -228,13 +362,13 @@ namespace Second
 
         }
 
-        public void setMessageRead(bool MessageRead)
+        public void setMessageRead(int MessageRead)
         {
             this.messageRead = MessageRead;
         }
 
 
-        public bool getMessageRead()
+        public int getMessageRead()
         {
             return messageRead;
 
