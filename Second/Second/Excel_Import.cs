@@ -146,13 +146,18 @@ namespace Second
                         studentObj.setStudentNumber(long.Parse(dataGridView1.Rows[r.Index].Cells[0].Value.ToString()));
                         studentObj.setStudentFName(dataGridView1.Rows[r.Index].Cells[1].Value.ToString());
                         studentObj.setStudentLName(dataGridView1.Rows[r.Index].Cells[2].Value.ToString());
-                        if(studentObj.getStudentFName().Any(char.IsDigit) || studentObj.getStudentFName().Any(char.IsPunctuation) || 
-                           studentObj.getStudentLName().Any(char.IsDigit) || studentObj.getStudentFName().Any(char.IsPunctuation) ||
-                           studentObj.getStudentFName().Equals("") || studentObj.getStudentLName().Equals(""))
+                        if(studentObj.getStudentFName().Equals("") || studentObj.getStudentLName().Equals(""))
                         {
-                            throw new System.FormatException("");
+                            throw new System.ArgumentNullException();
                         }
-                        studentObj.addStudent(long.Parse(currentLessonNumber), int.Parse(currentLessonGroupNumber));
+
+                        else if ( studentObj.getStudentFName().Any(char.IsDigit) || studentObj.getStudentLName().Any(char.IsDigit) ||
+                                  studentObj.getStudentFName().Any(char.IsSymbol) || studentObj.getStudentLName().Any(char.IsSymbol) ||
+                                  studentObj.getStudentFName().Any(char.IsPunctuation) || studentObj.getStudentLName().Any(char.IsPunctuation) )
+                        {
+                            throw new System.FormatException();
+                        }
+                        studentObj.addStudent(long.Parse(currentLessonNumber), int.Parse(currentLessonGroupNumber), false);
                         hasRegister = true;
                     }
                     catch (SqlException ee)
@@ -162,38 +167,52 @@ namespace Second
                             hasRepeat = true;
                             repeats = repeats + studentObj.getStudentNumber()+ "، ";
                         }
+                        else if (ee.Message.Contains("server"))
+                        {
+                            DialogForm dialog = new DialogForm("ارتباط با سرور برقرار نشد.", "خطای سرور", "error", this);
+                            break;
+                        }
                     }
-                    catch(FormatException)
+                
+                    catch (ArgumentNullException)
                     {
                         hasError = true;
                         hasWrongInput = true;
                         mistakes = mistakes + index + "، ";
                         continue;
-                        /////////////
-                        //MessageBox.Show("!خطای فایل ورودی", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        //this.Close();
+                    }
+                    catch (FormatException)
+                    {
+                        hasError = true;
+                        hasWrongInput = true;
+                        mistakes = mistakes + index + "، ";
+                        continue;
+                    }
+                    catch(Exception)
+                    {
+                        //if add operation is successful, this exception will occur, but it doesn't need to show any messages here.
                     }
                 }
 
                 if (hasRegister)
                 {
-                    MessageBox.Show("اطلاعات (غیرتکراری) در لیست کلاس افزوده شدند.");
+                    DialogForm dialog = new DialogForm("اطلاعات غیرتکراری با موفقیت ثبت شدند.", "ثبت موفقیت آمیز", "success", this);
                 }
                 else
                 {
-                    MessageBox.Show(".تمامی اطلاعات تکراری هستند");
+                    DialogForm dialog = new DialogForm("تمامی اطلاعات تکراری هستند.", "خطا", "error", this);
                 }
 
                 if (hasRepeat && hasRegister)
                 {
                     repeats = "شماره های دانشجویی " + repeats + "تکراری بوده و ثبت نشدند.";
-                    MessageBox.Show(repeats);
+                    DialogForm dialog = new DialogForm(repeats, "اشکال در ثبت", "information", this);
                 }
 
                 if(hasWrongInput)
                 {
                     mistakes = "اطلاعات سطرهای " + mistakes + "اشتباه بوده و ثبت نشدند.";
-                    MessageBox.Show(mistakes);
+                    DialogForm dialog = new DialogForm(mistakes, "خطا", "error", this);
                 }
             }
             this.Close();

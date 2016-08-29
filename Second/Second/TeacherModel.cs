@@ -222,7 +222,6 @@ namespace Test
         /// <summary>
         /// end of set and get
         /// </summary>
-        /// <param name="teacherNumber"></param>
 
         public void setTeacherNumber(long teacherNumber)
         {
