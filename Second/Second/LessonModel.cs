@@ -31,17 +31,29 @@ namespace Test
         }
         public void addLesson()
         {
-           
-                SqlConnection conn = new SqlConnection();
-                conn.ConnectionString =
-                     "Data Source= 185.159.152.5;" +
-                     "Initial Catalog=youshita_Test;" +
-                     "User id=youshita_co; " +
-                     "Password=P@hn1395;";
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString =
+                    "Data Source= 185.159.152.5;" +
+                    "Initial Catalog=youshita_Test;" +
+                    "User id=youshita_co; " +
+                    "Password=P@hn1395;";
 
 
-                SqlCommand sc = new SqlCommand();
-                SqlDataReader reader;
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+
+            if (getLessonName() == "")
+            {
+                throw new System.ArgumentNullException();
+            }
+
+            else if (getLessonName().Any(char.IsNumber) || getLessonName().Any(char.IsSymbol) || getLessonName().Any(char.IsPunctuation))
+            {
+                throw new System.FormatException();
+            }
+
+            else
+            {
                 sc.CommandText = "INSERT INTO lessonTable (lesson#,lessonName,lessonGroup#,lessonTeacher#) VALUES ( '" + getLessonNumber()
                                                                                                                 + "','" + getLessonName()
                                                                                                                 + "','" + getLessonGroupNumber()
@@ -52,12 +64,12 @@ namespace Test
                 conn.Open();
                 reader = sc.ExecuteReader();
                 conn.Close();
-
+                //throw new Exception("success");
+            }
         }
 
         public void createLessonTable()
         {
-            
                 SqlConnection conn = new SqlConnection();
                 conn.ConnectionString =
                          "Data Source= 185.159.152.5;" +
@@ -65,32 +77,24 @@ namespace Test
                          "User id=youshita_co; " +
                          "Password=P@hn1395;";
 
-
-               
-
-                using (SqlCommand cmd = new SqlCommand("CREATE TABLE [dbo].[" + getLessonNumber() + "-" + getLessonGroupNumber() + "_Table" + "]("
-                                 + "[student#] [bigint] NOT NULL ,"
-                                 + "[studentFName] [text] NOT NULL,"
-                                 + "[studentLName] [text] NOT NULL,"
-                                 + "CONSTRAINT ['pk_" + getLessonNumber() + "-" + getLessonGroupNumber() + "_Table" + "'] PRIMARY KEY CLUSTERED "
-                                 + "("
-                                 + "[student#] ASC"
-                                 + ")WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]"
-                                 + ") ON [PRIMARY]", new SqlConnection(conn.ConnectionString)))
-                {
-                    cmd.Connection.Open();
-                    cmd.ExecuteNonQuery();
-                    cmd.Connection.Close();
-                }
-
-               
-           
+            using (SqlCommand cmd = new SqlCommand("CREATE TABLE [dbo].[" + getLessonNumber() + "-" + getLessonGroupNumber() + "_Table" + "]("
+                             + "[student#] [bigint] NOT NULL ,"
+                             + "[studentFName] [text] NOT NULL,"
+                             + "[studentLName] [text] NOT NULL,"
+                             + "CONSTRAINT ['pk_" + getLessonNumber() + "-" + getLessonGroupNumber() + "_Table" + "'] PRIMARY KEY CLUSTERED "
+                             + "("
+                             + "[student#] ASC"
+                             + ")WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]"
+                             + ") ON [PRIMARY]", new SqlConnection(conn.ConnectionString)))
+            {
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+            }
         }
 
         public void updateLesson()
         {
-
-
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString =
             "Data Source= 185.159.152.5;" +

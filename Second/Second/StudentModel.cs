@@ -26,26 +26,47 @@ namespace Test
 
 
         }
-        public void addStudent(long lessonNumber , int lessonGroupNumber)
+        public void addStudent(long lessonNumber , int lessonGroupNumber, bool isSingle)
         {
 
             SqlConnection conn = new SqlConnection();
-                conn.ConnectionString =
-                "Data Source= 185.159.152.5;" +
-                        "Initial Catalog=youshita_Test;" +
-                        "User id=youshita_co; " +
-                        "Password=P@hn1395;";
+            conn.ConnectionString =
+            "Data Source= 185.159.152.5;" +
+                    "Initial Catalog=youshita_Test;" +
+                    "User id=youshita_co; " +
+                    "Password=P@hn1395;";
 
-                SqlCommand sc = new SqlCommand();
-                SqlDataReader reader;
-                sc.CommandText = "INSERT INTO [dbo].["+lessonNumber+"-"+lessonGroupNumber+"_Table] (student#,studentFName,studentLName) VALUES ( '" + getStudentNumber()
-                                                                                                                + "','" + getStudentFName()
-                                                                                                                + "','" + getStudentLName() + "')";
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+
+            if (getStudentFName() == "" || getStudentLName() == "")
+            {
+                throw new System.ArgumentNullException();
+            }
+
+            else if (getStudentFName().Any(char.IsNumber) || getStudentLName().Any(char.IsNumber) ||
+                     getStudentFName().Any(char.IsSymbol) || getStudentLName().Any(char.IsSymbol)||
+                     getStudentFName().Any(char.IsPunctuation) || getStudentLName().Any(char.IsPunctuation) )
+            {
+                throw new System.FormatException();
+            }
+
+            else
+            {
+                sc.CommandText = "INSERT INTO [dbo].[" + lessonNumber + "-" + lessonGroupNumber + "_Table] (student#,studentFName,studentLName) VALUES ( '" + getStudentNumber()
+                                                                                                            + "','" + getStudentFName()
+                                                                                                            + "','" + getStudentLName() + "')";
                 sc.CommandType = CommandType.Text;
                 sc.Connection = conn;
                 conn.Open();
                 reader = sc.ExecuteReader();
                 conn.Close();
+
+                if (isSingle)
+                {
+                    throw new Exception("success");
+                }
+            }
         }
 
         public void updateStudent(long lessonNumber, int lessonGroupNumber)
@@ -59,15 +80,32 @@ namespace Test
 
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "UPDATE [dbo].[" + lessonNumber + "-" + lessonGroupNumber + "_Table] SET student# = '" + getStudentNewNumber()
-                                                                + "', studentFName ='" + getStudentFName()
-                                                                + "', studentLName ='" + getStudentLName()  + "' WHERE student# = "+getStudentNumber()+"";
 
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
-            conn.Close();
+            if (getStudentFName() == "" || getStudentLName() == "")
+            {
+                throw new System.ArgumentNullException();
+            }
+
+            else if (getStudentFName().Any(char.IsNumber) || getStudentLName().Any(char.IsNumber) ||
+                     getStudentFName().Any(char.IsSymbol) || getStudentLName().Any(char.IsSymbol) ||
+                     getStudentFName().Any(char.IsPunctuation) || getStudentLName().Any(char.IsPunctuation))
+            {
+                throw new System.FormatException();
+            }
+
+            else
+            {
+                sc.CommandText = "UPDATE [dbo].[" + lessonNumber + "-" + lessonGroupNumber + "_Table] SET student# = '" + getStudentNewNumber()
+                                                                + "', studentFName ='" + getStudentFName()
+                                                                + "', studentLName ='" + getStudentLName() + "' WHERE student# = " + getStudentNumber() + "";
+
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                conn.Open();
+                reader = sc.ExecuteReader();
+                conn.Close();
+                throw new Exception("success");
+            }
 
 
         }
@@ -89,9 +127,7 @@ namespace Test
             conn.Open();
             reader = sc.ExecuteReader();
             conn.Close();
-
-
-
+            throw new Exception("success");
         }
         public  List<StudentModel> getAllStudent()
         {
@@ -128,12 +164,7 @@ namespace Test
 
 
             return list;
-
-
        }
-
-
-
 
 
         public void setStudentNumber(long StudentNumber)

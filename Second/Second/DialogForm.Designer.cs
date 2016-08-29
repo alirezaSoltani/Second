@@ -32,8 +32,8 @@
             this.titleBar_lbl = new System.Windows.Forms.Label();
             this.error_panel = new System.Windows.Forms.Panel();
             this.ok_btn = new System.Windows.Forms.Button();
-            this.context_lbl = new System.Windows.Forms.Label();
             this.icon_lbl = new System.Windows.Forms.PictureBox();
+            this.context_lbl = new System.Windows.Forms.Label();
             this.error_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.icon_lbl)).BeginInit();
             this.SuspendLayout();
@@ -75,19 +75,6 @@
             this.ok_btn.UseVisualStyleBackColor = false;
             this.ok_btn.Click += new System.EventHandler(this.ok_btn_Click);
             // 
-            // context_lbl
-            // 
-            this.context_lbl.AutoEllipsis = true;
-            this.context_lbl.BackColor = System.Drawing.Color.Transparent;
-            this.context_lbl.CausesValidation = false;
-            this.context_lbl.Font = new System.Drawing.Font("B Nazanin", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.context_lbl.Location = new System.Drawing.Point(30, 14);
-            this.context_lbl.Name = "context_lbl";
-            this.context_lbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.context_lbl.Size = new System.Drawing.Size(379, 109);
-            this.context_lbl.TabIndex = 5;
-            this.context_lbl.UseCompatibleTextRendering = true;
-            // 
             // icon_lbl
             // 
             this.icon_lbl.BackColor = System.Drawing.Color.Transparent;
@@ -99,20 +86,35 @@
             this.icon_lbl.TabIndex = 4;
             this.icon_lbl.TabStop = false;
             // 
-            // Error
+            // context_lbl
             // 
+            this.context_lbl.BackColor = System.Drawing.Color.Transparent;
+            this.context_lbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.context_lbl.Location = new System.Drawing.Point(30, 14);
+            this.context_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.context_lbl.Name = "context_lbl";
+            this.context_lbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.context_lbl.Size = new System.Drawing.Size(380, 109);
+            this.context_lbl.TabIndex = 66;
+            this.context_lbl.Text = "متن خطا";
+            // 
+            // DialogForm
+            // 
+            this.AcceptButton = this.ok_btn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Linen;
+            this.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.ClientSize = new System.Drawing.Size(536, 242);
             this.Controls.Add(this.error_panel);
             this.Controls.Add(this.titleBar_lbl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Error";
+            this.Name = "DialogForm";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Error";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.Error_Load);
             this.error_panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.icon_lbl)).EndInit();
@@ -125,7 +127,7 @@
         private System.Windows.Forms.Label titleBar_lbl;
         private System.Windows.Forms.Panel error_panel;
         private System.Windows.Forms.Button ok_btn;
-        private System.Windows.Forms.Label context_lbl;
         private System.Windows.Forms.PictureBox icon_lbl;
+        private System.Windows.Forms.Label context_lbl;
     }
 }
