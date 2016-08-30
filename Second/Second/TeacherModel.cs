@@ -134,7 +134,30 @@ namespace Test
             throw new Exception("success");
         }
 
+        public string getTeacherFullName(long username)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString =
+            "Data Source= 185.159.152.5;" +
+                    "Initial Catalog=youshita_Test;" +
+                    "User id=youshita_co; " +
+                    "Password=P@hn1395;";
+            SqlCommand sc = new SqlCommand();
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn;
+            SqlDataReader reader;
 
+            sc.CommandText = " SELECT teacherFName , teacherLName FROM teacherTable WHERE teacher# = '" + username + "'";
+            conn.Open();
+            reader = sc.ExecuteReader();
+            reader.Read();
+            string FName = reader.GetString(0);
+            string LName = reader.GetString(1);
+            string fullName = FName + " " + LName;
+            conn.Close();
+
+            return fullName;
+        }
         public  List<TeacherModel> getAllTeacher()
         {
             List<TeacherModel> list = new List<TeacherModel>();

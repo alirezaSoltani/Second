@@ -47,11 +47,6 @@ namespace Test
                 throw new System.ArgumentNullException();
             }
 
-            else if (getLessonName().Any(char.IsNumber) || getLessonName().Any(char.IsSymbol) || getLessonName().Any(char.IsPunctuation))
-            {
-                throw new System.FormatException();
-            }
-
             else
             {
                 sc.CommandText = "INSERT INTO lessonTable (lesson#,lessonName,lessonGroup#,lessonTeacher#) VALUES ( '" + getLessonNumber()
@@ -104,15 +99,25 @@ namespace Test
 
             SqlCommand sc = new SqlCommand();
             SqlDataReader reader;
-            sc.CommandText = "UPDATE lessonTable SET lesson# = '" + getNewLessonNumber()
+
+            if (getLessonName() == "")
+            {
+                throw new System.ArgumentNullException();
+            }
+            
+            else
+            {
+                sc.CommandText = "UPDATE lessonTable SET lesson# = '" + getNewLessonNumber()
                                                                 + "', lessonName ='" + getLessonName()
                                                                 + "', lessonGroup# ='" + getNewLessonGroupNumber() + "' WHERE lesson# =" + getLessonNumber() + "AND lessonGroup#= " + getLessonGroupNumber() + "";
 
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn;
-            conn.Open();
-            reader = sc.ExecuteReader();
-            conn.Close();
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn;
+                conn.Open();
+                reader = sc.ExecuteReader();
+                conn.Close();
+                //throw new Exception("success");
+            }
 
 
 
@@ -124,15 +129,23 @@ namespace Test
                 "Password=P@hn1395;";
 
 
+            if (getLessonName() == "")
+            {
+                throw new System.ArgumentNullException();
+            }
 
-            SqlCommand sc2 = new SqlCommand();
-            SqlDataReader reader2;
-            sc2.Connection = conn2;
-            conn2.Open();
-            sc2.CommandText = "EXEC sp_rename '" + getLessonNumber() + "-" + getLessonGroupNumber() + "_Table', '" + getNewLessonNumber() + "-" + getNewLessonGroupNumber() + "_Table'";
-            sc2.CommandType = CommandType.Text;
-            reader2 = sc2.ExecuteReader();
-            conn2.Close();
+            else
+            {
+                SqlCommand sc2 = new SqlCommand();
+                SqlDataReader reader2;
+                sc2.Connection = conn2;
+                conn2.Open();
+                sc2.CommandText = "EXEC sp_rename '" + getLessonNumber() + "-" + getLessonGroupNumber() + "_Table', '" + getNewLessonNumber() + "-" + getNewLessonGroupNumber() + "_Table'";
+                sc2.CommandType = CommandType.Text;
+                reader2 = sc2.ExecuteReader();
+                conn2.Close();
+                throw new Exception("success");
+            }
         }
         public void deleteLesson()
         {
@@ -172,6 +185,7 @@ namespace Test
                 conn2.Open();
                 reader2 = sc1.ExecuteReader();
                 conn2.Close();
+                throw new Exception("success");
         }
 
         public void deleteLessonTeacher ()
@@ -250,8 +264,6 @@ namespace Test
 
 
             return list;
-
-
         }
 
         public void setLessonNumber(long LessonNumber)
