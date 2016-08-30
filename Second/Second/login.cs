@@ -14,6 +14,8 @@ namespace Second
     public partial class login1 : Form
     {
         private  long moderatorUsername;
+        int width = SystemInformation.PrimaryMonitorSize.Width;
+        int height = SystemInformation.PrimaryMonitorSize.Height;
 
         public login1()
         {
@@ -24,35 +26,32 @@ namespace Second
        
         private void login1_Load(object sender, EventArgs e)
         {
-
+            this.SetBounds(((390 * width) / 1000), ((150* width) / 1000), ((205 * width) / 1000), ((205 * width) / 1000));
+            login_panel.SetBounds(((0 * width) / 800), ((0 * height) / 100), ((205 * width) / 1000), ((205 * width) / 1000));
+            //login_exit_lbl.SetBounds(((137 * width) / 800), ((9 * height) / 200), ((3 * width) / 200), ((2 * height) / 100));
+            logo_pictureBox.SetBounds(((33 * width) / 800), ((40 * height) / 800), ((30 * width) / 200), ((12 * height) / 200));
+            login_username_txtbx.SetBounds(((23 * width) / 800), ((150 * height) / 1000), ((26 * width) / 200), ((35 * height) / 1000));
+            login_password_txtbx.SetBounds(((23 * width) / 800), ((205 * height) / 1000), ((26 * width) / 200), ((35 * height) / 1000));
+            login_enter_lbl.SetBounds(((21 * width) / 800), ((210 * height) / 800), ((30 * width) / 200), ((8 * height) / 200));
+            exit_pictureBox.SetBounds(((142 * width) / 800), ((25 * height) / 800), ((5 * height) / 200), ((5 * height) / 200));
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
             this.Close();
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
+            Application.Exit();
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
             bool Checker = false;
-            if (textBox1.Text != "" && textBox2.Text != "")
+            if (login_username_txtbx.Text != "" && login_password_txtbx.Text != "")
             {
                 TeacherModel teacher = new TeacherModel();
-                Checker = teacher.Authenticator(Int64.Parse(textBox1.Text), textBox2.Text);
+                Checker = teacher.Authenticator(Int64.Parse(login_username_txtbx.Text), login_password_txtbx.Text);
                 if (Checker == true)
                 {
-                    setModeratorUsername(long.Parse(textBox1.Text));
+                    setModeratorUsername(long.Parse(login_username_txtbx.Text));
                     this.Hide();
                     ManagerForm1 Form2 = new ManagerForm1();
                     Form2.Show();
@@ -80,5 +79,20 @@ namespace Second
             return moderatorUsername;
         }
 
+        private void exit_pictureBox_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Application.Exit();
+        }
+
+        private void exit_pictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            exit_pictureBox.BackgroundImage = Second.Properties.Resources.exit_3;
+        }
+
+        private void exit_pictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            exit_pictureBox.BackgroundImage = Second.Properties.Resources.exit_1;
+        }
     }
 }

@@ -28,105 +28,126 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.panel1.SuspendLayout();
+            this.login_panel = new System.Windows.Forms.Panel();
+            this.exit_pictureBox = new System.Windows.Forms.PictureBox();
+            this.logo_pictureBox = new System.Windows.Forms.PictureBox();
+            this.login_enter_lbl = new System.Windows.Forms.Label();
+            this.login_password_txtbx = new System.Windows.Forms.TextBox();
+            this.login_username_txtbx = new System.Windows.Forms.TextBox();
+            this.login_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.exit_pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo_pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // login_panel
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = global::Second.Properties.Resources.new_form;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Location = new System.Drawing.Point(1, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(501, 450);
-            this.panel1.TabIndex = 6;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.login_panel.BackColor = System.Drawing.Color.Transparent;
+            this.login_panel.BackgroundImage = global::Second.Properties.Resources.loginBackGround;
+            this.login_panel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.login_panel.Controls.Add(this.exit_pictureBox);
+            this.login_panel.Controls.Add(this.logo_pictureBox);
+            this.login_panel.Controls.Add(this.login_enter_lbl);
+            this.login_panel.Controls.Add(this.login_password_txtbx);
+            this.login_panel.Controls.Add(this.login_username_txtbx);
+            this.login_panel.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.login_panel.Location = new System.Drawing.Point(1, 4);
+            this.login_panel.Margin = new System.Windows.Forms.Padding(4);
+            this.login_panel.Name = "login_panel";
+            this.login_panel.Size = new System.Drawing.Size(394, 396);
+            this.login_panel.TabIndex = 6;
             // 
-            // label2
+            // exit_pictureBox
             // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(440, 58);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 30);
-            this.label2.TabIndex = 5;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.exit_pictureBox.BackgroundImage = global::Second.Properties.Resources.exit_1;
+            this.exit_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.exit_pictureBox.Location = new System.Drawing.Point(339, 30);
+            this.exit_pictureBox.Name = "exit_pictureBox";
+            this.exit_pictureBox.Size = new System.Drawing.Size(30, 30);
+            this.exit_pictureBox.TabIndex = 6;
+            this.exit_pictureBox.TabStop = false;
+            this.exit_pictureBox.Click += new System.EventHandler(this.exit_pictureBox_Click);
+            this.exit_pictureBox.MouseEnter += new System.EventHandler(this.exit_pictureBox_MouseEnter);
+            this.exit_pictureBox.MouseLeave += new System.EventHandler(this.exit_pictureBox_MouseLeave);
             // 
-            // label1
+            // logo_pictureBox
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("B Yekan+", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(120, 332);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(319, 47);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "ورود";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.logo_pictureBox.BackgroundImage = global::Second.Properties.Resources.logo_01_fa;
+            this.logo_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.logo_pictureBox.Location = new System.Drawing.Point(59, 54);
+            this.logo_pictureBox.Name = "logo_pictureBox";
+            this.logo_pictureBox.Size = new System.Drawing.Size(280, 71);
+            this.logo_pictureBox.TabIndex = 5;
+            this.logo_pictureBox.TabStop = false;
             // 
-            // textBox2
+            // login_enter_lbl
             // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("B Yekan+", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.textBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBox2.Location = new System.Drawing.Point(139, 270);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '●';
-            this.textBox2.Size = new System.Drawing.Size(236, 34);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.login_enter_lbl.BackColor = System.Drawing.Color.Transparent;
+            this.login_enter_lbl.Font = new System.Drawing.Font("B Yekan+", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.login_enter_lbl.ForeColor = System.Drawing.Color.White;
+            this.login_enter_lbl.Location = new System.Drawing.Point(59, 285);
+            this.login_enter_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.login_enter_lbl.Name = "login_enter_lbl";
+            this.login_enter_lbl.Size = new System.Drawing.Size(282, 44);
+            this.login_enter_lbl.TabIndex = 4;
+            this.login_enter_lbl.Text = "ورود";
+            this.login_enter_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.login_enter_lbl.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox1
+            // login_password_txtbx
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("B Yekan+", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBox1.Location = new System.Drawing.Point(139, 207);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(236, 34);
-            this.textBox1.TabIndex = 2;
+            this.login_password_txtbx.BackColor = System.Drawing.Color.White;
+            this.login_password_txtbx.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.login_password_txtbx.Font = new System.Drawing.Font("B Yekan+", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.login_password_txtbx.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.login_password_txtbx.Location = new System.Drawing.Point(59, 224);
+            this.login_password_txtbx.Margin = new System.Windows.Forms.Padding(4);
+            this.login_password_txtbx.Multiline = true;
+            this.login_password_txtbx.Name = "login_password_txtbx";
+            this.login_password_txtbx.PasswordChar = '●';
+            this.login_password_txtbx.Size = new System.Drawing.Size(242, 36);
+            this.login_password_txtbx.TabIndex = 3;
+            // 
+            // login_username_txtbx
+            // 
+            this.login_username_txtbx.BackColor = System.Drawing.Color.White;
+            this.login_username_txtbx.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.login_username_txtbx.Font = new System.Drawing.Font("B Yekan+", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.login_username_txtbx.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.login_username_txtbx.Location = new System.Drawing.Point(59, 164);
+            this.login_username_txtbx.Margin = new System.Windows.Forms.Padding(4);
+            this.login_username_txtbx.Multiline = true;
+            this.login_username_txtbx.Name = "login_username_txtbx";
+            this.login_username_txtbx.Size = new System.Drawing.Size(242, 37);
+            this.login_username_txtbx.TabIndex = 2;
             // 
             // login1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 513);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(396, 399);
+            this.Controls.Add(this.login_panel);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "login1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "login";
             this.Load += new System.EventHandler(this.login1_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.login_panel.ResumeLayout(false);
+            this.login_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.exit_pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo_pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox login_password_txtbx;
+        private System.Windows.Forms.TextBox login_username_txtbx;
+        private System.Windows.Forms.Label login_enter_lbl;
+        private System.Windows.Forms.Panel login_panel;
+        private System.Windows.Forms.PictureBox logo_pictureBox;
+        private System.Windows.Forms.PictureBox exit_pictureBox;
     }
 }
