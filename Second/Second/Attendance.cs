@@ -34,7 +34,7 @@ namespace Second
                     "Password=P@hn1395;";
 
                 using (SqlCommand cmd = new SqlCommand("ALTER TABLE [dbo].[" + getLessonNumber() + "-" + getLessonGroupNumber() + "_Table" + "]"
-                           + "ADD [" + date + "] [INT]", new SqlConnection(conn.ConnectionString)))
+                           + "ADD [" + date + "] [VARCHAR(50)]", new SqlConnection(conn.ConnectionString)))
                 {
                     cmd.Connection.Open();
                     cmd.ExecuteNonQuery();
@@ -59,7 +59,7 @@ namespace Second
         }
 
 
-        public void attend(String date,bool state)
+        public void attend(String date,string state)
         {
             Attendance attendanceObj = new Attendance();
             Test.StudentModel studentObj = new Test.StudentModel();
