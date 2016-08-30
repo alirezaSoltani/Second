@@ -31,6 +31,7 @@ namespace Second
         private int totalRecords;
         private const int pageSize = 10;
         private string[,] s;
+        private int userType;
         //private bool isAdded = false;
         /// <summary>
         /// Project temp attributes
@@ -95,11 +96,12 @@ namespace Second
             InitializeComponent();
         }
 
-        public ManagerForm1(long username, string password)
+        public ManagerForm1(long username, string password, int user)
         {
             InitializeComponent();
             currentUserName = username;
             currentPassword = password;
+            userType = user;
         }
 
 
@@ -444,6 +446,21 @@ namespace Second
             conn4.Close();
 
             /****************************************************setting tab design**********************************************************/
+
+
+            /****************************************************determining access level****************************************************/
+            if(userType == 2)
+            {
+                dashboard_info_lbl.Text =  dashbordTeacherObj.getTeacherFullName(currentUserName) + " خوش آمدید.";
+            }
+            else if(userType == 3)
+            {
+                manager_main_tc.TabPages.Remove(teachers);
+                manager_main_tc.TabPages.Remove(students);
+                manager_main_tc.TabPages.Remove(lessons);
+                manager_main_tc.TabPages.Remove(settings);
+            }
+            /****************************************************determining access level****************************************************/
             /// <summary>
             /// MultiResolution
             /// </summary>
@@ -1763,10 +1780,10 @@ namespace Second
         {
             try
             {
-                /*PasswordRequest k = new PasswordRequest();
-                k.Show();*/
+                PasswordRequest k = new PasswordRequest();
+                k.Show();
 
-                if (/*k.authenPass() == */true)
+                if (k.authenPass() == true)
                 {
                     LessonModel lessonObj = new LessonModel();
                     lessonObj.setLessonNumber(long.Parse(currentLessonNumber));
@@ -2401,6 +2418,11 @@ namespace Second
                     pageOffsets.Add(offset);
                 return pageOffsets;
             }
+        }
+
+        private void ManagerForm1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

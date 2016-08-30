@@ -14,15 +14,10 @@ namespace Second
     public partial class PasswordRequest : Form
     {
 
-        private bool Checker = false;
+        private int Checker = 0;
         public PasswordRequest()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -30,15 +25,9 @@ namespace Second
             this.Hide();
         }
 
-        private void botton1_Click(object sender, EventArgs e)
-        {
-         
-
-        }
-
         private void authenticatePassword_Click(object sender, EventArgs e)
         {
-            Checker = false;
+            Checker = 0;
             if (textBox1.Text != "")
             {
 
@@ -47,7 +36,7 @@ namespace Second
 
 
                 Checker = teacherObj.Authenticator(loginObj.getModeratorUsername(), textBox1.Text);
-                if (Checker == true)
+                if (Checker == 2)
                 {
                     this.Hide();
                 }
@@ -63,7 +52,7 @@ namespace Second
         }
         public bool authenPass()
         {
-            if(Checker == true)
+            if(Checker == 2)
             {
                 return true;
             }
