@@ -29,20 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            FarsiCalendarComponent.FarsiDate farsiDate2 = new FarsiCalendarComponent.FarsiDate();
+            FarsiCalendarComponent.FarsiDate farsiDate1 = new FarsiCalendarComponent.FarsiDate();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerForm1));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerForm1));
             this.manager_main_tc = new System.Windows.Forms.TabControl();
             this.dashboard = new System.Windows.Forms.TabPage();
             this.dashboard_greeting_panel = new System.Windows.Forms.Panel();
@@ -67,6 +71,7 @@
             this.teachers_information_lbl = new System.Windows.Forms.Label();
             this.teachers_addEditDelete_panel = new System.Windows.Forms.Panel();
             this.teachers_deleteTeacher_gpb = new System.Windows.Forms.GroupBox();
+            this.teachers_delete_teacherNumber_lbl = new System.Windows.Forms.Label();
             this.teachers_delete_teacherNumber_text_lbl = new System.Windows.Forms.Label();
             this.teachers_deleteTeacher_btn = new System.Windows.Forms.Button();
             this.teachers_addTeacher_gpb = new System.Windows.Forms.GroupBox();
@@ -172,13 +177,41 @@
             this.lessons_add_lessonName_lbl = new System.Windows.Forms.Label();
             this.messaging = new System.Windows.Forms.TabPage();
             this.setting = new System.Windows.Forms.TabPage();
+            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.setting_panel = new System.Windows.Forms.Panel();
+            this.setting_aboutUs_gpb = new System.Windows.Forms.GroupBox();
+            this.setting_aboutUs_lbl = new System.Windows.Forms.Label();
+            this.setting_changeTheme_gpb = new System.Windows.Forms.GroupBox();
+            this.setting_changeInfo_gpb = new System.Windows.Forms.GroupBox();
+            this.setting_changeInfo_showNewPass_pic = new System.Windows.Forms.PictureBox();
+            this.setting_changeInfo_showPass_pic = new System.Windows.Forms.PictureBox();
+            this.setting_changeInfo_clear_btn = new System.Windows.Forms.Button();
+            this.setting_changeInfo_managerName_txtbx = new System.Windows.Forms.TextBox();
+            this.setting_changeInfo_change_btn = new System.Windows.Forms.Button();
+            this.setting_changeInfo_managerFamily_lbl = new System.Windows.Forms.Label();
+            this.setting_changeInfo_managerNewPass_lbl = new System.Windows.Forms.Label();
+            this.setting_changeInfo_managerPass_lbl = new System.Windows.Forms.Label();
+            this.setting_changeInfo_managerFamily_txtbx = new System.Windows.Forms.TextBox();
+            this.setting_changeInfo_managerPass_txtbx = new System.Windows.Forms.TextBox();
+            this.setting_changeInfo_managerName_lbl = new System.Windows.Forms.Label();
+            this.setting_changeInfo_managerNewPass_txtbx = new System.Windows.Forms.TextBox();
             this.synchronizeTimer1 = new GHNet.Windows.Forms.SynchronizeTimer(this.components);
             this.facultyName_pictureBox = new System.Windows.Forms.PictureBox();
             this.logo_pictureBox = new System.Windows.Forms.PictureBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.teachers_delete_teacherNumber_lbl = new System.Windows.Forms.Label();
+            this.bindingSource5 = new System.Windows.Forms.BindingSource(this.components);
             this.manager_main_tc.SuspendLayout();
             this.dashboard.SuspendLayout();
             this.dashboard_greeting_panel.SuspendLayout();
@@ -210,11 +243,21 @@
             this.lessons_editLesson_gpb.SuspendLayout();
             this.lessons_addLesson_gpb.SuspendLayout();
             this.lessons_add_teachers_panel.SuspendLayout();
+            this.setting.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
+            this.bindingNavigator1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            this.setting_panel.SuspendLayout();
+            this.setting_aboutUs_gpb.SuspendLayout();
+            this.setting_changeInfo_gpb.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.setting_changeInfo_showNewPass_pic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.setting_changeInfo_showPass_pic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.facultyName_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource5)).BeginInit();
             this.SuspendLayout();
             // 
             // manager_main_tc
@@ -436,12 +479,12 @@
             this.dashboard_date_calendar.Name = "dashboard_date_calendar";
             this.dashboard_date_calendar.NumbersColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.dashboard_date_calendar.SelectedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(250)))));
-            farsiDate2.Day = 9;
-            farsiDate2.FarsiDateValue = "95/06/09";
-            farsiDate2.GeoDate = new System.DateTime(2016, 8, 30, 0, 0, 0, 0);
-            farsiDate2.Month = 6;
-            farsiDate2.Year = 1395;
-            this.dashboard_date_calendar.SelectedFarsiValue = farsiDate2;
+            farsiDate1.Day = 9;
+            farsiDate1.FarsiDateValue = "95/06/09";
+            farsiDate1.GeoDate = new System.DateTime(2016, 8, 30, 0, 0, 0, 0);
+            farsiDate1.Month = 6;
+            farsiDate1.Year = 1395;
+            this.dashboard_date_calendar.SelectedFarsiValue = farsiDate1;
             this.dashboard_date_calendar.SelectedGeoValue = new System.DateTime(2016, 8, 30, 0, 0, 0, 0);
             this.dashboard_date_calendar.SelectedNumberColor = System.Drawing.Color.Black;
             this.dashboard_date_calendar.ShowSmallDayName = false;
@@ -500,37 +543,37 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Linen;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(1, 4);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGridView1.RowTemplate.ReadOnly = true;
@@ -593,6 +636,21 @@
             this.teachers_deleteTeacher_gpb.TabIndex = 77;
             this.teachers_deleteTeacher_gpb.TabStop = false;
             this.teachers_deleteTeacher_gpb.Text = "حذف اطلاعات";
+            // 
+            // teachers_delete_teacherNumber_lbl
+            // 
+            this.teachers_delete_teacherNumber_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.teachers_delete_teacherNumber_lbl.Enabled = false;
+            this.teachers_delete_teacherNumber_lbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.teachers_delete_teacherNumber_lbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.teachers_delete_teacherNumber_lbl.Location = new System.Drawing.Point(315, 94);
+            this.teachers_delete_teacherNumber_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.teachers_delete_teacherNumber_lbl.Name = "teachers_delete_teacherNumber_lbl";
+            this.teachers_delete_teacherNumber_lbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.teachers_delete_teacherNumber_lbl.Size = new System.Drawing.Size(160, 30);
+            this.teachers_delete_teacherNumber_lbl.TabIndex = 92;
+            this.teachers_delete_teacherNumber_lbl.Text = "شماره استاد";
+            this.teachers_delete_teacherNumber_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // teachers_delete_teacherNumber_text_lbl
             // 
@@ -960,37 +1018,37 @@
             this.dataGridView2.BackgroundColor = System.Drawing.Color.Linen;
             this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dataGridView2.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView2.EnableHeadersVisualStyles = false;
             this.dataGridView2.Location = new System.Drawing.Point(4, 0);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView2.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.dataGridView2.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGridView2.RowTemplate.ReadOnly = true;
@@ -1057,7 +1115,6 @@
             this.students_addEditDelete_panel.Name = "students_addEditDelete_panel";
             this.students_addEditDelete_panel.Size = new System.Drawing.Size(1876, 359);
             this.students_addEditDelete_panel.TabIndex = 39;
-            this.students_addEditDelete_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // students_deleteStudent_gpb
             // 
@@ -1342,7 +1399,6 @@
             this.students_add_studentName_txtbx.Name = "students_add_studentName_txtbx";
             this.students_add_studentName_txtbx.Size = new System.Drawing.Size(233, 29);
             this.students_add_studentName_txtbx.TabIndex = 17;
-            this.students_add_studentName_txtbx.TextChanged += new System.EventHandler(this.manager_studentFName_add_txt_TextChanged);
             // 
             // students_add_addStudent_btn
             // 
@@ -1387,7 +1443,6 @@
             this.students_add_studentFamily_lbl.TabIndex = 22;
             this.students_add_studentFamily_lbl.Text = "نام خانوادگی دانشجو";
             this.students_add_studentFamily_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.students_add_studentFamily_lbl.Click += new System.EventHandler(this.label26_Click);
             // 
             // students_add_lessonGroupNumber_lbl
             // 
@@ -1401,7 +1456,6 @@
             this.students_add_lessonGroupNumber_lbl.TabIndex = 31;
             this.students_add_lessonGroupNumber_lbl.Text = "شماره گروه درس";
             this.students_add_lessonGroupNumber_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.students_add_lessonGroupNumber_lbl.Click += new System.EventHandler(this.label9_Click);
             // 
             // students_add_studentNumber_lbl
             // 
@@ -1417,7 +1471,6 @@
             this.students_add_studentNumber_lbl.TabIndex = 20;
             this.students_add_studentNumber_lbl.Text = "شماره دانشجویی";
             this.students_add_studentNumber_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.students_add_studentNumber_lbl.Click += new System.EventHandler(this.label24_Click);
             // 
             // students_add_lessonNumber_lbl
             // 
@@ -1431,7 +1484,6 @@
             this.students_add_lessonNumber_lbl.TabIndex = 30;
             this.students_add_lessonNumber_lbl.Text = "شماره درس";
             this.students_add_lessonNumber_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.students_add_lessonNumber_lbl.Click += new System.EventHandler(this.label10_Click);
             // 
             // students_add_studentFamily_txtbx
             // 
@@ -1442,7 +1494,6 @@
             this.students_add_studentFamily_txtbx.Name = "students_add_studentFamily_txtbx";
             this.students_add_studentFamily_txtbx.Size = new System.Drawing.Size(233, 29);
             this.students_add_studentFamily_txtbx.TabIndex = 18;
-            this.students_add_studentFamily_txtbx.TextChanged += new System.EventHandler(this.manager_studentLName_add_txt_TextChanged);
             // 
             // students_add_lessonNumber_txtbx
             // 
@@ -1453,7 +1504,6 @@
             this.students_add_lessonNumber_txtbx.Name = "students_add_lessonNumber_txtbx";
             this.students_add_lessonNumber_txtbx.Size = new System.Drawing.Size(233, 29);
             this.students_add_lessonNumber_txtbx.TabIndex = 27;
-            this.students_add_lessonNumber_txtbx.TextChanged += new System.EventHandler(this.manager_student_lessonNumber_txt_TextChanged);
             // 
             // students_add_studentName_lbl
             // 
@@ -1467,7 +1517,6 @@
             this.students_add_studentName_lbl.TabIndex = 21;
             this.students_add_studentName_lbl.Text = "نام دانشجو";
             this.students_add_studentName_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.students_add_studentName_lbl.Click += new System.EventHandler(this.label25_Click);
             // 
             // students_add_lessonGroupNumber_txtbx
             // 
@@ -1478,7 +1527,6 @@
             this.students_add_lessonGroupNumber_txtbx.Name = "students_add_lessonGroupNumber_txtbx";
             this.students_add_lessonGroupNumber_txtbx.Size = new System.Drawing.Size(233, 29);
             this.students_add_lessonGroupNumber_txtbx.TabIndex = 28;
-            this.students_add_lessonGroupNumber_txtbx.TextChanged += new System.EventHandler(this.manager_student_lessonGroupNumber_txt_TextChanged);
             // 
             // students_add_studentNumber_txtbx
             // 
@@ -1489,7 +1537,6 @@
             this.students_add_studentNumber_txtbx.Name = "students_add_studentNumber_txtbx";
             this.students_add_studentNumber_txtbx.Size = new System.Drawing.Size(233, 29);
             this.students_add_studentNumber_txtbx.TabIndex = 16;
-            this.students_add_studentNumber_txtbx.TextChanged += new System.EventHandler(this.manager_studentNumber_add_txt_TextChanged);
             // 
             // lessons
             // 
@@ -1556,37 +1603,37 @@
             this.dataGridView3.BackgroundColor = System.Drawing.Color.Linen;
             this.dataGridView3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dataGridView3.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView3.EnableHeadersVisualStyles = false;
             this.dataGridView3.Location = new System.Drawing.Point(-1, 4);
             this.dataGridView3.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView3.MultiSelect = false;
             this.dataGridView3.Name = "dataGridView3";
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridView3.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.dataGridView3.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGridView3.RowTemplate.ReadOnly = true;
@@ -2036,7 +2083,10 @@
             // 
             // setting
             // 
-            this.setting.BackColor = System.Drawing.Color.LightBlue;
+            this.setting.BackColor = System.Drawing.Color.White;
+            this.setting.Controls.Add(this.bindingNavigator1);
+            this.setting.Controls.Add(this.dataGridView5);
+            this.setting.Controls.Add(this.setting_panel);
             this.setting.Location = new System.Drawing.Point(4, 30);
             this.setting.Margin = new System.Windows.Forms.Padding(4);
             this.setting.Name = "setting";
@@ -2044,6 +2094,368 @@
             this.setting.Size = new System.Drawing.Size(1902, 810);
             this.setting.TabIndex = 5;
             this.setting.Text = "تنظیمات";
+            // 
+            // bindingNavigator1
+            // 
+            this.bindingNavigator1.AddNewItem = null;
+            this.bindingNavigator1.AutoSize = false;
+            this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
+            this.bindingNavigator1.DeleteItem = null;
+            this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.None;
+            this.bindingNavigator1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2});
+            this.bindingNavigator1.Location = new System.Drawing.Point(324, 372);
+            this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.bindingNavigator1.Name = "bindingNavigator1";
+            this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
+            this.bindingNavigator1.Size = new System.Drawing.Size(320, 31);
+            this.bindingNavigator1.TabIndex = 61;
+            this.bindingNavigator1.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 28);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 28);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 28);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 27);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 28);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 28);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
+            // 
+            // dataGridView5
+            // 
+            this.dataGridView5.AllowUserToAddRows = false;
+            this.dataGridView5.AllowUserToDeleteRows = false;
+            this.dataGridView5.AllowUserToOrderColumns = true;
+            this.dataGridView5.AllowUserToResizeColumns = false;
+            this.dataGridView5.AllowUserToResizeRows = false;
+            this.dataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView5.BackgroundColor = System.Drawing.Color.Linen;
+            this.dataGridView5.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dataGridView5.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Cursor = System.Windows.Forms.Cursors.Arrow;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView5.DefaultCellStyle = dataGridViewCellStyle14;
+            this.dataGridView5.EnableHeadersVisualStyles = false;
+            this.dataGridView5.Location = new System.Drawing.Point(48, 374);
+            this.dataGridView5.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView5.MultiSelect = false;
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView5.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridView5.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            this.dataGridView5.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.dataGridView5.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView5.RowTemplate.ReadOnly = true;
+            this.dataGridView5.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView5.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView5.Size = new System.Drawing.Size(1879, 396);
+            this.dataGridView5.TabIndex = 60;
+            // 
+            // setting_panel
+            // 
+            this.setting_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.setting_panel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.setting_panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.setting_panel.Controls.Add(this.setting_aboutUs_gpb);
+            this.setting_panel.Controls.Add(this.setting_changeTheme_gpb);
+            this.setting_panel.Controls.Add(this.setting_changeInfo_gpb);
+            this.setting_panel.Location = new System.Drawing.Point(48, 8);
+            this.setting_panel.Margin = new System.Windows.Forms.Padding(4);
+            this.setting_panel.Name = "setting_panel";
+            this.setting_panel.Size = new System.Drawing.Size(1827, 348);
+            this.setting_panel.TabIndex = 59;
+            // 
+            // setting_aboutUs_gpb
+            // 
+            this.setting_aboutUs_gpb.Controls.Add(this.setting_aboutUs_lbl);
+            this.setting_aboutUs_gpb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.setting_aboutUs_gpb.Location = new System.Drawing.Point(78, 18);
+            this.setting_aboutUs_gpb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.setting_aboutUs_gpb.Name = "setting_aboutUs_gpb";
+            this.setting_aboutUs_gpb.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.setting_aboutUs_gpb.Size = new System.Drawing.Size(543, 314);
+            this.setting_aboutUs_gpb.TabIndex = 36;
+            this.setting_aboutUs_gpb.TabStop = false;
+            this.setting_aboutUs_gpb.Text = "درباره ما";
+            // 
+            // setting_aboutUs_lbl
+            // 
+            this.setting_aboutUs_lbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.setting_aboutUs_lbl.Location = new System.Drawing.Point(56, 74);
+            this.setting_aboutUs_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.setting_aboutUs_lbl.Name = "setting_aboutUs_lbl";
+            this.setting_aboutUs_lbl.Size = new System.Drawing.Size(431, 130);
+            this.setting_aboutUs_lbl.TabIndex = 0;
+            this.setting_aboutUs_lbl.Text = "32";
+            // 
+            // setting_changeTheme_gpb
+            // 
+            this.setting_changeTheme_gpb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.setting_changeTheme_gpb.Location = new System.Drawing.Point(626, 18);
+            this.setting_changeTheme_gpb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.setting_changeTheme_gpb.Name = "setting_changeTheme_gpb";
+            this.setting_changeTheme_gpb.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.setting_changeTheme_gpb.Size = new System.Drawing.Size(543, 314);
+            this.setting_changeTheme_gpb.TabIndex = 35;
+            this.setting_changeTheme_gpb.TabStop = false;
+            this.setting_changeTheme_gpb.Text = "تغییر نمای ظاهری";
+            // 
+            // setting_changeInfo_gpb
+            // 
+            this.setting_changeInfo_gpb.Controls.Add(this.setting_changeInfo_showNewPass_pic);
+            this.setting_changeInfo_gpb.Controls.Add(this.setting_changeInfo_showPass_pic);
+            this.setting_changeInfo_gpb.Controls.Add(this.setting_changeInfo_clear_btn);
+            this.setting_changeInfo_gpb.Controls.Add(this.setting_changeInfo_managerName_txtbx);
+            this.setting_changeInfo_gpb.Controls.Add(this.setting_changeInfo_change_btn);
+            this.setting_changeInfo_gpb.Controls.Add(this.setting_changeInfo_managerFamily_lbl);
+            this.setting_changeInfo_gpb.Controls.Add(this.setting_changeInfo_managerNewPass_lbl);
+            this.setting_changeInfo_gpb.Controls.Add(this.setting_changeInfo_managerPass_lbl);
+            this.setting_changeInfo_gpb.Controls.Add(this.setting_changeInfo_managerFamily_txtbx);
+            this.setting_changeInfo_gpb.Controls.Add(this.setting_changeInfo_managerPass_txtbx);
+            this.setting_changeInfo_gpb.Controls.Add(this.setting_changeInfo_managerName_lbl);
+            this.setting_changeInfo_gpb.Controls.Add(this.setting_changeInfo_managerNewPass_txtbx);
+            this.setting_changeInfo_gpb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.setting_changeInfo_gpb.Location = new System.Drawing.Point(1189, 18);
+            this.setting_changeInfo_gpb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.setting_changeInfo_gpb.Name = "setting_changeInfo_gpb";
+            this.setting_changeInfo_gpb.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.setting_changeInfo_gpb.Size = new System.Drawing.Size(519, 314);
+            this.setting_changeInfo_gpb.TabIndex = 33;
+            this.setting_changeInfo_gpb.TabStop = false;
+            this.setting_changeInfo_gpb.Text = "تغییر اطلاعات";
+            // 
+            // setting_changeInfo_showNewPass_pic
+            // 
+            this.setting_changeInfo_showNewPass_pic.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("setting_changeInfo_showNewPass_pic.BackgroundImage")));
+            this.setting_changeInfo_showNewPass_pic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.setting_changeInfo_showNewPass_pic.Location = new System.Drawing.Point(1, 207);
+            this.setting_changeInfo_showNewPass_pic.Margin = new System.Windows.Forms.Padding(4);
+            this.setting_changeInfo_showNewPass_pic.Name = "setting_changeInfo_showNewPass_pic";
+            this.setting_changeInfo_showNewPass_pic.Size = new System.Drawing.Size(28, 23);
+            this.setting_changeInfo_showNewPass_pic.TabIndex = 37;
+            this.setting_changeInfo_showNewPass_pic.TabStop = false;
+            this.setting_changeInfo_showNewPass_pic.MouseDown += new System.Windows.Forms.MouseEventHandler(this.setting_changeInfo_showNewPass_pic_MouseDown);
+            this.setting_changeInfo_showNewPass_pic.MouseUp += new System.Windows.Forms.MouseEventHandler(this.setting_changeInfo_showNewPass_pic_MouseUp);
+            // 
+            // setting_changeInfo_showPass_pic
+            // 
+            this.setting_changeInfo_showPass_pic.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("setting_changeInfo_showPass_pic.BackgroundImage")));
+            this.setting_changeInfo_showPass_pic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.setting_changeInfo_showPass_pic.Location = new System.Drawing.Point(1, 161);
+            this.setting_changeInfo_showPass_pic.Margin = new System.Windows.Forms.Padding(4);
+            this.setting_changeInfo_showPass_pic.Name = "setting_changeInfo_showPass_pic";
+            this.setting_changeInfo_showPass_pic.Size = new System.Drawing.Size(28, 23);
+            this.setting_changeInfo_showPass_pic.TabIndex = 36;
+            this.setting_changeInfo_showPass_pic.TabStop = false;
+            this.setting_changeInfo_showPass_pic.MouseDown += new System.Windows.Forms.MouseEventHandler(this.setting_changeInfo_showPass_pic_MouseDown);
+            this.setting_changeInfo_showPass_pic.MouseUp += new System.Windows.Forms.MouseEventHandler(this.setting_changeInfo_showPass_pic_MouseUp);
+            // 
+            // setting_changeInfo_clear_btn
+            // 
+            this.setting_changeInfo_clear_btn.AutoSize = true;
+            this.setting_changeInfo_clear_btn.BackColor = System.Drawing.Color.White;
+            this.setting_changeInfo_clear_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.setting_changeInfo_clear_btn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.setting_changeInfo_clear_btn.Location = new System.Drawing.Point(268, 249);
+            this.setting_changeInfo_clear_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.setting_changeInfo_clear_btn.Name = "setting_changeInfo_clear_btn";
+            this.setting_changeInfo_clear_btn.Size = new System.Drawing.Size(181, 38);
+            this.setting_changeInfo_clear_btn.TabIndex = 30;
+            this.setting_changeInfo_clear_btn.Text = "پاک کردن";
+            this.setting_changeInfo_clear_btn.UseVisualStyleBackColor = false;
+            this.setting_changeInfo_clear_btn.Click += new System.EventHandler(this.setting_changeInfo_clear_btn_Click);
+            // 
+            // setting_changeInfo_managerName_txtbx
+            // 
+            this.setting_changeInfo_managerName_txtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.setting_changeInfo_managerName_txtbx.Location = new System.Drawing.Point(33, 71);
+            this.setting_changeInfo_managerName_txtbx.Margin = new System.Windows.Forms.Padding(4);
+            this.setting_changeInfo_managerName_txtbx.Name = "setting_changeInfo_managerName_txtbx";
+            this.setting_changeInfo_managerName_txtbx.Size = new System.Drawing.Size(233, 29);
+            this.setting_changeInfo_managerName_txtbx.TabIndex = 17;
+            // 
+            // setting_changeInfo_change_btn
+            // 
+            this.setting_changeInfo_change_btn.AutoSize = true;
+            this.setting_changeInfo_change_btn.BackColor = System.Drawing.Color.White;
+            this.setting_changeInfo_change_btn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.setting_changeInfo_change_btn.ForeColor = System.Drawing.Color.Black;
+            this.setting_changeInfo_change_btn.Location = new System.Drawing.Point(33, 249);
+            this.setting_changeInfo_change_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.setting_changeInfo_change_btn.Name = "setting_changeInfo_change_btn";
+            this.setting_changeInfo_change_btn.Size = new System.Drawing.Size(181, 38);
+            this.setting_changeInfo_change_btn.TabIndex = 29;
+            this.setting_changeInfo_change_btn.Text = "تغییر اطلاعات";
+            this.setting_changeInfo_change_btn.UseVisualStyleBackColor = false;
+            this.setting_changeInfo_change_btn.Click += new System.EventHandler(this.setting_changeInfo_change_btn_Click);
+            // 
+            // setting_changeInfo_managerFamily_lbl
+            // 
+            this.setting_changeInfo_managerFamily_lbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.setting_changeInfo_managerFamily_lbl.Location = new System.Drawing.Point(296, 114);
+            this.setting_changeInfo_managerFamily_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.setting_changeInfo_managerFamily_lbl.Name = "setting_changeInfo_managerFamily_lbl";
+            this.setting_changeInfo_managerFamily_lbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.setting_changeInfo_managerFamily_lbl.Size = new System.Drawing.Size(155, 27);
+            this.setting_changeInfo_managerFamily_lbl.TabIndex = 22;
+            this.setting_changeInfo_managerFamily_lbl.Text = "نام خانوادگی مدیر";
+            this.setting_changeInfo_managerFamily_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // setting_changeInfo_managerNewPass_lbl
+            // 
+            this.setting_changeInfo_managerNewPass_lbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.setting_changeInfo_managerNewPass_lbl.Location = new System.Drawing.Point(319, 204);
+            this.setting_changeInfo_managerNewPass_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.setting_changeInfo_managerNewPass_lbl.Name = "setting_changeInfo_managerNewPass_lbl";
+            this.setting_changeInfo_managerNewPass_lbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.setting_changeInfo_managerNewPass_lbl.Size = new System.Drawing.Size(129, 27);
+            this.setting_changeInfo_managerNewPass_lbl.TabIndex = 31;
+            this.setting_changeInfo_managerNewPass_lbl.Text = "گذر واژه جدید";
+            this.setting_changeInfo_managerNewPass_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // setting_changeInfo_managerPass_lbl
+            // 
+            this.setting_changeInfo_managerPass_lbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.setting_changeInfo_managerPass_lbl.Location = new System.Drawing.Point(355, 158);
+            this.setting_changeInfo_managerPass_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.setting_changeInfo_managerPass_lbl.Name = "setting_changeInfo_managerPass_lbl";
+            this.setting_changeInfo_managerPass_lbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.setting_changeInfo_managerPass_lbl.Size = new System.Drawing.Size(93, 27);
+            this.setting_changeInfo_managerPass_lbl.TabIndex = 30;
+            this.setting_changeInfo_managerPass_lbl.Text = "گذر واژه ";
+            this.setting_changeInfo_managerPass_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // setting_changeInfo_managerFamily_txtbx
+            // 
+            this.setting_changeInfo_managerFamily_txtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.setting_changeInfo_managerFamily_txtbx.Location = new System.Drawing.Point(33, 114);
+            this.setting_changeInfo_managerFamily_txtbx.Margin = new System.Windows.Forms.Padding(4);
+            this.setting_changeInfo_managerFamily_txtbx.Name = "setting_changeInfo_managerFamily_txtbx";
+            this.setting_changeInfo_managerFamily_txtbx.Size = new System.Drawing.Size(233, 29);
+            this.setting_changeInfo_managerFamily_txtbx.TabIndex = 18;
+            // 
+            // setting_changeInfo_managerPass_txtbx
+            // 
+            this.setting_changeInfo_managerPass_txtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.setting_changeInfo_managerPass_txtbx.Location = new System.Drawing.Point(33, 158);
+            this.setting_changeInfo_managerPass_txtbx.Margin = new System.Windows.Forms.Padding(4);
+            this.setting_changeInfo_managerPass_txtbx.Name = "setting_changeInfo_managerPass_txtbx";
+            this.setting_changeInfo_managerPass_txtbx.PasswordChar = '●';
+            this.setting_changeInfo_managerPass_txtbx.Size = new System.Drawing.Size(233, 29);
+            this.setting_changeInfo_managerPass_txtbx.TabIndex = 27;
+            // 
+            // setting_changeInfo_managerName_lbl
+            // 
+            this.setting_changeInfo_managerName_lbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.setting_changeInfo_managerName_lbl.Location = new System.Drawing.Point(361, 71);
+            this.setting_changeInfo_managerName_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.setting_changeInfo_managerName_lbl.Name = "setting_changeInfo_managerName_lbl";
+            this.setting_changeInfo_managerName_lbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.setting_changeInfo_managerName_lbl.Size = new System.Drawing.Size(89, 27);
+            this.setting_changeInfo_managerName_lbl.TabIndex = 21;
+            this.setting_changeInfo_managerName_lbl.Text = "نام مدیر";
+            this.setting_changeInfo_managerName_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // setting_changeInfo_managerNewPass_txtbx
+            // 
+            this.setting_changeInfo_managerNewPass_txtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.setting_changeInfo_managerNewPass_txtbx.Location = new System.Drawing.Point(33, 204);
+            this.setting_changeInfo_managerNewPass_txtbx.Margin = new System.Windows.Forms.Padding(4);
+            this.setting_changeInfo_managerNewPass_txtbx.Name = "setting_changeInfo_managerNewPass_txtbx";
+            this.setting_changeInfo_managerNewPass_txtbx.PasswordChar = '●';
+            this.setting_changeInfo_managerNewPass_txtbx.Size = new System.Drawing.Size(233, 29);
+            this.setting_changeInfo_managerNewPass_txtbx.TabIndex = 28;
             // 
             // facultyName_pictureBox
             // 
@@ -2066,21 +2478,6 @@
             this.logo_pictureBox.Size = new System.Drawing.Size(369, 80);
             this.logo_pictureBox.TabIndex = 9;
             this.logo_pictureBox.TabStop = false;
-            // 
-            // teachers_delete_teacherNumber_lbl
-            // 
-            this.teachers_delete_teacherNumber_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.teachers_delete_teacherNumber_lbl.Enabled = false;
-            this.teachers_delete_teacherNumber_lbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.teachers_delete_teacherNumber_lbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.teachers_delete_teacherNumber_lbl.Location = new System.Drawing.Point(315, 94);
-            this.teachers_delete_teacherNumber_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.teachers_delete_teacherNumber_lbl.Name = "teachers_delete_teacherNumber_lbl";
-            this.teachers_delete_teacherNumber_lbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.teachers_delete_teacherNumber_lbl.Size = new System.Drawing.Size(160, 30);
-            this.teachers_delete_teacherNumber_lbl.TabIndex = 92;
-            this.teachers_delete_teacherNumber_lbl.Text = "شماره استاد";
-            this.teachers_delete_teacherNumber_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ManagerForm1
             // 
@@ -2141,11 +2538,23 @@
             this.lessons_addLesson_gpb.ResumeLayout(false);
             this.lessons_addLesson_gpb.PerformLayout();
             this.lessons_add_teachers_panel.ResumeLayout(false);
+            this.setting.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
+            this.bindingNavigator1.ResumeLayout(false);
+            this.bindingNavigator1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            this.setting_panel.ResumeLayout(false);
+            this.setting_aboutUs_gpb.ResumeLayout(false);
+            this.setting_changeInfo_gpb.ResumeLayout(false);
+            this.setting_changeInfo_gpb.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.setting_changeInfo_showNewPass_pic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.setting_changeInfo_showPass_pic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.facultyName_pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo_pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2288,5 +2697,34 @@
         private System.Windows.Forms.Label students_delete_lessonNumber_text_lbl;
         private System.Windows.Forms.Label students_delete_studentNumber_text_lbl;
         private System.Windows.Forms.Label teachers_delete_teacherNumber_lbl;
+        private System.Windows.Forms.BindingNavigator bindingNavigator1;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.Panel setting_panel;
+        private System.Windows.Forms.GroupBox setting_aboutUs_gpb;
+        private System.Windows.Forms.Label setting_aboutUs_lbl;
+        private System.Windows.Forms.GroupBox setting_changeTheme_gpb;
+        private System.Windows.Forms.GroupBox setting_changeInfo_gpb;
+        private System.Windows.Forms.PictureBox setting_changeInfo_showNewPass_pic;
+        private System.Windows.Forms.PictureBox setting_changeInfo_showPass_pic;
+        private System.Windows.Forms.Button setting_changeInfo_clear_btn;
+        private System.Windows.Forms.TextBox setting_changeInfo_managerName_txtbx;
+        private System.Windows.Forms.Button setting_changeInfo_change_btn;
+        private System.Windows.Forms.Label setting_changeInfo_managerFamily_lbl;
+        private System.Windows.Forms.Label setting_changeInfo_managerNewPass_lbl;
+        private System.Windows.Forms.Label setting_changeInfo_managerPass_lbl;
+        private System.Windows.Forms.TextBox setting_changeInfo_managerFamily_txtbx;
+        private System.Windows.Forms.TextBox setting_changeInfo_managerPass_txtbx;
+        private System.Windows.Forms.Label setting_changeInfo_managerName_lbl;
+        private System.Windows.Forms.TextBox setting_changeInfo_managerNewPass_txtbx;
+        private System.Windows.Forms.BindingSource bindingSource5;
     }
 }

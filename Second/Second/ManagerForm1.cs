@@ -23,9 +23,14 @@ namespace Second
         private string currentNumber = "";
         private string currentLessonNumber = "";
         private string currentLessonGroupNumber = "";
-        private string currentUserName = "";
-        private string currentPassword = "";
+        private long currentUserName;
+        private string currentPassword;
+
         private bool isWrong = false;
+
+        private int totalRecords;
+        private const int pageSize = 10;
+        private string[,] s;
         //private bool isAdded = false;
         /// <summary>
         /// Project temp attributes
@@ -90,10 +95,11 @@ namespace Second
             InitializeComponent();
         }
 
-        public ManagerForm1(string username, string password)
+        public ManagerForm1(long username, string password)
         {
             InitializeComponent();
             currentUserName = username;
+            currentPassword = password;
         }
 
 
@@ -116,7 +122,7 @@ namespace Second
             TeacherModel dashbordTeacherObj = new TeacherModel();
             dashboard_greeting_panel.SetBounds(((354 * width) / 800), ((2 * height) / 100), ((53 * width) / 100), ((20 * height) / 100));
             dashboard_greeting_gpb.SetBounds(((3 * width) / 400), ((3 * height) / 400), ((51 * width) / 100), ((17 * height) / 100));
-            dashboard_info_lbl.Text = "شما با شماره کاربری " + currentUserName + "وارد سامانه شده اید. \n" + dashbordTeacherObj.getTeacherFullName(long.Parse(currentUserName)) + " خوش آمدید.";
+            dashboard_info_lbl.Text = "شما با شماره کاربری " + currentUserName + "وارد سامانه شده اید. \n" + dashbordTeacherObj.getTeacherFullName(currentUserName) + " خوش آمدید.";
             dashboard_info_lbl.SetBounds(((5 * width) / 400), ((5 * height) / 100), ((48 * width) / 100), ((6 * height) / 100));
 
 
@@ -178,7 +184,7 @@ namespace Second
             teachers_addTeacher_gpb.SetBounds(((65 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
             teachers_editTeacher_gpb.SetBounds(((34 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
             teachers_deleteTeacher_gpb.SetBounds(((3 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
-            
+
             /****************************************************teachers tab design**********************************************************/
 
 
@@ -229,7 +235,7 @@ namespace Second
             students_addStudent_gpb.SetBounds(((65 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
             students_editStudent_gpb.SetBounds(((34 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
             students_deleteStudent_gpb.SetBounds(((3 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
-            
+
             /****************************************************students tab design**********************************************************/
 
 
@@ -310,6 +316,134 @@ namespace Second
             /// </summary>
 
             /****************************************************lessons tab design**********************************************************/
+
+
+            /****************************************************settings tab design**********************************************************/
+
+
+            SqlConnection conn2 = new SqlConnection();
+            conn2.ConnectionString =
+                  "Data Source= 185.159.152.5;" +
+                    "Initial Catalog=youshita_Test;" +
+                    "User id=youshita_co; " +
+                    "Password=P@hn1395;";
+
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "SELECT COUNT(*) AS NumberOfLogs FROM logTable ";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn2;
+            conn2.Open();
+            reader = sc.ExecuteReader();
+
+            reader.Read();
+            totalRecords = int.Parse((reader["NumberOfLogs"].ToString()));
+            conn2.Close();
+
+
+
+            s = new string[totalRecords, 5];
+
+
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString =
+                "Data Source= 185.159.152.5;" +
+                "Initial Catalog=youshita_Test;" +
+                "User id=youshita_co; " +
+                "Password=P@hn1395;";
+
+
+            SqlCommand sc1 = new SqlCommand();
+
+            SqlDataReader rdr = null;
+            sc1.CommandText = "SELECT * FROM logTable ORDER BY logDate DESC";
+            sc1.Connection = conn;
+            conn.Open();
+            rdr = sc1.ExecuteReader();
+            for (int x = 0; x < totalRecords; x++)
+            {
+
+                rdr.Read();
+
+
+                s[x, 0] = rdr.GetString(0);
+                s[x, 1] = rdr.GetString(1);
+                s[x, 2] = rdr.GetString(2);
+                s[x, 3] = (rdr.GetInt64(3)).ToString();
+                s[x, 4] = rdr.GetString(4);
+
+            }
+
+
+            bindingNavigator1.BindingSource = bindingSource5;
+            bindingSource5.CurrentChanged += new System.EventHandler(bindingSource5_CurrentChanged);
+            bindingSource5.DataSource = new PageOffsetList();
+
+
+            setting_panel.SetBounds(((5 * width) / 400), ((2 * height) / 100), ((96 * width) / 100), ((31 * height) / 100));
+
+            dataGridView5.SetBounds(((5 * width) / 400), (38 * height) / 100, ((96 * width) / 100), ((36 * height) / 100));
+            bindingNavigator1.SetBounds(((5 * width) / 400), (135 * height) / 400, ((96 * width) / 100), ((4 * height) / 100));
+            setting_changeInfo_gpb.SetBounds(((65 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
+            setting_changeTheme_gpb.SetBounds(((34 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
+            setting_aboutUs_gpb.SetBounds(((3 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
+
+
+            ////change pass
+            setting_changeInfo_managerName_lbl.SetBounds(((17 * width) / 100), ((8 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            setting_changeInfo_managerFamily_lbl.SetBounds(((17 * width) / 100), ((20 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            setting_changeInfo_managerPass_lbl.SetBounds(((17 * width) / 100), ((32 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            setting_changeInfo_managerNewPass_lbl.SetBounds(((17 * width) / 100), ((44 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            setting_changeInfo_managerName_txtbx.SetBounds(((4 * width) / 100), ((8 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            setting_changeInfo_managerFamily_txtbx.SetBounds(((4 * width) / 100), ((20 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            setting_changeInfo_managerPass_txtbx.SetBounds(((4 * width) / 100), ((32 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            setting_changeInfo_managerNewPass_txtbx.SetBounds(((4 * width) / 100), ((44 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            setting_changeInfo_change_btn.SetBounds(((4 * width) / 100), ((73 * height) / 300), ((10 * width) / 100), ((30 * height) / 1000));
+            setting_changeInfo_clear_btn.SetBounds(((30 * width) / 200), ((73 * height) / 300), ((10 * width) / 100), ((30 * height) / 1000));
+            setting_changeInfo_showPass_pic.SetBounds(((8 * width) / 400), ((87 * height) / 800), ((15 * width) / 1000), ((27 * height) / 1000));
+            setting_changeInfo_showNewPass_pic.SetBounds(((8 * width) / 400), ((45 * height) / 300), ((15 * width) / 1000), ((27 * height) / 1000));
+            //////About Us
+            setting_aboutUs_lbl.SetBounds(((4 * width) / 400), ((10 * height) / 300), ((260 * width) / 1000), ((250 * height) / 1000));
+            setting_aboutUs_lbl.Text = "  شرکت رایان پردازش نوین آریا جوان \n ";
+
+
+
+
+            dataGridView5.RowHeadersWidth = (width / 30);
+
+            dataGridView5.Columns[0].HeaderText = "عنوان گزارش ";
+            dataGridView5.Columns[1].HeaderText = "متن گزارش";
+            dataGridView5.Columns[2].HeaderText = "تاریخ گزارش";
+            dataGridView5.Columns[3].HeaderText = " کاربر";
+            dataGridView5.Columns[4].Visible = false;
+
+
+
+
+
+            SqlConnection conn4 = new SqlConnection();
+            conn4.ConnectionString =
+                  "Data Source= 185.159.152.5;" +
+                    "Initial Catalog=youshita_Test;" +
+                    "User id=youshita_co; " +
+                    "Password=P@hn1395;";
+
+            SqlCommand sc4 = new SqlCommand();
+            SqlDataReader reader4;
+            sc4.CommandText = "SELECT * FROM managerTable ";
+            sc4.CommandType = CommandType.Text;
+            sc4.Connection = conn4;
+            conn4.Open();
+            reader4 = sc4.ExecuteReader();
+
+            reader4.Read();
+            setting_changeInfo_managerName_txtbx.Text = reader4.GetString(1);
+            setting_changeInfo_managerFamily_txtbx.Text = reader4.GetString(2);
+            setting_changeInfo_managerPass_txtbx.Text = "";
+            setting_changeInfo_managerNewPass_txtbx.Text = "";
+            conn4.Close();
+
+            /****************************************************setting tab design**********************************************************/
             /// <summary>
             /// MultiResolution
             /// </summary>
@@ -353,33 +487,14 @@ namespace Second
                 if (e1.Message == "success")
                 {
                     DialogForm dialog = new DialogForm("اطلاعات ورودی با موفقیت ثبت شدند.", "ثبت موفقیت آمیز", "success", this);
-                    /// <summary>
-                    /// Reset dataGridView to the desired class
-                    /// </summary>
-                    GetData2("SELECT * FROM [dbo].[" + currentLessonNumber + "-" + currentLessonGroupNumber + "_Table]");
-
-                    dataGridView2.Columns[0].HeaderText = "شماره دانشجویی";
-                    dataGridView2.Columns[1].HeaderText = "نام دانشجو";
-                    dataGridView2.Columns[2].HeaderText = "نام خانوادگی دانشجو";
-
-                    foreach (DataGridViewColumn col in dataGridView2.Columns)
-                    {
-                        col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                    }
-                    foreach (DataGridViewRow row in dataGridView2.Rows)
-                    {
-                        dataGridView2.Rows[row.Index].HeaderCell.Value = (row.Index + 1).ToString();
-                    }
-                    /// <summary>
-                    /// Reset dataGridView to the desired class
-                    /// </summary>
+                    lessonsDataGridViewUpdate_2();
 
                     //***clear textBoxes
                     students_add_studentNumber_txtbx.Clear();
                     students_add_studentName_txtbx.Clear();
                     students_add_studentFamily_txtbx.Clear();
                 }
-            }     
+            }
         }
 
         private void manager_lesson_add_bt_Click(object sender, EventArgs e)
@@ -397,11 +512,11 @@ namespace Second
                     }
                 }
 
-                for(int i=0; i<numberOfTeachers; i++)
+                for (int i = 0; i < numberOfTeachers; i++)
                 {
-                    for(int j=0; j<numberOfTeachers; j++)
+                    for (int j = 0; j < numberOfTeachers; j++)
                     {
-                        if(i!=j)
+                        if (i != j)
                         {
                             if (teacher_txtbx_List[i].Text == teacher_txtbx_List[j].Text)
                             {
@@ -409,7 +524,7 @@ namespace Second
                                 throw new Exception("duplicateTeacher");
                             }
                         }
-                        
+
                     }
                 }
 
@@ -496,140 +611,12 @@ namespace Second
             }
         }
 
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GetData(string selectCommand)
-        {
-            try
-            {
-                // Specify a connection string. Replace the given value with a 
-                // valid connection string for a Northwind SQL Server sample
-                // database accessible to your system.
-                String connectionString = "Data Source= 185.159.152.5;" +
-                    "Initial Catalog=youshita_Test;" +
-                    "User id=youshita_co; " +
-                    "Password=P@hn1395;";
-
-                // Create a new data adapter based on the specified query.
-                dataAdapter = new SqlDataAdapter(selectCommand, connectionString);
-
-                // Create a command builder to generate SQL update, insert, and
-                // delete commands based on selectCommand. These are used to
-                // update the database.
-
-                SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
-
-                // Populate a new data table and bind it to the BindingSource.
-                DataTable table = new DataTable();
-                table.Locale = System.Globalization.CultureInfo.InvariantCulture;
-                dataAdapter.Fill(table);
-                bindingSource1.DataSource = table;
 
 
-                // Resize the DataGridView columns to fit the newly loaded content.
-                dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-                dataGridView1.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells);
 
-            }
-            catch (SqlException)
-            {
-                DialogForm dialog = new DialogForm("مشکل در ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
-            }
-        }
-
-        private void GetData2(string selectCommand)
-        {
-            try
-            {
-                // Specify a connection string. Replace the given value with a 
-                // valid connection string for a Northwind SQL Server sample
-                // database accessible to your system.
-                String connectionString = "Data Source= 185.159.152.5;" +
-                    "Initial Catalog=youshita_Test;" +
-                    "User id=youshita_co; " +
-                    "Password=P@hn1395;";
-
-                // Create a new data adapter based on the specified query.
-                dataAdapter = new SqlDataAdapter(selectCommand, connectionString);
-
-                // Create a command builder to generate SQL update, insert, and
-                // delete commands based on selectCommand. These are used to
-                // update the database.
-
-                SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
-
-                // Populate a new data table and bind it to the BindingSource.
-                DataTable table2 = new DataTable();
-                table2.Locale = System.Globalization.CultureInfo.InvariantCulture;
-                dataAdapter.Fill(table2);
-                bindingSource2.DataSource = table2;
-
-
-                // Resize the DataGridView columns to fit the newly loaded content.
-                dataGridView2.AutoResizeColumns(
-                    DataGridViewAutoSizeColumnsMode.AllCells);
-                dataGridView2.AutoResizeRows(
-                   DataGridViewAutoSizeRowsMode.AllCells);
-
-            }
-            catch (SqlException)
-            {
-                DialogForm dialog = new DialogForm("مشکل در ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
-            }
-        }
-
-        private void GetData3(string selectCommand)
-        {
-            try
-            {
-                // Specify a connection string. Replace the given value with a 
-                // valid connection string for a Northwind SQL Server sample
-                // database accessible to your system.
-                String connectionString = "Data Source= 185.159.152.5;" +
-                    "Initial Catalog=youshita_Test;" +
-                    "User id=youshita_co; " +
-                    "Password=P@hn1395;";
-
-                // Create a new data adapter based on the specified query.
-                dataAdapter = new SqlDataAdapter(selectCommand, connectionString);
-
-                // Create a command builder to generate SQL update, insert, and
-                // delete commands based on selectCommand. These are used to
-                // update the database.
-
-                SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
-
-                // Populate a new data table and bind it to the BindingSource.
-                DataTable table3 = new DataTable();
-                table3.Locale = System.Globalization.CultureInfo.InvariantCulture;
-                dataAdapter.Fill(table3);
-                bindingSource3.DataSource = table3;
-
-
-                // Resize the DataGridView columns to fit the newly loaded content.
-                dataGridView3.AutoResizeColumns(
-                    DataGridViewAutoSizeColumnsMode.AllCells);
-                dataGridView3.AutoResizeRows(
-                   DataGridViewAutoSizeRowsMode.AllCells);
-
-            }
-            catch (SqlException)
-            {
-                DialogForm dialog = new DialogForm("مشکل در ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
-            }
-        }
 
         private void add_lesson_teacher_bt_Click(object sender, EventArgs e)
         {
-            //lessons_add_teachers_panel.VerticalScroll.Value = lessons_add_teachers_panel.VerticalScroll.Minimum;
             lessons_add_deleteTeacher_btn.Enabled = true;
 
             if (numberOfTeachers == 9)
@@ -682,7 +669,7 @@ namespace Second
             {
                 DialogForm dialog = new DialogForm("فرمت اطلاعات ورودی اشتباه است.", "خطا", "error", this);
             }
-             
+
             catch (ArgumentNullException)
             {
                 DialogForm dialog = new DialogForm("اطلاعات ورودی ناقص هستند.", "خطا", "error", this);
@@ -702,7 +689,7 @@ namespace Second
 
             catch (Exception e1)
             {
-                if(e1.Message == "success")
+                if (e1.Message == "success")
                 {
                     DialogForm dialog = new DialogForm("اطلاعات ورودی با موفقیت ثبت شدند.", "ثبت موفقیت آمیز", "success", this);
                     teachersDataGridViewUpdate_1();
@@ -825,7 +812,7 @@ namespace Second
             }
             catch (System.ArgumentOutOfRangeException)
             {
-                
+
             }
         }
 
@@ -858,7 +845,7 @@ namespace Second
 
             catch (SqlException e1)
             {
-                if(e1.Message.Contains("server"))
+                if (e1.Message.Contains("server"))
                 {
                     DialogForm dialog = new DialogForm("ارتباط با سرور برقرار نشد.", "خطای سرور", "error", this);
                 }
@@ -877,56 +864,6 @@ namespace Second
                     teachersDataGridViewUpdate_1();
                 }
             }
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void manager_student_lessonNumber_txt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void manager_student_lessonGroupNumber_txt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void manager_studentNumber_add_txt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void manager_studentFName_add_txt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label25_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void manager_studentLName_add_txt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label24_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label26_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void students_return_btn_Click(object sender, EventArgs e)
@@ -1185,7 +1122,7 @@ namespace Second
                 }
                 catch (System.ArgumentOutOfRangeException)
                 {
-                    
+
                 }
             }
 
@@ -1242,7 +1179,7 @@ namespace Second
                 }
                 catch (System.ArgumentOutOfRangeException)
                 {
-                    
+
                 }
             }
         }
@@ -1495,7 +1432,7 @@ namespace Second
                     dataGridView4.Columns[0].HeaderText = "عنوان";
                 }
             }
-            catch(System.Net.WebException)
+            catch (System.Net.WebException)
             {
                 DialogForm dialog = new DialogForm("مشکل در ارتباط با سرور", "خطا", "error", this);
             }
@@ -1585,7 +1522,7 @@ namespace Second
                 }
                 catch (System.ArgumentOutOfRangeException)
                 {
-                    
+
                 }
             }
 
@@ -1614,7 +1551,7 @@ namespace Second
                 }
                 catch (System.ArgumentOutOfRangeException)
                 {
-                    
+
                 }
             }
         }
@@ -1741,7 +1678,7 @@ namespace Second
                     DialogForm dialog = new DialogForm("اطلاعات ورودی تکراری یا اشتباه است.", "خطا", "error", this);
                 }
             }
-            
+
             catch (Exception e1)
             {
                 if (e1.Message == "success")
@@ -1889,6 +1826,137 @@ namespace Second
             lessons_edit_deleteLesson_btn.Enabled = false;
         }
 
+        private void bindingSource5_CurrentChanged(object sender, EventArgs e)
+        {
+
+            // The desired page has changed, so fetch the page of records using the "Current" offset 
+            int offset = (int)bindingSource5.Current;
+            var records = new List<logModel>();
+            for (int i = offset; i < offset + pageSize && i < totalRecords; i++)
+                records.Add(new logModel { logTitle = s[i, 0], logMain = s[i, 1], logDate = s[i, 2], logMode = s[i, 4], logUser = long.Parse(s[i, 3]) });
+            dataGridView5.DataSource = records;
+
+        }
+
+        private void setting_changeInfo_clear_btn_Click(object sender, EventArgs e)
+        {
+            setting_changeInfo_managerName_txtbx.Clear();
+            setting_changeInfo_managerFamily_txtbx.Clear();
+            setting_changeInfo_managerPass_txtbx.Clear();
+            setting_changeInfo_managerNewPass_txtbx.Clear();
+        }
+
+
+        private void setting_changeInfo_change_btn_Click(object sender, EventArgs e)
+        {
+            if (setting_changeInfo_managerName_txtbx.Text != "" && setting_changeInfo_managerFamily_txtbx.Text != "" && setting_changeInfo_managerPass_txtbx.Text != "" && setting_changeInfo_managerNewPass_txtbx.Text != "")
+            {
+                if(setting_changeInfo_managerName_txtbx.Text.Any(char.IsDigit) || setting_changeInfo_managerFamily_txtbx.Text.Any(char.IsDigit) ||
+                   setting_changeInfo_managerName_txtbx.Text.Any(char.IsPunctuation) || setting_changeInfo_managerFamily_txtbx.Text.Any(char.IsPunctuation) ||
+                   setting_changeInfo_managerName_txtbx.Text.Any(char.IsSymbol) || setting_changeInfo_managerFamily_txtbx.Text.Any(char.IsSymbol) )
+                {
+                       DialogForm dialog = new DialogForm("فرمت اطلاعات ورودی اشتباه است.", "خطا", "error", this);
+                }
+
+                else if(currentPassword.Equals(setting_changeInfo_managerPass_txtbx.Text))
+                {
+                    try
+                    {
+                        SqlConnection conn2 = new SqlConnection();
+                        conn2.ConnectionString =
+                              "Data Source= 185.159.152.5;" +
+                                "Initial Catalog=youshita_Test;" +
+                                "User id=youshita_co; " +
+                                "Password=P@hn1395;";
+
+                        SqlCommand sc = new SqlCommand();
+                        SqlDataReader reader;
+                        sc.CommandText = "UPDATE managerTable SET  managerFName='" + setting_changeInfo_managerName_txtbx.Text + "', " +
+                                                                  "managerLName='" + setting_changeInfo_managerFamily_txtbx.Text + "'," +
+                                                                  "managerPassword='" + setting_changeInfo_managerNewPass_txtbx.Text + "'  WHERE manager# = " + currentUserName + "";
+                        sc.CommandType = CommandType.Text;
+                        sc.Connection = conn2;
+                        conn2.Open();
+                        reader = sc.ExecuteReader();
+                        conn2.Close();
+
+                        SqlConnection conn = new SqlConnection();
+                        conn.ConnectionString =
+                              "Data Source= 185.159.152.5;" +
+                                "Initial Catalog=youshita_Test;" +
+                                "User id=youshita_co; " +
+                                "Password=P@hn1395;";
+
+                        SqlCommand sc1 = new SqlCommand();
+                        SqlDataReader reader1;
+                        sc1.CommandText = "UPDATE teacherTable SET  teacherFName='" + setting_changeInfo_managerName_txtbx.Text + "', " +
+                                                                  "teacherLName='" + setting_changeInfo_managerFamily_txtbx.Text + "'," +
+                                                                  "teacherPassword='" + setting_changeInfo_managerNewPass_txtbx.Text + "'  WHERE teacher# = " + -1 + "";
+                        sc1.CommandType = CommandType.Text;
+                        sc1.Connection = conn;
+                        conn.Open();
+                        reader1 = sc1.ExecuteReader();
+                        conn.Close();
+
+                        currentPassword = setting_changeInfo_managerNewPass_txtbx.Text;
+                        setting_changeInfo_managerPass_txtbx.Clear();
+                        setting_changeInfo_managerNewPass_txtbx.Clear();
+                        DialogForm dialog = new DialogForm("گذر واژه شما با موفقیت تغییر یافت.", "تغییر موفقیت آمیز", "success", this);
+                    }
+
+                    catch (FormatException)
+                    {
+                        DialogForm dialog = new DialogForm("فرمت اطلاعات ورودی اشتباه است.", "خطا", "error", this);
+                    }
+
+                    catch (ArgumentNullException)
+                    {
+                        DialogForm dialog = new DialogForm("اطلاعات ورودی ناقص هستند.", "خطا", "error", this);
+                    }
+
+                    catch (SqlException e1)
+                    {
+                        if (e1.Message.Contains("server"))
+                        {
+                            DialogForm dialog = new DialogForm("ارتباط با سرور برقرار نشد.", "خطای سرور", "error", this);
+                        }
+                        else
+                        {
+                            DialogForm dialog = new DialogForm("اطلاعات ورودی تکراری یا اشتباه است.", "خطا", "error", this);
+                        }
+                    }
+                }
+                else
+                {
+                    DialogForm dialog = new DialogForm("گذرواژه اشتباه است.", "خطا", "error", this);
+                }
+            }
+            else
+            {
+                DialogForm dialog = new DialogForm("اطلاعات ورودی کامل نیست.", "خطا", "error", this);
+            }
+        }
+
+        private void setting_changeInfo_showPass_pic_MouseDown(object sender, MouseEventArgs e)
+        {
+            setting_changeInfo_managerPass_txtbx.PasswordChar = '\0';
+        }
+
+        private void setting_changeInfo_showPass_pic_MouseUp(object sender, MouseEventArgs e)
+        {
+            setting_changeInfo_managerPass_txtbx.PasswordChar = '●';
+        }
+
+        private void setting_changeInfo_showNewPass_pic_MouseDown(object sender, MouseEventArgs e)
+        {
+            setting_changeInfo_managerNewPass_txtbx.PasswordChar = '\0';
+        }
+
+        private void setting_changeInfo_showNewPass_pic_MouseUp(object sender, MouseEventArgs e)
+        {
+            setting_changeInfo_managerNewPass_txtbx.PasswordChar = '●';
+        }
+
         private void teachersDataGridViewUpdate_1()
         {
             try
@@ -1911,7 +1979,7 @@ namespace Second
 
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
-                    if(row.Cells[0].Value.ToString() == "-1")
+                    if (row.Cells[0].Value.ToString() == "-1")
                     {
                         dataGridView1.Rows.Remove(row);
                     }
@@ -1930,7 +1998,7 @@ namespace Second
                 /// datagridview reintialization
                 /// </summary>
             }
-            catch(ArgumentOutOfRangeException)
+            catch (ArgumentOutOfRangeException)
             {
                 //DialogForm dialog = new DialogForm("اشکال در ارتباط با پایگاه داده", "خطا", "error", this);
             }
@@ -1996,7 +2064,7 @@ namespace Second
                     {
                         if (row.Cells[col.Index].Value.ToString() == "1")
                         {
-                            if(col.Index > 2)
+                            if (col.Index > 2)
                             {
                                 row.Cells[col.Index].Value = "✓";
                                 row.Cells[col.Index].Style.ForeColor = Color.Blue;
@@ -2159,13 +2227,181 @@ namespace Second
             /// Reset GroupBoxes and their components
             /// </summary>
         }
-    }
 
-    class xmlReaderClass
-    {
-        public string title { get; set; }
-        public string url { get; set; }
-        public string description { get; set; }
+        private void GetData(string selectCommand)
+        {
+            try
+            {
+                // Specify a connection string. Replace the given value with a 
+                // valid connection string for a Northwind SQL Server sample
+                // database accessible to your system.
+                String connectionString = "Data Source= 185.159.152.5;" +
+                    "Initial Catalog=youshita_Test;" +
+                    "User id=youshita_co; " +
+                    "Password=P@hn1395;";
+
+                // Create a new data adapter based on the specified query.
+                dataAdapter = new SqlDataAdapter(selectCommand, connectionString);
+
+                // Create a command builder to generate SQL update, insert, and
+                // delete commands based on selectCommand. These are used to
+                // update the database.
+
+                SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+
+                // Populate a new data table and bind it to the BindingSource.
+                DataTable table = new DataTable();
+                table.Locale = System.Globalization.CultureInfo.InvariantCulture;
+                dataAdapter.Fill(table);
+                bindingSource1.DataSource = table;
+
+
+                // Resize the DataGridView columns to fit the newly loaded content.
+                dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+                dataGridView1.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells);
+
+            }
+            catch (SqlException)
+            {
+                DialogForm dialog = new DialogForm("مشکل در ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
+            }
+        }
+
+        private void GetData2(string selectCommand)
+        {
+            try
+            {
+                // Specify a connection string. Replace the given value with a 
+                // valid connection string for a Northwind SQL Server sample
+                // database accessible to your system.
+                String connectionString = "Data Source= 185.159.152.5;" +
+                    "Initial Catalog=youshita_Test;" +
+                    "User id=youshita_co; " +
+                    "Password=P@hn1395;";
+
+                // Create a new data adapter based on the specified query.
+                dataAdapter = new SqlDataAdapter(selectCommand, connectionString);
+
+                // Create a command builder to generate SQL update, insert, and
+                // delete commands based on selectCommand. These are used to
+                // update the database.
+
+                SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+
+                // Populate a new data table and bind it to the BindingSource.
+                DataTable table2 = new DataTable();
+                table2.Locale = System.Globalization.CultureInfo.InvariantCulture;
+                dataAdapter.Fill(table2);
+                bindingSource2.DataSource = table2;
+
+
+                // Resize the DataGridView columns to fit the newly loaded content.
+                dataGridView2.AutoResizeColumns(
+                    DataGridViewAutoSizeColumnsMode.AllCells);
+                dataGridView2.AutoResizeRows(
+                   DataGridViewAutoSizeRowsMode.AllCells);
+
+            }
+            catch (SqlException)
+            {
+                DialogForm dialog = new DialogForm("مشکل در ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
+            }
+        }
+
+        private void GetData3(string selectCommand)
+        {
+            try
+            {
+                // Specify a connection string. Replace the given value with a 
+                // valid connection string for a Northwind SQL Server sample
+                // database accessible to your system.
+                String connectionString = "Data Source= 185.159.152.5;" +
+                    "Initial Catalog=youshita_Test;" +
+                    "User id=youshita_co; " +
+                    "Password=P@hn1395;";
+
+                // Create a new data adapter based on the specified query.
+                dataAdapter = new SqlDataAdapter(selectCommand, connectionString);
+
+                // Create a command builder to generate SQL update, insert, and
+                // delete commands based on selectCommand. These are used to
+                // update the database.
+
+                SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+
+                // Populate a new data table and bind it to the BindingSource.
+                DataTable table3 = new DataTable();
+                table3.Locale = System.Globalization.CultureInfo.InvariantCulture;
+                dataAdapter.Fill(table3);
+                bindingSource3.DataSource = table3;
+
+
+                // Resize the DataGridView columns to fit the newly loaded content.
+                dataGridView3.AutoResizeColumns(
+                    DataGridViewAutoSizeColumnsMode.AllCells);
+                dataGridView3.AutoResizeRows(
+                   DataGridViewAutoSizeRowsMode.AllCells);
+
+            }
+            catch (SqlException)
+            {
+                DialogForm dialog = new DialogForm("مشکل در ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
+            }
+        }
+
+
+
+        class xmlReaderClass
+        {
+            public string title { get; set; }
+            public string url { get; set; }
+            public string description { get; set; }
+        }
+
+        class logModel
+        {
+            public string logTitle { get; set; }
+            public string logMain { get; set; }
+            public string logDate { get; set; }
+            public long logUser { get; set; }
+            public string logMode { get; set; }
+
+        }
+
+        class PageOffsetList : System.ComponentModel.IListSource
+        {
+            public bool ContainsListCollection { get; protected set; }
+            private int totalRecords;
+            public System.Collections.IList GetList()
+            {
+
+                SqlConnection conn2 = new SqlConnection();
+                conn2.ConnectionString =
+                      "Data Source= 185.159.152.5;" +
+                        "Initial Catalog=youshita_Test;" +
+                        "User id=youshita_co; " +
+                        "Password=P@hn1395;";
+
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
+                sc.CommandText = "SELECT COUNT(*) AS NumberOfLogs FROM logTable ";
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn2;
+                conn2.Open();
+                reader = sc.ExecuteReader();
+
+                reader.Read();
+                totalRecords = int.Parse((reader["NumberOfLogs"].ToString()));
+                conn2.Close();
+
+
+                // Return a list of page offsets based on "totalRecords" and "pageSize"
+                var pageOffsets = new List<int>();
+                for (int offset = 0; offset < totalRecords; offset += pageSize)
+                    pageOffsets.Add(offset);
+                return pageOffsets;
+            }
+        }
     }
 }
     

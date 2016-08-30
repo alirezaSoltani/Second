@@ -73,6 +73,16 @@ namespace Second.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _21312 {
+            get {
+                object obj = ResourceManager.GetObject("21312", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AC_System__135_135px_ {
             get {
                 object obj = ResourceManager.GetObject("AC-System (135-135px)", resourceCulture);
