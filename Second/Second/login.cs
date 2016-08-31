@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,7 +14,6 @@ namespace Second
 {
     public partial class login1 : Form
     {
-        private long moderatorUsername;
         private int width = SystemInformation.PrimaryMonitorSize.Width;
         private int height = SystemInformation.PrimaryMonitorSize.Height;
 
@@ -42,63 +42,7 @@ namespace Second
         
         private void label1_Click(object sender, EventArgs e)
         {
-            userType = 0;
-            if (login_username_txtbx.Text != "" && login_password_txtbx.Text != "")
-            {
-                TeacherModel teacher = new TeacherModel();
-                try
-                {
-                    setModeratorUsername(long.Parse(login_username_txtbx.Text));
-                    username = long.Parse(login_username_txtbx.Text);
-                    password = login_password_txtbx.Text;
-                    userType = teacher.Authenticator(username, password);
-                }
-                catch(FormatException)
-                {
-                    userType = -1;
-                    DialogForm dialog = new DialogForm("نام کاربری اشتباه است.", "خطا", "error", this);
-                }
-
-               
-
-                if (userType == 1)
-                {
-                    this.Hide();
-                    ManagerForm1 form = new ManagerForm1(12345, password, userType);
-                    form.Show();
-                }
-                else if (userType == 2)
-                {
-                    this.Hide();
-                    ManagerForm1 form = new ManagerForm1(-1, password, userType);
-                    form.Show();
-                }
-                else if (userType == 3)
-                {
-                    this.Hide();
-                    ManagerForm1 form = new ManagerForm1(username, password, userType);
-                    form.Show();
-                }
-                else if (userType == 0)
-                {
-                    DialogForm dialog = new DialogForm("نام کاربری یا رمز عبور اشتباه است.", "خطا", "error", this);
-                }
-            }
-            else
-            {
-                DialogForm dialog = new DialogForm("نام کاربری و رمز عبور را وارد کنید.", "خطا", "error", this);
-            }
-        }
-
-        public void setModeratorUsername(long moderatorUsername2)
-        {
-            this.moderatorUsername = moderatorUsername2;
-        }
-
-
-        public long getModeratorUsername()
-        {
-            return moderatorUsername;
+            login_Authenticator();
         }
 
         private void exit_pictureBox_Click(object sender, EventArgs e)
@@ -127,6 +71,79 @@ namespace Second
         {
             showPassword_pictureBox.Visible = true;
             login_password_txtbx.PasswordChar = '●';
+        }
+
+        private void login_enter_lbl_MouseEnter(object sender, EventArgs e)
+        {
+            login_enter_lbl.ForeColor = Color.LightSkyBlue;
+        }
+
+        private void login_enter_lbl_MouseLeave(object sender, EventArgs e)
+        {
+            login_enter_lbl.ForeColor = Color.White;
+        }
+
+        private void login_username_txtbx_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                login_Authenticator();
+            }
+        }
+
+        private void login_password_txtbx_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                login_Authenticator();
+            }
+        }
+
+        private void login_Authenticator()
+        {
+            userType = 0;
+            if (login_username_txtbx.Text != "" && login_password_txtbx.Text != "")
+            {
+                TeacherModel teacher = new TeacherModel();
+                try
+                {
+                    username = long.Parse(login_username_txtbx.Text);
+                    password = login_password_txtbx.Text;
+                    userType = teacher.Authenticator(username, password);
+                }
+                catch (FormatException)
+                {
+                    userType = -1;
+                    DialogForm dialog = new DialogForm("نام کاربری اشتباه است.", "خطا", "error", this);
+                }
+
+                if (userType == 1)
+                {
+                    this.Hide();
+                    ManagerForm1 form = new ManagerForm1(-1, password, userType, username);
+                    form.Show();
+                }
+                else if (userType == 2)
+                {
+                    this.Hide();
+                    ManagerForm1 form = new ManagerForm1(-1, password, userType, username);
+                    form.Show();
+                }
+                else if (userType == 3)
+                {
+                    this.Hide();
+                    ManagerForm1 form = new ManagerForm1(username, password, userType, -2);
+                    form.Show();
+                }
+                else if (userType == 0)
+                {
+                    DialogForm dialog = new DialogForm("نام کاربری یا رمز عبور اشتباه است.", "خطا", "error", this);
+                }
+            }
+            else
+            {
+                DialogForm dialog = new DialogForm("نام کاربری و رمز عبور را وارد کنید.", "خطا", "error", this);
+            }
         }
     }
 }

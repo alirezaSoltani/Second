@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -200,12 +201,12 @@ namespace Test
         public int Authenticator(long username, String password)
         {
             int Authenticate = 0;
-            if(username == 99 && password == "1")
+            if(username == 991 && password == "1")
             {
                 Authenticate = 1;
             }
 
-            if (username != 99)
+            if (username != 991)
             {
                 SqlConnection conn = new SqlConnection();
                 conn.ConnectionString =
@@ -257,7 +258,7 @@ namespace Test
                 while (reader1.Read())
                 {
                     if (reader1.GetInt64(0) == username &&
-                            reader1.GetString(1) == password)
+                            reader1.GetString(1) == hashPass(password))
                     {
                         Authenticate = 3;
                     }
@@ -340,6 +341,24 @@ namespace Test
         /// </summary>
 
 
+        private string hashPass(string password2)
+        {
+            string password = password2;
 
-    }
+            // byte array representation of that string
+            byte[] encodedPassword = new UTF8Encoding().GetBytes(password);
+
+            // need MD5 to calculate the hash
+            byte[] hash = ((HashAlgorithm)CryptoConfig.CreateFromName("MD5")).ComputeHash(encodedPassword);
+
+            // string representation (similar to UNIX format)
+            string encoded = BitConverter.ToString(hash)
+               // without dashes
+               .Replace("0", string.Empty).Replace("-", string.Empty)
+               // make lowercase
+               .ToLower();
+
+            return encoded;
+        }
+    } 
 }
