@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            FarsiCalendarComponent.FarsiDate farsiDate1 = new FarsiCalendarComponent.FarsiDate();
+            FarsiCalendarComponent.FarsiDate farsiDate2 = new FarsiCalendarComponent.FarsiDate();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerForm1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle61 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle62 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle63 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle64 = new System.Windows.Forms.DataGridViewCellStyle();
             this.manager_main_tc = new System.Windows.Forms.TabControl();
             this.dashboard = new System.Windows.Forms.TabPage();
             this.dashboard_greeting_panel = new System.Windows.Forms.Panel();
@@ -101,6 +101,7 @@
             this.teachers_edit_teacherNumber_lbl = new System.Windows.Forms.Label();
             this.teachers_edit_teacherNumber_txtbx = new System.Windows.Forms.TextBox();
             this.students = new System.Windows.Forms.TabPage();
+            this.students_export_excel_btn = new System.Windows.Forms.Button();
             this.students_showPassword_pictureBox = new System.Windows.Forms.PictureBox();
             this.students_passwordInfo_lbl = new System.Windows.Forms.Label();
             this.students_password_txtbx = new System.Windows.Forms.TextBox();
@@ -211,8 +212,14 @@
             this.messaging_send_rtxt = new System.Windows.Forms.RichTextBox();
             this.messaging_send_lessonGroupNumber_lbl = new System.Windows.Forms.Label();
             this.attendance = new System.Windows.Forms.TabPage();
+            this.Attendance_dataGridView_panel = new System.Windows.Forms.Panel();
+            this.attendance_register_btn = new System.Windows.Forms.Button();
+            this.attendance_attendClear_btn = new System.Windows.Forms.Button();
+            this.dataGridView8 = new System.Windows.Forms.DataGridView();
             this.attendance_lessonInfo_panel = new System.Windows.Forms.Panel();
             this.attendance_lessonInfo_gpb = new System.Windows.Forms.GroupBox();
+            this.attendance_date_dp = new Atf.UI.DateTimeSelector();
+            this.attendance_attend_btn = new System.Windows.Forms.Button();
             this.attendance_clear_btn = new System.Windows.Forms.Button();
             this.attendance_showLesson_btn = new System.Windows.Forms.Button();
             this.attendance_minute_cb = new System.Windows.Forms.ComboBox();
@@ -239,6 +246,7 @@
             this.setting_panel = new System.Windows.Forms.Panel();
             this.setting_aboutUs_gpb = new System.Windows.Forms.GroupBox();
             this.setting_aboutUs_lbl = new System.Windows.Forms.Label();
+            this.settings_abotUs_pictureBox = new System.Windows.Forms.PictureBox();
             this.setting_changeTheme_gpb = new System.Windows.Forms.GroupBox();
             this.setting_changeInfo_gpb = new System.Windows.Forms.GroupBox();
             this.setting_changeInfo_showNewPass_pic = new System.Windows.Forms.PictureBox();
@@ -262,7 +270,7 @@
             this.bindingSource5 = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSource7 = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSource6 = new System.Windows.Forms.BindingSource(this.components);
-            this.attendance_date_dp = new FarsiCalendarComponent.FarsiDatePicker();
+            this.bindingSource8 = new System.Windows.Forms.BindingSource(this.components);
             this.manager_main_tc.SuspendLayout();
             this.dashboard.SuspendLayout();
             this.dashboard_greeting_panel.SuspendLayout();
@@ -306,6 +314,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
             this.messaging_send_panel.SuspendLayout();
             this.attendance.SuspendLayout();
+            this.Attendance_dataGridView_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
             this.attendance_lessonInfo_panel.SuspendLayout();
             this.attendance_lessonInfo_gpb.SuspendLayout();
             this.settings.SuspendLayout();
@@ -314,6 +324,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.setting_panel.SuspendLayout();
             this.setting_aboutUs_gpb.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.settings_abotUs_pictureBox)).BeginInit();
             this.setting_changeInfo_gpb.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.setting_changeInfo_showNewPass_pic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.setting_changeInfo_showPass_pic)).BeginInit();
@@ -325,6 +336,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource8)).BeginInit();
             this.SuspendLayout();
             // 
             // manager_main_tc
@@ -547,13 +559,13 @@
             this.dashboard_date_calendar.Name = "dashboard_date_calendar";
             this.dashboard_date_calendar.NumbersColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.dashboard_date_calendar.SelectedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(250)))));
-            farsiDate1.Day = 10;
-            farsiDate1.FarsiDateValue = "95/06/10";
-            farsiDate1.GeoDate = new System.DateTime(2016, 8, 31, 0, 0, 0, 0);
-            farsiDate1.Month = 6;
-            farsiDate1.Year = 1395;
-            this.dashboard_date_calendar.SelectedFarsiValue = farsiDate1;
-            this.dashboard_date_calendar.SelectedGeoValue = new System.DateTime(2016, 8, 31, 0, 0, 0, 0);
+            farsiDate2.Day = 12;
+            farsiDate2.FarsiDateValue = "95/06/12";
+            farsiDate2.GeoDate = new System.DateTime(2016, 9, 2, 0, 0, 0, 0);
+            farsiDate2.Month = 6;
+            farsiDate2.Year = 1395;
+            this.dashboard_date_calendar.SelectedFarsiValue = farsiDate2;
+            this.dashboard_date_calendar.SelectedGeoValue = new System.DateTime(2016, 9, 2, 0, 0, 0, 0);
             this.dashboard_date_calendar.SelectedNumberColor = System.Drawing.Color.Black;
             this.dashboard_date_calendar.ShowSmallDayName = false;
             this.dashboard_date_calendar.ShowToday = true;
@@ -666,37 +678,37 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Linen;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle49.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle49.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle49.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle49;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle50.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle50.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle50.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle50.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle50.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle50.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle50;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle51.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle51.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle51.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle51.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle51.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle51;
+            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle52;
             this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGridView1.RowTemplate.ReadOnly = true;
@@ -1107,6 +1119,7 @@
             // students
             // 
             this.students.BackColor = System.Drawing.Color.White;
+            this.students.Controls.Add(this.students_export_excel_btn);
             this.students.Controls.Add(this.students_showPassword_pictureBox);
             this.students.Controls.Add(this.students_passwordInfo_lbl);
             this.students.Controls.Add(this.students_password_txtbx);
@@ -1124,11 +1137,27 @@
             this.students.TabIndex = 2;
             this.students.Text = "دانشجویان";
             // 
+            // students_export_excel_btn
+            // 
+            this.students_export_excel_btn.AutoSize = true;
+            this.students_export_excel_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.students_export_excel_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.students_export_excel_btn.Enabled = false;
+            this.students_export_excel_btn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.students_export_excel_btn.Location = new System.Drawing.Point(384, 375);
+            this.students_export_excel_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.students_export_excel_btn.Name = "students_export_excel_btn";
+            this.students_export_excel_btn.Size = new System.Drawing.Size(182, 31);
+            this.students_export_excel_btn.TabIndex = 79;
+            this.students_export_excel_btn.Text = "گرفتن خروجی";
+            this.students_export_excel_btn.UseVisualStyleBackColor = false;
+            this.students_export_excel_btn.Click += new System.EventHandler(this.button1_Click);
+            // 
             // students_showPassword_pictureBox
             // 
             this.students_showPassword_pictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("students_showPassword_pictureBox.BackgroundImage")));
             this.students_showPassword_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.students_showPassword_pictureBox.Location = new System.Drawing.Point(452, 375);
+            this.students_showPassword_pictureBox.Location = new System.Drawing.Point(596, 380);
             this.students_showPassword_pictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.students_showPassword_pictureBox.Name = "students_showPassword_pictureBox";
             this.students_showPassword_pictureBox.Size = new System.Drawing.Size(28, 23);
@@ -1143,7 +1172,7 @@
             this.students_passwordInfo_lbl.BackColor = System.Drawing.Color.Transparent;
             this.students_passwordInfo_lbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.students_passwordInfo_lbl.ForeColor = System.Drawing.Color.Red;
-            this.students_passwordInfo_lbl.Location = new System.Drawing.Point(891, 377);
+            this.students_passwordInfo_lbl.Location = new System.Drawing.Point(1035, 382);
             this.students_passwordInfo_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.students_passwordInfo_lbl.Name = "students_passwordInfo_lbl";
             this.students_passwordInfo_lbl.Size = new System.Drawing.Size(401, 27);
@@ -1155,7 +1184,7 @@
             // students_password_txtbx
             // 
             this.students_password_txtbx.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.students_password_txtbx.Location = new System.Drawing.Point(488, 372);
+            this.students_password_txtbx.Location = new System.Drawing.Point(632, 377);
             this.students_password_txtbx.Margin = new System.Windows.Forms.Padding(4);
             this.students_password_txtbx.Name = "students_password_txtbx";
             this.students_password_txtbx.PasswordChar = '●';
@@ -1166,7 +1195,7 @@
             // students_password_lbl
             // 
             this.students_password_lbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.students_password_lbl.Location = new System.Drawing.Point(740, 372);
+            this.students_password_lbl.Location = new System.Drawing.Point(884, 377);
             this.students_password_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.students_password_lbl.Name = "students_password_lbl";
             this.students_password_lbl.Size = new System.Drawing.Size(115, 27);
@@ -1195,37 +1224,37 @@
             this.dataGridView2.BackgroundColor = System.Drawing.Color.Linen;
             this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dataGridView2.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle53.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle53.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle53.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle53.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle53.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle53;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle54.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle54.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle54.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle54.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle54.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle54.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle54;
             this.dataGridView2.EnableHeadersVisualStyles = false;
             this.dataGridView2.Location = new System.Drawing.Point(4, 0);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle55.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle55.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle55.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle55.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle55.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle55;
+            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle56;
             this.dataGridView2.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.dataGridView2.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGridView2.RowTemplate.ReadOnly = true;
@@ -1838,37 +1867,37 @@
             this.dataGridView3.BackgroundColor = System.Drawing.Color.Linen;
             this.dataGridView3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dataGridView3.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle57.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle57.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle57.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle57.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle57.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle57;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle58.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle58.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle58.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle58.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle58.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle58.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle58;
             this.dataGridView3.EnableHeadersVisualStyles = false;
             this.dataGridView3.Location = new System.Drawing.Point(-1, 4);
             this.dataGridView3.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView3.MultiSelect = false;
             this.dataGridView3.Name = "dataGridView3";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle59.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle59.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle59.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle59.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle59.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle59;
+            dataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle60;
             this.dataGridView3.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.dataGridView3.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGridView3.RowTemplate.ReadOnly = true;
@@ -2382,19 +2411,18 @@
             // 
             // messaging_inbox_selectLessonNumber_cb
             // 
+            this.messaging_inbox_selectLessonNumber_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.messaging_inbox_selectLessonNumber_cb.FormattingEnabled = true;
-            this.messaging_inbox_selectLessonNumber_cb.Items.AddRange(new object[] {
-            "کلیه دروس"});
             this.messaging_inbox_selectLessonNumber_cb.Location = new System.Drawing.Point(669, 43);
             this.messaging_inbox_selectLessonNumber_cb.Margin = new System.Windows.Forms.Padding(4);
             this.messaging_inbox_selectLessonNumber_cb.Name = "messaging_inbox_selectLessonNumber_cb";
             this.messaging_inbox_selectLessonNumber_cb.Size = new System.Drawing.Size(116, 29);
             this.messaging_inbox_selectLessonNumber_cb.TabIndex = 1;
-            this.messaging_inbox_selectLessonNumber_cb.Text = "select";
             this.messaging_inbox_selectLessonNumber_cb.SelectedIndexChanged += new System.EventHandler(this.messaging_inbox_selectLessonNumber_cb_SelectedIndexChanged);
             // 
             // messaging_inbox_selectLessonGroupNumber_cb
             // 
+            this.messaging_inbox_selectLessonGroupNumber_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.messaging_inbox_selectLessonGroupNumber_cb.FormattingEnabled = true;
             this.messaging_inbox_selectLessonGroupNumber_cb.Location = new System.Drawing.Point(537, 43);
             this.messaging_inbox_selectLessonGroupNumber_cb.Margin = new System.Windows.Forms.Padding(4);
@@ -2463,7 +2491,7 @@
             this.messaging_outbox_gpb.Size = new System.Drawing.Size(779, 276);
             this.messaging_outbox_gpb.TabIndex = 0;
             this.messaging_outbox_gpb.TabStop = false;
-            this.messaging_outbox_gpb.Text = "پیام های ارسالی شما";
+            this.messaging_outbox_gpb.Text = "پیام های ارسالی";
             // 
             // messaging_outbox_messageShow_txtbx
             // 
@@ -2549,19 +2577,18 @@
             // 
             // messaging_send_selectLessonNumber_cb
             // 
+            this.messaging_send_selectLessonNumber_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.messaging_send_selectLessonNumber_cb.FormattingEnabled = true;
-            this.messaging_send_selectLessonNumber_cb.Items.AddRange(new object[] {
-            "کلیه دروس"});
             this.messaging_send_selectLessonNumber_cb.Location = new System.Drawing.Point(629, 42);
             this.messaging_send_selectLessonNumber_cb.Margin = new System.Windows.Forms.Padding(4);
             this.messaging_send_selectLessonNumber_cb.Name = "messaging_send_selectLessonNumber_cb";
             this.messaging_send_selectLessonNumber_cb.Size = new System.Drawing.Size(116, 29);
             this.messaging_send_selectLessonNumber_cb.TabIndex = 17;
-            this.messaging_send_selectLessonNumber_cb.Text = "select";
             this.messaging_send_selectLessonNumber_cb.SelectedIndexChanged += new System.EventHandler(this.messaging_send_selectLessonNumber_cb_SelectedIndexChanged_1);
             // 
             // messaging_send_selectGroupLessonNumber_cb
             // 
+            this.messaging_send_selectGroupLessonNumber_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.messaging_send_selectGroupLessonNumber_cb.FormattingEnabled = true;
             this.messaging_send_selectGroupLessonNumber_cb.Location = new System.Drawing.Point(488, 42);
             this.messaging_send_selectGroupLessonNumber_cb.Margin = new System.Windows.Forms.Padding(4);
@@ -2592,6 +2619,7 @@
             // 
             // attendance
             // 
+            this.attendance.Controls.Add(this.Attendance_dataGridView_panel);
             this.attendance.Controls.Add(this.attendance_lessonInfo_panel);
             this.attendance.Location = new System.Drawing.Point(4, 30);
             this.attendance.Name = "attendance";
@@ -2601,19 +2629,74 @@
             this.attendance.Text = "حضور و غیاب";
             this.attendance.UseVisualStyleBackColor = true;
             // 
+            // Attendance_dataGridView_panel
+            // 
+            this.Attendance_dataGridView_panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Attendance_dataGridView_panel.Controls.Add(this.attendance_register_btn);
+            this.Attendance_dataGridView_panel.Controls.Add(this.attendance_attendClear_btn);
+            this.Attendance_dataGridView_panel.Controls.Add(this.dataGridView8);
+            this.Attendance_dataGridView_panel.Location = new System.Drawing.Point(13, 199);
+            this.Attendance_dataGridView_panel.Margin = new System.Windows.Forms.Padding(4);
+            this.Attendance_dataGridView_panel.Name = "Attendance_dataGridView_panel";
+            this.Attendance_dataGridView_panel.Size = new System.Drawing.Size(1872, 607);
+            this.Attendance_dataGridView_panel.TabIndex = 4;
+            // 
+            // attendance_register_btn
+            // 
+            this.attendance_register_btn.AutoSize = true;
+            this.attendance_register_btn.BackColor = System.Drawing.Color.White;
+            this.attendance_register_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.attendance_register_btn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.attendance_register_btn.Location = new System.Drawing.Point(909, 552);
+            this.attendance_register_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.attendance_register_btn.Name = "attendance_register_btn";
+            this.attendance_register_btn.Size = new System.Drawing.Size(136, 38);
+            this.attendance_register_btn.TabIndex = 1004;
+            this.attendance_register_btn.Text = "ثبت";
+            this.attendance_register_btn.UseVisualStyleBackColor = false;
+            this.attendance_register_btn.Click += new System.EventHandler(this.attendance_register_btn_Click);
+            // 
+            // attendance_attendClear_btn
+            // 
+            this.attendance_attendClear_btn.AutoSize = true;
+            this.attendance_attendClear_btn.BackColor = System.Drawing.Color.White;
+            this.attendance_attendClear_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.attendance_attendClear_btn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.attendance_attendClear_btn.Location = new System.Drawing.Point(1072, 552);
+            this.attendance_attendClear_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.attendance_attendClear_btn.Name = "attendance_attendClear_btn";
+            this.attendance_attendClear_btn.Size = new System.Drawing.Size(136, 38);
+            this.attendance_attendClear_btn.TabIndex = 1003;
+            this.attendance_attendClear_btn.Text = "پاک کردن";
+            this.attendance_attendClear_btn.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView8
+            // 
+            this.dataGridView8.AllowUserToAddRows = false;
+            this.dataGridView8.AllowUserToDeleteRows = false;
+            this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView8.Location = new System.Drawing.Point(27, 12);
+            this.dataGridView8.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView8.Name = "dataGridView8";
+            this.dataGridView8.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView8.Size = new System.Drawing.Size(1837, 532);
+            this.dataGridView8.TabIndex = 1;
+            // 
             // attendance_lessonInfo_panel
             // 
             this.attendance_lessonInfo_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.attendance_lessonInfo_panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.attendance_lessonInfo_panel.Controls.Add(this.attendance_lessonInfo_gpb);
-            this.attendance_lessonInfo_panel.Location = new System.Drawing.Point(8, 6);
+            this.attendance_lessonInfo_panel.Location = new System.Drawing.Point(10, 18);
+            this.attendance_lessonInfo_panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.attendance_lessonInfo_panel.Name = "attendance_lessonInfo_panel";
-            this.attendance_lessonInfo_panel.Size = new System.Drawing.Size(1878, 161);
-            this.attendance_lessonInfo_panel.TabIndex = 0;
+            this.attendance_lessonInfo_panel.Size = new System.Drawing.Size(1876, 162);
+            this.attendance_lessonInfo_panel.TabIndex = 3;
             // 
             // attendance_lessonInfo_gpb
             // 
             this.attendance_lessonInfo_gpb.Controls.Add(this.attendance_date_dp);
+            this.attendance_lessonInfo_gpb.Controls.Add(this.attendance_attend_btn);
             this.attendance_lessonInfo_gpb.Controls.Add(this.attendance_clear_btn);
             this.attendance_lessonInfo_gpb.Controls.Add(this.attendance_showLesson_btn);
             this.attendance_lessonInfo_gpb.Controls.Add(this.attendance_minute_cb);
@@ -2627,11 +2710,35 @@
             this.attendance_lessonInfo_gpb.Controls.Add(this.attendance_lessonNumber_lbl);
             this.attendance_lessonInfo_gpb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.attendance_lessonInfo_gpb.Location = new System.Drawing.Point(27, 16);
+            this.attendance_lessonInfo_gpb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.attendance_lessonInfo_gpb.Name = "attendance_lessonInfo_gpb";
+            this.attendance_lessonInfo_gpb.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.attendance_lessonInfo_gpb.Size = new System.Drawing.Size(1823, 122);
             this.attendance_lessonInfo_gpb.TabIndex = 0;
             this.attendance_lessonInfo_gpb.TabStop = false;
             this.attendance_lessonInfo_gpb.Text = "اطلاعات درس";
+            // 
+            // attendance_date_dp
+            // 
+            this.attendance_date_dp.Location = new System.Drawing.Point(740, 73);
+            this.attendance_date_dp.Name = "attendance_date_dp";
+            this.attendance_date_dp.Size = new System.Drawing.Size(153, 30);
+            this.attendance_date_dp.TabIndex = 1003;
+            // 
+            // attendance_attend_btn
+            // 
+            this.attendance_attend_btn.AutoSize = true;
+            this.attendance_attend_btn.BackColor = System.Drawing.Color.White;
+            this.attendance_attend_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.attendance_attend_btn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.attendance_attend_btn.Location = new System.Drawing.Point(33, 69);
+            this.attendance_attend_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.attendance_attend_btn.Name = "attendance_attend_btn";
+            this.attendance_attend_btn.Size = new System.Drawing.Size(136, 38);
+            this.attendance_attend_btn.TabIndex = 1002;
+            this.attendance_attend_btn.Text = "حضور و غیاب";
+            this.attendance_attend_btn.UseVisualStyleBackColor = false;
+            this.attendance_attend_btn.Click += new System.EventHandler(this.attendance_attend_btn_Click);
             // 
             // attendance_clear_btn
             // 
@@ -2639,14 +2746,13 @@
             this.attendance_clear_btn.BackColor = System.Drawing.Color.White;
             this.attendance_clear_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.attendance_clear_btn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.attendance_clear_btn.Location = new System.Drawing.Point(174, 49);
+            this.attendance_clear_btn.Location = new System.Drawing.Point(196, 69);
             this.attendance_clear_btn.Margin = new System.Windows.Forms.Padding(4);
             this.attendance_clear_btn.Name = "attendance_clear_btn";
-            this.attendance_clear_btn.Size = new System.Drawing.Size(136, 31);
+            this.attendance_clear_btn.Size = new System.Drawing.Size(136, 38);
             this.attendance_clear_btn.TabIndex = 85;
             this.attendance_clear_btn.Text = "پاک کردن";
             this.attendance_clear_btn.UseVisualStyleBackColor = false;
-            this.attendance_clear_btn.Click += new System.EventHandler(this.attendance_clear_btn_Click);
             // 
             // attendance_showLesson_btn
             // 
@@ -2654,13 +2760,14 @@
             this.attendance_showLesson_btn.BackColor = System.Drawing.Color.White;
             this.attendance_showLesson_btn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.attendance_showLesson_btn.ForeColor = System.Drawing.Color.Black;
-            this.attendance_showLesson_btn.Location = new System.Drawing.Point(30, 49);
+            this.attendance_showLesson_btn.Location = new System.Drawing.Point(597, 20);
             this.attendance_showLesson_btn.Margin = new System.Windows.Forms.Padding(4);
             this.attendance_showLesson_btn.Name = "attendance_showLesson_btn";
-            this.attendance_showLesson_btn.Size = new System.Drawing.Size(136, 31);
+            this.attendance_showLesson_btn.Size = new System.Drawing.Size(136, 38);
             this.attendance_showLesson_btn.TabIndex = 84;
             this.attendance_showLesson_btn.Text = "نمایش اطلاعات";
             this.attendance_showLesson_btn.UseVisualStyleBackColor = false;
+            this.attendance_showLesson_btn.Click += new System.EventHandler(this.attendance_showLesson_btn_Click);
             // 
             // attendance_minute_cb
             // 
@@ -2727,7 +2834,8 @@
             "57",
             "58",
             "59"});
-            this.attendance_minute_cb.Location = new System.Drawing.Point(382, 47);
+            this.attendance_minute_cb.Location = new System.Drawing.Point(355, 73);
+            this.attendance_minute_cb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.attendance_minute_cb.Name = "attendance_minute_cb";
             this.attendance_minute_cb.Size = new System.Drawing.Size(107, 29);
             this.attendance_minute_cb.TabIndex = 79;
@@ -2735,10 +2843,10 @@
             // 
             // attendance_date_lbl
             // 
-            this.attendance_date_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.attendance_date_lbl.BackColor = System.Drawing.Color.Transparent;
             this.attendance_date_lbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.attendance_date_lbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.attendance_date_lbl.Location = new System.Drawing.Point(937, 45);
+            this.attendance_date_lbl.Location = new System.Drawing.Point(836, 80);
             this.attendance_date_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.attendance_date_lbl.Name = "attendance_date_lbl";
             this.attendance_date_lbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -2752,7 +2860,7 @@
             this.attendance_minute_lbl.BackColor = System.Drawing.Color.Transparent;
             this.attendance_minute_lbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.attendance_minute_lbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.attendance_minute_lbl.Location = new System.Drawing.Point(493, 47);
+            this.attendance_minute_lbl.Location = new System.Drawing.Point(467, 73);
             this.attendance_minute_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.attendance_minute_lbl.Name = "attendance_minute_lbl";
             this.attendance_minute_lbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -2790,7 +2898,8 @@
             "21",
             "22",
             "23"});
-            this.attendance_hour_cb.Location = new System.Drawing.Point(606, 49);
+            this.attendance_hour_cb.Location = new System.Drawing.Point(564, 75);
+            this.attendance_hour_cb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.attendance_hour_cb.Name = "attendance_hour_cb";
             this.attendance_hour_cb.Size = new System.Drawing.Size(97, 29);
             this.attendance_hour_cb.TabIndex = 78;
@@ -2798,14 +2907,14 @@
             // 
             // attendance_hour_lbl
             // 
-            this.attendance_hour_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.attendance_hour_lbl.BackColor = System.Drawing.Color.Transparent;
             this.attendance_hour_lbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.attendance_hour_lbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.attendance_hour_lbl.Location = new System.Drawing.Point(717, 48);
+            this.attendance_hour_lbl.Location = new System.Drawing.Point(669, 78);
             this.attendance_hour_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.attendance_hour_lbl.Name = "attendance_hour_lbl";
             this.attendance_hour_lbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.attendance_hour_lbl.Size = new System.Drawing.Size(62, 30);
+            this.attendance_hour_lbl.Size = new System.Drawing.Size(61, 30);
             this.attendance_hour_lbl.TabIndex = 77;
             this.attendance_hour_lbl.Text = "ساعت";
             this.attendance_hour_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2814,7 +2923,8 @@
             // 
             this.attendance_lessonGroupNumber_cb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.attendance_lessonGroupNumber_cb.FormattingEnabled = true;
-            this.attendance_lessonGroupNumber_cb.Location = new System.Drawing.Point(1112, 46);
+            this.attendance_lessonGroupNumber_cb.Location = new System.Drawing.Point(740, 16);
+            this.attendance_lessonGroupNumber_cb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.attendance_lessonGroupNumber_cb.Name = "attendance_lessonGroupNumber_cb";
             this.attendance_lessonGroupNumber_cb.Size = new System.Drawing.Size(153, 29);
             this.attendance_lessonGroupNumber_cb.TabIndex = 74;
@@ -2825,7 +2935,7 @@
             this.attendance_lessonGroupNumber_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.attendance_lessonGroupNumber_lbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.attendance_lessonGroupNumber_lbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.attendance_lessonGroupNumber_lbl.Location = new System.Drawing.Point(1294, 46);
+            this.attendance_lessonGroupNumber_lbl.Location = new System.Drawing.Point(921, 16);
             this.attendance_lessonGroupNumber_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.attendance_lessonGroupNumber_lbl.Name = "attendance_lessonGroupNumber_lbl";
             this.attendance_lessonGroupNumber_lbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -2838,18 +2948,20 @@
             // 
             this.attendance_lessonNumber_cb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.attendance_lessonNumber_cb.FormattingEnabled = true;
-            this.attendance_lessonNumber_cb.Location = new System.Drawing.Point(1420, 48);
+            this.attendance_lessonNumber_cb.Location = new System.Drawing.Point(1048, 18);
+            this.attendance_lessonNumber_cb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.attendance_lessonNumber_cb.Name = "attendance_lessonNumber_cb";
             this.attendance_lessonNumber_cb.Size = new System.Drawing.Size(153, 29);
             this.attendance_lessonNumber_cb.TabIndex = 72;
             this.attendance_lessonNumber_cb.Text = "انتخاب کنید";
+            this.attendance_lessonNumber_cb.SelectedIndexChanged += new System.EventHandler(this.attendance_lessonNumber_cb_SelectedIndexChanged);
             // 
             // attendance_lessonNumber_lbl
             // 
             this.attendance_lessonNumber_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.attendance_lessonNumber_lbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.attendance_lessonNumber_lbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.attendance_lessonNumber_lbl.Location = new System.Drawing.Point(1580, 46);
+            this.attendance_lessonNumber_lbl.Location = new System.Drawing.Point(1208, 16);
             this.attendance_lessonNumber_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.attendance_lessonNumber_lbl.Name = "attendance_lessonNumber_lbl";
             this.attendance_lessonNumber_lbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -2979,38 +3091,38 @@
             this.dataGridView5.BackgroundColor = System.Drawing.Color.Linen;
             this.dataGridView5.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dataGridView5.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle61.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle61.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle61.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle61.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle61.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle61.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle61;
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView5.Cursor = System.Windows.Forms.Cursors.Arrow;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView5.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle62.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle62.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle62.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle62.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle62.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle62.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle62.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView5.DefaultCellStyle = dataGridViewCellStyle62;
             this.dataGridView5.EnableHeadersVisualStyles = false;
             this.dataGridView5.Location = new System.Drawing.Point(48, 374);
             this.dataGridView5.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView5.MultiSelect = false;
             this.dataGridView5.Name = "dataGridView5";
             this.dataGridView5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView5.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dataGridView5.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle63.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle63.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle63.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle63.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle63.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle63.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView5.RowHeadersDefaultCellStyle = dataGridViewCellStyle63;
+            dataGridViewCellStyle64.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridView5.RowsDefaultCellStyle = dataGridViewCellStyle64;
             this.dataGridView5.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.dataGridView5.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGridView5.RowTemplate.ReadOnly = true;
@@ -3036,6 +3148,7 @@
             // setting_aboutUs_gpb
             // 
             this.setting_aboutUs_gpb.Controls.Add(this.setting_aboutUs_lbl);
+            this.setting_aboutUs_gpb.Controls.Add(this.settings_abotUs_pictureBox);
             this.setting_aboutUs_gpb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.setting_aboutUs_gpb.Location = new System.Drawing.Point(78, 18);
             this.setting_aboutUs_gpb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -3048,13 +3161,24 @@
             // 
             // setting_aboutUs_lbl
             // 
-            this.setting_aboutUs_lbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.setting_aboutUs_lbl.Location = new System.Drawing.Point(56, 74);
+            this.setting_aboutUs_lbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.setting_aboutUs_lbl.Location = new System.Drawing.Point(20, 178);
             this.setting_aboutUs_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.setting_aboutUs_lbl.Name = "setting_aboutUs_lbl";
-            this.setting_aboutUs_lbl.Size = new System.Drawing.Size(431, 130);
+            this.setting_aboutUs_lbl.Size = new System.Drawing.Size(496, 123);
             this.setting_aboutUs_lbl.TabIndex = 0;
             this.setting_aboutUs_lbl.Text = "32";
+            this.setting_aboutUs_lbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // settings_abotUs_pictureBox
+            // 
+            this.settings_abotUs_pictureBox.BackgroundImage = global::Second.Properties.Resources.first_Form;
+            this.settings_abotUs_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.settings_abotUs_pictureBox.Location = new System.Drawing.Point(123, 27);
+            this.settings_abotUs_pictureBox.Name = "settings_abotUs_pictureBox";
+            this.settings_abotUs_pictureBox.Size = new System.Drawing.Size(294, 197);
+            this.settings_abotUs_pictureBox.TabIndex = 1;
+            this.settings_abotUs_pictureBox.TabStop = false;
             // 
             // setting_changeTheme_gpb
             // 
@@ -3256,19 +3380,6 @@
             this.logo_pictureBox.TabIndex = 9;
             this.logo_pictureBox.TabStop = false;
             // 
-            // attendance_date_dp
-            // 
-            this.attendance_date_dp.Enabled = false;
-            this.attendance_date_dp.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.attendance_date_dp.GeoDate = new System.DateTime(2016, 8, 31, 0, 0, 0, 0);
-            this.attendance_date_dp.Location = new System.Drawing.Point(836, 48);
-            this.attendance_date_dp.Margin = new System.Windows.Forms.Padding(5);
-            this.attendance_date_dp.MaximumSize = new System.Drawing.Size(1666, 34);
-            this.attendance_date_dp.Name = "attendance_date_dp";
-            this.attendance_date_dp.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.attendance_date_dp.Size = new System.Drawing.Size(150, 26);
-            this.attendance_date_dp.TabIndex = 1001;
-            // 
             // ManagerForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -3345,6 +3456,9 @@
             this.messaging_send_panel.ResumeLayout(false);
             this.messaging_send_panel.PerformLayout();
             this.attendance.ResumeLayout(false);
+            this.Attendance_dataGridView_panel.ResumeLayout(false);
+            this.Attendance_dataGridView_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
             this.attendance_lessonInfo_panel.ResumeLayout(false);
             this.attendance_lessonInfo_gpb.ResumeLayout(false);
             this.attendance_lessonInfo_gpb.PerformLayout();
@@ -3355,6 +3469,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.setting_panel.ResumeLayout(false);
             this.setting_aboutUs_gpb.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.settings_abotUs_pictureBox)).EndInit();
             this.setting_changeInfo_gpb.ResumeLayout(false);
             this.setting_changeInfo_gpb.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.setting_changeInfo_showNewPass_pic)).EndInit();
@@ -3367,6 +3482,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3552,19 +3668,6 @@
         private System.Windows.Forms.TextBox teachers_password_txtbx;
         private System.Windows.Forms.Label teachers_password_lbl;
         private System.Windows.Forms.TabPage attendance;
-        private System.Windows.Forms.Panel attendance_lessonInfo_panel;
-        private System.Windows.Forms.GroupBox attendance_lessonInfo_gpb;
-        private System.Windows.Forms.Label attendance_lessonNumber_lbl;
-        private System.Windows.Forms.ComboBox attendance_lessonNumber_cb;
-        private System.Windows.Forms.ComboBox attendance_lessonGroupNumber_cb;
-        private System.Windows.Forms.Label attendance_lessonGroupNumber_lbl;
-        private System.Windows.Forms.ComboBox attendance_hour_cb;
-        private System.Windows.Forms.Label attendance_hour_lbl;
-        private System.Windows.Forms.Label attendance_date_lbl;
-        private System.Windows.Forms.Label attendance_minute_lbl;
-        private System.Windows.Forms.ComboBox attendance_minute_cb;
-        private System.Windows.Forms.Button attendance_clear_btn;
-        private System.Windows.Forms.Button attendance_showLesson_btn;
         private System.Windows.Forms.Panel messaging_inbox_panel;
         private System.Windows.Forms.Button messaging_inbox_select_btn;
         private System.Windows.Forms.Label messaging_inbox_lessonGroupNumber_lbl;
@@ -3588,6 +3691,27 @@
         private System.Windows.Forms.Label messaging_send_lessonGroupNumber_lbl;
         private System.Windows.Forms.BindingSource bindingSource7;
         private System.Windows.Forms.BindingSource bindingSource6;
-        private FarsiCalendarComponent.FarsiDatePicker attendance_date_dp;
+        private System.Windows.Forms.PictureBox settings_abotUs_pictureBox;
+        private System.Windows.Forms.Button students_export_excel_btn;
+        private System.Windows.Forms.Panel Attendance_dataGridView_panel;
+        private System.Windows.Forms.Button attendance_register_btn;
+        private System.Windows.Forms.Button attendance_attendClear_btn;
+        private System.Windows.Forms.DataGridView dataGridView8;
+        private System.Windows.Forms.Panel attendance_lessonInfo_panel;
+        private System.Windows.Forms.GroupBox attendance_lessonInfo_gpb;
+        private System.Windows.Forms.Button attendance_attend_btn;
+        private System.Windows.Forms.Button attendance_clear_btn;
+        private System.Windows.Forms.Button attendance_showLesson_btn;
+        private System.Windows.Forms.ComboBox attendance_minute_cb;
+        private System.Windows.Forms.Label attendance_date_lbl;
+        private System.Windows.Forms.Label attendance_minute_lbl;
+        private System.Windows.Forms.ComboBox attendance_hour_cb;
+        private System.Windows.Forms.Label attendance_hour_lbl;
+        private System.Windows.Forms.ComboBox attendance_lessonGroupNumber_cb;
+        private System.Windows.Forms.Label attendance_lessonGroupNumber_lbl;
+        private System.Windows.Forms.ComboBox attendance_lessonNumber_cb;
+        private System.Windows.Forms.Label attendance_lessonNumber_lbl;
+        private Atf.UI.DateTimeSelector attendance_date_dp;
+        private System.Windows.Forms.BindingSource bindingSource8;
     }
 }

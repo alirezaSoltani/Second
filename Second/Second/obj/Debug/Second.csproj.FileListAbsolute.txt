@@ -121,3 +121,5 @@ C:\Users\ASUS\Source\Repos\Second6\Second\Second\obj\Debug\Second.DialogForm.res
 C:\Users\ASUS\Source\Repos\Second6\Second\Second\obj\Debug\Second.FirstForm.resources
 C:\Users\ASUS\Source\Repos\Second6\Second\Second\bin\Debug\PersianDate.dll
 C:\Users\ASUS\Source\Repos\Second6\Second\Second\bin\Debug\PersianDate.pdb
+C:\Users\ASUS\Source\Repos\Second6\Second\Second\obj\Debug\Second.csproj.ResolveComReference.cache
+C:\Users\ASUS\Source\Repos\Second6\Second\Second\bin\Debug\DateTimeSelector.dll
