@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DateTimeSelector">
+      <HintPath>..\..\..\..\..\Desktop\DateTimeSelector.dll</HintPath>
+    </Reference>
     <Reference Include="FarsiCalendarComponent">
       <HintPath>..\..\..\..\..\Desktop\ll\FarsiCalendarComponent\bin\Release\FarsiCalendarComponent.dll</HintPath>
     </Reference>
@@ -44,6 +47,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Web.Services" />
