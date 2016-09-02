@@ -3571,6 +3571,7 @@ namespace Second
                 dataGridView8.AutoResizeRows(
                    DataGridViewAutoSizeRowsMode.AllCells);
 
+
             }
             catch (SqlException)
             {
