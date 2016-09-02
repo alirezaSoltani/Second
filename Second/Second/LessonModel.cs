@@ -220,6 +220,7 @@ namespace Test
                     conn.Open();
                     reader= sc.ExecuteReader();
                     conn.Close();
+                    throw new Exception("success");
                 }
                 else
                 {
