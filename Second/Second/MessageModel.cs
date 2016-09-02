@@ -20,7 +20,7 @@ namespace Second
         private long messageLessonNumber;
         private long senderTeacherNumber;
         private Int16 messageLessonGroupNumber;
-        private bool messageRead;
+        private int messageRead;
 
         pharmalogyWebService.PharmalogyWebService pharmaObj = new pharmalogyWebService.PharmalogyWebService();
 
@@ -31,7 +31,7 @@ namespace Second
             messageMain = "";
             messageLessonNumber = 0;
             senderTeacherNumber = 0;
-            messageRead = false;
+            messageRead = 0;
             messageLessonGroupNumber = 0;
 
 
@@ -72,8 +72,7 @@ namespace Second
 
                 SqlCommand sc = new SqlCommand();
                 SqlDataReader reader;
-                sc.CommandText = "INSERT INTO messageTable (message#,messageTitle,messageMain,messageDate,messageLesson#,senderTeacher#,messageLessonGroup#,messageRead) VALUES ( '" + getMessageNumber()
-                                                                                                                + "','" + getMessageTtile()
+                sc.CommandText = "INSERT INTO messageTable (messageTitle,messageMain,messageDate,messageLesson#,senderTeacher#,messageLessonGroup#,messageRead) VALUES ( '" + getMessageTtile()
                                                                                                                 + "','" + getMessageMain()
                                                                                                                 + "','" + dateAndTime
                                                                                                                 + "','" + getMessageLessonNumber()
@@ -228,13 +227,13 @@ namespace Second
 
         }
 
-        public void setMessageRead(bool MessageRead)
+        public void setMessageRead(int MessageRead)
         {
             this.messageRead = MessageRead;
         }
 
 
-        public bool getMessageRead()
+        public int getMessageRead()
         {
             return messageRead;
 

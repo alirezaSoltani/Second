@@ -26,6 +26,7 @@ namespace Second
         private string currentLessonGroupNumber = "";
         private long currentUserName;
         private string currentPassword;
+        private string inbox_lessonGroupNumber;
         private long managerUsername = -2;
         private bool isWrong = false;
 
@@ -367,6 +368,34 @@ namespace Second
 
 
 
+            /***************************************************messagingTab***************************************************************/
+
+            messaging_inbox_panel.SetBounds(((10 * width) / 800), ((2 * height) / 100), ((45 * width) / 100), ((67 * height) / 100));
+            messaging_inbox_gpb.SetBounds(((10 * width) / 800), ((2 * height) / 100), ((42 * width) / 100), ((62 * height) / 100));
+            dataGridView6.SetBounds(((8 * width) / 800), ((15 * height) / 100), ((40 * width) / 100), ((25 * height) / 100));
+            messaging_inbox_messageShow_txtbx.SetBounds(((8 * width) / 800), ((42 * height) / 100), ((40 * width) / 100), ((18 * height) / 100));
+            messaging_inbox_select_btn.SetBounds(((130 * width) / 800), ((80 * height) / 800), ((64 * width) / 800), ((32 * height) / 800));
+            messaging_inbox_selectLessonGroupNumber_cb.SetBounds(((200 * width) / 800), ((84 * height) / 800), ((64 * width) / 800), ((25 * height) / 800));
+            messaging_inbox_selectLessonNumber_cb.SetBounds(((270 * width) / 800), ((84 * height) / 800), ((64 * width) / 800), ((25 * height) / 800));
+            messaging_inbox_lessonGroupNumber_lbl.SetBounds(((220 * width) / 800), ((55 * height) / 800), ((64 * width) / 800), ((25 * height) / 800));
+            messaging_inbox_lessonNumber_lbl.SetBounds(((300 * width) / 800), ((55 * height) / 800), ((64 * width) / 800), ((25 * height) / 800));
+
+            messaging_send_panel.SetBounds(((400 * width) / 800), ((49 * height) / 100), ((189 * width) / 400), ((20 * height) / 100));
+            messaging_send_rtxt.SetBounds(((8 * width) / 800), ((8 * height) / 100), ((160 * width) / 400), ((10 * height) / 100));
+            messaging_send_lbl.SetBounds(((332 * width) / 800), ((8 * height) / 100), ((20 * width) / 400), ((10 * height) / 100));
+            messaging_send_selectGroupLessonNumber_cb.SetBounds(((193 * width) / 800), ((27 * height) / 800), ((64 * width) / 800), ((25 * height) / 800));
+            messaging_send_selectLessonNumber_cb.SetBounds(((263 * width) / 800), ((27 * height) / 800), ((64 * width) / 800), ((25 * height) / 800));
+            messaging_send_lessonGroupNumber_lbl.SetBounds(((213 * width) / 800), ((5 * height) / 800), ((64 * width) / 800), ((25 * height) / 800));
+            messaging_send_lessonNumber_lbl.SetBounds(((293 * width) / 800), ((5 * height) / 800), ((64 * width) / 800), ((25 * height) / 800));
+
+            messaging_outbox_panel.SetBounds(((400 * width) / 800), ((2 * height) / 100), ((189 * width) / 400), ((45 * height) / 100));
+            messaging_outbox_gpb.SetBounds(((10 * width) / 800), ((2 * height) / 100), ((178 * width) / 400), ((41 * height) / 100));
+            dataGridView7.SetBounds(((8 * width) / 800), ((4 * height) / 100), ((170 * width) / 400), ((20 * height) / 100));
+            messaging_outbox_messageShow_txtbx.SetBounds(((8 * width) / 800), ((26 * height) / 100), ((170 * width) / 400), ((9 * height) / 100));
+            messaging_outbox_delete_btn.SetBounds(((8 * width) / 800), ((36 * height) / 100), ((30 * width) / 400), ((4 * height) / 100));
+            messaging_outbox_delete_btn.Enabled = false;
+            /***************************************************messagingTab***************************************************************/
+
 
 
 
@@ -549,12 +578,8 @@ namespace Second
             //////About Us
             setting_aboutUs_lbl.SetBounds(((4 * width) / 400), ((10 * height) / 300), ((260 * width) / 1000), ((250 * height) / 1000));
             setting_aboutUs_lbl.Text = "  شرکت رایان پردازش نوین آریا جوان \n ";
-
-
-            
-           
-
             /****************************************************setting tab design**********************************************************/
+
 
 
 
@@ -1067,6 +1092,113 @@ namespace Second
             {
                 lessonsDataGridViewUpdate_1();
                 lessons_return_btn.PerformClick();
+            }
+
+
+            else if (manager_main_tc.SelectedTab == manager_main_tc.TabPages["messaging"])
+            {
+                //////////////////////outbox/////////////////////////
+
+                MessageModel obj = new MessageModel();
+
+
+                dataGridView7.DataSource = bindingSource7;
+
+                GetData7("SELECT * FROM  messageTable where senderTeacher# = " + currentUserName + " ORDER BY messageDate DESC ");
+
+                //  dataGridView7.RowHeadersWidth = (width / 48);
+                dataGridView7.Columns[0].Visible = false;
+                dataGridView7.Columns[1].Visible = false;
+                dataGridView7.Columns[2].HeaderText = "متن پیام";
+                dataGridView7.Columns[3].HeaderText = "شماره درس";
+                dataGridView7.Columns[4].Visible = false;
+                dataGridView7.Columns[5].HeaderText = "شماره گروه درس";
+                dataGridView7.Columns[6].Visible = false;
+                dataGridView7.Columns[7].HeaderText = "تاریخ";
+                //dataGridView7.Columns[2].Width = (width / 3);
+
+
+                foreach (DataGridViewColumn col in dataGridView7.Columns)
+                {
+                    col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                }
+
+                foreach (DataGridViewRow row in dataGridView7.Rows)
+                {
+                    //row.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    dataGridView7.Rows[row.Index].HeaderCell.Value = (row.Index + 1).ToString();
+                    //row.HeaderCell.Value = String.Format("{0}", row.Index + 1);
+                }
+
+                /////////////////////////inbox/////////////////////////////////
+
+
+                for (int i = 0; i < messaging_send_selectLessonNumber_cb.Items.Count; i++)
+                {
+                    messaging_send_selectLessonNumber_cb.Items.RemoveAt(i);
+                }
+
+
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString =
+                "Data Source= 185.159.152.5;" +
+                    "Initial Catalog=youshita_Test;" +
+                    "User id=youshita_co; " +
+                    "Password=P@hn1395;";
+
+                SqlCommand sc1 = new SqlCommand();
+                SqlDataReader reader2;
+                sc1.Connection = conn;
+                conn.Open();
+
+                sc1.CommandText = "SELECT DISTINCT lessonName FROM lessonTable where lessonTeacher# = " + currentUserName + "";
+
+
+                sc1.CommandType = CommandType.Text;
+                reader2 = sc1.ExecuteReader();
+                while (reader2.Read())
+                {
+                    string name = reader2.GetString(0);
+                    messaging_send_selectLessonNumber_cb.Items.Add(name);
+                    //.Insert(" " + reader2.GetString(0) + " " + reader2.GetInt32(1).ToString() + " ");
+                }
+
+                conn.Close();
+                ////////////////////////////////cobo2 send//////////////////////////////////////
+
+                for (int i = 0; i < messaging_inbox_selectLessonNumber_cb.Items.Count; i++)
+                {
+                    messaging_inbox_selectLessonNumber_cb.Items.RemoveAt(i);
+                }
+
+                SqlConnection conn2 = new SqlConnection();
+                conn2.ConnectionString =
+                "Data Source= 185.159.152.5;" +
+                    "Initial Catalog=youshita_Test;" +
+                    "User id=youshita_co; " +
+                    "Password=P@hn1395;";
+
+                SqlCommand sc2 = new SqlCommand();
+                SqlDataReader reader1;
+                sc2.Connection = conn2;
+                conn2.Open();
+
+                sc2.CommandText = "SELECT DISTINCT lessonName FROM lessonTable where lessonTeacher# = " + currentUserName + "";
+
+
+                sc1.CommandType = CommandType.Text;
+                reader1 = sc2.ExecuteReader();
+                while (reader1.Read())
+                {
+                    string name = reader1.GetString(0);
+                    messaging_inbox_selectLessonNumber_cb.Items.Add(name);
+                    //.Insert(" " + reader2.GetString(0) + " " + reader2.GetInt32(1).ToString() + " ");
+                }
+
+                conn2.Close();
+
+                /////////////////////////////cobo2 inbox////////////////////////////////////////*/
+
             }
 
             else if (manager_main_tc.SelectedTab == manager_main_tc.TabPages["settings"])
@@ -1636,6 +1768,393 @@ namespace Second
             dataGridView4.Columns[2].Visible = false;
             dataGridView4.Columns[0].Name = "عنوان";
         }
+
+        /********************************************messsaging tab codes*******************/
+
+        private void messaging_outbox_delete_btn_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn2 = new SqlConnection();
+            conn2.ConnectionString =
+                  "Data Source= 185.159.152.5;" +
+                    "Initial Catalog=youshita_Test;" +
+                    "User id=youshita_co; " +
+                    "Password=P@hn1395;";
+
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "DELETE FROM messageTable WHERE message# =" + currentNumber + " ";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn2;
+            conn2.Open();
+            reader = sc.ExecuteReader();
+            conn2.Close();
+            MessageBox.Show("Ok");
+
+
+            ///////////////update Table
+            dataGridView7.DataSource = bindingSource7;
+
+            GetData7("SELECT * FROM  messageTable where senderTeacher# = " + currentUserName + " ORDER BY messageDate DESC ");
+
+
+            dataGridView7.Columns[0].Visible = false;
+            dataGridView7.Columns[1].Visible = false;
+            dataGridView7.Columns[2].HeaderText = "متن پیام";
+            dataGridView7.Columns[3].HeaderText = "شماره درس";
+            dataGridView7.Columns[4].Visible = false;
+            dataGridView7.Columns[5].HeaderText = "شماره گروه درس";
+            dataGridView7.Columns[6].Visible = false;
+            dataGridView7.Columns[7].HeaderText = "تاریخ";
+
+
+
+            foreach (DataGridViewColumn col in dataGridView7.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            }
+
+            foreach (DataGridViewRow row in dataGridView7.Rows)
+            {
+                //row.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dataGridView7.Rows[row.Index].HeaderCell.Value = (row.Index + 1).ToString();
+                //row.HeaderCell.Value = String.Format("{0}", row.Index + 1);
+            }
+
+            messaging_outbox_messageShow_txtbx.Text = "";
+
+        }
+
+
+        private void GetData7(string selectCommand)
+        {
+            try
+            {
+
+                // Specify a connection string. Replace the given value with a 
+                // valid connection string for a Northwind SQL Server sample
+                // database accessible to your system.
+                String connectionString = "Data Source= 185.159.152.5;" +
+                    "Initial Catalog=youshita_Test;" +
+                    "User id=youshita_co; " +
+                    "Password=P@hn1395;";
+
+                // Create a new data adapter based on the specified query.
+                dataAdapter = new SqlDataAdapter(selectCommand, connectionString);
+
+                // Create a command builder to generate SQL update, insert, and
+                // delete commands based on selectCommand. These are used to
+                // update the database.
+
+                SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+
+                // Populate a new data table and bind it to the BindingSource.
+                DataTable table7 = new DataTable();
+                table7.Locale = System.Globalization.CultureInfo.InvariantCulture;
+                dataAdapter.Fill(table7);
+                bindingSource7.DataSource = table7;
+
+
+                // Resize the DataGridView columns to fit the newly loaded content.
+                /*   dataGridView7.AutoResizeColumns(
+                       DataGridViewAutoSizeColumnsMode.AllCells);
+                   dataGridView7.AutoResizeRows(
+                      DataGridViewAutoSizeRowsMode.AllCells);*/
+
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("3- To run this example, replace the value of the " +
+                    "connectionString variable with a connection string that is " +
+                    "valid for your system.");
+            }
+        }
+
+
+
+        private void GetData6(string selectCommand)
+        {
+            try
+            {
+                // Specify a connection string. Replace the given value with a 
+                // valid connection string for a Northwind SQL Server sample
+                // database accessible to your system.
+                String connectionString = "Data Source= 185.159.152.5;" +
+                    "Initial Catalog=youshita_Test;" +
+                    "User id=youshita_co; " +
+                    "Password=P@hn1395;";
+
+                // Create a new data adapter based on the specified query.
+                dataAdapter = new SqlDataAdapter(selectCommand, connectionString);
+
+                // Create a command builder to generate SQL update, insert, and
+                // delete commands based on selectCommand. These are used to
+                // update the database.
+
+                SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+
+                // Populate a new data table and bind it to the BindingSource.
+                DataTable table6 = new DataTable();
+                table6.Locale = System.Globalization.CultureInfo.InvariantCulture;
+                dataAdapter.Fill(table6);
+                bindingSource6.DataSource = table6;
+
+
+                // Resize the DataGridView columns to fit the newly loaded content.
+                dataGridView6.AutoResizeColumns(
+                    DataGridViewAutoSizeColumnsMode.AllCells);
+                dataGridView6.AutoResizeRows(
+                   DataGridViewAutoSizeRowsMode.AllCells);
+
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("4- To run this example, replace the value of the " +
+                    "connectionString variable with a connection string that is " +
+                    "valid for your system.");
+            }
+        }
+
+        private void messaging_send_selectLessonNumber_cb_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            for (int i = 0; i < messaging_send_selectGroupLessonNumber_cb.Items.Count; i++)
+            {
+                messaging_send_selectGroupLessonNumber_cb.Items.RemoveAt(i);
+            }
+            string lessonNum = messaging_send_selectLessonNumber_cb.Items[messaging_send_selectLessonNumber_cb.SelectedIndex].ToString();
+
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString =
+            "Data Source= 185.159.152.5;" +
+                "Initial Catalog=youshita_Test;" +
+                "User id=youshita_co; " +
+                "Password=P@hn1395;";
+
+            SqlCommand sc1 = new SqlCommand();
+            SqlDataReader reader2;
+            sc1.Connection = conn;
+            conn.Open();
+
+            sc1.CommandText = "SELECT DISTINCT lessonGroup# FROM lessonTable where lessonName = '" + lessonNum + "' AND lessonTeacher# = " + currentUserName + "";
+
+
+            sc1.CommandType = CommandType.Text;
+            reader2 = sc1.ExecuteReader();
+            while (reader2.Read())
+            {
+                //
+                Int16 name = reader2.GetInt16(0);
+
+                messaging_send_selectGroupLessonNumber_cb.Items.Add(name);
+                //.Insert(" " + reader2.GetString(0) + " " + reader2.GetInt32(1).ToString() + " ");
+            }
+        }
+
+        private void messaging_inbox_select_btn_Click(object sender, EventArgs e)
+        {
+            messaging_inbox_messageShow_txtbx.Clear();
+            long inbox_lessonNumber = 0;
+            SqlConnection conn2 = new SqlConnection();
+            conn2.ConnectionString =
+                  "Data Source= 185.159.152.5;" +
+                    "Initial Catalog=youshita_Test;" +
+                    "User id=youshita_co; " +
+                    "Password=P@hn1395;";
+
+            SqlCommand sc = new SqlCommand();
+            SqlDataReader reader;
+            sc.CommandText = "SELECT lesson# FROM lessonTable WHERE lessonName = '" + messaging_inbox_selectLessonNumber_cb.Text + "'";
+            sc.CommandType = CommandType.Text;
+            sc.Connection = conn2;
+            conn2.Open();
+            reader = sc.ExecuteReader();
+            reader.Read();
+            inbox_lessonNumber = reader.GetInt64(0);
+            conn2.Close();
+
+
+            inbox_lessonGroupNumber = messaging_inbox_selectLessonGroupNumber_cb.Text;
+
+
+            dataGridView6.DataSource = bindingSource6;
+            GetData6("select *  from messageTable where messageLesson# = " + inbox_lessonNumber + "AND messageLessonGroup# = " + inbox_lessonGroupNumber + "  ORDER BY messageDate DESC");
+
+            dataGridView6.RowHeadersWidth = (width / 28);
+            dataGridView6.Columns[0].Visible = false;
+            dataGridView6.Columns[1].HeaderText = "فرستنده";
+            dataGridView6.Columns[2].HeaderText = "متن پیام";
+            dataGridView6.Columns[3].HeaderText = "شماره درس";
+            dataGridView6.Columns[4].Visible = false;
+            dataGridView6.Columns[5].HeaderText = "شماره گروه درس";
+            dataGridView6.Columns[6].Visible = false;
+            dataGridView6.Columns[7].HeaderText = "تاریخ";
+
+            dataGridView6.Columns[2].Width = (width / 5);
+
+
+            foreach (DataGridViewColumn col in dataGridView6.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            }
+
+            foreach (DataGridViewRow roww in dataGridView6.Rows)
+            {
+                //row.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dataGridView6.Rows[roww.Index].HeaderCell.Value = (roww.Index + 1).ToString();
+                //row.HeaderCell.Value = String.Format("{0}", row.Index + 1);
+            }
+        }
+
+        private void dataGridView7_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                messaging_outbox_messageShow_txtbx.Text = dataGridView7.Rows[e.RowIndex].Cells["messageMain"].Value.ToString();
+            }
+            catch (System.ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("!بر روی رکورد کلیک کنید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            currentNumber = dataGridView7.Rows[e.RowIndex].Cells["message#"].Value.ToString();
+            messaging_outbox_delete_btn.Enabled = true;
+        }
+
+
+        private void dataGridView6_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                messaging_inbox_messageShow_txtbx.Text = dataGridView6.Rows[e.RowIndex].Cells["messageMain"].Value.ToString();
+            }
+            catch (System.ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("!بر روی رکورد کلیک کنید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
+        private void messaging_inbox_selectLessonNumber_cb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            for (int i = 0; i < messaging_inbox_selectLessonGroupNumber_cb.Items.Count; i++)
+            {
+                messaging_inbox_selectLessonGroupNumber_cb.Items.RemoveAt(i);
+            }
+            string lessonName = messaging_inbox_selectLessonNumber_cb.Items[messaging_inbox_selectLessonNumber_cb.SelectedIndex].ToString();
+
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString =
+            "Data Source= 185.159.152.5;" +
+                "Initial Catalog=youshita_Test;" +
+                "User id=youshita_co; " +
+                "Password=P@hn1395;";
+
+            SqlCommand sc1 = new SqlCommand();
+            SqlDataReader reader2;
+            sc1.Connection = conn;
+            conn.Open();
+
+            sc1.CommandText = "SELECT DISTINCT lessonGroup# FROM lessonTable where lessonName = '" + lessonName + "' AND lessonTeacher# = " + currentUserName + "";
+
+
+            sc1.CommandType = CommandType.Text;
+            reader2 = sc1.ExecuteReader();
+            while (reader2.Read())
+            {
+
+                Int16 name = reader2.GetInt16(0);
+
+                messaging_inbox_selectLessonGroupNumber_cb.Items.Add(name);
+
+            }
+        }
+
+        private void messaging_send_lbl_Click(object sender, EventArgs e)
+        {
+            if (messaging_send_rtxt.Text == "")
+            {
+                DialogForm dialog = new DialogForm("متن پیام را وارد نمایید.", "خطا", "error", this);
+            }
+            else if (messaging_send_selectLessonNumber_cb.Text == "select" || messaging_send_selectGroupLessonNumber_cb.Text == "")
+            {
+                DialogForm dialog = new DialogForm("شماره درس یا شماره گروه درس انتخاب نشده است.", "خطا", "error", this);
+            }
+            else
+            {
+                long send_lessonNum = 0;
+                SqlConnection conn2 = new SqlConnection();
+                conn2.ConnectionString =
+                      "Data Source= 185.159.152.5;" +
+                        "Initial Catalog=youshita_Test;" +
+                        "User id=youshita_co; " +
+                        "Password=P@hn1395;";
+
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
+                sc.CommandText = "SELECT lesson# FROM lessonTable WHERE lessonName = '" + messaging_send_selectLessonNumber_cb.Text + "'";
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn2;
+                conn2.Open();
+                reader = sc.ExecuteReader();
+                reader.Read();
+                send_lessonNum = reader.GetInt64(0);
+                conn2.Close();
+
+
+                MessageModel messageObj = new MessageModel();
+                messageObj.setMessageMain(messaging_send_rtxt.Text);
+                messageObj.setMessageLessonNumber(send_lessonNum);
+                messageObj.setMessageLessonGroupNumber(Int16.Parse(messaging_send_selectGroupLessonNumber_cb.Text));
+                // messageObj.setSenderTeacherNumber(Int16.Parse(senderTeacherNumber));
+                messageObj.setSenderTeacherNumber(currentUserName);
+                messageObj.setMessageRead(0);
+                messageObj.setMessageDate("");
+                messageObj.setMessageNumber(0);
+                messageObj.setMessageTitle("");
+
+                messageObj.sendMessage();
+                MessageBox.Show("پیام با موفقیت ارسال شد", "ثبت موفقیت آمیز", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+
+                ///////////////update Table
+                dataGridView7.DataSource = bindingSource7;
+
+                GetData7("SELECT * FROM  messageTable where senderTeacher# = " + currentUserName + " ORDER BY messageDate DESC ");
+
+
+                dataGridView7.Columns[0].Visible = false;
+                dataGridView7.Columns[1].Visible = false;
+                dataGridView7.Columns[2].HeaderText = "متن پیام";
+                dataGridView7.Columns[3].HeaderText = "شماره درس";
+                dataGridView7.Columns[4].Visible = false;
+                dataGridView7.Columns[5].HeaderText = "شماره گروه درس";
+                dataGridView7.Columns[6].Visible = false;
+                dataGridView7.Columns[7].HeaderText = "تاریخ";
+
+                /*  dataGridView7.Columns[2].Width = (width / 3);
+                  dataGridView7.Columns[3].Width = (width /20);
+                  dataGridView7.Columns[5].Width = (width / 20);
+                  dataGridView7.Columns[7].Width = (width / 10);*/
+
+                foreach (DataGridViewColumn col in dataGridView7.Columns)
+                {
+                    col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                }
+
+                foreach (DataGridViewRow row in dataGridView7.Rows)
+                {
+                    //row.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    dataGridView7.Rows[row.Index].HeaderCell.Value = (row.Index + 1).ToString();
+                    //row.HeaderCell.Value = String.Format("{0}", row.Index + 1);
+                }
+
+                ///////////////////clear////////////
+
+                messaging_send_rtxt.Clear();
+            }
+        }
+        /********************************************messsaging tab codes*******************/
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -2720,11 +3239,18 @@ namespace Second
             //attendance_hour_cb
             ///attendance_lessonGroupNumber_cb
             //attendance_lessonNumber_cb
-            //attendance_minute_cb
-                
+            //attendance_minute_cb 
         }
 
+        private void messaging_send_lbl_MouseDown(object sender, MouseEventArgs e)
+        {
+            messaging_send_lbl.BorderStyle = BorderStyle.Fixed3D;
+        }
 
+        private void messaging_send_lbl_MouseUp(object sender, MouseEventArgs e)
+        {
+            messaging_send_lbl.BorderStyle = BorderStyle.FixedSingle;
+        }
     }
 }
     

@@ -189,13 +189,33 @@
             this.lessons_add_lessonName_lbl = new System.Windows.Forms.Label();
             this.lessons_information_lbl = new System.Windows.Forms.Label();
             this.messaging = new System.Windows.Forms.TabPage();
+            this.messaging_inbox_panel = new System.Windows.Forms.Panel();
+            this.messaging_inbox_select_btn = new System.Windows.Forms.Button();
+            this.messaging_inbox_lessonGroupNumber_lbl = new System.Windows.Forms.Label();
+            this.messaging_inbox_lessonNumber_lbl = new System.Windows.Forms.Label();
+            this.messaging_inbox_selectLessonNumber_cb = new System.Windows.Forms.ComboBox();
+            this.messaging_inbox_selectLessonGroupNumber_cb = new System.Windows.Forms.ComboBox();
+            this.messaging_inbox_gpb = new System.Windows.Forms.GroupBox();
+            this.messaging_inbox_messageShow_txtbx = new System.Windows.Forms.TextBox();
+            this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.messaging_outbox_panel = new System.Windows.Forms.Panel();
+            this.messaging_outbox_gpb = new System.Windows.Forms.GroupBox();
+            this.messaging_outbox_messageShow_txtbx = new System.Windows.Forms.TextBox();
+            this.messaging_outbox_delete_btn = new System.Windows.Forms.Button();
+            this.dataGridView7 = new System.Windows.Forms.DataGridView();
+            this.messaging_send_panel = new System.Windows.Forms.Panel();
+            this.messaging_send_lessonNumber_lbl = new System.Windows.Forms.Label();
+            this.messaging_send_lbl = new System.Windows.Forms.Label();
+            this.messaging_send_selectLessonNumber_cb = new System.Windows.Forms.ComboBox();
+            this.messaging_send_selectGroupLessonNumber_cb = new System.Windows.Forms.ComboBox();
+            this.messaging_send_rtxt = new System.Windows.Forms.RichTextBox();
+            this.messaging_send_lessonGroupNumber_lbl = new System.Windows.Forms.Label();
             this.attendance = new System.Windows.Forms.TabPage();
             this.attendance_lessonInfo_panel = new System.Windows.Forms.Panel();
             this.attendance_lessonInfo_gpb = new System.Windows.Forms.GroupBox();
             this.attendance_clear_btn = new System.Windows.Forms.Button();
             this.attendance_showLesson_btn = new System.Windows.Forms.Button();
             this.attendance_minute_cb = new System.Windows.Forms.ComboBox();
-            this.attendance_date_dp = new FarsiCalendarComponent.FarsiDatePicker();
             this.attendance_date_lbl = new System.Windows.Forms.Label();
             this.attendance_minute_lbl = new System.Windows.Forms.Label();
             this.attendance_hour_cb = new System.Windows.Forms.ComboBox();
@@ -240,27 +260,9 @@
             this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSource5 = new System.Windows.Forms.BindingSource(this.components);
-            this.messaging_inbox_panel = new System.Windows.Forms.Panel();
-            this.messaging_inbox_select_btn = new System.Windows.Forms.Button();
-            this.messaging_inbox_lessonGroupNumber_lbl = new System.Windows.Forms.Label();
-            this.messaging_inbox_lessonNumber_lbl = new System.Windows.Forms.Label();
-            this.messaging_inbox_selectLessonNumber_cb = new System.Windows.Forms.ComboBox();
-            this.messaging_inbox_selectLessonGroupNumber_cb = new System.Windows.Forms.ComboBox();
-            this.messaging_inbox_gpb = new System.Windows.Forms.GroupBox();
-            this.messaging_inbox_messageShow_txtbx = new System.Windows.Forms.TextBox();
-            this.dataGridView6 = new System.Windows.Forms.DataGridView();
-            this.messaging_outbox_panel = new System.Windows.Forms.Panel();
-            this.messaging_outbox_gpb = new System.Windows.Forms.GroupBox();
-            this.messaging_outbox_messageShow_txtbx = new System.Windows.Forms.TextBox();
-            this.messaging_outbox_delete_btn = new System.Windows.Forms.Button();
-            this.dataGridView7 = new System.Windows.Forms.DataGridView();
-            this.messaging_send_panel = new System.Windows.Forms.Panel();
-            this.messaging_send_lessonNumber_lbl = new System.Windows.Forms.Label();
-            this.messaging_send_lbl = new System.Windows.Forms.Label();
-            this.messaging_send_selectLessonNumber_cb = new System.Windows.Forms.ComboBox();
-            this.messaging_send_selectGroupLessonNumber_cb = new System.Windows.Forms.ComboBox();
-            this.messaging_send_rtxt = new System.Windows.Forms.RichTextBox();
-            this.messaging_send_lessonGroupNumber_lbl = new System.Windows.Forms.Label();
+            this.bindingSource7 = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource6 = new System.Windows.Forms.BindingSource(this.components);
+            this.attendance_date_dp = new FarsiCalendarComponent.FarsiDatePicker();
             this.manager_main_tc.SuspendLayout();
             this.dashboard.SuspendLayout();
             this.dashboard_greeting_panel.SuspendLayout();
@@ -296,6 +298,13 @@
             this.lessons_addLesson_gpb.SuspendLayout();
             this.lessons_add_teachers_panel.SuspendLayout();
             this.messaging.SuspendLayout();
+            this.messaging_inbox_panel.SuspendLayout();
+            this.messaging_inbox_gpb.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            this.messaging_outbox_panel.SuspendLayout();
+            this.messaging_outbox_gpb.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
+            this.messaging_send_panel.SuspendLayout();
             this.attendance.SuspendLayout();
             this.attendance_lessonInfo_panel.SuspendLayout();
             this.attendance_lessonInfo_gpb.SuspendLayout();
@@ -314,13 +323,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource5)).BeginInit();
-            this.messaging_inbox_panel.SuspendLayout();
-            this.messaging_inbox_gpb.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
-            this.messaging_outbox_panel.SuspendLayout();
-            this.messaging_outbox_gpb.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
-            this.messaging_send_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource6)).BeginInit();
             this.SuspendLayout();
             // 
             // manager_main_tc
@@ -2327,6 +2331,265 @@
             this.messaging.TabIndex = 4;
             this.messaging.Text = "پیام رسانی";
             // 
+            // messaging_inbox_panel
+            // 
+            this.messaging_inbox_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.messaging_inbox_panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.messaging_inbox_panel.Controls.Add(this.messaging_inbox_select_btn);
+            this.messaging_inbox_panel.Controls.Add(this.messaging_inbox_lessonGroupNumber_lbl);
+            this.messaging_inbox_panel.Controls.Add(this.messaging_inbox_lessonNumber_lbl);
+            this.messaging_inbox_panel.Controls.Add(this.messaging_inbox_selectLessonNumber_cb);
+            this.messaging_inbox_panel.Controls.Add(this.messaging_inbox_selectLessonGroupNumber_cb);
+            this.messaging_inbox_panel.Controls.Add(this.messaging_inbox_gpb);
+            this.messaging_inbox_panel.Location = new System.Drawing.Point(141, 35);
+            this.messaging_inbox_panel.Margin = new System.Windows.Forms.Padding(4);
+            this.messaging_inbox_panel.Name = "messaging_inbox_panel";
+            this.messaging_inbox_panel.Size = new System.Drawing.Size(815, 507);
+            this.messaging_inbox_panel.TabIndex = 23;
+            // 
+            // messaging_inbox_select_btn
+            // 
+            this.messaging_inbox_select_btn.Location = new System.Drawing.Point(405, 43);
+            this.messaging_inbox_select_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.messaging_inbox_select_btn.Name = "messaging_inbox_select_btn";
+            this.messaging_inbox_select_btn.Size = new System.Drawing.Size(124, 34);
+            this.messaging_inbox_select_btn.TabIndex = 5;
+            this.messaging_inbox_select_btn.Text = "تایید";
+            this.messaging_inbox_select_btn.UseVisualStyleBackColor = true;
+            this.messaging_inbox_select_btn.Click += new System.EventHandler(this.messaging_inbox_select_btn_Click);
+            // 
+            // messaging_inbox_lessonGroupNumber_lbl
+            // 
+            this.messaging_inbox_lessonGroupNumber_lbl.AutoSize = true;
+            this.messaging_inbox_lessonGroupNumber_lbl.Location = new System.Drawing.Point(557, 17);
+            this.messaging_inbox_lessonGroupNumber_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.messaging_inbox_lessonGroupNumber_lbl.Name = "messaging_inbox_lessonGroupNumber_lbl";
+            this.messaging_inbox_lessonGroupNumber_lbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.messaging_inbox_lessonGroupNumber_lbl.Size = new System.Drawing.Size(100, 21);
+            this.messaging_inbox_lessonGroupNumber_lbl.TabIndex = 6;
+            this.messaging_inbox_lessonGroupNumber_lbl.Text = "شماره گروه درس";
+            // 
+            // messaging_inbox_lessonNumber_lbl
+            // 
+            this.messaging_inbox_lessonNumber_lbl.AutoSize = true;
+            this.messaging_inbox_lessonNumber_lbl.Location = new System.Drawing.Point(712, 17);
+            this.messaging_inbox_lessonNumber_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.messaging_inbox_lessonNumber_lbl.Name = "messaging_inbox_lessonNumber_lbl";
+            this.messaging_inbox_lessonNumber_lbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.messaging_inbox_lessonNumber_lbl.Size = new System.Drawing.Size(57, 21);
+            this.messaging_inbox_lessonNumber_lbl.TabIndex = 1;
+            this.messaging_inbox_lessonNumber_lbl.Text = "نام درس";
+            // 
+            // messaging_inbox_selectLessonNumber_cb
+            // 
+            this.messaging_inbox_selectLessonNumber_cb.FormattingEnabled = true;
+            this.messaging_inbox_selectLessonNumber_cb.Items.AddRange(new object[] {
+            "کلیه دروس"});
+            this.messaging_inbox_selectLessonNumber_cb.Location = new System.Drawing.Point(669, 43);
+            this.messaging_inbox_selectLessonNumber_cb.Margin = new System.Windows.Forms.Padding(4);
+            this.messaging_inbox_selectLessonNumber_cb.Name = "messaging_inbox_selectLessonNumber_cb";
+            this.messaging_inbox_selectLessonNumber_cb.Size = new System.Drawing.Size(116, 29);
+            this.messaging_inbox_selectLessonNumber_cb.TabIndex = 1;
+            this.messaging_inbox_selectLessonNumber_cb.Text = "select";
+            this.messaging_inbox_selectLessonNumber_cb.SelectedIndexChanged += new System.EventHandler(this.messaging_inbox_selectLessonNumber_cb_SelectedIndexChanged);
+            // 
+            // messaging_inbox_selectLessonGroupNumber_cb
+            // 
+            this.messaging_inbox_selectLessonGroupNumber_cb.FormattingEnabled = true;
+            this.messaging_inbox_selectLessonGroupNumber_cb.Location = new System.Drawing.Point(537, 43);
+            this.messaging_inbox_selectLessonGroupNumber_cb.Margin = new System.Windows.Forms.Padding(4);
+            this.messaging_inbox_selectLessonGroupNumber_cb.Name = "messaging_inbox_selectLessonGroupNumber_cb";
+            this.messaging_inbox_selectLessonGroupNumber_cb.Size = new System.Drawing.Size(123, 29);
+            this.messaging_inbox_selectLessonGroupNumber_cb.TabIndex = 4;
+            // 
+            // messaging_inbox_gpb
+            // 
+            this.messaging_inbox_gpb.Controls.Add(this.messaging_inbox_messageShow_txtbx);
+            this.messaging_inbox_gpb.Controls.Add(this.dataGridView6);
+            this.messaging_inbox_gpb.Location = new System.Drawing.Point(57, 86);
+            this.messaging_inbox_gpb.Margin = new System.Windows.Forms.Padding(4);
+            this.messaging_inbox_gpb.Name = "messaging_inbox_gpb";
+            this.messaging_inbox_gpb.Padding = new System.Windows.Forms.Padding(4);
+            this.messaging_inbox_gpb.Size = new System.Drawing.Size(729, 389);
+            this.messaging_inbox_gpb.TabIndex = 1;
+            this.messaging_inbox_gpb.TabStop = false;
+            this.messaging_inbox_gpb.Text = "پیام های دریافتی";
+            // 
+            // messaging_inbox_messageShow_txtbx
+            // 
+            this.messaging_inbox_messageShow_txtbx.Location = new System.Drawing.Point(32, 242);
+            this.messaging_inbox_messageShow_txtbx.Margin = new System.Windows.Forms.Padding(4);
+            this.messaging_inbox_messageShow_txtbx.Multiline = true;
+            this.messaging_inbox_messageShow_txtbx.Name = "messaging_inbox_messageShow_txtbx";
+            this.messaging_inbox_messageShow_txtbx.ReadOnly = true;
+            this.messaging_inbox_messageShow_txtbx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.messaging_inbox_messageShow_txtbx.Size = new System.Drawing.Size(656, 106);
+            this.messaging_inbox_messageShow_txtbx.TabIndex = 8;
+            // 
+            // dataGridView6
+            // 
+            this.dataGridView6.AllowUserToAddRows = false;
+            this.dataGridView6.AllowUserToDeleteRows = false;
+            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView6.Location = new System.Drawing.Point(32, 46);
+            this.dataGridView6.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView6.Name = "dataGridView6";
+            this.dataGridView6.ReadOnly = true;
+            this.dataGridView6.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView6.Size = new System.Drawing.Size(657, 181);
+            this.dataGridView6.TabIndex = 0;
+            this.dataGridView6.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView6_CellDoubleClick);
+            // 
+            // messaging_outbox_panel
+            // 
+            this.messaging_outbox_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.messaging_outbox_panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.messaging_outbox_panel.Controls.Add(this.messaging_outbox_gpb);
+            this.messaging_outbox_panel.Location = new System.Drawing.Point(965, 35);
+            this.messaging_outbox_panel.Margin = new System.Windows.Forms.Padding(4);
+            this.messaging_outbox_panel.Name = "messaging_outbox_panel";
+            this.messaging_outbox_panel.Size = new System.Drawing.Size(820, 314);
+            this.messaging_outbox_panel.TabIndex = 22;
+            // 
+            // messaging_outbox_gpb
+            // 
+            this.messaging_outbox_gpb.Controls.Add(this.messaging_outbox_messageShow_txtbx);
+            this.messaging_outbox_gpb.Controls.Add(this.messaging_outbox_delete_btn);
+            this.messaging_outbox_gpb.Controls.Add(this.dataGridView7);
+            this.messaging_outbox_gpb.Location = new System.Drawing.Point(21, 22);
+            this.messaging_outbox_gpb.Margin = new System.Windows.Forms.Padding(4);
+            this.messaging_outbox_gpb.Name = "messaging_outbox_gpb";
+            this.messaging_outbox_gpb.Padding = new System.Windows.Forms.Padding(4);
+            this.messaging_outbox_gpb.Size = new System.Drawing.Size(779, 276);
+            this.messaging_outbox_gpb.TabIndex = 0;
+            this.messaging_outbox_gpb.TabStop = false;
+            this.messaging_outbox_gpb.Text = "پیام های ارسالی شما";
+            // 
+            // messaging_outbox_messageShow_txtbx
+            // 
+            this.messaging_outbox_messageShow_txtbx.Location = new System.Drawing.Point(36, 155);
+            this.messaging_outbox_messageShow_txtbx.Margin = new System.Windows.Forms.Padding(4);
+            this.messaging_outbox_messageShow_txtbx.Multiline = true;
+            this.messaging_outbox_messageShow_txtbx.Name = "messaging_outbox_messageShow_txtbx";
+            this.messaging_outbox_messageShow_txtbx.ReadOnly = true;
+            this.messaging_outbox_messageShow_txtbx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.messaging_outbox_messageShow_txtbx.Size = new System.Drawing.Size(708, 63);
+            this.messaging_outbox_messageShow_txtbx.TabIndex = 7;
+            // 
+            // messaging_outbox_delete_btn
+            // 
+            this.messaging_outbox_delete_btn.Location = new System.Drawing.Point(36, 234);
+            this.messaging_outbox_delete_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.messaging_outbox_delete_btn.Name = "messaging_outbox_delete_btn";
+            this.messaging_outbox_delete_btn.Size = new System.Drawing.Size(124, 34);
+            this.messaging_outbox_delete_btn.TabIndex = 6;
+            this.messaging_outbox_delete_btn.Text = "حذف";
+            this.messaging_outbox_delete_btn.UseVisualStyleBackColor = true;
+            this.messaging_outbox_delete_btn.Click += new System.EventHandler(this.messaging_outbox_delete_btn_Click);
+            // 
+            // dataGridView7
+            // 
+            this.dataGridView7.AllowUserToAddRows = false;
+            this.dataGridView7.AllowUserToDeleteRows = false;
+            this.dataGridView7.AllowUserToResizeColumns = false;
+            this.dataGridView7.AllowUserToResizeRows = false;
+            this.dataGridView7.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView7.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView7.EnableHeadersVisualStyles = false;
+            this.dataGridView7.Location = new System.Drawing.Point(36, 26);
+            this.dataGridView7.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView7.Name = "dataGridView7";
+            this.dataGridView7.ReadOnly = true;
+            this.dataGridView7.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView7.Size = new System.Drawing.Size(709, 122);
+            this.dataGridView7.TabIndex = 0;
+            this.dataGridView7.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView7_CellDoubleClick);
+            // 
+            // messaging_send_panel
+            // 
+            this.messaging_send_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.messaging_send_panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.messaging_send_panel.Controls.Add(this.messaging_send_lessonNumber_lbl);
+            this.messaging_send_panel.Controls.Add(this.messaging_send_lbl);
+            this.messaging_send_panel.Controls.Add(this.messaging_send_selectLessonNumber_cb);
+            this.messaging_send_panel.Controls.Add(this.messaging_send_selectGroupLessonNumber_cb);
+            this.messaging_send_panel.Controls.Add(this.messaging_send_rtxt);
+            this.messaging_send_panel.Controls.Add(this.messaging_send_lessonGroupNumber_lbl);
+            this.messaging_send_panel.Location = new System.Drawing.Point(965, 368);
+            this.messaging_send_panel.Margin = new System.Windows.Forms.Padding(4);
+            this.messaging_send_panel.Name = "messaging_send_panel";
+            this.messaging_send_panel.Size = new System.Drawing.Size(820, 174);
+            this.messaging_send_panel.TabIndex = 24;
+            // 
+            // messaging_send_lessonNumber_lbl
+            // 
+            this.messaging_send_lessonNumber_lbl.AutoSize = true;
+            this.messaging_send_lessonNumber_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.messaging_send_lessonNumber_lbl.Location = new System.Drawing.Point(672, 17);
+            this.messaging_send_lessonNumber_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.messaging_send_lessonNumber_lbl.Name = "messaging_send_lessonNumber_lbl";
+            this.messaging_send_lessonNumber_lbl.Size = new System.Drawing.Size(57, 21);
+            this.messaging_send_lessonNumber_lbl.TabIndex = 7;
+            this.messaging_send_lessonNumber_lbl.Text = "نام درس";
+            // 
+            // messaging_send_lbl
+            // 
+            this.messaging_send_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.messaging_send_lbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.messaging_send_lbl.Image = ((System.Drawing.Image)(resources.GetObject("messaging_send_lbl.Image")));
+            this.messaging_send_lbl.Location = new System.Drawing.Point(751, 78);
+            this.messaging_send_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.messaging_send_lbl.Name = "messaging_send_lbl";
+            this.messaging_send_lbl.Size = new System.Drawing.Size(56, 75);
+            this.messaging_send_lbl.TabIndex = 15;
+            this.messaging_send_lbl.Click += new System.EventHandler(this.messaging_send_lbl_Click);
+            this.messaging_send_lbl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.messaging_send_lbl_MouseDown);
+            this.messaging_send_lbl.MouseUp += new System.Windows.Forms.MouseEventHandler(this.messaging_send_lbl_MouseUp);
+            // 
+            // messaging_send_selectLessonNumber_cb
+            // 
+            this.messaging_send_selectLessonNumber_cb.FormattingEnabled = true;
+            this.messaging_send_selectLessonNumber_cb.Items.AddRange(new object[] {
+            "کلیه دروس"});
+            this.messaging_send_selectLessonNumber_cb.Location = new System.Drawing.Point(629, 42);
+            this.messaging_send_selectLessonNumber_cb.Margin = new System.Windows.Forms.Padding(4);
+            this.messaging_send_selectLessonNumber_cb.Name = "messaging_send_selectLessonNumber_cb";
+            this.messaging_send_selectLessonNumber_cb.Size = new System.Drawing.Size(116, 29);
+            this.messaging_send_selectLessonNumber_cb.TabIndex = 17;
+            this.messaging_send_selectLessonNumber_cb.Text = "select";
+            this.messaging_send_selectLessonNumber_cb.SelectedIndexChanged += new System.EventHandler(this.messaging_send_selectLessonNumber_cb_SelectedIndexChanged_1);
+            // 
+            // messaging_send_selectGroupLessonNumber_cb
+            // 
+            this.messaging_send_selectGroupLessonNumber_cb.FormattingEnabled = true;
+            this.messaging_send_selectGroupLessonNumber_cb.Location = new System.Drawing.Point(488, 42);
+            this.messaging_send_selectGroupLessonNumber_cb.Margin = new System.Windows.Forms.Padding(4);
+            this.messaging_send_selectGroupLessonNumber_cb.Name = "messaging_send_selectGroupLessonNumber_cb";
+            this.messaging_send_selectGroupLessonNumber_cb.Size = new System.Drawing.Size(123, 29);
+            this.messaging_send_selectGroupLessonNumber_cb.TabIndex = 18;
+            // 
+            // messaging_send_rtxt
+            // 
+            this.messaging_send_rtxt.BackColor = System.Drawing.Color.LightYellow;
+            this.messaging_send_rtxt.Location = new System.Drawing.Point(37, 78);
+            this.messaging_send_rtxt.Margin = new System.Windows.Forms.Padding(4);
+            this.messaging_send_rtxt.Name = "messaging_send_rtxt";
+            this.messaging_send_rtxt.Size = new System.Drawing.Size(708, 74);
+            this.messaging_send_rtxt.TabIndex = 16;
+            this.messaging_send_rtxt.Text = "";
+            // 
+            // messaging_send_lessonGroupNumber_lbl
+            // 
+            this.messaging_send_lessonGroupNumber_lbl.AutoSize = true;
+            this.messaging_send_lessonGroupNumber_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.messaging_send_lessonGroupNumber_lbl.Location = new System.Drawing.Point(508, 17);
+            this.messaging_send_lessonGroupNumber_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.messaging_send_lessonGroupNumber_lbl.Name = "messaging_send_lessonGroupNumber_lbl";
+            this.messaging_send_lessonGroupNumber_lbl.Size = new System.Drawing.Size(100, 21);
+            this.messaging_send_lessonGroupNumber_lbl.TabIndex = 20;
+            this.messaging_send_lessonGroupNumber_lbl.Text = "شماره گروه درس";
+            // 
             // attendance
             // 
             this.attendance.Controls.Add(this.attendance_lessonInfo_panel);
@@ -2350,10 +2613,10 @@
             // 
             // attendance_lessonInfo_gpb
             // 
+            this.attendance_lessonInfo_gpb.Controls.Add(this.attendance_date_dp);
             this.attendance_lessonInfo_gpb.Controls.Add(this.attendance_clear_btn);
             this.attendance_lessonInfo_gpb.Controls.Add(this.attendance_showLesson_btn);
             this.attendance_lessonInfo_gpb.Controls.Add(this.attendance_minute_cb);
-            this.attendance_lessonInfo_gpb.Controls.Add(this.attendance_date_dp);
             this.attendance_lessonInfo_gpb.Controls.Add(this.attendance_date_lbl);
             this.attendance_lessonInfo_gpb.Controls.Add(this.attendance_minute_lbl);
             this.attendance_lessonInfo_gpb.Controls.Add(this.attendance_hour_cb);
@@ -2469,18 +2732,6 @@
             this.attendance_minute_cb.Size = new System.Drawing.Size(107, 29);
             this.attendance_minute_cb.TabIndex = 79;
             this.attendance_minute_cb.Text = "انتخاب کنید";
-            // 
-            // attendance_date_dp
-            // 
-            this.attendance_date_dp.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.attendance_date_dp.GeoDate = new System.DateTime(2016, 8, 31, 0, 0, 0, 0);
-            this.attendance_date_dp.Location = new System.Drawing.Point(816, 50);
-            this.attendance_date_dp.Margin = new System.Windows.Forms.Padding(5);
-            this.attendance_date_dp.MaximumSize = new System.Drawing.Size(1666, 34);
-            this.attendance_date_dp.Name = "attendance_date_dp";
-            this.attendance_date_dp.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.attendance_date_dp.Size = new System.Drawing.Size(150, 26);
-            this.attendance_date_dp.TabIndex = 2;
             // 
             // attendance_date_lbl
             // 
@@ -3005,254 +3256,18 @@
             this.logo_pictureBox.TabIndex = 9;
             this.logo_pictureBox.TabStop = false;
             // 
-            // messaging_inbox_panel
+            // attendance_date_dp
             // 
-            this.messaging_inbox_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.messaging_inbox_panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.messaging_inbox_panel.Controls.Add(this.messaging_inbox_select_btn);
-            this.messaging_inbox_panel.Controls.Add(this.messaging_inbox_lessonGroupNumber_lbl);
-            this.messaging_inbox_panel.Controls.Add(this.messaging_inbox_lessonNumber_lbl);
-            this.messaging_inbox_panel.Controls.Add(this.messaging_inbox_selectLessonNumber_cb);
-            this.messaging_inbox_panel.Controls.Add(this.messaging_inbox_selectLessonGroupNumber_cb);
-            this.messaging_inbox_panel.Controls.Add(this.messaging_inbox_gpb);
-            this.messaging_inbox_panel.Location = new System.Drawing.Point(141, 35);
-            this.messaging_inbox_panel.Margin = new System.Windows.Forms.Padding(4);
-            this.messaging_inbox_panel.Name = "messaging_inbox_panel";
-            this.messaging_inbox_panel.Size = new System.Drawing.Size(815, 507);
-            this.messaging_inbox_panel.TabIndex = 23;
-            // 
-            // messaging_inbox_select_btn
-            // 
-            this.messaging_inbox_select_btn.Location = new System.Drawing.Point(405, 43);
-            this.messaging_inbox_select_btn.Margin = new System.Windows.Forms.Padding(4);
-            this.messaging_inbox_select_btn.Name = "messaging_inbox_select_btn";
-            this.messaging_inbox_select_btn.Size = new System.Drawing.Size(124, 34);
-            this.messaging_inbox_select_btn.TabIndex = 5;
-            this.messaging_inbox_select_btn.Text = "تایید";
-            this.messaging_inbox_select_btn.UseVisualStyleBackColor = true;
-            // 
-            // messaging_inbox_lessonGroupNumber_lbl
-            // 
-            this.messaging_inbox_lessonGroupNumber_lbl.AutoSize = true;
-            this.messaging_inbox_lessonGroupNumber_lbl.Location = new System.Drawing.Point(557, 17);
-            this.messaging_inbox_lessonGroupNumber_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.messaging_inbox_lessonGroupNumber_lbl.Name = "messaging_inbox_lessonGroupNumber_lbl";
-            this.messaging_inbox_lessonGroupNumber_lbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.messaging_inbox_lessonGroupNumber_lbl.Size = new System.Drawing.Size(100, 21);
-            this.messaging_inbox_lessonGroupNumber_lbl.TabIndex = 6;
-            this.messaging_inbox_lessonGroupNumber_lbl.Text = "شماره گروه درس";
-            // 
-            // messaging_inbox_lessonNumber_lbl
-            // 
-            this.messaging_inbox_lessonNumber_lbl.AutoSize = true;
-            this.messaging_inbox_lessonNumber_lbl.Location = new System.Drawing.Point(712, 17);
-            this.messaging_inbox_lessonNumber_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.messaging_inbox_lessonNumber_lbl.Name = "messaging_inbox_lessonNumber_lbl";
-            this.messaging_inbox_lessonNumber_lbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.messaging_inbox_lessonNumber_lbl.Size = new System.Drawing.Size(57, 21);
-            this.messaging_inbox_lessonNumber_lbl.TabIndex = 1;
-            this.messaging_inbox_lessonNumber_lbl.Text = "نام درس";
-            // 
-            // messaging_inbox_selectLessonNumber_cb
-            // 
-            this.messaging_inbox_selectLessonNumber_cb.FormattingEnabled = true;
-            this.messaging_inbox_selectLessonNumber_cb.Items.AddRange(new object[] {
-            "کلیه دروس"});
-            this.messaging_inbox_selectLessonNumber_cb.Location = new System.Drawing.Point(669, 43);
-            this.messaging_inbox_selectLessonNumber_cb.Margin = new System.Windows.Forms.Padding(4);
-            this.messaging_inbox_selectLessonNumber_cb.Name = "messaging_inbox_selectLessonNumber_cb";
-            this.messaging_inbox_selectLessonNumber_cb.Size = new System.Drawing.Size(116, 29);
-            this.messaging_inbox_selectLessonNumber_cb.TabIndex = 1;
-            this.messaging_inbox_selectLessonNumber_cb.Text = "select";
-            // 
-            // messaging_inbox_selectLessonGroupNumber_cb
-            // 
-            this.messaging_inbox_selectLessonGroupNumber_cb.FormattingEnabled = true;
-            this.messaging_inbox_selectLessonGroupNumber_cb.Location = new System.Drawing.Point(537, 43);
-            this.messaging_inbox_selectLessonGroupNumber_cb.Margin = new System.Windows.Forms.Padding(4);
-            this.messaging_inbox_selectLessonGroupNumber_cb.Name = "messaging_inbox_selectLessonGroupNumber_cb";
-            this.messaging_inbox_selectLessonGroupNumber_cb.Size = new System.Drawing.Size(123, 29);
-            this.messaging_inbox_selectLessonGroupNumber_cb.TabIndex = 4;
-            // 
-            // messaging_inbox_gpb
-            // 
-            this.messaging_inbox_gpb.Controls.Add(this.messaging_inbox_messageShow_txtbx);
-            this.messaging_inbox_gpb.Controls.Add(this.dataGridView6);
-            this.messaging_inbox_gpb.Location = new System.Drawing.Point(57, 86);
-            this.messaging_inbox_gpb.Margin = new System.Windows.Forms.Padding(4);
-            this.messaging_inbox_gpb.Name = "messaging_inbox_gpb";
-            this.messaging_inbox_gpb.Padding = new System.Windows.Forms.Padding(4);
-            this.messaging_inbox_gpb.Size = new System.Drawing.Size(729, 389);
-            this.messaging_inbox_gpb.TabIndex = 1;
-            this.messaging_inbox_gpb.TabStop = false;
-            this.messaging_inbox_gpb.Text = "پیام های دریافتی";
-            // 
-            // messaging_inbox_messageShow_txtbx
-            // 
-            this.messaging_inbox_messageShow_txtbx.Location = new System.Drawing.Point(32, 242);
-            this.messaging_inbox_messageShow_txtbx.Margin = new System.Windows.Forms.Padding(4);
-            this.messaging_inbox_messageShow_txtbx.Multiline = true;
-            this.messaging_inbox_messageShow_txtbx.Name = "messaging_inbox_messageShow_txtbx";
-            this.messaging_inbox_messageShow_txtbx.ReadOnly = true;
-            this.messaging_inbox_messageShow_txtbx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.messaging_inbox_messageShow_txtbx.Size = new System.Drawing.Size(656, 106);
-            this.messaging_inbox_messageShow_txtbx.TabIndex = 8;
-            // 
-            // dataGridView6
-            // 
-            this.dataGridView6.AllowUserToAddRows = false;
-            this.dataGridView6.AllowUserToDeleteRows = false;
-            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Location = new System.Drawing.Point(32, 46);
-            this.dataGridView6.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.ReadOnly = true;
-            this.dataGridView6.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView6.Size = new System.Drawing.Size(657, 181);
-            this.dataGridView6.TabIndex = 0;
-            // 
-            // messaging_outbox_panel
-            // 
-            this.messaging_outbox_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.messaging_outbox_panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.messaging_outbox_panel.Controls.Add(this.messaging_outbox_gpb);
-            this.messaging_outbox_panel.Location = new System.Drawing.Point(965, 35);
-            this.messaging_outbox_panel.Margin = new System.Windows.Forms.Padding(4);
-            this.messaging_outbox_panel.Name = "messaging_outbox_panel";
-            this.messaging_outbox_panel.Size = new System.Drawing.Size(820, 314);
-            this.messaging_outbox_panel.TabIndex = 22;
-            // 
-            // messaging_outbox_gpb
-            // 
-            this.messaging_outbox_gpb.Controls.Add(this.messaging_outbox_messageShow_txtbx);
-            this.messaging_outbox_gpb.Controls.Add(this.messaging_outbox_delete_btn);
-            this.messaging_outbox_gpb.Controls.Add(this.dataGridView7);
-            this.messaging_outbox_gpb.Location = new System.Drawing.Point(21, 22);
-            this.messaging_outbox_gpb.Margin = new System.Windows.Forms.Padding(4);
-            this.messaging_outbox_gpb.Name = "messaging_outbox_gpb";
-            this.messaging_outbox_gpb.Padding = new System.Windows.Forms.Padding(4);
-            this.messaging_outbox_gpb.Size = new System.Drawing.Size(779, 276);
-            this.messaging_outbox_gpb.TabIndex = 0;
-            this.messaging_outbox_gpb.TabStop = false;
-            this.messaging_outbox_gpb.Text = "پیام های ارسالی شما";
-            // 
-            // messaging_outbox_messageShow_txtbx
-            // 
-            this.messaging_outbox_messageShow_txtbx.Location = new System.Drawing.Point(36, 155);
-            this.messaging_outbox_messageShow_txtbx.Margin = new System.Windows.Forms.Padding(4);
-            this.messaging_outbox_messageShow_txtbx.Multiline = true;
-            this.messaging_outbox_messageShow_txtbx.Name = "messaging_outbox_messageShow_txtbx";
-            this.messaging_outbox_messageShow_txtbx.ReadOnly = true;
-            this.messaging_outbox_messageShow_txtbx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.messaging_outbox_messageShow_txtbx.Size = new System.Drawing.Size(708, 63);
-            this.messaging_outbox_messageShow_txtbx.TabIndex = 7;
-            // 
-            // messaging_outbox_delete_btn
-            // 
-            this.messaging_outbox_delete_btn.Location = new System.Drawing.Point(36, 234);
-            this.messaging_outbox_delete_btn.Margin = new System.Windows.Forms.Padding(4);
-            this.messaging_outbox_delete_btn.Name = "messaging_outbox_delete_btn";
-            this.messaging_outbox_delete_btn.Size = new System.Drawing.Size(124, 34);
-            this.messaging_outbox_delete_btn.TabIndex = 6;
-            this.messaging_outbox_delete_btn.Text = "حذف";
-            this.messaging_outbox_delete_btn.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView7
-            // 
-            this.dataGridView7.AllowUserToAddRows = false;
-            this.dataGridView7.AllowUserToDeleteRows = false;
-            this.dataGridView7.AllowUserToResizeColumns = false;
-            this.dataGridView7.AllowUserToResizeRows = false;
-            this.dataGridView7.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView7.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView7.EnableHeadersVisualStyles = false;
-            this.dataGridView7.Location = new System.Drawing.Point(36, 26);
-            this.dataGridView7.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView7.Name = "dataGridView7";
-            this.dataGridView7.ReadOnly = true;
-            this.dataGridView7.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView7.Size = new System.Drawing.Size(709, 122);
-            this.dataGridView7.TabIndex = 0;
-            // 
-            // messaging_send_panel
-            // 
-            this.messaging_send_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.messaging_send_panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.messaging_send_panel.Controls.Add(this.messaging_send_lessonNumber_lbl);
-            this.messaging_send_panel.Controls.Add(this.messaging_send_lbl);
-            this.messaging_send_panel.Controls.Add(this.messaging_send_selectLessonNumber_cb);
-            this.messaging_send_panel.Controls.Add(this.messaging_send_selectGroupLessonNumber_cb);
-            this.messaging_send_panel.Controls.Add(this.messaging_send_rtxt);
-            this.messaging_send_panel.Controls.Add(this.messaging_send_lessonGroupNumber_lbl);
-            this.messaging_send_panel.Location = new System.Drawing.Point(965, 368);
-            this.messaging_send_panel.Margin = new System.Windows.Forms.Padding(4);
-            this.messaging_send_panel.Name = "messaging_send_panel";
-            this.messaging_send_panel.Size = new System.Drawing.Size(820, 174);
-            this.messaging_send_panel.TabIndex = 24;
-            // 
-            // messaging_send_lessonNumber_lbl
-            // 
-            this.messaging_send_lessonNumber_lbl.AutoSize = true;
-            this.messaging_send_lessonNumber_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.messaging_send_lessonNumber_lbl.Location = new System.Drawing.Point(672, 17);
-            this.messaging_send_lessonNumber_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.messaging_send_lessonNumber_lbl.Name = "messaging_send_lessonNumber_lbl";
-            this.messaging_send_lessonNumber_lbl.Size = new System.Drawing.Size(57, 21);
-            this.messaging_send_lessonNumber_lbl.TabIndex = 7;
-            this.messaging_send_lessonNumber_lbl.Text = "نام درس";
-            // 
-            // messaging_send_lbl
-            // 
-            this.messaging_send_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.messaging_send_lbl.Image = ((System.Drawing.Image)(resources.GetObject("messaging_send_lbl.Image")));
-            this.messaging_send_lbl.Location = new System.Drawing.Point(751, 78);
-            this.messaging_send_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.messaging_send_lbl.Name = "messaging_send_lbl";
-            this.messaging_send_lbl.Size = new System.Drawing.Size(56, 75);
-            this.messaging_send_lbl.TabIndex = 15;
-            // 
-            // messaging_send_selectLessonNumber_cb
-            // 
-            this.messaging_send_selectLessonNumber_cb.FormattingEnabled = true;
-            this.messaging_send_selectLessonNumber_cb.Items.AddRange(new object[] {
-            "کلیه دروس"});
-            this.messaging_send_selectLessonNumber_cb.Location = new System.Drawing.Point(629, 42);
-            this.messaging_send_selectLessonNumber_cb.Margin = new System.Windows.Forms.Padding(4);
-            this.messaging_send_selectLessonNumber_cb.Name = "messaging_send_selectLessonNumber_cb";
-            this.messaging_send_selectLessonNumber_cb.Size = new System.Drawing.Size(116, 29);
-            this.messaging_send_selectLessonNumber_cb.TabIndex = 17;
-            this.messaging_send_selectLessonNumber_cb.Text = "select";
-            // 
-            // messaging_send_selectGroupLessonNumber_cb
-            // 
-            this.messaging_send_selectGroupLessonNumber_cb.FormattingEnabled = true;
-            this.messaging_send_selectGroupLessonNumber_cb.Location = new System.Drawing.Point(488, 42);
-            this.messaging_send_selectGroupLessonNumber_cb.Margin = new System.Windows.Forms.Padding(4);
-            this.messaging_send_selectGroupLessonNumber_cb.Name = "messaging_send_selectGroupLessonNumber_cb";
-            this.messaging_send_selectGroupLessonNumber_cb.Size = new System.Drawing.Size(123, 29);
-            this.messaging_send_selectGroupLessonNumber_cb.TabIndex = 18;
-            // 
-            // messaging_send_rtxt
-            // 
-            this.messaging_send_rtxt.BackColor = System.Drawing.Color.LightYellow;
-            this.messaging_send_rtxt.Location = new System.Drawing.Point(37, 78);
-            this.messaging_send_rtxt.Margin = new System.Windows.Forms.Padding(4);
-            this.messaging_send_rtxt.Name = "messaging_send_rtxt";
-            this.messaging_send_rtxt.Size = new System.Drawing.Size(708, 74);
-            this.messaging_send_rtxt.TabIndex = 16;
-            this.messaging_send_rtxt.Text = "";
-            // 
-            // messaging_send_lessonGroupNumber_lbl
-            // 
-            this.messaging_send_lessonGroupNumber_lbl.AutoSize = true;
-            this.messaging_send_lessonGroupNumber_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.messaging_send_lessonGroupNumber_lbl.Location = new System.Drawing.Point(508, 17);
-            this.messaging_send_lessonGroupNumber_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.messaging_send_lessonGroupNumber_lbl.Name = "messaging_send_lessonGroupNumber_lbl";
-            this.messaging_send_lessonGroupNumber_lbl.Size = new System.Drawing.Size(100, 21);
-            this.messaging_send_lessonGroupNumber_lbl.TabIndex = 20;
-            this.messaging_send_lessonGroupNumber_lbl.Text = "شماره گروه درس";
+            this.attendance_date_dp.Enabled = false;
+            this.attendance_date_dp.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.attendance_date_dp.GeoDate = new System.DateTime(2016, 8, 31, 0, 0, 0, 0);
+            this.attendance_date_dp.Location = new System.Drawing.Point(836, 48);
+            this.attendance_date_dp.Margin = new System.Windows.Forms.Padding(5);
+            this.attendance_date_dp.MaximumSize = new System.Drawing.Size(1666, 34);
+            this.attendance_date_dp.Name = "attendance_date_dp";
+            this.attendance_date_dp.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.attendance_date_dp.Size = new System.Drawing.Size(150, 26);
+            this.attendance_date_dp.TabIndex = 1001;
             // 
             // ManagerForm1
             // 
@@ -3318,6 +3333,17 @@
             this.lessons_addLesson_gpb.PerformLayout();
             this.lessons_add_teachers_panel.ResumeLayout(false);
             this.messaging.ResumeLayout(false);
+            this.messaging_inbox_panel.ResumeLayout(false);
+            this.messaging_inbox_panel.PerformLayout();
+            this.messaging_inbox_gpb.ResumeLayout(false);
+            this.messaging_inbox_gpb.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            this.messaging_outbox_panel.ResumeLayout(false);
+            this.messaging_outbox_gpb.ResumeLayout(false);
+            this.messaging_outbox_gpb.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
+            this.messaging_send_panel.ResumeLayout(false);
+            this.messaging_send_panel.PerformLayout();
             this.attendance.ResumeLayout(false);
             this.attendance_lessonInfo_panel.ResumeLayout(false);
             this.attendance_lessonInfo_gpb.ResumeLayout(false);
@@ -3339,17 +3365,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource5)).EndInit();
-            this.messaging_inbox_panel.ResumeLayout(false);
-            this.messaging_inbox_panel.PerformLayout();
-            this.messaging_inbox_gpb.ResumeLayout(false);
-            this.messaging_inbox_gpb.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
-            this.messaging_outbox_panel.ResumeLayout(false);
-            this.messaging_outbox_gpb.ResumeLayout(false);
-            this.messaging_outbox_gpb.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
-            this.messaging_send_panel.ResumeLayout(false);
-            this.messaging_send_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3543,7 +3560,6 @@
         private System.Windows.Forms.Label attendance_lessonGroupNumber_lbl;
         private System.Windows.Forms.ComboBox attendance_hour_cb;
         private System.Windows.Forms.Label attendance_hour_lbl;
-        private FarsiCalendarComponent.FarsiDatePicker attendance_date_dp;
         private System.Windows.Forms.Label attendance_date_lbl;
         private System.Windows.Forms.Label attendance_minute_lbl;
         private System.Windows.Forms.ComboBox attendance_minute_cb;
@@ -3570,5 +3586,8 @@
         private System.Windows.Forms.ComboBox messaging_send_selectGroupLessonNumber_cb;
         private System.Windows.Forms.RichTextBox messaging_send_rtxt;
         private System.Windows.Forms.Label messaging_send_lessonGroupNumber_lbl;
+        private System.Windows.Forms.BindingSource bindingSource7;
+        private System.Windows.Forms.BindingSource bindingSource6;
+        private FarsiCalendarComponent.FarsiDatePicker attendance_date_dp;
     }
 }
