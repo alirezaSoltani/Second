@@ -147,14 +147,14 @@ namespace Second
                 string LName = reader5.GetString(1);
                 string fullName = FName + " " + LName;
                 conn5.Close();
-                dashboard_info_lbl.Text = "شما با شماره کاربری " + managerUsername + "وارد سامانه شده اید. \n" +fullName + " خوش آمدید.";
+                dashboard_info_lbl.Text = "شما با شماره کاربری " + managerUsername + "وارد سامانه شده اید. \n" + fullName + " خوش آمدید.";
             }
-            else if(userType == 3)
+            else if (userType == 3)
             {
                 dashboard_info_lbl.Text = "شما با شماره کاربری " + currentUserName + "وارد سامانه شده اید. \n" + dashboardTeacherObj.getTeacherFullName(currentUserName) + " خوش آمدید.";
             }
 
-            
+
             dashboard_greeting_panel.SetBounds(((354 * width) / 800), ((2 * height) / 100), ((53 * width) / 100), ((20 * height) / 100));
             dashboard_greeting_gpb.SetBounds(((3 * width) / 400), ((3 * height) / 400), ((51 * width) / 100), ((17 * height) / 100));
             dashboard_info_lbl.SetBounds(((5 * width) / 400), ((5 * height) / 100), ((48 * width) / 100), ((6 * height) / 100));
@@ -426,13 +426,13 @@ namespace Second
 
 
 
-            attendance_clear_btn.SetBounds(((80 * width) / 1000), ((13 * height) / 300), ((55 * width) / 1000), ((27 * height) / 1000));
+            attendance_cancel_btn.SetBounds(((80 * width) / 1000), ((13 * height) / 300), ((55 * width) / 1000), ((27 * height) / 1000));
             attendance_attend_btn.SetBounds(((15 * width) / 1000), ((13 * height) / 300), ((55 * width) / 1000), ((27 * height) / 1000));
 
 
             Attendance_dataGridView_panel.SetBounds(((5 * width) / 400), ((50 * height) / 300), ((960 * width) / 1000), ((572 * height) / 1000));
             dataGridView8.SetBounds(((5 * width) / 400), ((5 * height) / 300), ((932 * width) / 1000), ((480 * height) / 1000));
-            attendance_attendClear_btn.SetBounds(((500 * width) / 1000), ((510 * height) / 1000), ((75 * width) / 1000), ((27 * height) / 1000));
+            //attendance_attendClear_btn.SetBounds(((500 * width) / 1000), ((510 * height) / 1000), ((75 * width) / 1000), ((27 * height) / 1000));
             attendance_register_btn.SetBounds(((400 * width) / 1000), ((510 * height) / 1000), ((75 * width) / 1000), ((27 * height) / 1000));
 
             attendance_date_dp.UsePersianFormat = true;
@@ -626,11 +626,11 @@ namespace Second
                 setting_changeInfo_showPass_pic.SetBounds(((8 * width) / 400), ((87 * height) / 800), ((15 * width) / 1000), ((27 * height) / 1000));
                 setting_changeInfo_showNewPass_pic.SetBounds(((8 * width) / 400), ((45 * height) / 300), ((15 * width) / 1000), ((27 * height) / 1000));
                 //////About Us
-                settings_abotUs_pictureBox.SetBounds(((60* width) / 1000), ((25 * height) / 1000), ((160* width) / 1000), ((185 * height) / 1000));
-                setting_aboutUs_lbl.SetBounds(((4 * width) / 400), ((54* height) / 300), ((260 * width) / 1000), ((98 * height) / 1000));
+                settings_abotUs_pictureBox.SetBounds(((60 * width) / 1000), ((25 * height) / 1000), ((160 * width) / 1000), ((185 * height) / 1000));
+                setting_aboutUs_lbl.SetBounds(((4 * width) / 400), ((54 * height) / 300), ((260 * width) / 1000), ((98 * height) / 1000));
                 setting_aboutUs_lbl.Text = "شرکت نرم افزاری رایان پردازش نوین آریا\nتلفن تماس: 061335534050\nآدرس ایمیل :RayanProcessCompany@gmail.com\nوب سایت:";
             }
-            catch(SqlException)
+            catch (SqlException)
             {
                 DialogForm dialog = new DialogForm("اشکال در برقراری ارتباط با سرور", "خطای سرور", "error", this);
             }
@@ -1158,123 +1158,135 @@ namespace Second
 
             else if (manager_main_tc.SelectedTab == manager_main_tc.TabPages["messaging"])
             {
-                int lessonLimit = messaging_send_selectLessonNumber_cb.Items.Count;
-                int lessonGroupLimit = messaging_inbox_selectLessonNumber_cb.Items.Count;
-
-                for (int i = 0; i < lessonLimit; i++)
+                try
                 {
-                    messaging_send_selectLessonNumber_cb.Items.RemoveAt(0);
+                    int lessonLimit = messaging_send_selectLessonNumber_cb.Items.Count;
+                    int lessonGroupLimit = messaging_inbox_selectLessonNumber_cb.Items.Count;
+
+                    for (int i = 0; i < lessonLimit; i++)
+                    {
+                        messaging_send_selectLessonNumber_cb.Items.RemoveAt(0);
+                    }
+
+                    for (int i = 0; i < lessonGroupLimit; i++)
+                    {
+                        messaging_inbox_selectLessonNumber_cb.Items.RemoveAt(0);
+                    }
+
+
+                    //////////////////////outbox/////////////////////////
+
+                    MessageModel obj = new MessageModel();
+
+                    dataGridView7.DataSource = bindingSource7;
+
+                    GetData7("SELECT * FROM  messageTable where senderTeacher# = " + currentUserName + " ORDER BY messageDate DESC ");
+
+                    dataGridView7.RowHeadersWidth = (width / 25);
+                    dataGridView7.Columns[0].Visible = false;
+                    dataGridView7.Columns[1].Visible = false;
+                    dataGridView7.Columns[2].HeaderText = "متن پیام";
+                    dataGridView7.Columns[3].HeaderText = "شماره درس";
+                    dataGridView7.Columns[4].Visible = false;
+                    dataGridView7.Columns[5].HeaderText = "شماره گروه درس";
+                    dataGridView7.Columns[6].Visible = false;
+                    dataGridView7.Columns[7].HeaderText = "تاریخ";
+                    //dataGridView7.Columns[2].Width = (width / 3);
+
+
+                    foreach (DataGridViewColumn col in dataGridView7.Columns)
+                    {
+                        col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                    }
+
+                    foreach (DataGridViewRow row in dataGridView7.Rows)
+                    {
+                        //row.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                        dataGridView7.Rows[row.Index].HeaderCell.Value = (row.Index + 1).ToString();
+                        //row.HeaderCell.Value = String.Format("{0}", row.Index + 1);
+                    }
+
+                    /////////////////////////inbox/////////////////////////////////
+
+
+
+
+
+
+                    SqlConnection conn = new SqlConnection();
+                    conn.ConnectionString =
+                    "Data Source= 185.159.152.5;" +
+                        "Initial Catalog=youshita_Test;" +
+                        "User id=youshita_co; " +
+                        "Password=P@hn1395;";
+
+                    SqlCommand sc1 = new SqlCommand();
+                    SqlDataReader reader2;
+                    sc1.Connection = conn;
+                    conn.Open();
+
+                    sc1.CommandText = "SELECT DISTINCT lessonName FROM lessonTable where lessonTeacher# = " + currentUserName + "";
+
+
+                    sc1.CommandType = CommandType.Text;
+                    reader2 = sc1.ExecuteReader();
+                    while (reader2.Read())
+                    {
+                        string name = reader2.GetString(0);
+                        messaging_send_selectLessonNumber_cb.Items.Add(name);
+                        //.Insert(" " + reader2.GetString(0) + " " + reader2.GetInt32(1).ToString() + " ");
+                    }
+
+                    conn.Close();
+
+
+                    ////////////////////////////////cobo2 send//////////////////////////////////////
+
+
+
+                    SqlConnection conn2 = new SqlConnection();
+                    conn2.ConnectionString =
+                    "Data Source= 185.159.152.5;" +
+                        "Initial Catalog=youshita_Test;" +
+                        "User id=youshita_co; " +
+                        "Password=P@hn1395;";
+
+                    SqlCommand sc2 = new SqlCommand();
+                    SqlDataReader reader1;
+                    sc2.Connection = conn2;
+                    conn2.Open();
+
+                    sc2.CommandText = "SELECT DISTINCT lessonName FROM lessonTable where lessonTeacher# = " + currentUserName + "";
+
+
+                    sc2.CommandType = CommandType.Text;
+                    reader1 = sc2.ExecuteReader();
+                    while (reader1.Read())
+                    {
+                        string name = reader1.GetString(0);
+                        messaging_inbox_selectLessonNumber_cb.Items.Add(name);
+                        //.Insert(" " + reader2.GetString(0) + " " + reader2.GetInt32(1).ToString() + " ");
+                    }
+
+                    conn2.Close();
+
+                    /////////////////////////////cobo2 inbox////////////////////////////////////////*/
+                }
+                catch(SqlException)
+                {
+                    DialogForm dialog = new DialogForm("اشکال در برقراری ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
+                }
+                catch(ArgumentOutOfRangeException)
+                {
+                    DialogForm dialog = new DialogForm("اشکال در برقراری ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
                 }
 
-                for (int i = 0; i < lessonGroupLimit ; i++)
-                {
-                    messaging_inbox_selectLessonNumber_cb.Items.RemoveAt(0);
-                }
-
-
-                //////////////////////outbox/////////////////////////
-
-                MessageModel obj = new MessageModel();
-
-                dataGridView7.DataSource = bindingSource7;
-
-                GetData7("SELECT * FROM  messageTable where senderTeacher# = " + currentUserName + " ORDER BY messageDate DESC ");
-
-                dataGridView7.RowHeadersWidth = (width / 25);
-                dataGridView7.Columns[0].Visible = false;
-                dataGridView7.Columns[1].Visible = false;
-                dataGridView7.Columns[2].HeaderText = "متن پیام";
-                dataGridView7.Columns[3].HeaderText = "شماره درس";
-                dataGridView7.Columns[4].Visible = false;
-                dataGridView7.Columns[5].HeaderText = "شماره گروه درس";
-                dataGridView7.Columns[6].Visible = false;
-                dataGridView7.Columns[7].HeaderText = "تاریخ";
-                //dataGridView7.Columns[2].Width = (width / 3);
-
-
-                foreach (DataGridViewColumn col in dataGridView7.Columns)
-                {
-                    col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-                }
-
-                foreach (DataGridViewRow row in dataGridView7.Rows)
-                {
-                    //row.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                    dataGridView7.Rows[row.Index].HeaderCell.Value = (row.Index + 1).ToString();
-                    //row.HeaderCell.Value = String.Format("{0}", row.Index + 1);
-                }
-
-                /////////////////////////inbox/////////////////////////////////
-
-
-                
-
-
-
-                SqlConnection conn = new SqlConnection();
-                conn.ConnectionString =
-                "Data Source= 185.159.152.5;" +
-                    "Initial Catalog=youshita_Test;" +
-                    "User id=youshita_co; " +
-                    "Password=P@hn1395;";
-
-                SqlCommand sc1 = new SqlCommand();
-                SqlDataReader reader2;
-                sc1.Connection = conn;
-                conn.Open();
-
-                sc1.CommandText = "SELECT DISTINCT lessonName FROM lessonTable where lessonTeacher# = " + currentUserName + "";
-
-
-                sc1.CommandType = CommandType.Text;
-                reader2 = sc1.ExecuteReader();
-                while (reader2.Read())
-                {
-                    string name = reader2.GetString(0);
-                    messaging_send_selectLessonNumber_cb.Items.Add(name);
-                    //.Insert(" " + reader2.GetString(0) + " " + reader2.GetInt32(1).ToString() + " ");
-                }
-
-                conn.Close();
-
-
-                ////////////////////////////////cobo2 send//////////////////////////////////////
-
-                
-
-                SqlConnection conn2 = new SqlConnection();
-                conn2.ConnectionString =
-                "Data Source= 185.159.152.5;" +
-                    "Initial Catalog=youshita_Test;" +
-                    "User id=youshita_co; " +
-                    "Password=P@hn1395;";
-
-                SqlCommand sc2 = new SqlCommand();
-                SqlDataReader reader1;
-                sc2.Connection = conn2;
-                conn2.Open();
-
-                sc2.CommandText = "SELECT DISTINCT lessonName FROM lessonTable where lessonTeacher# = " + currentUserName + "";
-
-
-                sc2.CommandType = CommandType.Text;
-                reader1 = sc2.ExecuteReader();
-                while (reader1.Read())
-                {
-                    string name = reader1.GetString(0);
-                    messaging_inbox_selectLessonNumber_cb.Items.Add(name);
-                    //.Insert(" " + reader2.GetString(0) + " " + reader2.GetInt32(1).ToString() + " ");
-                }
-
-                conn2.Close();
-
-                /////////////////////////////cobo2 inbox////////////////////////////////////////*/
 
             }
 
             else if (manager_main_tc.SelectedTab == manager_main_tc.TabPages["settings"])
             {
-                if(userType != 3)
+                if (userType != 3)
                 {
                     //***datagridview initialization
                     SqlConnection conn2 = new SqlConnection();
@@ -1345,9 +1357,71 @@ namespace Second
                 }
             }
 
+            else if (manager_main_tc.SelectedTab == manager_main_tc.TabPages["attendance"])
+            {
+
+                int lessonLimit = attendance_lessonNumber_cb.Items.Count;
+                attendance_lessonGroupNumber_cb.Text = "";
+                for (int i = 0; i < lessonLimit; i++)
+                {
+                    attendance_lessonNumber_cb.Items.RemoveAt(0);
+                }
+
+                int lessonGroupLimit = attendance_lessonGroupNumber_cb.Items.Count;
+                attendance_lessonGroupNumber_cb.Text = "";
+                for (int i = 0; i < lessonGroupLimit; i++)
+                {
+                    attendance_lessonGroupNumber_cb.Items.RemoveAt(0);
+                }
+
+                attendance_date_lbl.Enabled = false;
+                attendance_date_dp.Enabled = false;
+                attendance_date_dp.Text = "";
+                attendance_hour_cb.Enabled = false;
+                attendance_hour_cb.Text = "";
+                attendance_hour_lbl.Enabled = false;
+                attendance_minute_cb.Enabled = false;
+                attendance_minute_cb.Text = "";
+                attendance_minute_lbl.Enabled = false;
+                attendance_attend_btn.Enabled = false;
+                attendance_register_btn.Enabled = false;
+
+            }
+
+            for (int i = 0; i < attendance_lessonNumber_cb.Items.Count; i++)
+            {
+                attendance_lessonNumber_cb.Items.RemoveAt(i);
+            }
+
+
+            SqlConnection conn8 = new SqlConnection();
+            conn8.ConnectionString =
+            "Data Source= 185.159.152.5;" +
+                "Initial Catalog=youshita_Test;" +
+                "User id=youshita_co; " +
+                "Password=P@hn1395;";
+
+            SqlCommand sc8 = new SqlCommand();
+            SqlDataReader reader8;
+            sc8.Connection = conn8;
+            conn8.Open();
+
+            sc8.CommandText = "SELECT DISTINCT lessonName FROM lessonTable where lessonTeacher# = " + currentUserName + "";
+
+
+            sc8.CommandType = CommandType.Text;
+            reader8 = sc8.ExecuteReader();
+            while (reader8.Read())
+            {
+                string name = reader8.GetString(0);
+                attendance_lessonNumber_cb.Items.Add(name);
+                //.Insert(" " + reader2.GetString(0) + " " + reader2.GetInt32(1).ToString() + " ");
+            }
+
+            conn8.Close();
         }
 
-        private void students_edit_clear_btn_Click(object sender, EventArgs e)
+    private void students_edit_clear_btn_Click(object sender, EventArgs e)
         {
             students_edit_studentNumber_txtbx.Clear();
             students_edit_studentName_txtbx.Clear();
@@ -3175,7 +3249,7 @@ namespace Second
             }
             catch (SqlException)
             {
-                DialogForm dialog = new DialogForm("مشکل در ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
+                DialogForm dialog = new DialogForm("اشکال در برقراری ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
             }
         }
 
@@ -3216,7 +3290,7 @@ namespace Second
             }
             catch (SqlException)
             {
-                DialogForm dialog = new DialogForm("مشکل در ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
+                DialogForm dialog = new DialogForm("اشکال در برقراری ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
             }
         }
 
@@ -3257,7 +3331,7 @@ namespace Second
             }
             catch (SqlException)
             {
-                DialogForm dialog = new DialogForm("مشکل در ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
+                DialogForm dialog = new DialogForm("اشکال در برقراری ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
             }
         }
 
@@ -3389,63 +3463,151 @@ namespace Second
 
         private void attendance_register_btn_Click(object sender, EventArgs e)
         {
-            StudentModel studentObj = new StudentModel();
-            Attendance attendanceObj = new Attendance();
-            attendanceObj.setLessonNumber(10);
-            attendanceObj.setLessonGroupNumber(1);
-
-            foreach (DataGridViewRow row in dataGridView8.Rows)
+            try
             {
-                string stNum = row.Cells[0].Value.ToString();
+                attendance_register_btn.Enabled = false;
+                StudentModel studentObj = new StudentModel();
+                Attendance attendanceObj = new Attendance();
+                
+                attendanceObj.setLessonNumber(10);
+                attendanceObj.setLessonGroupNumber(1);
+                attendanceObj.attendanceLesson(attendance_date_dp.Text + "\n" + attendance_hour_cb.Text + ":" + attendance_minute_cb.Text + "", currentUserName);
+
+                foreach (DataGridViewRow row in dataGridView8.Rows)
+                {
+                    string stNum = row.Cells[0].Value.ToString();
+                    attendanceObj.attend(attendance_date_dp.Text + "\n" + attendance_hour_cb.Text + ":" + attendance_minute_cb.Text + "", row.Cells[3].Value.ToString(), long.Parse(stNum));
+                }
+                DialogForm dialog = new DialogForm("اطلاعات با موفقیت ثبت شد.", "ثبت موفقیت آمیز", "success", this);
 
 
+                //////////////////////////////////////Reset datagridview
+                //dataGridView8.DataSource = null;
+                dataGridView8.Columns.RemoveAt(3);
+                long inbox_lessonNumber = 0;
+                SqlConnection conn2 = new SqlConnection();
+                conn2.ConnectionString =
+                      "Data Source= 185.159.152.5;" +
+                        "Initial Catalog=youshita_Test;" +
+                        "User id=youshita_co; " +
+                        "Password=P@hn1395;";
 
-                attendanceObj.attend(attendance_date_dp.Text + "\n" + attendance_hour_cb.Text + ":" + attendance_minute_cb.Text + "", row.Cells[3].Value.ToString(), long.Parse(stNum));
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
+                sc.CommandText = "SELECT lesson# FROM lessonTable WHERE lessonName = '" + attendance_lessonNumber_cb.Text + "'";
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn2;
+                conn2.Open();
+                reader = sc.ExecuteReader();
+                reader.Read();
+                inbox_lessonNumber = reader.GetInt64(0);
+                conn2.Close();
+
+                dataGridView8.DataSource = bindingSource8;
+
+                GetData8("select *  from [dbo].[" + inbox_lessonNumber + "-" + attendance_lessonGroupNumber_cb.Text + "_Table]");
+
+                // dataGridView6.RowHeadersWidth = (width / 28);
+
+                dataGridView8.Columns[0].HeaderText = "شماره دانشجویی";
+                dataGridView8.Columns[1].HeaderText = "نام دانشجو";
+                dataGridView8.Columns[2].HeaderText = "نام خانوادگی";
+                dataGridView8.Columns[0].Frozen = true;
+                dataGridView8.Columns[1].Frozen = true;
+                dataGridView8.Columns[2].Frozen = true;
+
+
+                foreach (DataGridViewColumn col in dataGridView8.Columns)
+                {
+                    col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                }
+
+                foreach (DataGridViewRow roww in dataGridView6.Rows)
+                {
+                    //row.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    dataGridView8.Rows[roww.Index].HeaderCell.Value = (roww.Index + 1).ToString();
+                    //row.HeaderCell.Value = String.Format("{0}", row.Index + 1);
+                }
+                //////////////////////////////////////Reset datagridview
             }
-
-
+            catch (SqlException e1)
+            {
+                MessageBox.Show(e1.Message);
+                DialogForm dialog = new DialogForm("اشکال در برقراری ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
+            }
+            catch (InvalidOperationException e1)
+            {
+                if (e1.Message.Contains("unique"))
+                {
+                    DialogForm dialog = new DialogForm("اطلاعات وارد شده تکراری یا اشتباه است.", "خطا", "error", this);
+                }
+                else
+                {
+                    DialogForm dialog = new DialogForm("اشکال در برقراری ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
+                }
+            }
+           
         }
 
         private void attendance_attend_btn_Click(object sender, EventArgs e)
         {
-            Attendance attendanceObj = new Attendance();
-
-            long inbox_lessonNumber = 0;
-            SqlConnection conn2 = new SqlConnection();
-            conn2.ConnectionString =
-                  "Data Source= 185.159.152.5;" +
-                    "Initial Catalog=youshita_Test;" +
-                    "User id=youshita_co; " +
-                    "Password=P@hn1395;";
-
-            SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "SELECT lesson# FROM lessonTable WHERE lessonName = '" + attendance_lessonNumber_cb.Text + "'";
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn2;
-            conn2.Open();
-            reader = sc.ExecuteReader();
-            reader.Read();
-            attendanceObj.setLessonNumber(reader.GetInt64(0));
-            conn2.Close();
-
-            DataGridViewCheckBoxColumn myCheckedColumn = new DataGridViewCheckBoxColumn()
+            try
             {
-                Name = attendance_date_dp.Text + "\n" + attendance_hour_cb.Text + ":" + attendance_minute_cb.Text + "",
-                FalseValue = "0",
-                TrueValue = "1",
-                Visible = true
-            };
+                Attendance attendanceObj = new Attendance();
+
+                long inbox_lessonNumber = 0;
+                SqlConnection conn2 = new SqlConnection();
+                conn2.ConnectionString =
+                      "Data Source= 185.159.152.5;" +
+                        "Initial Catalog=youshita_Test;" +
+                        "User id=youshita_co; " +
+                        "Password=P@hn1395;";
+
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
+                sc.CommandText = "SELECT lesson# FROM lessonTable WHERE lessonName = '" + attendance_lessonNumber_cb.Text + "'";
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn2;
+                conn2.Open();
+                reader = sc.ExecuteReader();
+                reader.Read();
+                attendanceObj.setLessonNumber(reader.GetInt64(0));
+                conn2.Close();
+
+                DataGridViewCheckBoxColumn myCheckedColumn = new DataGridViewCheckBoxColumn()
+                {
+                    Name = attendance_date_dp.Text + "\n" + attendance_hour_cb.Text + ":" + attendance_minute_cb.Text + "",
+                    FalseValue = "0",
+                    TrueValue = "1",
+                    Visible = true
+                };
 
 
-            attendanceObj.setLessonGroupNumber(short.Parse(attendance_lessonGroupNumber_cb.Text));
-            attendanceObj.attendanceLesson(myCheckedColumn.Name, currentUserName);
-            dataGridView8.Columns.Insert(3, myCheckedColumn); ///catch invalid operation
-            foreach (DataGridViewRow row in dataGridView8.Rows)
-            {
-                row.Cells[myCheckedColumn.Name].Value = "0";
+                attendanceObj.setLessonGroupNumber(short.Parse(attendance_lessonGroupNumber_cb.Text));
+                //attendanceObj.attendanceLesson(myCheckedColumn.Name, currentUserName);
+                dataGridView8.Columns.Insert(3, myCheckedColumn); ///catch invalid operation
+                foreach (DataGridViewRow row in dataGridView8.Rows)
+                {
+                    row.Cells[myCheckedColumn.Name].Value = "0";
+                }
+                dataGridView8.Columns[3].Frozen = true;
+                attendance_register_btn.Enabled = true;
             }
-            dataGridView8.Columns[3].Frozen = true;
+            catch(SqlException)
+            {
+                DialogForm dialog = new DialogForm("اشکال در برقراری ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
+            }
+            catch(InvalidOperationException e1)
+            {
+                if(e1.Message.Contains("unique"))
+                {
+                    DialogForm dialog = new DialogForm("اطلاعات وارد شده تکراری یا اشتباه است.", "خطا", "error", this);
+                }
+                else
+                {
+                    DialogForm dialog = new DialogForm("اشکال در برقراری ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
+                }
+            }
 
 
         }
@@ -3455,9 +3617,11 @@ namespace Second
 
         private void attendance_lessonNumber_cb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            for (int i = 0; i < attendance_lessonGroupNumber_cb.Items.Count; i++)
+            int lessonGroupLimit = attendance_lessonGroupNumber_cb.Items.Count;
+            attendance_lessonGroupNumber_cb.Text = "";
+            for (int i = 0; i < lessonGroupLimit; i++)
             {
-                attendance_lessonGroupNumber_cb.Items.RemoveAt(i);
+                attendance_lessonGroupNumber_cb.Items.RemoveAt(0);
             }
             string lessonNum = attendance_lessonNumber_cb.Items[attendance_lessonNumber_cb.SelectedIndex].ToString();
 
@@ -3491,49 +3655,67 @@ namespace Second
 
         private void attendance_showLesson_btn_Click(object sender, EventArgs e)
         {
-            long inbox_lessonNumber = 0;
-            SqlConnection conn2 = new SqlConnection();
-            conn2.ConnectionString =
-                  "Data Source= 185.159.152.5;" +
-                    "Initial Catalog=youshita_Test;" +
-                    "User id=youshita_co; " +
-                    "Password=P@hn1395;";
-
-            SqlCommand sc = new SqlCommand();
-            SqlDataReader reader;
-            sc.CommandText = "SELECT lesson# FROM lessonTable WHERE lessonName = '" + attendance_lessonNumber_cb.Text + "'";
-            sc.CommandType = CommandType.Text;
-            sc.Connection = conn2;
-            conn2.Open();
-            reader = sc.ExecuteReader();
-            reader.Read();
-            inbox_lessonNumber = reader.GetInt64(0);
-            conn2.Close();
-
-            dataGridView8.DataSource = bindingSource8;
-
-            GetData8("select *  from [dbo].[" + inbox_lessonNumber + "-" + attendance_lessonGroupNumber_cb.Text + "_Table]");
-
-            // dataGridView6.RowHeadersWidth = (width / 28);
-
-            dataGridView8.Columns[0].HeaderText = "شماره دانشجویی";
-            dataGridView8.Columns[1].HeaderText = "نام دانشجو";
-            dataGridView8.Columns[2].HeaderText = "نام خانوادگی";
-            dataGridView8.Columns[0].Frozen = true;
-            dataGridView8.Columns[1].Frozen = true;
-            dataGridView8.Columns[2].Frozen = true;
-
-
-            foreach (DataGridViewColumn col in dataGridView8.Columns)
+            try
             {
-                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                attendance_showLesson_btn.Enabled = false;
+                attendance_cancel_btn.Enabled = true;
+
+                long inbox_lessonNumber = 0;
+                SqlConnection conn2 = new SqlConnection();
+                conn2.ConnectionString =
+                      "Data Source= 185.159.152.5;" +
+                        "Initial Catalog=youshita_Test;" +
+                        "User id=youshita_co; " +
+                        "Password=P@hn1395;";
+
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
+                sc.CommandText = "SELECT lesson# FROM lessonTable WHERE lessonName = '" + attendance_lessonNumber_cb.Text + "'";
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn2;
+                conn2.Open();
+                reader = sc.ExecuteReader();
+                reader.Read();
+                inbox_lessonNumber = reader.GetInt64(0);
+                conn2.Close();
+
+                dataGridView8.DataSource = bindingSource8;
+
+                GetData8("select *  from [dbo].[" + inbox_lessonNumber + "-" + attendance_lessonGroupNumber_cb.Text + "_Table]");
+
+                // dataGridView6.RowHeadersWidth = (width / 28);
+
+                dataGridView8.Columns[0].HeaderText = "شماره دانشجویی";
+                dataGridView8.Columns[1].HeaderText = "نام دانشجو";
+                dataGridView8.Columns[2].HeaderText = "نام خانوادگی";
+                dataGridView8.Columns[0].Frozen = true;
+                dataGridView8.Columns[1].Frozen = true;
+                dataGridView8.Columns[2].Frozen = true;
+
+
+                foreach (DataGridViewColumn col in dataGridView8.Columns)
+                {
+                    col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                }
+
+                foreach (DataGridViewRow roww in dataGridView6.Rows)
+                {
+                    //row.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    dataGridView8.Rows[roww.Index].HeaderCell.Value = (roww.Index + 1).ToString();
+                    //row.HeaderCell.Value = String.Format("{0}", row.Index + 1);
+                }
+
+                attendance_date_lbl.Enabled = true;
+                attendance_date_dp.Enabled = true;
+                attendance_hour_cb.Enabled = true;
+                attendance_hour_lbl.Enabled = true;
+                attendance_minute_cb.Enabled = true;
+                attendance_minute_lbl.Enabled = true;
+                attendance_attend_btn.Enabled = true;
             }
-
-            foreach (DataGridViewRow roww in dataGridView6.Rows)
+            catch(SqlException)
             {
-                //row.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                dataGridView8.Rows[roww.Index].HeaderCell.Value = (roww.Index + 1).ToString();
-                //row.HeaderCell.Value = String.Format("{0}", row.Index + 1);
+                DialogForm dialog = new DialogForm("اشکال در برقراری ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
             }
         }
 
@@ -3575,8 +3757,71 @@ namespace Second
             }
             catch (SqlException)
             {
-                DialogForm dialog = new DialogForm("مشکل در ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
+                DialogForm dialog = new DialogForm("اشکال در برقراری ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
             }
+        }
+
+        private void attendance_cancel_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                attendance_showLesson_btn.Enabled = true;
+                attendance_cancel_btn.Enabled = false;
+                attendance_register_btn.Enabled = false;
+                //////////////////////////////////////Reset datagridview
+                //dataGridView8.DataSource = null;
+                dataGridView8.Columns.RemoveAt(3);
+                long inbox_lessonNumber = 0;
+                SqlConnection conn2 = new SqlConnection();
+                conn2.ConnectionString =
+                      "Data Source= 185.159.152.5;" +
+                        "Initial Catalog=youshita_Test;" +
+                        "User id=youshita_co; " +
+                        "Password=P@hn1395;";
+
+                SqlCommand sc = new SqlCommand();
+                SqlDataReader reader;
+                sc.CommandText = "SELECT lesson# FROM lessonTable WHERE lessonName = '" + attendance_lessonNumber_cb.Text + "'";
+                sc.CommandType = CommandType.Text;
+                sc.Connection = conn2;
+                conn2.Open();
+                reader = sc.ExecuteReader();
+                reader.Read();
+                inbox_lessonNumber = reader.GetInt64(0);
+                conn2.Close();
+
+                dataGridView8.DataSource = bindingSource8;
+
+                GetData8("select *  from [dbo].[" + inbox_lessonNumber + "-" + attendance_lessonGroupNumber_cb.Text + "_Table]");
+
+                // dataGridView6.RowHeadersWidth = (width / 28);
+
+                dataGridView8.Columns[0].HeaderText = "شماره دانشجویی";
+                dataGridView8.Columns[1].HeaderText = "نام دانشجو";
+                dataGridView8.Columns[2].HeaderText = "نام خانوادگی";
+                dataGridView8.Columns[0].Frozen = true;
+                dataGridView8.Columns[1].Frozen = true;
+                dataGridView8.Columns[2].Frozen = true;
+
+
+                foreach (DataGridViewColumn col in dataGridView8.Columns)
+                {
+                    col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                }
+
+                foreach (DataGridViewRow roww in dataGridView6.Rows)
+                {
+                    //row.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    dataGridView8.Rows[roww.Index].HeaderCell.Value = (roww.Index + 1).ToString();
+                    //row.HeaderCell.Value = String.Format("{0}", row.Index + 1);
+                }
+                //////////////////////////////////////Reset datagridview
+            }
+            catch(SqlException)
+            {
+                DialogForm dialog = new DialogForm("اشکال در برقراری ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
+            }
+
         }
     }
 }

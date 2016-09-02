@@ -214,13 +214,11 @@
             this.attendance = new System.Windows.Forms.TabPage();
             this.Attendance_dataGridView_panel = new System.Windows.Forms.Panel();
             this.attendance_register_btn = new System.Windows.Forms.Button();
-            this.attendance_attendClear_btn = new System.Windows.Forms.Button();
             this.dataGridView8 = new System.Windows.Forms.DataGridView();
             this.attendance_lessonInfo_panel = new System.Windows.Forms.Panel();
             this.attendance_lessonInfo_gpb = new System.Windows.Forms.GroupBox();
             this.attendance_date_dp = new Atf.UI.DateTimeSelector();
             this.attendance_attend_btn = new System.Windows.Forms.Button();
-            this.attendance_clear_btn = new System.Windows.Forms.Button();
             this.attendance_showLesson_btn = new System.Windows.Forms.Button();
             this.attendance_minute_cb = new System.Windows.Forms.ComboBox();
             this.attendance_date_lbl = new System.Windows.Forms.Label();
@@ -271,6 +269,7 @@
             this.bindingSource7 = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSource6 = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSource8 = new System.Windows.Forms.BindingSource(this.components);
+            this.attendance_cancel_btn = new System.Windows.Forms.Button();
             this.manager_main_tc.SuspendLayout();
             this.dashboard.SuspendLayout();
             this.dashboard_greeting_panel.SuspendLayout();
@@ -2633,7 +2632,6 @@
             // 
             this.Attendance_dataGridView_panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Attendance_dataGridView_panel.Controls.Add(this.attendance_register_btn);
-            this.Attendance_dataGridView_panel.Controls.Add(this.attendance_attendClear_btn);
             this.Attendance_dataGridView_panel.Controls.Add(this.dataGridView8);
             this.Attendance_dataGridView_panel.Location = new System.Drawing.Point(13, 199);
             this.Attendance_dataGridView_panel.Margin = new System.Windows.Forms.Padding(4);
@@ -2655,20 +2653,6 @@
             this.attendance_register_btn.Text = "ثبت";
             this.attendance_register_btn.UseVisualStyleBackColor = false;
             this.attendance_register_btn.Click += new System.EventHandler(this.attendance_register_btn_Click);
-            // 
-            // attendance_attendClear_btn
-            // 
-            this.attendance_attendClear_btn.AutoSize = true;
-            this.attendance_attendClear_btn.BackColor = System.Drawing.Color.White;
-            this.attendance_attendClear_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.attendance_attendClear_btn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.attendance_attendClear_btn.Location = new System.Drawing.Point(1072, 552);
-            this.attendance_attendClear_btn.Margin = new System.Windows.Forms.Padding(4);
-            this.attendance_attendClear_btn.Name = "attendance_attendClear_btn";
-            this.attendance_attendClear_btn.Size = new System.Drawing.Size(136, 38);
-            this.attendance_attendClear_btn.TabIndex = 1003;
-            this.attendance_attendClear_btn.Text = "پاک کردن";
-            this.attendance_attendClear_btn.UseVisualStyleBackColor = false;
             // 
             // dataGridView8
             // 
@@ -2695,9 +2679,9 @@
             // 
             // attendance_lessonInfo_gpb
             // 
+            this.attendance_lessonInfo_gpb.Controls.Add(this.attendance_cancel_btn);
             this.attendance_lessonInfo_gpb.Controls.Add(this.attendance_date_dp);
             this.attendance_lessonInfo_gpb.Controls.Add(this.attendance_attend_btn);
-            this.attendance_lessonInfo_gpb.Controls.Add(this.attendance_clear_btn);
             this.attendance_lessonInfo_gpb.Controls.Add(this.attendance_showLesson_btn);
             this.attendance_lessonInfo_gpb.Controls.Add(this.attendance_minute_cb);
             this.attendance_lessonInfo_gpb.Controls.Add(this.attendance_date_lbl);
@@ -2720,6 +2704,7 @@
             // 
             // attendance_date_dp
             // 
+            this.attendance_date_dp.Enabled = false;
             this.attendance_date_dp.Location = new System.Drawing.Point(740, 73);
             this.attendance_date_dp.Name = "attendance_date_dp";
             this.attendance_date_dp.Size = new System.Drawing.Size(153, 30);
@@ -2730,6 +2715,7 @@
             this.attendance_attend_btn.AutoSize = true;
             this.attendance_attend_btn.BackColor = System.Drawing.Color.White;
             this.attendance_attend_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.attendance_attend_btn.Enabled = false;
             this.attendance_attend_btn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.attendance_attend_btn.Location = new System.Drawing.Point(33, 69);
             this.attendance_attend_btn.Margin = new System.Windows.Forms.Padding(4);
@@ -2739,20 +2725,6 @@
             this.attendance_attend_btn.Text = "حضور و غیاب";
             this.attendance_attend_btn.UseVisualStyleBackColor = false;
             this.attendance_attend_btn.Click += new System.EventHandler(this.attendance_attend_btn_Click);
-            // 
-            // attendance_clear_btn
-            // 
-            this.attendance_clear_btn.AutoSize = true;
-            this.attendance_clear_btn.BackColor = System.Drawing.Color.White;
-            this.attendance_clear_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.attendance_clear_btn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.attendance_clear_btn.Location = new System.Drawing.Point(196, 69);
-            this.attendance_clear_btn.Margin = new System.Windows.Forms.Padding(4);
-            this.attendance_clear_btn.Name = "attendance_clear_btn";
-            this.attendance_clear_btn.Size = new System.Drawing.Size(136, 38);
-            this.attendance_clear_btn.TabIndex = 85;
-            this.attendance_clear_btn.Text = "پاک کردن";
-            this.attendance_clear_btn.UseVisualStyleBackColor = false;
             // 
             // attendance_showLesson_btn
             // 
@@ -2771,6 +2743,8 @@
             // 
             // attendance_minute_cb
             // 
+            this.attendance_minute_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.attendance_minute_cb.Enabled = false;
             this.attendance_minute_cb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.attendance_minute_cb.FormattingEnabled = true;
             this.attendance_minute_cb.Items.AddRange(new object[] {
@@ -2839,11 +2813,11 @@
             this.attendance_minute_cb.Name = "attendance_minute_cb";
             this.attendance_minute_cb.Size = new System.Drawing.Size(107, 29);
             this.attendance_minute_cb.TabIndex = 79;
-            this.attendance_minute_cb.Text = "انتخاب کنید";
             // 
             // attendance_date_lbl
             // 
             this.attendance_date_lbl.BackColor = System.Drawing.Color.Transparent;
+            this.attendance_date_lbl.Enabled = false;
             this.attendance_date_lbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.attendance_date_lbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.attendance_date_lbl.Location = new System.Drawing.Point(836, 80);
@@ -2858,6 +2832,7 @@
             // attendance_minute_lbl
             // 
             this.attendance_minute_lbl.BackColor = System.Drawing.Color.Transparent;
+            this.attendance_minute_lbl.Enabled = false;
             this.attendance_minute_lbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.attendance_minute_lbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.attendance_minute_lbl.Location = new System.Drawing.Point(467, 73);
@@ -2871,6 +2846,8 @@
             // 
             // attendance_hour_cb
             // 
+            this.attendance_hour_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.attendance_hour_cb.Enabled = false;
             this.attendance_hour_cb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.attendance_hour_cb.FormattingEnabled = true;
             this.attendance_hour_cb.Items.AddRange(new object[] {
@@ -2903,11 +2880,11 @@
             this.attendance_hour_cb.Name = "attendance_hour_cb";
             this.attendance_hour_cb.Size = new System.Drawing.Size(97, 29);
             this.attendance_hour_cb.TabIndex = 78;
-            this.attendance_hour_cb.Text = "انتخاب کنید";
             // 
             // attendance_hour_lbl
             // 
             this.attendance_hour_lbl.BackColor = System.Drawing.Color.Transparent;
+            this.attendance_hour_lbl.Enabled = false;
             this.attendance_hour_lbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.attendance_hour_lbl.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.attendance_hour_lbl.Location = new System.Drawing.Point(669, 78);
@@ -2921,6 +2898,7 @@
             // 
             // attendance_lessonGroupNumber_cb
             // 
+            this.attendance_lessonGroupNumber_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.attendance_lessonGroupNumber_cb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.attendance_lessonGroupNumber_cb.FormattingEnabled = true;
             this.attendance_lessonGroupNumber_cb.Location = new System.Drawing.Point(740, 16);
@@ -2928,7 +2906,6 @@
             this.attendance_lessonGroupNumber_cb.Name = "attendance_lessonGroupNumber_cb";
             this.attendance_lessonGroupNumber_cb.Size = new System.Drawing.Size(153, 29);
             this.attendance_lessonGroupNumber_cb.TabIndex = 74;
-            this.attendance_lessonGroupNumber_cb.Text = "انتخاب کنید";
             // 
             // attendance_lessonGroupNumber_lbl
             // 
@@ -2946,6 +2923,7 @@
             // 
             // attendance_lessonNumber_cb
             // 
+            this.attendance_lessonNumber_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.attendance_lessonNumber_cb.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.attendance_lessonNumber_cb.FormattingEnabled = true;
             this.attendance_lessonNumber_cb.Location = new System.Drawing.Point(1048, 18);
@@ -2953,7 +2931,6 @@
             this.attendance_lessonNumber_cb.Name = "attendance_lessonNumber_cb";
             this.attendance_lessonNumber_cb.Size = new System.Drawing.Size(153, 29);
             this.attendance_lessonNumber_cb.TabIndex = 72;
-            this.attendance_lessonNumber_cb.Text = "انتخاب کنید";
             this.attendance_lessonNumber_cb.SelectedIndexChanged += new System.EventHandler(this.attendance_lessonNumber_cb_SelectedIndexChanged);
             // 
             // attendance_lessonNumber_lbl
@@ -3380,6 +3357,22 @@
             this.logo_pictureBox.TabIndex = 9;
             this.logo_pictureBox.TabStop = false;
             // 
+            // attendance_cancel_btn
+            // 
+            this.attendance_cancel_btn.AutoSize = true;
+            this.attendance_cancel_btn.BackColor = System.Drawing.Color.White;
+            this.attendance_cancel_btn.Enabled = false;
+            this.attendance_cancel_btn.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.attendance_cancel_btn.ForeColor = System.Drawing.Color.Black;
+            this.attendance_cancel_btn.Location = new System.Drawing.Point(177, 67);
+            this.attendance_cancel_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.attendance_cancel_btn.Name = "attendance_cancel_btn";
+            this.attendance_cancel_btn.Size = new System.Drawing.Size(136, 38);
+            this.attendance_cancel_btn.TabIndex = 1004;
+            this.attendance_cancel_btn.Text = "لغو";
+            this.attendance_cancel_btn.UseVisualStyleBackColor = false;
+            this.attendance_cancel_btn.Click += new System.EventHandler(this.attendance_cancel_btn_Click);
+            // 
             // ManagerForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -3695,12 +3688,10 @@
         private System.Windows.Forms.Button students_export_excel_btn;
         private System.Windows.Forms.Panel Attendance_dataGridView_panel;
         private System.Windows.Forms.Button attendance_register_btn;
-        private System.Windows.Forms.Button attendance_attendClear_btn;
         private System.Windows.Forms.DataGridView dataGridView8;
         private System.Windows.Forms.Panel attendance_lessonInfo_panel;
         private System.Windows.Forms.GroupBox attendance_lessonInfo_gpb;
         private System.Windows.Forms.Button attendance_attend_btn;
-        private System.Windows.Forms.Button attendance_clear_btn;
         private System.Windows.Forms.Button attendance_showLesson_btn;
         private System.Windows.Forms.ComboBox attendance_minute_cb;
         private System.Windows.Forms.Label attendance_date_lbl;
@@ -3713,5 +3704,6 @@
         private System.Windows.Forms.Label attendance_lessonNumber_lbl;
         private Atf.UI.DateTimeSelector attendance_date_dp;
         private System.Windows.Forms.BindingSource bindingSource8;
+        private System.Windows.Forms.Button attendance_cancel_btn;
     }
 }
