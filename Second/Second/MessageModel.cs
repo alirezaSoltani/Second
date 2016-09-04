@@ -40,8 +40,7 @@ namespace Second
         public void sendMessage()
         {
            string dateAndTime = pharmaObj.getDateTime();
-            try
-            {
+           
 
                 SqlConnection conn = new SqlConnection();
                 conn.ConnectionString =
@@ -93,25 +92,20 @@ namespace Second
                 SqlDataReader reader3;
                 sc2.Connection = conn;
                 conn.Open();
-                sc2.CommandText = "INSERT INTO logTable VALUES ( 'Send Message' , 'sending message with " + getSenderTeacherNumber() + " ' , '" + dateAndTime  + "' , '" + getSenderTeacherNumber() + "','s m')";
+                sc2.CommandText = "INSERT INTO logTable VALUES ( 'Send Message' , 'sending message with username : " + getSenderTeacherNumber() + " ' , '" + dateAndTime  + "' , '" + getSenderTeacherNumber() + "','s m')";
                 sc2.CommandType = CommandType.Text;
                 reader3 = sc2.ExecuteReader();
                 conn.Close();
                 ////////log
 
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
+           
 
         }
 
         public void deleteMessage(String username)
         {
             string dateAndTime = pharmaObj.getDateTime();
-            try
-            {
+           
 
 
                 SqlConnection conn = new SqlConnection();
@@ -136,16 +130,13 @@ namespace Second
                 SqlDataReader reader2;
                 sc1.Connection = conn;
                 conn.Open();
-                sc1.CommandText = "INSERT INTO logTable VALUES ( 'Delete Message' , 'deleting message # " +getMessageNumber() + " with " + username + " ' , '" + dateAndTime + "' , '" + username + "','d m')";
+                sc1.CommandText = "INSERT INTO logTable VALUES ( 'Delete Message' , 'deleting message # " +getMessageNumber() + " with username : " + username + " ' , '" + dateAndTime + "' , '" + username + "','d m')";
                 sc1.CommandType = CommandType.Text;
                 reader2 = sc1.ExecuteReader();
                 conn.Close();
                 //////log
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
+           
+            
         }
 
         public List<LessonModel> getTeacherLessons(long username)
