@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
@@ -42,7 +43,14 @@ namespace Second
         
         private void label1_Click(object sender, EventArgs e)
         {
-            login_Authenticator();
+            try
+            {
+                login_Authenticator();
+            }
+            catch (SqlException)
+            {
+                DialogForm dialog = new DialogForm("اشکال در برقراری ارتباط با سرور", "خطا", "error", this);
+            }
         }
 
         private void exit_pictureBox_Click(object sender, EventArgs e)
@@ -85,17 +93,31 @@ namespace Second
 
         private void login_username_txtbx_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)13)
+            try
             {
-                login_Authenticator();
+                if (e.KeyChar == (char)13)
+                {
+                    login_Authenticator();
+                }
+            }
+            catch (SqlException)
+            {
+                DialogForm dialog = new DialogForm("اشکال در برقراری ارتباط با سرور", "خطا", "error", this);
             }
         }
 
         private void login_password_txtbx_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)13)
+            try
             {
-                login_Authenticator();
+                if (e.KeyChar == (char)13)
+                {
+                    login_Authenticator();
+                }
+            }
+            catch (SqlException)
+            {
+                DialogForm dialog = new DialogForm("اشکال در برقراری ارتباط با سرور", "خطا", "error", this);
             }
         }
 

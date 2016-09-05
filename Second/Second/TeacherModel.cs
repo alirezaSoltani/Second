@@ -200,71 +200,74 @@ namespace Test
         }
         public int Authenticator(long username, String password)
         {
-            int Authenticate = 0;
-            if(username == 991 && password == "1")
-            {
-                Authenticate = 1;
-            }
-
-            if (username != 991)
-            {
-                SqlConnection conn = new SqlConnection();
-                conn.ConnectionString =
-                    "Data Source= 185.159.152.5;" +
-                    "Initial Catalog=youshita_Test;" +
-                    "User id=youshita_co; " +
-                    "Password=P@hn1395;";
-
-
-                SqlCommand sc = new SqlCommand();
-                SqlDataReader reader;
-                sc.CommandText = "SELECT manager# , managerPassword FROM managerTable ";
-
-                sc.CommandType = CommandType.Text;
-                sc.Connection = conn;
-                conn.Open();
-                reader = sc.ExecuteReader();
-
-                while (reader.Read())
+                 int Authenticate = 0;
+         
+                if (username == 991 && password == "1")
                 {
-                    if (reader.GetInt64(0) == username &&
-                            reader.GetString(1) == password)
-                    {
-                        Authenticate = 2;
-                    }
+                    Authenticate = 1;
                 }
-                conn.Close();
-            }
 
-            if (Authenticate == 0)
-            {
-                SqlConnection conn1 = new SqlConnection();
-                conn1.ConnectionString =
-                    "Data Source= 185.159.152.5;" +
-                    "Initial Catalog=youshita_Test;" +
-                    "User id=youshita_co; " +
-                    "Password=P@hn1395;";
-
-
-                SqlCommand sc1 = new SqlCommand();
-                SqlDataReader reader1;
-                sc1.CommandText = "SELECT teacher# , teacherPassword FROM teacherTable ";
-
-                sc1.CommandType = CommandType.Text;
-                sc1.Connection = conn1;
-                conn1.Open();
-                reader1 = sc1.ExecuteReader();
-
-                while (reader1.Read())
+                if (username != 991)
                 {
-                    if (reader1.GetInt64(0) == username &&
-                            reader1.GetString(1) == hashPass(password))
+                    SqlConnection conn = new SqlConnection();
+                    conn.ConnectionString =
+                        "Data Source= 185.159.152.5;" +
+                        "Initial Catalog=youshita_Test;" +
+                        "User id=youshita_co; " +
+                        "Password=P@hn1395;";
+
+
+                    SqlCommand sc = new SqlCommand();
+                    SqlDataReader reader;
+                    sc.CommandText = "SELECT manager# , managerPassword FROM managerTable ";
+
+                    sc.CommandType = CommandType.Text;
+                    sc.Connection = conn;
+                    conn.Open();
+                    reader = sc.ExecuteReader();
+
+                    while (reader.Read())
                     {
-                        Authenticate = 3;
+                        if (reader.GetInt64(0) == username &&
+                                reader.GetString(1) == password)
+                        {
+                            Authenticate = 2;
+                        }
                     }
+                    conn.Close();
                 }
-                conn1.Close();
-            } 
+
+                if (Authenticate == 0)
+                {
+                    SqlConnection conn1 = new SqlConnection();
+                    conn1.ConnectionString =
+                        "Data Source= 185.159.152.5;" +
+                        "Initial Catalog=youshita_Test;" +
+                        "User id=youshita_co; " +
+                        "Password=P@hn1395;";
+
+
+                    SqlCommand sc1 = new SqlCommand();
+                    SqlDataReader reader1;
+                    sc1.CommandText = "SELECT teacher# , teacherPassword FROM teacherTable ";
+
+                    sc1.CommandType = CommandType.Text;
+                    sc1.Connection = conn1;
+                    conn1.Open();
+                    reader1 = sc1.ExecuteReader();
+
+                    while (reader1.Read())
+                    {
+                        if (reader1.GetInt64(0) == username &&
+                                reader1.GetString(1) == hashPass(password))
+                        {
+                            Authenticate = 3;
+                        }
+                    }
+                    conn1.Close();
+                }
+               
+          
             return Authenticate;
         }
 

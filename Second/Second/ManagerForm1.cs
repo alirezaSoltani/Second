@@ -519,7 +519,7 @@ namespace Second
                     SqlCommand sc1 = new SqlCommand();
 
                     SqlDataReader rdr = null;
-                    sc1.CommandText = "SELECT * FROM logTable ORDER BY logDate DESC";
+                    sc1.CommandText = "SELECT * FROM logTable ORDER BY log# DESC";
                     sc1.Connection = conn;
                     conn.Open();
                     rdr = sc1.ExecuteReader();
@@ -637,6 +637,10 @@ namespace Second
             catch (InvalidOperationException)
             {
                 DialogForm dialog = new DialogForm("اشکال در برقراری ارتباط با سرور", "خطای سرور", "error", this);
+            }
+            catch(ArgumentOutOfRangeException)
+            {
+
             }
             /****************************************************setting tab design**********************************************************/
 
@@ -1403,6 +1407,11 @@ namespace Second
                     attendance_minute_lbl.Enabled = false;
                     attendance_attend_btn.Enabled = false;
                     attendance_register_btn.Enabled = false;
+                    attendance_register_change_btn.Enabled = false;
+                    attendance_delete_btn.Enabled = false;
+                    attendance_change_btn.Enabled = false;
+                    attendance_cancel_btn.Enabled = false;
+                    attendance_showLesson_btn.Enabled = true;
 
 
 
@@ -1447,6 +1456,20 @@ namespace Second
                 {
                     DialogForm dialog = new DialogForm("اشکال در برقراری ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
                 }
+                try
+                {
+                    if (dataGridView8.Columns[3] != null)
+                    {
+                        dataGridView8.Columns.RemoveAt(3);
+                    }
+                }
+                catch(ArgumentOutOfRangeException)
+                {
+
+                }
+                dataGridView8.DataSource = null;
+
+
             }
         }
 
@@ -3655,64 +3678,82 @@ namespace Second
 
         private void attendance_attend_btn_Click(object sender, EventArgs e)
         {
-            try
+            if (attendance_hour_cb.Text != "" && attendance_minute_cb.Text != "" && attendance_date_dp.Text != "")
             {
-                Attendance attendanceObj = new Attendance();
-
-                long inbox_lessonNumber = 0;
-                SqlConnection conn2 = new SqlConnection();
-                conn2.ConnectionString =
-                      "Data Source= 185.159.152.5;" +
-                        "Initial Catalog=youshita_Test;" +
-                        "User id=youshita_co; " +
-                        "Password=P@hn1395;";
-
-                SqlCommand sc = new SqlCommand();
-                SqlDataReader reader;
-                sc.CommandText = "SELECT lesson# FROM lessonTable WHERE lessonName = '" + attendance_lessonNumber_cb.Text + "'";
-                sc.CommandType = CommandType.Text;
-                sc.Connection = conn2;
-                conn2.Open();
-                reader = sc.ExecuteReader();
-                reader.Read();
-                attendanceObj.setLessonNumber(reader.GetInt64(0));
-                conn2.Close();
-
-                DataGridViewCheckBoxColumn myCheckedColumn = new DataGridViewCheckBoxColumn()
+                try
                 {
-                    Name = attendance_date_dp.Text + "\n" + attendance_hour_cb.Text + ":" + attendance_minute_cb.Text + "",
-                    FalseValue = "0",
-                    TrueValue = "1",
-                    Visible = true
-                };
+                    Attendance attendanceObj = new Attendance();
+
+                    long inbox_lessonNumber = 0;
+                    SqlConnection conn2 = new SqlConnection();
+                    conn2.ConnectionString =
+                          "Data Source= 185.159.152.5;" +
+                            "Initial Catalog=youshita_Test;" +
+                            "User id=youshita_co; " +
+                            "Password=P@hn1395;";
+
+                    SqlCommand sc = new SqlCommand();
+                    SqlDataReader reader;
+                    sc.CommandText = "SELECT lesson# FROM lessonTable WHERE lessonName = '" + attendance_lessonNumber_cb.Text + "'";
+                    sc.CommandType = CommandType.Text;
+                    sc.Connection = conn2;
+                    conn2.Open();
+                    reader = sc.ExecuteReader();
+                    reader.Read();
+                    attendanceObj.setLessonNumber(reader.GetInt64(0));
+                    conn2.Close();
+
+                    DataGridViewCheckBoxColumn myCheckedColumn = new DataGridViewCheckBoxColumn()
+                    {
+                        Name = attendance_date_dp.Text + "\n" + attendance_hour_cb.Text + ":" + attendance_minute_cb.Text + "",
+                        FalseValue = "0",
+                        TrueValue = "1",
+                        Visible = true
+                    };
 
 
-                attendanceObj.setLessonGroupNumber(short.Parse(attendance_lessonGroupNumber_cb.Text));
-                //attendanceObj.attendanceLesson(myCheckedColumn.Name, currentUserName);
-                dataGridView8.Columns.Insert(3, myCheckedColumn); ///catch invalid operation
-                foreach (DataGridViewRow row in dataGridView8.Rows)
-                {
-                    row.Cells[myCheckedColumn.Name].Value = "0";
+                    attendanceObj.setLessonGroupNumber(short.Parse(attendance_lessonGroupNumber_cb.Text));
+                    //attendanceObj.attendanceLesson(myCheckedColumn.Name, currentUserName);
+                    dataGridView8.Columns.Insert(3, myCheckedColumn); ///catch invalid operation
+                    foreach (DataGridViewRow row in dataGridView8.Rows)
+                    {
+                        row.Cells[myCheckedColumn.Name].Value = "0";
+                    }
+                    dataGridView8.Columns[3].Frozen = true;
+                    attendance_register_btn.Enabled = true;
+                    attendance_cancel_btn.Enabled = true;
+                    attendance_change_btn.Enabled = false;
+                    attendance_delete_btn.Enabled = false;
+                    attendance_showLesson_btn.Enabled = false;
+                    attendance_register_change_btn.Enabled = false;
+                    attendance_date_dp.Enabled = false;
+                    attendance_hour_cb.Enabled = false;
+                    attendance_lessonGroupNumber_cb.Enabled = false;
+                    attendance_lessonNumber_cb.Enabled = false;
+                    attendance_minute_cb.Enabled = false;
+
+
                 }
-                dataGridView8.Columns[3].Frozen = true;
-                attendance_register_btn.Enabled = true;
-            }
-            catch(SqlException)
-            {
-                DialogForm dialog = new DialogForm("اشکال در برقراری ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
-            }
-            catch(InvalidOperationException e1)
-            {
-                if(e1.Message.Contains("unique"))
-                {
-                    DialogForm dialog = new DialogForm("اطلاعات وارد شده تکراری یا اشتباه است.", "خطا", "error", this);
-                }
-                else
+                catch (SqlException)
                 {
                     DialogForm dialog = new DialogForm("اشکال در برقراری ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
                 }
+                catch (InvalidOperationException e1)
+                {
+                    if (e1.Message.Contains("unique"))
+                    {
+                        DialogForm dialog = new DialogForm("اطلاعات وارد شده تکراری یا اشتباه است.", "خطا", "error", this);
+                    }
+                    else
+                    {
+                        DialogForm dialog = new DialogForm("اشکال در برقراری ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
+                    }
+                }
             }
-
+            else
+            {
+                DialogForm dialog = new DialogForm("اطلاعات ورودی کامل نمیباشند .", "خطا", "error", this);
+            }
 
         }
 
@@ -3843,6 +3884,7 @@ namespace Second
                 attendance_minute_cb.Enabled = true;
                 attendance_minute_lbl.Enabled = true;
                 attendance_attend_btn.Enabled = true;
+                attendance_cancel_btn.Enabled = false;
                 if (userType != 3)
                 {
                     attendance_delete_btn.Enabled = true;
@@ -3902,9 +3944,17 @@ namespace Second
         {
             try
             {
+                attendance_attend_btn.Enabled = true;
+                attendance_delete_btn.Enabled = true;
+                attendance_change_btn.Enabled = true;
                 attendance_showLesson_btn.Enabled = true;
                 attendance_cancel_btn.Enabled = false;
                 attendance_register_btn.Enabled = false;
+                attendance_date_dp.Enabled = true;
+                attendance_hour_cb.Enabled = true;
+                attendance_lessonGroupNumber_cb.Enabled = true;
+                attendance_lessonNumber_cb.Enabled = true;
+                attendance_minute_cb.Enabled = true;
                 //////////////////////////////////////Reset datagridview
                 //dataGridView8.DataSource = null;
                 dataGridView8.Columns.RemoveAt(3);
@@ -3940,6 +3990,28 @@ namespace Second
                 dataGridView8.Columns[1].Frozen = true;
                 dataGridView8.Columns[2].Frozen = true;
 
+                foreach (DataGridViewRow row in dataGridView8.Rows)
+                {
+                    foreach (DataGridViewColumn col in dataGridView8.Columns)
+                    {
+                        if (row.Cells[col.Index].Value.ToString() == "1")
+                        {
+                            if (col.Index > 2)
+                            {
+                                row.Cells[col.Index].Value = "✓";
+                                row.Cells[col.Index].Style.ForeColor = Color.Blue;
+                            }
+                        }
+                        else if (row.Cells[col.Index].Value.ToString() == "0")
+                        {
+                            if (col.Index > 2)
+                            {
+                                row.Cells[col.Index].Value = "×";
+                                row.Cells[col.Index].Style.ForeColor = Color.Red;
+                            }
+                        }
+                    }
+                }
 
                 foreach (DataGridViewColumn col in dataGridView8.Columns)
                 {
@@ -3968,6 +4040,7 @@ namespace Second
 
         private void attendance_delete_btn_Click(object sender, EventArgs e)
         {
+            attendance_cancel_btn.Enabled = true;
             try
             {
                 Attendance attendanceObj = new Attendance();
@@ -4078,7 +4151,7 @@ namespace Second
 
         private void attendance_change_btn_Click(object sender, EventArgs e)
         {
-
+            attendance_cancel_btn.Enabled = true;
             try
             {
                 Attendance attendanceObj = new Attendance();
@@ -4113,7 +4186,8 @@ namespace Second
 
                 attendanceObj.setLessonGroupNumber(short.Parse(attendance_lessonGroupNumber_cb.Text));
                 //attendanceObj.attendanceLesson(myCheckedColumn.Name, currentUserName);
-                dataGridView8.Columns.Insert(3, myCheckedColumn); ///catch invalid operation
+                ///catch invalid operation
+               dataGridView8.Columns.Insert(3, myCheckedColumn);
                 foreach (DataGridViewRow row in dataGridView8.Rows)
                 {
                     if(row.Cells[attendance_date_dp.Text + "\n" + attendance_hour_cb.Text + ":" + attendance_minute_cb.Text].Value == "×")
@@ -4127,18 +4201,43 @@ namespace Second
 
                     row.Cells[myCheckedColumn.Name].Value = row.Cells[attendance_date_dp.Text + "\n" + attendance_hour_cb.Text + ":" + attendance_minute_cb.Text].Value;
                 }
+               
                 dataGridView8.Columns[3].Frozen = true;
-                attendance_register_btn.Enabled = true;
+                attendance_register_change_btn.Enabled = true;
+                attendance_date_dp.Enabled = false;
+                attendance_hour_cb.Enabled = false;
+                attendance_lessonGroupNumber_cb.Enabled = false;
+                attendance_lessonNumber_cb.Enabled = false;
+                attendance_minute_cb.Enabled = false;
+                attendance_delete_btn.Enabled = false;
+                attendance_attend_btn.Enabled = false;
+               
+                
+
             }
             catch (SqlException)
             {
                 DialogForm dialog = new DialogForm("اشکال در برقراری ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
+
+            }
+           catch (ArgumentException e1)
+            {
+                if (e1.Message.Contains("cannot be found"))
+                {
+                    dataGridView8.Columns.RemoveAt(3);
+                    DialogForm dialog = new DialogForm("در تاریخ وارد شده حضور و غیاب انجام نشده است .", "خطا", "error", this);
+                }
+                else
+                {
+                    DialogForm dialog = new DialogForm("اشکال در برقراری ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
+                }
             }
             catch (InvalidOperationException e1)
             {
-                if (e1.Message.Contains("unique"))
+                if (e1.Message.Contains("cannot be found"))
                 {
-                    DialogForm dialog = new DialogForm("اطلاعات وارد شده تکراری یا اشتباه است.", "خطا", "error", this);
+                    dataGridView8.Columns.RemoveAt(3);
+                    DialogForm dialog = new DialogForm("در تاریخ وارد شده حضور و غیاب انجام نشده است .", "خطا", "error", this);
                 }
                 else
                 {
@@ -4147,6 +4246,7 @@ namespace Second
             }
             attendance_register_change_btn.Enabled = true;
             // attendanceObj.updateAttendance(currentLessonNumber, currentLessonGroupNumber, attendance_date_dp.Text + "\n" + attendance_hour_cb.Text + ":" + attendance_minute_cb.Text, studentNumber, state)
+
         }
 
         private void attendance_register_change_btn_Click(object sender, EventArgs e)
@@ -4154,6 +4254,7 @@ namespace Second
             try
             {
                 attendance_register_btn.Enabled = false;
+                
                 StudentModel studentObj = new StudentModel();
                 Attendance attendanceObj = new Attendance();
 
@@ -4241,11 +4342,28 @@ namespace Second
                     //row.HeaderCell.Value = String.Format("{0}", row.Index + 1);
                 }
                 //////////////////////////////////////Reset datagridview
+
+               
+                attendance_date_dp.Enabled = true;
+                attendance_hour_cb.Enabled = true;
+                attendance_minute_cb.Enabled = true;
+                attendance_attend_btn.Enabled = true;
+                attendance_register_btn.Enabled = false;
+                attendance_register_change_btn.Enabled = false;
+                attendance_delete_btn.Enabled = true;
+                attendance_change_btn.Enabled = true;
+                attendance_cancel_btn.Enabled = true;
+                attendance_showLesson_btn.Enabled = true;
+
             }
             catch (SqlException)
             {
 
                 DialogForm dialog = new DialogForm("اشکال در برقراری ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
+            }
+            catch(NullReferenceException)
+            {
+               DialogForm dialog = new DialogForm("در این تاریخ هیچ حضور و غیابی وجود ندارد.", "خطا", "error", this);
             }
             catch (InvalidOperationException e1)
             {
