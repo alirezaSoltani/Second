@@ -122,6 +122,7 @@ namespace Second
             this.SetBounds(0, 0, width, ((955 * height) / 1000));
             /*Manager form design*/
 
+            trialVersion_lbl.SetBounds(((375 * width) / 800), ((4 * height) / 100), ((50 * width) / 100), ((20 * height) / 100));
 
             /****************************************************dashboard tab design********************************************************/
             TeacherModel dashboardTeacherObj = new TeacherModel();
@@ -735,13 +736,14 @@ namespace Second
                         {
                             if (teacher_txtbx_List[i].Text == teacher_txtbx_List[j].Text)
                             {
-                                isWrong = false;
+                                isWrong = true;
                                 throw new Exception("duplicateTeacher");
                             }
                         }
 
                     }
                 }
+                //// check invalid input
 
                 if (isWrong == false)
                 {
@@ -757,7 +759,24 @@ namespace Second
                     for (int counter = 0; counter < numberOfTeachers; counter++)
                     {
                         lessonObj.setLessonTeacherNumber(long.Parse(teacher_txtbx_List[counter].Text));
-                        lessonObj.addLesson();
+                        try
+                        {
+                            lessonObj.addLesson();
+                        }
+                        catch (SqlException e1)
+                        {
+                            if (e1.Message.Contains("FOREIGN"))
+                            {
+                                DialogForm dialog = new DialogForm("استاد مورد نظر با شماره ی "+ teacher_txtbx_List[counter].Text + " یافت نشد .", "خطای سرور", "error", this);
+                            }
+                            if (e1.Message.Contains("server"))
+                            {
+                                DialogForm dialog = new DialogForm("ارتباط با سرور برقرار نشد.", "خطای سرور", "error", this);
+                            }
+                           
+                        }
+
+                        //throws exception
                         //isAdded = true;
                     }
                     lessonObj.createLessonTable();
@@ -787,45 +806,38 @@ namespace Second
                     //***successful
                     throw new Exception("success");
                 }
-            }
+           }
 
 
             catch (FormatException)
-            {
-                DialogForm dialog = new DialogForm("فرمت اطلاعات ورودی اشتباه است.", "خطا", "error", this);
-            }
+             {
+                 DialogForm dialog = new DialogForm("فرمت اطلاعات ورودی اشتباه است.", "خطا", "error", this);
+             }
 
-            catch (ArgumentNullException)
-            {
-                DialogForm dialog = new DialogForm("اطلاعات ورودی ناقص هستند.", "خطا", "error", this);
-            }
-
-            catch (SqlException e1)
-            {
-                if (e1.Message.Contains("server"))
-                {
-                    DialogForm dialog = new DialogForm("ارتباط با سرور برقرار نشد.", "خطای سرور", "error", this);
-                }
-                else
-                {
-                    DialogForm dialog = new DialogForm("اطلاعات ورودی تکراری یا اشتباه است.", "خطا", "error", this);
-                }
-            }
+             catch (ArgumentNullException)
+             {
+                 DialogForm dialog = new DialogForm("اطلاعات ورودی ناقص هستند.", "خطا", "error", this);
+             }
 
             catch (Exception e1)
-            {
-                if (e1.Message == "success")
-                {
-                    DialogForm dialog = new DialogForm("اطلاعات ورودی با موفقیت ثبت شدند.", "ثبت موفقیت آمیز", "success", this);
-                    lessonsDataGridViewUpdate_2();
-                    lessons_return_btn.Enabled = true;
-                }
+             {
+                 if (e1.Message == "success")
+                 {
+                     DialogForm dialog = new DialogForm("اطلاعات ورودی با موفقیت ثبت شدند.", "ثبت موفقیت آمیز", "success", this);
+                     lessonsDataGridViewUpdate_2();
+                     lessons_return_btn.Enabled = true;
+                 }
 
-                else if (e1.Message == "duplicateTeacher")
+                 else if (e1.Message == "duplicateTeacher")
+                 {
+                     DialogForm dialog = new DialogForm("شماره اساتید تکراری هستند.", "خطا", "error", this);
+                 }
+                 else if (e1.Message.Contains("PRIMARY"))
                 {
-                    DialogForm dialog = new DialogForm("شماره اساتید تکراری هستند.", "خطا", "error", this);
+                    DialogForm dialog = new DialogForm("شماره درس تکراری است . این درس قبلا ثبت شده است.", "خطا", "error", this);
                 }
-            }
+             }
+           
         }
 
 
@@ -2653,6 +2665,25 @@ namespace Second
             {
                 if (e1.Message == "success")
                 {
+                    //***enable add components
+                    lessonsTab_enable_add_components();
+
+                    //***disable edit & delete component
+                    lessonsTab_disable_edit_delete_components();
+
+                    //***disable return & cancel Buttons
+                    lessons_return_btn.Enabled = false;
+                    lessons_cancel_btn.Enabled = false;
+
+                    //***disable password components
+                    lessons_showPassword_pictureBox.Visible = false;
+                    lessons_password_txtbx.Clear();
+                    lessons_password_txtbx.Visible = false;
+                    lessons_password_lbl.Enabled = false;
+                    lessons_passwordInfo_lbl.Visible = false;
+
+                    lessonsDataGridViewUpdate_1();
+
                     students_return_btn.PerformClick();
                     DialogForm dialog = new DialogForm("اطلاعات با موفقیت حذف شدند.", "حذف موفقیت آمیز", "success", this);
                 }
@@ -3515,6 +3546,9 @@ namespace Second
         {
             try
             {
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.ShowDialog();
+
                 // creating Excel Application
                 Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
 
@@ -3553,7 +3587,7 @@ namespace Second
                 }
                 
                 // save the application
-                workbook.SaveAs("d:\\123.xlsx", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+                workbook.SaveAs(saveFileDialog1.FileName, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
 
                 // Exit from the application
                 app.Quit();
@@ -3656,6 +3690,23 @@ namespace Second
                     //row.HeaderCell.Value = String.Format("{0}", row.Index + 1);
                 }
                 //////////////////////////////////////Reset datagridview
+
+                attendance_date_dp.Enabled = true;
+                attendance_hour_cb.Enabled = true;
+                attendance_minute_cb.Enabled = true;
+                attendance_attend_btn.Enabled = true;
+                attendance_register_btn.Enabled = false;
+                attendance_register_change_btn.Enabled = false;
+                if (userType != 3)
+                {
+                    attendance_delete_btn.Enabled = true;
+                    attendance_change_btn.Enabled = true;
+                }
+                attendance_cancel_btn.Enabled = true;
+                attendance_showLesson_btn.Enabled = true;
+               
+
+
             }
             catch (SqlException)
             {
@@ -3802,7 +3853,7 @@ namespace Second
         {
             try
             {
-                attendance_showLesson_btn.Enabled = false;
+               
                 attendance_cancel_btn.Enabled = true;
 
                 long inbox_lessonNumber = 0;
@@ -3945,8 +3996,11 @@ namespace Second
             try
             {
                 attendance_attend_btn.Enabled = true;
-                attendance_delete_btn.Enabled = true;
-                attendance_change_btn.Enabled = true;
+                if (userType != 3)
+                {
+                    attendance_delete_btn.Enabled = true;
+                    attendance_change_btn.Enabled = true;
+                }
                 attendance_showLesson_btn.Enabled = true;
                 attendance_cancel_btn.Enabled = false;
                 attendance_register_btn.Enabled = false;
@@ -3955,6 +4009,7 @@ namespace Second
                 attendance_lessonGroupNumber_cb.Enabled = true;
                 attendance_lessonNumber_cb.Enabled = true;
                 attendance_minute_cb.Enabled = true;
+                attendance_register_change_btn.Enabled = false;
                 //////////////////////////////////////Reset datagridview
                 //dataGridView8.DataSource = null;
                 dataGridView8.Columns.RemoveAt(3);
@@ -4081,7 +4136,7 @@ namespace Second
                 dataGridView8.Columns[0].Frozen = true;
                 dataGridView8.Columns[1].Frozen = true;
                 dataGridView8.Columns[2].Frozen = true;
-
+                DialogForm dialog = new DialogForm("اطلاعات با موفقیت حذف شد.", "ثبت موفقیت آمیز", "success", this);
 
                 foreach (DataGridViewRow row in dataGridView8.Rows)
                 {
@@ -4119,6 +4174,7 @@ namespace Second
                     //row.HeaderCell.Value = String.Format("{0}", row.Index + 1);
                 }
                 //////////////////////////////////////Reset datagridview
+
             }
           
 
@@ -4182,7 +4238,7 @@ namespace Second
                     TrueValue = "1",
                     Visible = true
                 };
-
+               
 
                 attendanceObj.setLessonGroupNumber(short.Parse(attendance_lessonGroupNumber_cb.Text));
                 //attendanceObj.attendanceLesson(myCheckedColumn.Name, currentUserName);
@@ -4211,6 +4267,7 @@ namespace Second
                 attendance_minute_cb.Enabled = false;
                 attendance_delete_btn.Enabled = false;
                 attendance_attend_btn.Enabled = false;
+                attendance_showLesson_btn.Enabled = false;
                
                 
 
@@ -4350,8 +4407,11 @@ namespace Second
                 attendance_attend_btn.Enabled = true;
                 attendance_register_btn.Enabled = false;
                 attendance_register_change_btn.Enabled = false;
-                attendance_delete_btn.Enabled = true;
-                attendance_change_btn.Enabled = true;
+                if (userType != 3)
+                {
+                    attendance_delete_btn.Enabled = true;
+                    attendance_change_btn.Enabled = true;
+                }
                 attendance_cancel_btn.Enabled = true;
                 attendance_showLesson_btn.Enabled = true;
 

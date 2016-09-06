@@ -25,7 +25,6 @@ namespace Second
         public void attendanceLesson(string date , long username)
         {
            
-           
                 SqlConnection conn = new SqlConnection();
                 conn.ConnectionString =
                   "Data Source= 185.159.152.5;" +
@@ -51,10 +50,7 @@ namespace Second
                 reader2 = sc1.ExecuteReader();
                 conn.Close();
                 ////////log
-
-          
-
-          
+                
 
         }
 
@@ -103,7 +99,9 @@ namespace Second
             conn2.Open();
             reader2 = sc2.ExecuteReader();
             conn2.Close();
-           
+
+         
+
 
         }
         public void updateAttendance(long lessonNumber, int lessonGroupNumber, string dateAndTime, long studentNumber, string state)

@@ -1,4 +1,5 @@
 ﻿using Second;
+using Second.pharmalogyWebService;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -31,7 +32,8 @@ namespace Test
             teacherURL = "";
         }
 
-     
+        PharmalogyWebService pharmaObj = new PharmalogyWebService();
+
 
         public void addTeacher()
         {
@@ -66,11 +68,15 @@ namespace Test
                 conn.Open();
                 reader = sc.ExecuteReader();
                 conn.Close();
+
+
+
                 throw new Exception("success");
             }
         }
 
        
+
 
         public void updateTeacher()
         {
@@ -202,12 +208,12 @@ namespace Test
         {
                  int Authenticate = 0;
          
-                if (username == 991 && password == "1")
+                if (username == 999999999 && password == "P@hn1395")
                 {
                     Authenticate = 1;
                 }
 
-                if (username != 991)
+                if (username != 999999999)
                 {
                     SqlConnection conn = new SqlConnection();
                     conn.ConnectionString =
@@ -229,7 +235,7 @@ namespace Test
                     while (reader.Read())
                     {
                         if (reader.GetInt64(0) == username &&
-                                reader.GetString(1) == password)
+                                reader.GetString(1) == hashPass(password))
                         {
                             Authenticate = 2;
                         }
@@ -266,8 +272,10 @@ namespace Test
                     }
                     conn1.Close();
                 }
-               
+
           
+
+
             return Authenticate;
         }
 
