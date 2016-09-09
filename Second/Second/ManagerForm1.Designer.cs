@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            FarsiCalendarComponent.FarsiDate farsiDate1 = new FarsiCalendarComponent.FarsiDate();
+            FarsiCalendarComponent.FarsiDate farsiDate2 = new FarsiCalendarComponent.FarsiDate();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerForm1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle61 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle62 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle63 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle64 = new System.Windows.Forms.DataGridViewCellStyle();
             this.manager_main_tc = new System.Windows.Forms.TabControl();
             this.dashboard = new System.Windows.Forms.TabPage();
             this.dashboard_greeting_panel = new System.Windows.Forms.Panel();
@@ -274,6 +274,19 @@
             this.bindingSource6 = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSource8 = new System.Windows.Forms.BindingSource(this.components);
             this.trialVersion_lbl = new System.Windows.Forms.Label();
+            this.admin = new System.Windows.Forms.TabPage();
+            this.admin_addManager_panel = new System.Windows.Forms.Panel();
+            this.admin_addManager_gpb = new System.Windows.Forms.GroupBox();
+            this.admin_addManager_managerNumber_txtbx = new System.Windows.Forms.TextBox();
+            this.admin_addManager_managerName_txtbx = new System.Windows.Forms.TextBox();
+            this.admin_addManager_managerFamily_txtbx = new System.Windows.Forms.TextBox();
+            this.admin_addManager_managerPassword_txtbx = new System.Windows.Forms.TextBox();
+            this.admin_addManager_managerNumber_lbl = new System.Windows.Forms.Label();
+            this.admin_addManager_managerName_lbl = new System.Windows.Forms.Label();
+            this.admin_addManager_managerFamily_lbl = new System.Windows.Forms.Label();
+            this.admin_addManager_managerPassword_lbl = new System.Windows.Forms.Label();
+            this.admin_addManager_add_btn = new System.Windows.Forms.Button();
+            this.admin_addManager_clear_btn = new System.Windows.Forms.Button();
             this.manager_main_tc.SuspendLayout();
             this.dashboard.SuspendLayout();
             this.dashboard_greeting_panel.SuspendLayout();
@@ -340,6 +353,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource8)).BeginInit();
+            this.admin.SuspendLayout();
+            this.admin_addManager_panel.SuspendLayout();
+            this.admin_addManager_gpb.SuspendLayout();
             this.SuspendLayout();
             // 
             // manager_main_tc
@@ -352,6 +368,7 @@
             this.manager_main_tc.Controls.Add(this.messaging);
             this.manager_main_tc.Controls.Add(this.attendance);
             this.manager_main_tc.Controls.Add(this.settings);
+            this.manager_main_tc.Controls.Add(this.admin);
             this.manager_main_tc.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.manager_main_tc.Location = new System.Drawing.Point(32, 134);
             this.manager_main_tc.Name = "manager_main_tc";
@@ -543,13 +560,13 @@
             this.dashboard_date_calendar.Name = "dashboard_date_calendar";
             this.dashboard_date_calendar.NumbersColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.dashboard_date_calendar.SelectedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(250)))));
-            farsiDate1.Day = 16;
-            farsiDate1.FarsiDateValue = "95/06/16";
-            farsiDate1.GeoDate = new System.DateTime(2016, 9, 6, 0, 0, 0, 0);
-            farsiDate1.Month = 6;
-            farsiDate1.Year = 1395;
-            this.dashboard_date_calendar.SelectedFarsiValue = farsiDate1;
-            this.dashboard_date_calendar.SelectedGeoValue = new System.DateTime(2016, 9, 6, 0, 0, 0, 0);
+            farsiDate2.Day = 19;
+            farsiDate2.FarsiDateValue = "95/06/19";
+            farsiDate2.GeoDate = new System.DateTime(2016, 9, 9, 0, 0, 0, 0);
+            farsiDate2.Month = 6;
+            farsiDate2.Year = 1395;
+            this.dashboard_date_calendar.SelectedFarsiValue = farsiDate2;
+            this.dashboard_date_calendar.SelectedGeoValue = new System.DateTime(2016, 9, 9, 0, 0, 0, 0);
             this.dashboard_date_calendar.SelectedNumberColor = System.Drawing.Color.Black;
             this.dashboard_date_calendar.ShowSmallDayName = false;
             this.dashboard_date_calendar.ShowToday = true;
@@ -657,36 +674,36 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Linen;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle49.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle49.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle49.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle49;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle50.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle50.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle50.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle50.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle50.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle50.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle50;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle51.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle51.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle51.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle51.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle51.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle51;
+            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle52;
             this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGridView1.RowTemplate.ReadOnly = true;
@@ -1179,36 +1196,36 @@
             this.dataGridView2.BackgroundColor = System.Drawing.Color.Linen;
             this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dataGridView2.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle53.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle53.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle53.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle53.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle53.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle53;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle54.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle54.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle54.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle54.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle54.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle54.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle54;
             this.dataGridView2.EnableHeadersVisualStyles = false;
             this.dataGridView2.Location = new System.Drawing.Point(3, 0);
             this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle55.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle55.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle55.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle55.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle55.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle55;
+            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle56;
             this.dataGridView2.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.dataGridView2.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGridView2.RowTemplate.ReadOnly = true;
@@ -1789,36 +1806,36 @@
             this.dataGridView3.BackgroundColor = System.Drawing.Color.Linen;
             this.dataGridView3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dataGridView3.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle57.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle57.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle57.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle57.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle57.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle57;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle58.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle58.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle58.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle58.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle58.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle58.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle58;
             this.dataGridView3.EnableHeadersVisualStyles = false;
             this.dataGridView3.Location = new System.Drawing.Point(-1, 3);
             this.dataGridView3.MultiSelect = false;
             this.dataGridView3.Name = "dataGridView3";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle59.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle59.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle59.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle59.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle59.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle59;
+            dataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle60;
             this.dataGridView3.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.dataGridView3.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGridView3.RowTemplate.ReadOnly = true;
@@ -2273,12 +2290,13 @@
             // 
             // messaging_inbox_select_btn
             // 
+            this.messaging_inbox_select_btn.BackColor = System.Drawing.Color.White;
             this.messaging_inbox_select_btn.Location = new System.Drawing.Point(304, 35);
             this.messaging_inbox_select_btn.Name = "messaging_inbox_select_btn";
             this.messaging_inbox_select_btn.Size = new System.Drawing.Size(93, 28);
             this.messaging_inbox_select_btn.TabIndex = 5;
             this.messaging_inbox_select_btn.Text = "تایید";
-            this.messaging_inbox_select_btn.UseVisualStyleBackColor = true;
+            this.messaging_inbox_select_btn.UseVisualStyleBackColor = false;
             this.messaging_inbox_select_btn.Click += new System.EventHandler(this.messaging_inbox_select_btn_Click);
             // 
             // messaging_inbox_lessonGroupNumber_lbl
@@ -2388,12 +2406,13 @@
             // 
             // messaging_outbox_delete_btn
             // 
+            this.messaging_outbox_delete_btn.BackColor = System.Drawing.Color.White;
             this.messaging_outbox_delete_btn.Location = new System.Drawing.Point(27, 190);
             this.messaging_outbox_delete_btn.Name = "messaging_outbox_delete_btn";
             this.messaging_outbox_delete_btn.Size = new System.Drawing.Size(93, 28);
             this.messaging_outbox_delete_btn.TabIndex = 6;
             this.messaging_outbox_delete_btn.Text = "حذف";
-            this.messaging_outbox_delete_btn.UseVisualStyleBackColor = true;
+            this.messaging_outbox_delete_btn.UseVisualStyleBackColor = false;
             this.messaging_outbox_delete_btn.Click += new System.EventHandler(this.messaging_outbox_delete_btn_Click);
             // 
             // dataGridView7
@@ -2996,37 +3015,37 @@
             this.dataGridView5.BackgroundColor = System.Drawing.Color.Linen;
             this.dataGridView5.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dataGridView5.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle61.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle61.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle61.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle61.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle61.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle61.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle61;
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView5.Cursor = System.Windows.Forms.Cursors.Arrow;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView5.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle62.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle62.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle62.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle62.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle62.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle62.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle62.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView5.DefaultCellStyle = dataGridViewCellStyle62;
             this.dataGridView5.EnableHeadersVisualStyles = false;
             this.dataGridView5.Location = new System.Drawing.Point(36, 304);
             this.dataGridView5.MultiSelect = false;
             this.dataGridView5.Name = "dataGridView5";
             this.dataGridView5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView5.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dataGridView5.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle63.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle63.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle63.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            dataGridViewCellStyle63.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle63.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle63.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridView5.RowHeadersDefaultCellStyle = dataGridViewCellStyle63;
+            dataGridViewCellStyle64.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridView5.RowsDefaultCellStyle = dataGridViewCellStyle64;
             this.dataGridView5.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("B Yekan+", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.dataGridView5.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGridView5.RowTemplate.ReadOnly = true;
@@ -3284,6 +3303,132 @@
             this.trialVersion_lbl.TabIndex = 11;
             this.trialVersion_lbl.Text = "نسخه آزمایشی";
             // 
+            // admin
+            // 
+            this.admin.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.admin.Controls.Add(this.admin_addManager_panel);
+            this.admin.Location = new System.Drawing.Point(4, 26);
+            this.admin.Name = "admin";
+            this.admin.Padding = new System.Windows.Forms.Padding(3);
+            this.admin.Size = new System.Drawing.Size(1216, 562);
+            this.admin.TabIndex = 7;
+            this.admin.Text = "ادمین";
+            this.admin.UseVisualStyleBackColor = true;
+            // 
+            // admin_addManager_panel
+            // 
+            this.admin_addManager_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.admin_addManager_panel.Controls.Add(this.admin_addManager_gpb);
+            this.admin_addManager_panel.Location = new System.Drawing.Point(553, 24);
+            this.admin_addManager_panel.Name = "admin_addManager_panel";
+            this.admin_addManager_panel.Size = new System.Drawing.Size(423, 269);
+            this.admin_addManager_panel.TabIndex = 0;
+            // 
+            // admin_addManager_gpb
+            // 
+            this.admin_addManager_gpb.Controls.Add(this.admin_addManager_clear_btn);
+            this.admin_addManager_gpb.Controls.Add(this.admin_addManager_add_btn);
+            this.admin_addManager_gpb.Controls.Add(this.admin_addManager_managerPassword_lbl);
+            this.admin_addManager_gpb.Controls.Add(this.admin_addManager_managerFamily_lbl);
+            this.admin_addManager_gpb.Controls.Add(this.admin_addManager_managerName_lbl);
+            this.admin_addManager_gpb.Controls.Add(this.admin_addManager_managerNumber_lbl);
+            this.admin_addManager_gpb.Controls.Add(this.admin_addManager_managerPassword_txtbx);
+            this.admin_addManager_gpb.Controls.Add(this.admin_addManager_managerFamily_txtbx);
+            this.admin_addManager_gpb.Controls.Add(this.admin_addManager_managerName_txtbx);
+            this.admin_addManager_gpb.Controls.Add(this.admin_addManager_managerNumber_txtbx);
+            this.admin_addManager_gpb.Location = new System.Drawing.Point(12, 3);
+            this.admin_addManager_gpb.Name = "admin_addManager_gpb";
+            this.admin_addManager_gpb.Size = new System.Drawing.Size(400, 263);
+            this.admin_addManager_gpb.TabIndex = 0;
+            this.admin_addManager_gpb.TabStop = false;
+            this.admin_addManager_gpb.Text = "افزودن مدیر";
+            // 
+            // admin_addManager_managerNumber_txtbx
+            // 
+            this.admin_addManager_managerNumber_txtbx.Location = new System.Drawing.Point(15, 24);
+            this.admin_addManager_managerNumber_txtbx.Name = "admin_addManager_managerNumber_txtbx";
+            this.admin_addManager_managerNumber_txtbx.Size = new System.Drawing.Size(151, 25);
+            this.admin_addManager_managerNumber_txtbx.TabIndex = 0;
+            // 
+            // admin_addManager_managerName_txtbx
+            // 
+            this.admin_addManager_managerName_txtbx.Location = new System.Drawing.Point(15, 69);
+            this.admin_addManager_managerName_txtbx.Name = "admin_addManager_managerName_txtbx";
+            this.admin_addManager_managerName_txtbx.Size = new System.Drawing.Size(151, 25);
+            this.admin_addManager_managerName_txtbx.TabIndex = 1;
+            // 
+            // admin_addManager_managerFamily_txtbx
+            // 
+            this.admin_addManager_managerFamily_txtbx.Location = new System.Drawing.Point(15, 115);
+            this.admin_addManager_managerFamily_txtbx.Name = "admin_addManager_managerFamily_txtbx";
+            this.admin_addManager_managerFamily_txtbx.Size = new System.Drawing.Size(151, 25);
+            this.admin_addManager_managerFamily_txtbx.TabIndex = 2;
+            // 
+            // admin_addManager_managerPassword_txtbx
+            // 
+            this.admin_addManager_managerPassword_txtbx.Location = new System.Drawing.Point(15, 163);
+            this.admin_addManager_managerPassword_txtbx.Name = "admin_addManager_managerPassword_txtbx";
+            this.admin_addManager_managerPassword_txtbx.Size = new System.Drawing.Size(151, 25);
+            this.admin_addManager_managerPassword_txtbx.TabIndex = 3;
+            // 
+            // admin_addManager_managerNumber_lbl
+            // 
+            this.admin_addManager_managerNumber_lbl.AutoSize = true;
+            this.admin_addManager_managerNumber_lbl.Location = new System.Drawing.Point(244, 27);
+            this.admin_addManager_managerNumber_lbl.Name = "admin_addManager_managerNumber_lbl";
+            this.admin_addManager_managerNumber_lbl.Size = new System.Drawing.Size(57, 17);
+            this.admin_addManager_managerNumber_lbl.TabIndex = 4;
+            this.admin_addManager_managerNumber_lbl.Text = "شماره مدیر";
+            // 
+            // admin_addManager_managerName_lbl
+            // 
+            this.admin_addManager_managerName_lbl.AutoSize = true;
+            this.admin_addManager_managerName_lbl.Location = new System.Drawing.Point(256, 72);
+            this.admin_addManager_managerName_lbl.Name = "admin_addManager_managerName_lbl";
+            this.admin_addManager_managerName_lbl.Size = new System.Drawing.Size(45, 17);
+            this.admin_addManager_managerName_lbl.TabIndex = 5;
+            this.admin_addManager_managerName_lbl.Text = "نام مدیر";
+            // 
+            // admin_addManager_managerFamily_lbl
+            // 
+            this.admin_addManager_managerFamily_lbl.AutoSize = true;
+            this.admin_addManager_managerFamily_lbl.Location = new System.Drawing.Point(213, 123);
+            this.admin_addManager_managerFamily_lbl.Name = "admin_addManager_managerFamily_lbl";
+            this.admin_addManager_managerFamily_lbl.Size = new System.Drawing.Size(88, 17);
+            this.admin_addManager_managerFamily_lbl.TabIndex = 6;
+            this.admin_addManager_managerFamily_lbl.Text = "نام خانوادگی مدیر";
+            // 
+            // admin_addManager_managerPassword_lbl
+            // 
+            this.admin_addManager_managerPassword_lbl.AutoSize = true;
+            this.admin_addManager_managerPassword_lbl.Location = new System.Drawing.Point(258, 166);
+            this.admin_addManager_managerPassword_lbl.Name = "admin_addManager_managerPassword_lbl";
+            this.admin_addManager_managerPassword_lbl.Size = new System.Drawing.Size(43, 17);
+            this.admin_addManager_managerPassword_lbl.TabIndex = 7;
+            this.admin_addManager_managerPassword_lbl.Text = "گذر واژه";
+            // 
+            // admin_addManager_add_btn
+            // 
+            this.admin_addManager_add_btn.BackColor = System.Drawing.Color.White;
+            this.admin_addManager_add_btn.Location = new System.Drawing.Point(15, 208);
+            this.admin_addManager_add_btn.Name = "admin_addManager_add_btn";
+            this.admin_addManager_add_btn.Size = new System.Drawing.Size(151, 37);
+            this.admin_addManager_add_btn.TabIndex = 8;
+            this.admin_addManager_add_btn.Text = "ثبت";
+            this.admin_addManager_add_btn.UseVisualStyleBackColor = false;
+            this.admin_addManager_add_btn.Click += new System.EventHandler(this.admin_addManager_add_btn_Click);
+            // 
+            // admin_addManager_clear_btn
+            // 
+            this.admin_addManager_clear_btn.BackColor = System.Drawing.Color.White;
+            this.admin_addManager_clear_btn.Location = new System.Drawing.Point(213, 208);
+            this.admin_addManager_clear_btn.Name = "admin_addManager_clear_btn";
+            this.admin_addManager_clear_btn.Size = new System.Drawing.Size(145, 37);
+            this.admin_addManager_clear_btn.TabIndex = 9;
+            this.admin_addManager_clear_btn.Text = "پاک کردن";
+            this.admin_addManager_clear_btn.UseVisualStyleBackColor = false;
+            this.admin_addManager_clear_btn.Click += new System.EventHandler(this.admin_addManager_clear_btn_Click);
+            // 
             // ManagerForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3387,6 +3532,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource8)).EndInit();
+            this.admin.ResumeLayout(false);
+            this.admin_addManager_panel.ResumeLayout(false);
+            this.admin_addManager_gpb.ResumeLayout(false);
+            this.admin_addManager_gpb.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3621,5 +3770,18 @@
         private System.Windows.Forms.Button attendance_change_btn;
         private System.Windows.Forms.Button attendance_register_change_btn;
         private System.Windows.Forms.Label trialVersion_lbl;
+        private System.Windows.Forms.TabPage admin;
+        private System.Windows.Forms.Panel admin_addManager_panel;
+        private System.Windows.Forms.GroupBox admin_addManager_gpb;
+        private System.Windows.Forms.Button admin_addManager_clear_btn;
+        private System.Windows.Forms.Button admin_addManager_add_btn;
+        private System.Windows.Forms.Label admin_addManager_managerPassword_lbl;
+        private System.Windows.Forms.Label admin_addManager_managerFamily_lbl;
+        private System.Windows.Forms.Label admin_addManager_managerName_lbl;
+        private System.Windows.Forms.Label admin_addManager_managerNumber_lbl;
+        private System.Windows.Forms.TextBox admin_addManager_managerPassword_txtbx;
+        private System.Windows.Forms.TextBox admin_addManager_managerFamily_txtbx;
+        private System.Windows.Forms.TextBox admin_addManager_managerName_txtbx;
+        private System.Windows.Forms.TextBox admin_addManager_managerNumber_txtbx;
     }
 }

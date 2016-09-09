@@ -480,10 +480,93 @@ namespace Second
 
 
             /****************************************************settings tab design**********************************************************/
+
+            setting_panel.SetBounds(((5 * width) / 400), ((2 * height) / 100), ((96 * width) / 100), ((31 * height) / 100));
+
+            dataGridView5.SetBounds(((5 * width) / 400), (38 * height) / 100, ((96 * width) / 100), ((36 * height) / 100));
+            bindingNavigator1.SetBounds(((5 * width) / 400), (135 * height) / 400, ((96 * width) / 100), ((4 * height) / 100));
+            setting_changeInfo_gpb.SetBounds(((65 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
+            setting_changeTheme_gpb.SetBounds(((34 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
+            setting_aboutUs_gpb.SetBounds(((3 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
+
+
+            ////change pass
+            setting_changeInfo_managerName_lbl.SetBounds(((17 * width) / 100), ((8 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            setting_changeInfo_managerFamily_lbl.SetBounds(((17 * width) / 100), ((20 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            setting_changeInfo_managerPass_lbl.SetBounds(((17 * width) / 100), ((32 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            setting_changeInfo_managerNewPass_lbl.SetBounds(((17 * width) / 100), ((44 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            setting_changeInfo_managerName_txtbx.SetBounds(((4 * width) / 100), ((8 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            setting_changeInfo_managerFamily_txtbx.SetBounds(((4 * width) / 100), ((20 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            setting_changeInfo_managerPass_txtbx.SetBounds(((4 * width) / 100), ((32 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            setting_changeInfo_managerNewPass_txtbx.SetBounds(((4 * width) / 100), ((44 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            setting_changeInfo_change_btn.SetBounds(((4 * width) / 100), ((73 * height) / 300), ((10 * width) / 100), ((30 * height) / 1000));
+            setting_changeInfo_clear_btn.SetBounds(((30 * width) / 200), ((73 * height) / 300), ((10 * width) / 100), ((30 * height) / 1000));
+            setting_changeInfo_showPass_pic.SetBounds(((8 * width) / 400), ((87 * height) / 800), ((15 * width) / 1000), ((27 * height) / 1000));
+            setting_changeInfo_showNewPass_pic.SetBounds(((8 * width) / 400), ((45 * height) / 300), ((15 * width) / 1000), ((27 * height) / 1000));
+            //////About Us
+
+            settings_abotUs_pictureBox.SetBounds(((60 * width) / 1000), ((25 * height) / 1000), ((160 * width) / 1000), ((185 * height) / 1000));
+            setting_aboutUs_lbl.SetBounds(((4 * width) / 400), ((54 * height) / 300), ((260 * width) / 1000), ((98 * height) / 1000));
+            setting_aboutUs_lbl.Text = "شرکت نرم افزاری رایان پردازش نوین آریا\nتلفن تماس: 061335534050\nآدرس ایمیل :RayanProcessCompany@gmail.com\nوب سایت:";
+
+
             try
             {
+                if (userType == 3)
+                {
+                    dataGridView5.Visible = false;
+                    bindingNavigator1.Visible = false;
+                    SqlConnection conn6 = new SqlConnection();
+                    conn6.ConnectionString =
+                    "Data Source= 185.159.152.5;" +
+                            "Initial Catalog=youshita_Test;" +
+                            "User id=youshita_co; " +
+                            "Password=P@hn1395;";
+                    SqlCommand sc6 = new SqlCommand();
+                    sc6.CommandType = CommandType.Text;
+                    sc6.Connection = conn6;
+                    SqlDataReader reader5;
+
+                    sc6.CommandText = " SELECT teacherFName , teacherLName FROM teacherTable WHERE teacher# = '" + currentUserName + "'";
+                    conn6.Open();
+                    reader5 = sc6.ExecuteReader();
+                    reader5.Read();
+                    string FName = reader5.GetString(0);
+                    string LName = reader5.GetString(1);
+                    conn6.Close();
+                    setting_changeInfo_managerName_txtbx.Text = FName;
+                    setting_changeInfo_managerFamily_txtbx.Text = LName;
+                }
+
                 if (managerUsername != -2)
                 {
+                   
+
+
+                    //***change info components filling
+                    SqlConnection conn4 = new SqlConnection();
+                    conn4.ConnectionString =
+                          "Data Source= 185.159.152.5;" +
+                            "Initial Catalog=youshita_Test;" +
+                            "User id=youshita_co; " +
+                            "Password=P@hn1395;";
+
+                    SqlCommand sc4 = new SqlCommand();
+                    SqlDataReader reader4;
+                    sc4.CommandText = "SELECT * FROM managerTable WHERE manager# =" + managerUsername + "";
+                    sc4.CommandType = CommandType.Text;
+                    sc4.Connection = conn4;
+                    conn4.Open();
+                    reader4 = sc4.ExecuteReader();
+
+                    reader4.Read();
+                    setting_changeInfo_managerName_txtbx.Text = reader4.GetString(1);
+                    setting_changeInfo_managerFamily_txtbx.Text = reader4.GetString(2);
+                    setting_changeInfo_managerPass_txtbx.Text = "";
+                    setting_changeInfo_managerNewPass_txtbx.Text = "";
+                    conn4.Close();
+
+
                     //***datagridview initialization
                     SqlConnection conn2 = new SqlConnection();
                     conn2.ConnectionString =
@@ -550,86 +633,12 @@ namespace Second
                     dataGridView5.Columns[2].HeaderText = "تاریخ گزارش";
                     dataGridView5.Columns[3].HeaderText = " کاربر";
                     dataGridView5.Columns[4].Visible = false;
-
-
-                    //***change info components filling
-                    SqlConnection conn4 = new SqlConnection();
-                    conn4.ConnectionString =
-                          "Data Source= 185.159.152.5;" +
-                            "Initial Catalog=youshita_Test;" +
-                            "User id=youshita_co; " +
-                            "Password=P@hn1395;";
-
-                    SqlCommand sc4 = new SqlCommand();
-                    SqlDataReader reader4;
-                    sc4.CommandText = "SELECT * FROM managerTable WHERE manager# =" + managerUsername + "";
-                    sc4.CommandType = CommandType.Text;
-                    sc4.Connection = conn4;
-                    conn4.Open();
-                    reader4 = sc4.ExecuteReader();
-
-                    reader4.Read();
-                    setting_changeInfo_managerName_txtbx.Text = reader4.GetString(1);
-                    setting_changeInfo_managerFamily_txtbx.Text = reader4.GetString(2);
-                    setting_changeInfo_managerPass_txtbx.Text = "";
-                    setting_changeInfo_managerNewPass_txtbx.Text = "";
-                    conn4.Close();
                 }
 
-                else if (userType == 3)
-                {
-                    dataGridView5.Visible = false;
-                    bindingNavigator1.Visible = false;
-                    SqlConnection conn6 = new SqlConnection();
-                    conn6.ConnectionString =
-                    "Data Source= 185.159.152.5;" +
-                            "Initial Catalog=youshita_Test;" +
-                            "User id=youshita_co; " +
-                            "Password=P@hn1395;";
-                    SqlCommand sc6 = new SqlCommand();
-                    sc6.CommandType = CommandType.Text;
-                    sc6.Connection = conn6;
-                    SqlDataReader reader5;
-
-                    sc6.CommandText = " SELECT teacherFName , teacherLName FROM teacherTable WHERE teacher# = '" + currentUserName + "'";
-                    conn6.Open();
-                    reader5 = sc6.ExecuteReader();
-                    reader5.Read();
-                    string FName = reader5.GetString(0);
-                    string LName = reader5.GetString(1);
-                    conn6.Close();
-                    setting_changeInfo_managerName_txtbx.Text = FName;
-                    setting_changeInfo_managerFamily_txtbx.Text = LName;
-                }
+                
 
 
 
-                setting_panel.SetBounds(((5 * width) / 400), ((2 * height) / 100), ((96 * width) / 100), ((31 * height) / 100));
-
-                dataGridView5.SetBounds(((5 * width) / 400), (38 * height) / 100, ((96 * width) / 100), ((36 * height) / 100));
-                bindingNavigator1.SetBounds(((5 * width) / 400), (135 * height) / 400, ((96 * width) / 100), ((4 * height) / 100));
-                setting_changeInfo_gpb.SetBounds(((65 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
-                setting_changeTheme_gpb.SetBounds(((34 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
-                setting_aboutUs_gpb.SetBounds(((3 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
-
-
-                ////change pass
-                setting_changeInfo_managerName_lbl.SetBounds(((17 * width) / 100), ((8 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
-                setting_changeInfo_managerFamily_lbl.SetBounds(((17 * width) / 100), ((20 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
-                setting_changeInfo_managerPass_lbl.SetBounds(((17 * width) / 100), ((32 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
-                setting_changeInfo_managerNewPass_lbl.SetBounds(((17 * width) / 100), ((44 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
-                setting_changeInfo_managerName_txtbx.SetBounds(((4 * width) / 100), ((8 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
-                setting_changeInfo_managerFamily_txtbx.SetBounds(((4 * width) / 100), ((20 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
-                setting_changeInfo_managerPass_txtbx.SetBounds(((4 * width) / 100), ((32 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
-                setting_changeInfo_managerNewPass_txtbx.SetBounds(((4 * width) / 100), ((44 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
-                setting_changeInfo_change_btn.SetBounds(((4 * width) / 100), ((73 * height) / 300), ((10 * width) / 100), ((30 * height) / 1000));
-                setting_changeInfo_clear_btn.SetBounds(((30 * width) / 200), ((73 * height) / 300), ((10 * width) / 100), ((30 * height) / 1000));
-                setting_changeInfo_showPass_pic.SetBounds(((8 * width) / 400), ((87 * height) / 800), ((15 * width) / 1000), ((27 * height) / 1000));
-                setting_changeInfo_showNewPass_pic.SetBounds(((8 * width) / 400), ((45 * height) / 300), ((15 * width) / 1000), ((27 * height) / 1000));
-                //////About Us
-                settings_abotUs_pictureBox.SetBounds(((60 * width) / 1000), ((25 * height) / 1000), ((160 * width) / 1000), ((185 * height) / 1000));
-                setting_aboutUs_lbl.SetBounds(((4 * width) / 400), ((54 * height) / 300), ((260 * width) / 1000), ((98 * height) / 1000));
-                setting_aboutUs_lbl.Text = "شرکت نرم افزاری رایان پردازش نوین آریا\nتلفن تماس: 061335534050\nآدرس ایمیل :RayanProcessCompany@gmail.com\nوب سایت:";
             }
             catch (SqlException)
             {
@@ -641,12 +650,28 @@ namespace Second
             }
             catch(ArgumentOutOfRangeException)
             {
-
+                
             }
             /****************************************************setting tab design**********************************************************/
 
 
+            /***************************************************admin tab design*************************************************************/
 
+            admin_addManager_managerNumber_lbl.SetBounds(((17 * width) / 100), ((8 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            admin_addManager_managerName_lbl.SetBounds(((17 * width) / 100), ((22 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            admin_addManager_managerFamily_lbl.SetBounds(((17 * width) / 100), ((36 * height) / 300), ((83 * width) / 1000), ((27 * height) / 1000));
+            admin_addManager_managerPassword_lbl.SetBounds(((17 * width) / 100), ((50 * height) / 300), ((83 * width) / 1000), ((30 * height) / 1000));
+            admin_addManager_managerNumber_txtbx.SetBounds(((4 * width) / 100), ((8 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            admin_addManager_managerName_txtbx.SetBounds(((4 * width) / 100), ((22 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            admin_addManager_managerFamily_txtbx.SetBounds(((4 * width) / 100), ((36 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            admin_addManager_managerPassword_txtbx.SetBounds(((4 * width) / 100), ((50 * height) / 300), ((110 * width) / 1000), ((27 * height) / 1000));
+            admin_addManager_add_btn.SetBounds(((4 * width) / 100), ((73 * height) / 300), ((100 * width) / 1000), ((30 * height) / 1000));
+            admin_addManager_clear_btn.SetBounds(((30 * width) / 200), ((73 * height) / 300), ((10 * width) / 100), ((30 * height) / 1000));
+            admin_addManager_panel.SetBounds(((5 * width) / 400), ((2 * height) / 100), ((96 * width) / 100), ((31 * height) / 100));
+            admin_addManager_gpb.SetBounds(((34 * width) / 100), ((1 * height) / 300), ((282 * width) / 1000), ((290 * height) / 1000));
+           
+
+            /***************************************************admin tab design*************************************************************/
 
             /****************************************************determining access level****************************************************/
             if (userType == 3)
@@ -654,6 +679,11 @@ namespace Second
                 manager_main_tc.TabPages.Remove(teachers);
                 manager_main_tc.TabPages.Remove(students);
                 manager_main_tc.TabPages.Remove(lessons);
+                manager_main_tc.TabPages.Remove(admin);
+            }
+            if(userType == 2)
+            {
+                manager_main_tc.TabPages.Remove(admin);
             }
             /****************************************************determining access level****************************************************/
             /// <summary>
@@ -1347,7 +1377,7 @@ namespace Second
                         SqlCommand sc1 = new SqlCommand();
 
                         SqlDataReader rdr = null;
-                        sc1.CommandText = "SELECT * FROM logTable ORDER BY logDate DESC";
+                        sc1.CommandText = "SELECT * FROM logTable ORDER BY log# DESC";
                         sc1.Connection = conn;
                         conn.Open();
                         rdr = sc1.ExecuteReader();
@@ -1385,7 +1415,7 @@ namespace Second
                 }
                 catch (ArgumentOutOfRangeException)
                 {
-                    DialogForm dialog = new DialogForm("اشکال در برقراری ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
+                  // DialogForm dialog = new DialogForm("اشکال در برقراری ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
                 }
             }
 
@@ -4436,6 +4466,76 @@ namespace Second
                     DialogForm dialog = new DialogForm("اشکال در برقراری ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
                 }
             }
+
+
+        }
+
+        private void admin_addManager_clear_btn_Click(object sender, EventArgs e)
+        {
+            admin_addManager_managerFamily_txtbx.Text = "";
+            admin_addManager_managerName_txtbx.Text = "";
+            admin_addManager_managerNumber_txtbx.Text = "";
+            admin_addManager_managerPassword_txtbx.Text = "";
+        }
+
+        private void admin_addManager_add_btn_Click(object sender, EventArgs e)
+        {
+          /*  try
+            {*/
+                SqlConnection conn1 = new SqlConnection();
+                conn1.ConnectionString =
+                    "Data Source= 185.159.152.5;" +
+                    "Initial Catalog=youshita_Test;" +
+                    "User id=youshita_co; " +
+                    "Password=P@hn1395;";
+
+
+                SqlCommand sc1 = new SqlCommand();
+                SqlDataReader reader1;
+                sc1.CommandText = "INSERT INTO managerTable (manager#,managerFName,managerLName,managerPassword,managerURL) VALUES ( '" + long.Parse(admin_addManager_managerNumber_txtbx.Text)
+                                                                                                                + "','" + admin_addManager_managerName_txtbx.Text
+                                                                                                                + "','" + admin_addManager_managerFamily_txtbx.Text
+                                                                                                                + "','" + hashPass(admin_addManager_managerPassword_txtbx.Text)
+                                                                                                                + "','" + "" + "')";
+
+                sc1.CommandType = CommandType.Text;
+                sc1.Connection = conn1;
+                conn1.Open();
+                reader1 = sc1.ExecuteReader();
+                conn1.Close();
+
+
+                SqlConnection conn2 = new SqlConnection();
+                conn2.ConnectionString =
+                    "Data Source= 185.159.152.5;" +
+                    "Initial Catalog=youshita_Test;" +
+                    "User id=youshita_co; " +
+                    "Password=P@hn1395;";
+
+
+                SqlCommand sc2 = new SqlCommand();
+                SqlDataReader reader2;
+                sc2.CommandText = "INSERT INTO teacherTable (teacher#,teacherFName,teacherLName,teacherPassword,teacherURL) VALUES ( '" + -1
+                                                                                                                + "','" + admin_addManager_managerName_txtbx.Text
+                                                                                                                + "','" + admin_addManager_managerFamily_txtbx.Text
+                                                                                                                + "','" + hashPass(admin_addManager_managerPassword_txtbx.Text)
+                                                                                                                + "','" + "" + "')";
+            
+                sc2.CommandType = CommandType.Text;
+                sc2.Connection = conn2;
+                conn2.Open();
+                reader2 = sc2.ExecuteReader();
+                conn2.Close();
+
+                DialogForm dialog = new DialogForm("اطلاعات با موفقیت ثبت شد.", "ثبت موفقیت آمیز", "success", this);
+
+           /* }
+            catch (SqlException)
+            {
+
+                DialogForm dialog = new DialogForm("اشکال در برقراری ارتباط با سرور یا پایگاه داده", "خطا", "error", this);
+            }*/
+
 
 
         }
