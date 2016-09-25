@@ -507,7 +507,7 @@ namespace Second
 
             settings_abotUs_pictureBox.SetBounds(((60 * width) / 1000), ((25 * height) / 1000), ((160 * width) / 1000), ((185 * height) / 1000));
             setting_aboutUs_lbl.SetBounds(((4 * width) / 400), ((54 * height) / 300), ((260 * width) / 1000), ((98 * height) / 1000));
-            setting_aboutUs_lbl.Text = "شرکت نرم افزاری رایان پردازش نوین آریا\nتلفن تماس: 06135534050\nآدرس ایمیل :RayanProcessCompany@gmail.com\nوب سایت:";
+            setting_aboutUs_lbl.Text = "شرکت نرم افزاری رایان پردازش نوین آریا\nتلفن تماس: 06135534050\nآدرس ایمیل :RayanProcessCompany@gmail.com\nوب سایت:www.RayanProcess.com";
 
 
             try
