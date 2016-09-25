@@ -88,6 +88,12 @@
     <Compile Include="login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
+    <Compile Include="login2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login2.Designer.cs">
+      <DependentUpon>login2.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagerForm1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login2.resx">
+      <DependentUpon>login2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerForm1.resx">
       <DependentUpon>ManagerForm1.cs</DependentUpon>
@@ -221,7 +230,10 @@
     <None Include="Resources\exit_3.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\user_ico.png" />
+    <None Include="Resources\user_icon.png" />
     <None Include="Resources\first Form.png" />
+    <None Include="Resources\password-icon-wallpaper-3.jpg.png" />
     <Content Include="Resources\Untitled-2311.jpg" />
   </ItemGroup>
   <ItemGroup>

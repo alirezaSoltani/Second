@@ -13,7 +13,7 @@ using Test;
 
 namespace Second
 {
-    public partial class login1 : Form
+    public partial class login2 : Form
     {
         private int width = SystemInformation.PrimaryMonitorSize.Width;
         private int height = SystemInformation.PrimaryMonitorSize.Height;
@@ -22,25 +22,27 @@ namespace Second
         private long username = -256;
         private string password = "";
 
-        public login1()
+
+        public login2()
         {
             InitializeComponent();
-            this.BackColor = Color.Gainsboro;
-            this.TransparencyKey = Color.Gainsboro;
         }
-       
-        private void login1_Load(object sender, EventArgs e)
+
+        private void login2_Load(object sender, EventArgs e)
         {
-            this.SetBounds(((390 * width) / 1000), ((150* width) / 1000), ((205 * width) / 1000), ((205 * width) / 1000));
-            login_panel.SetBounds(((0 * width) / 800), ((0 * height) / 100), ((205 * width) / 1000), ((205 * width) / 1000));
-            logo_pictureBox.SetBounds(((33 * width) / 800), ((40 * height) / 800), ((30 * width) / 200), ((12 * height) / 200));
-            login_username_txtbx.SetBounds(((23 * width) / 800), ((153 * height) / 1000), ((26 * width) / 200), ((35 * height) / 1000));
-            login_password_txtbx.SetBounds(((23 * width) / 800), ((208 * height) / 1000), ((26 * width) / 200), ((35 * height) / 1000));
-            login_enter_lbl.SetBounds(((21 * width) / 800), ((210 * height) / 800), ((30 * width) / 200), ((8 * height) / 200));
-            exit_pictureBox.SetBounds(((142 * width) / 800), ((25 * height) / 800), ((5 * height) / 200), ((5 * height) / 200));
-            showPassword_pictureBox.SetBounds(((130 * width) / 800), ((208 * height) / 1000), ((25 * height) / 1000), ((25 * height) / 1000));
+            this.SetBounds(((390 * width) / 1000), ((150 * width) / 1000), ((209 * width) / 1000), ((240* width) / 1000));
+            login_panel.SetBounds(((0 * width) / 800), ((0 * height) / 100), ((209 * width) / 1000), ((240 * width) / 1000));
+            login_gpb.SetBounds(((10 * width) / 1000), ((10 * width) / 1000), ((180 * width) / 1000), ((150 * width) / 1000));
+            login_buttons_gpb.SetBounds(((10 * width) / 1000), ((175 * width) / 1000), ((180 * width) / 1000), ((45 * width) / 1000));
+            logo_pictureBox.SetBounds(((14 * width) / 800), ((20 * height) / 800), ((32 * width) / 200), ((12 * height) / 200));
+            login_username_txtbx.SetBounds(((17 * width) / 800), ((130 * height) / 1000), ((23 * width) / 200), ((35 * height) / 1000));
+            login_username_pictureBox.SetBounds(((112 * width) / 800), ((130 * height) / 1000), ((19 * width) / 1000), ((30 * height) / 1000));
+            login_password_txtbx.SetBounds(((17 * width) / 800), ((185 * height) / 1000), ((23 * width) / 200), ((35 * height) / 1000));
+            login_password_pictureBox.SetBounds(((112 * width) / 800), ((185 * height) / 1000), ((19 * width) / 1000), ((30 * height) / 1000));
+            login_enter_lbl.SetBounds(((5 * width) / 1000), ((9 * width) / 1000), ((170 * width) / 1000), ((55 * height) / 1000));
+            exit_pictureBox.SetBounds(((170 * width) / 1000), ((17 * width) / 1000), ((5 * height) / 200), ((5 * height) / 200));
         }
-        
+
         private void label1_Click(object sender, EventArgs e)
         {
             try
@@ -69,26 +71,28 @@ namespace Second
             exit_pictureBox.BackgroundImage = Second.Properties.Resources.exit_1;
         }
 
-        private void showPassword_pictureBox_MouseDown(object sender, MouseEventArgs e)
+        private void login_password_pictureBox_MouseDown(object sender, MouseEventArgs e)
         {
-            showPassword_pictureBox.Visible = false;
+            login_password_pictureBox.BackgroundImage = Second.Properties.Resources.user_ico;
             login_password_txtbx.PasswordChar = '\0';
         }
 
-        private void showPassword_pictureBox_MouseUp(object sender, MouseEventArgs e)
+        private void login_password_pictureBox_MouseUp(object sender, MouseEventArgs e)
         {
-            showPassword_pictureBox.Visible = true;
+            login_password_pictureBox.BackgroundImage = Second.Properties.Resources.password_icon_wallpaper_3_jpg;
             login_password_txtbx.PasswordChar = '●';
         }
 
         private void login_enter_lbl_MouseEnter(object sender, EventArgs e)
         {
-            login_enter_lbl.ForeColor = Color.LightSkyBlue;
+            login_enter_lbl.BackColor = Color.Gainsboro;
+            login_enter_lbl.ForeColor = Color.Blue;
         }
 
         private void login_enter_lbl_MouseLeave(object sender, EventArgs e)
         {
-            login_enter_lbl.ForeColor = Color.White;
+            login_enter_lbl.BackColor = Color.White;
+            login_enter_lbl.ForeColor = Color.Black;
         }
 
         private void login_username_txtbx_KeyPress(object sender, KeyPressEventArgs e)

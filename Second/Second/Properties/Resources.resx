@@ -130,8 +130,14 @@
   <data name="ok-256x256" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ok-256x256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="user_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="new form" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\new form.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="password-icon-wallpaper-3.jpg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\password-icon-wallpaper-3.jpg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Untitled-13" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Untitled-13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,6 +178,9 @@
   <data name="21312" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\21312.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="first Form" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\first Form.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -199,7 +208,7 @@
   <data name="new form21" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\new form2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="first Form" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\first Form.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user_ico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user_ico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

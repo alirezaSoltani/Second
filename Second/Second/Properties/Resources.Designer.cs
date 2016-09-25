@@ -233,6 +233,16 @@ namespace Second.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap password_icon_wallpaper_3_jpg {
+            get {
+                object obj = ResourceManager.GetObject("password-icon-wallpaper-3.jpg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Status_dialog_error_isdfcon {
             get {
                 object obj = ResourceManager.GetObject("Status-dialog-error-isdfcon", resourceCulture);
@@ -336,6 +346,26 @@ namespace Second.Properties {
         internal static System.Drawing.Bitmap Untitled_232 {
             get {
                 object obj = ResourceManager.GetObject("Untitled-232", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_ico {
+            get {
+                object obj = ResourceManager.GetObject("user_ico", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_icon {
+            get {
+                object obj = ResourceManager.GetObject("user_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

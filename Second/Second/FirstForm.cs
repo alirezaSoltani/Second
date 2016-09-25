@@ -32,7 +32,7 @@ namespace Second
             if (i == 7)
             {
                 timer1.Stop();
-                login1 l = new login1();
+                login2 l = new login2();
                 l.Show();
             }
         }

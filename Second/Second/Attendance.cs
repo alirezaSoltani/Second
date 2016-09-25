@@ -25,7 +25,6 @@ namespace Second
         public void attendanceLesson(string date , long username)
         {
            
-           
                 SqlConnection conn = new SqlConnection();
                 conn.ConnectionString =
                   "Data Source= 185.159.152.5;" +
@@ -51,10 +50,7 @@ namespace Second
                 reader2 = sc1.ExecuteReader();
                 conn.Close();
                 ////////log
-
-          
-
-          
+                
 
         }
 
@@ -63,8 +59,7 @@ namespace Second
         {
             Attendance attendanceObj = new Attendance();
             Test.StudentModel studentObj = new Test.StudentModel();
-            try
-            {
+         
 
                 SqlConnection conn = new SqlConnection();
                 conn.ConnectionString =
@@ -83,12 +78,51 @@ namespace Second
                 conn.Open();
                 reader = sc.ExecuteReader();
                 conn.Close();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
+          
         }
+
+        public void deleteAttendance(long lessonNumber , int lessonGroupNumber , string dateAndTime)
+        {
+
+            SqlConnection conn2 = new SqlConnection();
+            conn2.ConnectionString =
+                "Data Source= 185.159.152.5;" +
+                "Initial Catalog=youshita_Test;" +
+                "User id=youshita_co; " +
+                "Password=P@hn1395;";
+
+            SqlCommand sc2 = new SqlCommand();
+            SqlDataReader reader2;
+            sc2.CommandText = "ALTER TABLE [dbo].["+lessonNumber+"-"+ lessonGroupNumber + "_Table] DROP COLUMN ["+dateAndTime+"]";
+            sc2.CommandType = CommandType.Text;
+            sc2.Connection = conn2;
+            conn2.Open();
+            reader2 = sc2.ExecuteReader();
+            conn2.Close();
+
+         
+
+
+        }
+        public void updateAttendance(long lessonNumber, int lessonGroupNumber, string dateAndTime, long studentNumber, string state)
+        {
+            SqlConnection conn2 = new SqlConnection();
+            conn2.ConnectionString =
+                "Data Source= 185.159.152.5;" +
+                "Initial Catalog=youshita_Test;" +
+                "User id=youshita_co; " +
+                "Password=P@hn1395;";
+
+            SqlCommand sc2 = new SqlCommand();
+            SqlDataReader reader2;
+            sc2.CommandText = "UPDATE [dbo].[" + lessonNumber + "-" + lessonGroupNumber + "_Table" + "] SET [" + dateAndTime + "] = '" + state + "' WHERE student# = " + studentNumber + "";
+            sc2.CommandType = CommandType.Text;
+            sc2.Connection = conn2;
+            conn2.Open();
+            reader2 = sc2.ExecuteReader();
+            conn2.Close();
+        }
+
         public void setLessonNumber(long LessonNumber)
         {
             this.lessonNumber = LessonNumber;

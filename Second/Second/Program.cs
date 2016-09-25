@@ -17,7 +17,8 @@ namespace Second
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FirstForm());
-            //Application.Run(new ManagerForm1(104, "5", 2, 500));
+            //Application.Run(new login2());
+           // Application.Run(new ManagerForm1(104, "5", 2, 500));
         }
     }
 }
