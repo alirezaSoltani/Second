@@ -149,6 +149,7 @@ namespace Second
                 string fullName = FName + " " + LName;
                 conn5.Close();
                 dashboard_info_lbl.Text = "شما با شماره کاربری " + managerUsername + "وارد سامانه شده اید. \n" + fullName + " خوش آمدید.";
+                //////
             }
             else if (userType == 3)
             {
