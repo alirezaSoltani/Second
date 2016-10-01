@@ -22,6 +22,7 @@ namespace Second
             lessonGroupNumber = 0;
         }
 
+
         public void attendanceLesson(string date , long username)
         {
            
