@@ -3607,12 +3607,11 @@ namespace Second
                 }
 
                 // storing Each row and column value to excel sheet
-                for (int i = 0; i < dataGridView2.Rows.Count - 1; i++)
+                for (int i = 0; i < dataGridView2.Rows.Count; i++)
                 {
                     for (int j = 0; j < dataGridView2.Columns.Count; j++)
                     {
                         worksheet.Cells[i + 2, j + 1] = dataGridView2.Rows[i].Cells[j].Value.ToString();
-                        //worksheet.Cells[i + 2, j + 1].w
                     }
                 }
                 

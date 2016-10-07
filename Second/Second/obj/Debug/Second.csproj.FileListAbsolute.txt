@@ -138,3 +138,4 @@ C:\Users\Nimaa\Source\Repos\Second4\Second\Second\bin\Debug\FarsiCalendarCompone
 C:\Users\Nimaa\Source\Repos\Second4\Second\Second\bin\Debug\PersianDate.pdb
 C:\Users\Nimaa\Source\Repos\Second4\Second\Second\bin\Debug\fa\FarsiCalendarComponent.resources.dll
 C:\Users\Nimaa\Source\Repos\Second4\Second\Second\obj\Debug\Second.login2.resources
+C:\Users\ASUS\Source\Repos\Second6\Second\Second\bin\Debug\GHNet.dll
