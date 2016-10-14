@@ -26,7 +26,7 @@ namespace Test
 
 
         }
-        public void addStudent(long lessonNumber , int lessonGroupNumber, bool isSingle)
+        public void addStudent(long lessonNumber, int lessonGroupNumber, bool isSingle)
         {
 
             SqlConnection conn = new SqlConnection();
@@ -45,14 +45,40 @@ namespace Test
             }
 
             else if (getStudentFName().Any(char.IsNumber) || getStudentLName().Any(char.IsNumber) ||
-                     getStudentFName().Any(char.IsSymbol) || getStudentLName().Any(char.IsSymbol)||
-                     getStudentFName().Any(char.IsPunctuation) || getStudentLName().Any(char.IsPunctuation) )
+                     getStudentFName().Any(char.IsSymbol) || getStudentLName().Any(char.IsSymbol) ||
+                     getStudentFName().Any(char.IsPunctuation) || getStudentLName().Any(char.IsPunctuation))
             {
                 throw new System.FormatException();
             }
 
             else
             {
+                SqlConnection conn1 = new SqlConnection();
+                conn1.ConnectionString =
+                "Data Source= 185.159.152.5;" +
+                        "Initial Catalog=youshita_Test;" +
+                        "User id=youshita_co; " +
+                        "Password=P@hn1395;";
+
+                SqlCommand sc1 = new SqlCommand();
+                SqlDataReader reader1;
+
+                sc1.CommandText = "  SELECT COUNT(COLUMN_NAME)" +
+                                   " FROM INFORMATION_SCHEMA.COLUMNS" +
+                                  "  WHERE TABLE_CATALOG = 'youshita_Test' AND TABLE_SCHEMA = 'dbo'" +
+                                  "  AND TABLE_NAME = '" + lessonNumber + "-" + lessonGroupNumber + "_Table'  ";
+
+                sc1.CommandType = CommandType.Text;
+                sc1.Connection = conn1;
+                conn1.Open();
+                reader1 = sc1.ExecuteReader();
+                reader1.Read();
+                int numberOfColumnsClass = reader1.GetInt32(0);
+                conn1.Close();
+
+
+
+
                 sc.CommandText = "INSERT INTO [dbo].[" + lessonNumber + "-" + lessonGroupNumber + "_Table] (student#,studentFName,studentLName) VALUES ( '" + getStudentNumber()
                                                                                                             + "','" + getStudentFName()
                                                                                                             + "','" + getStudentLName() + "')";
@@ -61,13 +87,62 @@ namespace Test
                 conn.Open();
                 reader = sc.ExecuteReader();
                 conn.Close();
-
-                if (isSingle)
+              
+                if (numberOfColumnsClass > 3)
                 {
-                    throw new Exception("success");
+                    SqlConnection conn2 = new SqlConnection();
+                    conn2.ConnectionString =
+                    "Data Source= 185.159.152.5;" +
+                            "Initial Catalog=youshita_Test;" +
+                            "User id=youshita_co; " +
+                            "Password=P@hn1395;";
+
+                    SqlCommand sc2 = new SqlCommand();
+                    SqlDataReader reader2;
+                    sc2.CommandText = "select Column_name  from Information_schema.columns where Table_name like '" + lessonNumber + "-" + lessonGroupNumber + "_Table'";
+                    sc2.CommandType = CommandType.Text;
+                    sc2.Connection = conn2;
+                    conn2.Open();
+                    reader2 = sc2.ExecuteReader();
+                    for (int i = 0; i < 3; i++)
+                    {
+                        reader2.Read();
+                    }
+
+                    SqlConnection conn3 = new SqlConnection();
+                    conn3.ConnectionString =
+                    "Data Source= 185.159.152.5;" +
+                            "Initial Catalog=youshita_Test;" +
+                            "User id=youshita_co; " +
+                            "Password=P@hn1395;";
+
+                  
+                     while (reader2.Read())
+                     {
+                        SqlCommand sc3 = new SqlCommand();
+                        conn3.Open();
+                        sc3.Connection = conn3;
+                        SqlDataReader reader3;
+                        sc3.CommandText = "UPDATE [dbo].[" + lessonNumber + "-" + lessonGroupNumber + "_Table] SET [" + reader2.GetString(0) + "] = '0' WHERE student# = " + getStudentNumber() + "" ;
+                        sc3.CommandType = CommandType.Text;
+                        reader3 = sc3.ExecuteReader();
+                        conn3.Close();
+                    }
+           
+
+                    conn2.Close();
+                    }
+
+                    if (isSingle)
+                    {
+                        throw new Exception("success");
+                    }
+
+
+                    }
                 }
-            }
-        }
+            
+        
 
         public void updateStudent(long lessonNumber, int lessonGroupNumber)
         {
